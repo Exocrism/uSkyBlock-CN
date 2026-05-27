@@ -124,12 +124,16 @@ public class SkyBlockMenu {
         this.scheduler = scheduler;
     }
 
+    // ==================== 修复 2：displayPartyPlayerGUI ====================
+
     public Inventory displayPartyPlayerGUI(final Player inventoryViewer, final PlayerProfile partyMember) {
-        Preconditions.checkNotNull(partyMember.getName(), "Player name must not be null");
-        Preconditions.checkNotNull(partyMember.getUniqueId(), "Player UUID must not be null");
+        if (partyMember == null || partyMember.getName() == null || partyMember.getUniqueId() == null) {
+            plugin.getLogger().warning("Invalid PlayerProfile passed to displayPartyPlayerGUI, returning to party menu.");
+            return displayPartyGUI(inventoryViewer);
+        }
+        String name = partyMember.getName();
         List<String> lores = new ArrayList<>();
         String emptyTitle = tr("{0} <{1}>", "", tr("Permissions"));
-        String name = partyMember.getName();
         String title = tr("{0} <{1}>", name.substring(0, Math.min(32 - emptyTitle.length(), name.length())), tr("Permissions"));
         Inventory menu = Bukkit.createInventory(new UltimateHolder(inventoryViewer, title, MenuType.DEFAULT), 9, title);
         final ItemStack pHead = new ItemStack(Material.PLAYER_HEAD, 1);
@@ -208,8 +212,14 @@ public class SkyBlockMenu {
         for (UUID memberId : memberList) {
             ItemStack headItem = new ItemStack(Material.PLAYER_HEAD, 1);
             SkullMeta meta3 = requireNonNull((SkullMeta) requireNonNull(headItem.getItemMeta()));
-            meta3.setDisplayName(tr("\u00a7e{0}''s\u00a79 Permissions", memberId));
-            meta3.setOwnerProfile(Bukkit.createPlayerProfile(memberId));
+            // ★★★ 获取玩家名字，用于显示和创建完整的 PlayerProfile ★★★
+            String memberName = Bukkit.getOfflinePlayer(memberId).getName();
+            if (memberName == null) {
+                memberName = memberId.toString();
+            }
+            meta3.setDisplayName(tr("\u00a7e{0}''s\u00a79 Permissions", memberName));
+            // ★★★ 用完整信息创建 PlayerProfile，避免 getName() 返回 null ★★★
+            meta3.setOwnerProfile(Bukkit.createPlayerProfile(memberId, memberName));
             boolean isLeader = islandInfo.isLeader(memberId);
             if (isLeader) {
                 addLore(lores, "\u00a7a\u00a7l", tr("Leader"));
@@ -584,8 +594,8 @@ public class SkyBlockMenu {
 
         menuItem = new ItemStack(Material.HOPPER, 1);
         meta4 = menuItem.getItemMeta();
-        meta4.setDisplayName(tr("\u00a7b\u00a7lBuy Extra Hopper Limit"));
-        addLore(lores, tr("\u00a7eCurrent Limit: \u00a7a{0,number,##}\u00a77(Default) + \u00a7a{1,number,##}\u00a77(Extra)", plugin.getBlockLimitLogic().getLimits().getOrDefault(Material.HOPPER, 0),islandInfo.getHopperLimit()));
+        meta4.setDisplayName("\u00a7b\u00a7l" + tr("Buy Extra Hopper Limit"));
+        addLore(lores, "\u00a7e" + tr("Current Limit: {0,number,##}(Default) + {1,number,##}(Extra)", plugin.getBlockLimitLogic().getLimits().getOrDefault(Material.HOPPER, 0), islandInfo.getHopperLimit()));
         meta4.setLore(lores);
         menuItem.setItemMeta(meta4);
         menu.addItem(menuItem);
@@ -948,6 +958,8 @@ public class SkyBlockMenu {
             currentItem != null && currentItem.getItemMeta() != null && currentItem.getItemMeta().getDisplayName().equals(tr("\u00a74\u00a7lLocked Challenge"));
     }
 
+    // ==================== 修复 3：onClickPermissionMenu ====================
+
     private void onClickPermissionMenu(InventoryClickEvent event, ItemStack currentItem, Player p, String inventoryName, int slotIndex) {
         event.setCancelled(true);
         if (slotIndex < 0 || slotIndex > 35) {
@@ -964,23 +976,38 @@ public class SkyBlockMenu {
         ItemStack skullItem = event.getInventory().getItem(1);
         if (skullItem != null && skullItem.getType().equals(Material.PLAYER_HEAD)) {
             ItemMeta meta = requireNonNull(skullItem.getItemMeta());
-            if (meta instanceof SkullMeta) {
-                profile = ((SkullMeta) meta).getOwnerProfile();
+            if (meta instanceof SkullMeta skullMeta) {
+                PlayerProfile skullProfile = skullMeta.getOwnerProfile();
+                if (skullProfile != null && skullProfile.getName() != null && skullProfile.getUniqueId() != null) {
+                    profile = skullProfile;
+                }
             }
         }
         for (PartyPermissionMenuItem item : permissionMenuItems) {
             if (currentItem.getType() == item.getIcon().getType()) {
                 islandInfo.togglePerm(profile.getUniqueId(), item.getPerm());
-                p.openInventory(displayPartyPlayerGUI(p, profile));
+                if (profile != null && profile.getName() != null && profile.getUniqueId() != null) {
+                    p.openInventory(displayPartyPlayerGUI(p, profile));
+                } else {
+                    p.openInventory(displayPartyGUI(p));
+                    plugin.getLogger().warning("Invalid PlayerProfile in permission menu, returning to party menu.");
+                }
                 return;
             }
         }
         if (currentItem.getType() == Material.OAK_SIGN) {
             p.openInventory(displayPartyGUI(p));
         } else {
-            p.openInventory(displayPartyPlayerGUI(p, profile));
+            if (profile != null && profile.getName() != null && profile.getUniqueId() != null) {
+                p.openInventory(displayPartyPlayerGUI(p, profile));
+            } else {
+                p.openInventory(displayPartyGUI(p));
+                plugin.getLogger().warning("Invalid PlayerProfile in permission menu, returning to party menu.");
+            }
         }
     }
+
+    // ==================== 修复 1：onClickPartyMenu ====================
 
     private void onClickPartyMenu(InventoryClickEvent event, ItemStack currentItem, Player p, ItemMeta meta, SkullMeta skull, int slotIndex) {
         event.setCancelled(true);
@@ -990,7 +1017,13 @@ public class SkyBlockMenu {
         if (meta == null || currentItem.getType() == Material.OAK_SIGN) {
             p.performCommand("island");
         } else if (skull != null && skull.hasOwner() && plugin.getIslandInfo(p).isLeader(p)) {
-            p.openInventory(displayPartyPlayerGUI(p, skull.getOwnerProfile()));
+            PlayerProfile ownerProfile = skull.getOwnerProfile();
+            if (ownerProfile != null && ownerProfile.getName() != null && ownerProfile.getUniqueId() != null) {
+                p.openInventory(displayPartyPlayerGUI(p, ownerProfile));
+            } else {
+                p.openInventory(displayPartyGUI(p));
+                plugin.getLogger().warning("Unable to get valid PlayerProfile for skull item, returning to party menu.");
+            }
         }
     }
 

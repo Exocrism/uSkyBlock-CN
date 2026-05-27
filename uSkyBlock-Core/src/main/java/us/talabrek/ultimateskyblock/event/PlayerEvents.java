@@ -331,7 +331,7 @@ public class PlayerEvents implements Listener {
             if (isFirstCompletion){
                 event.setCancelled(true);
                 if (rateLimiter.tryAcquire()) {
-                    player.sendMessage("\u00a7c地狱门已被禁用");
+                    player.sendMessage("\u00a7c暂时无法进入地狱门，请先完成第一页挑战！");
                 }
             }
         }

@@ -92,7 +92,7 @@ import static us.talabrek.ultimateskyblock.util.LogUtil.log;
 public class uSkyBlock extends JavaPlugin implements uSkyBlockAPI, CommandManager.RequirementChecker {
     private static final String CN = uSkyBlock.class.getName();
     public static final String[][] depends = new String[][]{
-        new String[]{"Vault", "1.7.1", "optional"},
+        new String[]{"Vault", "1.6.0+", "optional"},
         new String[]{"WorldEdit", "7.2.12", "optionalIf", "FastAsyncWorldEdit"},
         new String[]{"WorldGuard", "7.0.8"},
         new String[]{"FastAsyncWorldEdit", "2.4.3", "optional"},

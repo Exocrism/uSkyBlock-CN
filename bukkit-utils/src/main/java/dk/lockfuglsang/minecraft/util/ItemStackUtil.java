@@ -198,20 +198,32 @@ public enum ItemStackUtil {
 
     @Contract("null -> null; !null -> !null")
     @Nullable
-    public static String getItemName(ItemStack stack) {
-        if (stack == null) {
-            return null;
-        }
-        var itemMeta = stack.getItemMeta();
-        if (itemMeta != null && itemMeta.hasDisplayName() && !itemMeta.getDisplayName().trim().isEmpty()) {
-            return stack.getItemMeta().getDisplayName();
-        }
-        return tr(FormatUtil.camelcase(stack.getType().name()).replaceAll("([A-Z])", " $1").trim());
+public static String getItemName(ItemStack stack) {
+    if (stack == null) {
+        return null;
     }
+    var itemMeta = stack.getItemMeta();
+    if (itemMeta != null && itemMeta.hasDisplayName() && !itemMeta.getDisplayName().trim().isEmpty()) {
+        return stack.getItemMeta().getDisplayName();
+    }
+    String materialName = stack.getType().name();
+    // 先尝试用 material 名作为 key 翻译，如 "COBBLESTONE" → tr("COBBLESTONE")
+    String translated = tr(materialName);
+    if (!translated.equals(materialName)) {
+        return translated; // 有翻译就用翻译
+    }
+    // 否则用原来的格式化方式
+    return tr(FormatUtil.camelcase(materialName).replaceAll("([A-Z])", " $1").trim());
+}
 
     @NotNull
     public static String getBlockName(@NotNull BlockData block) {
-        return tr(FormatUtil.camelcase(block.getMaterial().name()).replaceAll("([A-Z])", " $1").trim());
+        String materialName = block.getMaterial().name();
+        String translated = tr(materialName);
+        if (!translated.equals(materialName)) {
+            return translated;
+        }
+        return tr(FormatUtil.camelcase(materialName).replaceAll("([A-Z])", " $1").trim());
     }
 
     @Contract(pure = true)

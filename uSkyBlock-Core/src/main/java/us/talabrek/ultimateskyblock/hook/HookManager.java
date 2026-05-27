@@ -141,6 +141,8 @@ public class HookManager {
             }
         } catch (HookFailedException ex) {
             logger.log(Level.SEVERE, "Failed to hook into Vault permissions plugin.", ex);
+        } catch (NoClassDefFoundError e) {
+            logger.warning("Vault v2 API not found, permission hook disabled. This is expected if using Vault 1.x.");
         }
 
         logger.warning("Failed to find a compatible permissions system. Permission rewards will be disabled.");

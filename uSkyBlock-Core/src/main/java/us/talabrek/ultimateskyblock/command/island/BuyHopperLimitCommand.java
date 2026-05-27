@@ -41,24 +41,24 @@ public class BuyHopperLimitCommand extends RequireIslandCommand {
                 success = result == null;
                 if (success) {
                     islandInfo.setHopperLimit(curlimit + 1);
-                    player.sendMessage(tr("\u00a7a\u00a7lBuy Extra Hopper Success!"));
-                    player.sendMessage(tr("\u00a77======================"));
+                    player.sendMessage("\u00a7a\u00a7l" + tr("Buy Extra Hopper Success!"));
+                    player.sendMessage("\u00a77" + tr("======================"));
                 } else {
-                    player.sendMessage(tr("\u00a7c\u00a7lBuy Extra Hopper Failed!"));
+                    player.sendMessage("\u00a7c\u00a7l" + tr("Buy Extra Hopper Failed!"));
                     if (hook.getBalance(player) < price) {
-                        player.sendMessage(tr("\u00a7dYou do not have enough money!"));
-                        player.sendMessage(tr("\u00a7dYou have {0}", hook.getBalance(player)));
+                        player.sendMessage("\u00a7d" + tr("You do not have enough money!"));
+                        player.sendMessage("\u00a7d" + tr("You have {0}", hook.getBalance(player)));
                     }
-                    player.sendMessage(tr("\u00a7c {0}", result));
+                    player.sendMessage("\u00a7c" + tr("{0}", result));
                 }
             });
         } else {
-            player.sendMessage(tr("\u00a7b\u00a7lBuy Extra Hopper Limit"));
-            player.sendMessage(tr("\u00a77======================"));
+            player.sendMessage("\u00a7b\u00a7l" + tr("Buy Extra Hopper Limit"));
+            player.sendMessage("\u00a77" + tr("======================"));
         }
-        player.sendMessage(tr("\u00a7bCurrent Extra Limit is {0}", islandInfo.getHopperLimit()));
-        player.sendMessage(tr("\u00a7bPrice to buy another hopper limit is {0}", calcPrice(islandInfo.getHopperLimit())));
-        plugin.execCommand(player, "console:tellraw " + player.getName() + " [{\"text\":\"click to buy hopper\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"/is hopper buy\"}}]", false);
+        player.sendMessage("\u00a7b" + tr("Current Extra Limit is {0}", islandInfo.getHopperLimit()));
+        player.sendMessage("\u00a7b" + tr("Price to buy another hopper limit is {0}", calcPrice(islandInfo.getHopperLimit())));
+        plugin.execCommand(player, "console:tellraw " + player.getName() + " [{\"text\":\"" + tr("click to buy hopper") + "\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"/is hopper buy\"}}]", false);
         return true;
     }
 }

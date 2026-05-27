@@ -162,8 +162,7 @@ public class WorldGuardHandler {
         region.setFlag(Flags.PVP, null);
         boolean isLocked = islandConfig.isLocked();
         updateLockStatus(region, isLocked);
-        return region;
-    }
+        return region;    }
 
     private static void updateLockStatus(ProtectedRegion region, boolean isLocked) {
         if (isLocked) {
