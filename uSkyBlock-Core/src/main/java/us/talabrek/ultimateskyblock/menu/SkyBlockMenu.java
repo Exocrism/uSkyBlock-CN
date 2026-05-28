@@ -540,7 +540,7 @@ public class SkyBlockMenu {
         }
         meta4.setLore(lores);
         menuItem.setItemMeta(meta4);
-        //menu.addItem(menuItem);
+        menu.addItem(menuItem);
         lores.clear();
 
         menuItem = new ItemStack(Material.IRON_BARS, 1);
