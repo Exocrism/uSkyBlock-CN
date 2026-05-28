@@ -3757,3 +3757,178 @@ msgstr "当前数量限制：{0,number,##}（默认）+ {1,number,##}（额外�
 
 msgid "======================"
 msgstr "======================"
+
+# 生物群系名翻译
+msgid "OCEAN"
+msgstr "海洋"
+
+msgid "FOREST"
+msgstr "森林"
+
+msgid "DESERT"
+msgstr "沙漠"
+
+msgid "JUNGLE"
+msgstr "丛林"
+
+msgid "SWAMP"
+msgstr "沼泽"
+
+msgid "TAIGA"
+msgstr "针叶林"
+
+msgid "MUSHROOM_FIELDS"
+msgstr "蘑菇岛"
+
+msgid "NETHER_WASTES"
+msgstr "下界荒地"
+
+msgid "THE_END"
+msgstr "末地"
+
+msgid "PLAINS"
+msgstr "平原"
+
+msgid "WINDSWEPT_HILLS"
+msgstr "风袭丘陵"
+
+msgid "FLOWER_FOREST"
+msgstr "繁花森林"
+
+msgid "SAVANNA_PLATEAU"
+msgstr "热带高原"
+
+msgid "LUSH_CAVES"
+msgstr "繁茂洞穴"
+
+msgid "LUKEWARM_OCEAN"
+msgstr "温水海洋"
+
+msgid "SNOWY_SLOPES"
+msgstr "雪坡"
+
+msgid "DEEP_OCEAN"
+msgstr "深海"
+
+msgid "SNOWY_PLAINS"
+msgstr "积雪平原"
+
+msgid "DEEP_DARK"
+msgstr "深暗之域"
+
+msgid "DRIPSTONE_CAVES"
+msgstr "溶洞"
+
+msgid "MEADOW"
+msgstr "草甸"
+
+msgid "GROVE"
+msgstr "雪林"
+
+msgid "JAGGED_PEAKS"
+msgstr "尖峭山峰"
+
+msgid "FROZEN_PEAKS"
+msgstr "冰封山峰"
+
+msgid "STONY_PEAKS"
+msgstr "裸岩山峰"
+
+msgid "DARK_FOREST"
+msgstr "黑森林"
+
+msgid "BIRCH_FOREST"
+msgstr "白桦森林"
+
+msgid "OLD_GROWTH_BIRCH_FOREST"
+msgstr "原始白桦森林"
+
+msgid "OLD_GROWTH_PINE_TAIGA"
+msgstr "原始松木针叶林"
+
+msgid "OLD_GROWTH_SPRUCE_TAIGA"
+msgstr "原始云杉针叶林"
+
+msgid "SNOWY_TAIGA"
+msgstr "积雪针叶林"
+
+msgid "BAMBOO_JUNGLE"
+msgstr "竹林"
+
+msgid "SPARSE_JUNGLE"
+msgstr "稀疏丛林"
+
+msgid "SAVANNA"
+msgstr "热带草原"
+
+msgid "WINDSWEPT_SAVANNA"
+msgstr "风袭热带草原"
+
+msgid "BADLANDS"
+msgstr "恶地"
+
+msgid "WOODED_BADLANDS"
+msgstr "疏林恶地"
+
+msgid "ERODED_BADLANDS"
+msgstr "风蚀恶地"
+
+msgid "ICE_SPIKES"
+msgstr "冰刺平原"
+
+msgid "FROZEN_RIVER"
+msgstr "冻河"
+
+msgid "FROZEN_OCEAN"
+msgstr "冻洋"
+
+msgid "COLD_OCEAN"
+msgstr "冷水海洋"
+
+msgid "WARM_OCEAN"
+msgstr "暖水海洋"
+
+msgid "RIVER"
+msgstr "河流"
+
+msgid "BEACH"
+msgstr "沙滩"
+
+msgid "SNOWY_BEACH"
+msgstr "积雪沙滩"
+
+msgid "STONY_SHORE"
+msgstr "石岸"
+
+msgid "SUNFLOWER_PLAINS"
+msgstr "向日葵平原"
+
+msgid "CHERRY_GROVE"
+msgstr "樱花树林"
+
+msgid "MANGROVE_SWAMP"
+msgstr "红树林沼泽"
+
+msgid "SOUL_SAND_VALLEY"
+msgstr "灵魂沙峡谷"
+
+msgid "CRIMSON_FOREST"
+msgstr "绯红森林"
+
+msgid "WARPED_FOREST"
+msgstr "诡异森林"
+
+msgid "BASALT_DELTAS"
+msgstr "玄武岩三角洲"
+
+msgid "END_HIGHLANDS"
+msgstr "末地高地"
+
+msgid "END_MIDLANDS"
+msgstr "末地内陆"
+
+msgid "SMALL_END_ISLANDS"
+msgstr "末地小型岛屿"
+
+msgid "END_BARRENS"
+msgstr "末地荒地"
