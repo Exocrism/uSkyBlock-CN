@@ -3572,6 +3572,162 @@ msgstr "红色蘑菇方块"
 msgid "NETHER_PORTAL"
 msgstr "下界传送门"
 
+msgid "GRASS_BLOCK"
+msgstr "草方块"
+
+msgid "STONE_SWORD"
+msgstr "石剑"
+
+msgid "CHARCOAL"
+msgstr "木炭"
+
+msgid "RAW_GOLD"
+msgstr "粗金"
+
+msgid "COMPOSTER"
+msgstr "堆肥桶"
+
+msgid "BONE_MEAL"
+msgstr "骨粉"
+
+msgid "WHEAT_SEEDS"
+msgstr "小麦种子"
+
+msgid "SHIELD"
+msgstr "盾牌"
+
+msgid "STONE_BRICK_WALL"
+msgstr "石砖墙"
+
+msgid "ANDESITE"
+msgstr "安山岩"
+
+msgid "DIORITE"
+msgstr "闪长岩"
+
+msgid "GRANITE"
+msgstr "花岗岩"
+
+msgid "CALCITE"
+msgstr "方解石"
+
+msgid "TUFF"
+msgstr "凝灰岩"
+
+msgid "DEEPSLATE"
+msgstr "深板岩"
+
+msgid "WATER_BUCKET"
+msgstr "水桶"
+
+msgid "LAVA_BUCKET"
+msgstr "岩浆桶"
+
+msgid "COAL_BLOCK"
+msgstr "煤炭块"
+
+msgid "GOLD_NUGGET"
+msgstr "金粒"
+
+msgid "GLOWSTONE_DUST"
+msgstr "萤石粉"
+
+msgid "CRYING_OBSIDIAN"
+msgstr "哭泣的黑曜石"
+
+msgid "MAGMA_CREAM"
+msgstr "岩浆膏"
+
+msgid "NETHER_WART"
+msgstr "地狱疣"
+
+msgid "SMOOTH_QUARTZ"
+msgstr "平滑石英"
+
+msgid "NETHER_QUARTZ_ORE"
+msgstr "下界石英矿石"
+
+msgid "ENCHANTED_GOLDEN_APPLE"
+msgstr "附魔金苹果"
+
+msgid "EXPERIENCE_BOTTLE"
+msgstr "附魔之瓶"
+
+msgid "ENCHANTED_BOOK"
+msgstr "附魔书"
+
+msgid "OBSERVER"
+msgstr "侦测器"
+
+msgid "SPAWNER"
+msgstr "刷怪笼"
+
+msgid "BLAZE_POWDER"
+msgstr "烈焰粉"
+
+msgid "ENDER_EYE"
+msgstr "末影之眼"
+
+msgid "BLAZE_SPAWN_EGG"
+msgstr "烈焰人刷怪蛋"
+
+msgid "WITHER_SKELETON_SPAWN_EGG"
+msgstr "凋灵骷髅刷怪蛋"
+
+msgid "GREEN_DYE"
+msgstr "绿色染料"
+
+msgid "BAMBOO"
+msgstr "竹子"
+
+msgid "PAPER"
+msgstr "纸"
+
+msgid "TNT"
+msgstr "TNT"
+
+msgid "APPLE"
+msgstr "苹果"
+
+msgid "FLINT_AND_STEEL"
+msgstr "打火石"
+
+msgid "RAW_IRON"
+msgstr "粗铁"
+
+msgid "IRON_SWORD"
+msgstr "铁剑"
+
+msgid "IRON_HELMET"
+msgstr "铁头盔"
+
+msgid "IRON_CHESTPLATE"
+msgstr "铁胸甲"
+
+msgid "IRON_LEGGINGS"
+msgstr "铁护腿"
+
+msgid "IRON_BOOTS"
+msgstr "铁靴子"
+
+msgid "WHITE_BED"
+msgstr "白色床"
+
+msgid "WHITE_WOOL"
+msgstr "白色羊毛"
+
+msgid "SHEEP_SPAWN_EGG"
+msgstr "羊刷怪蛋"
+
+msgid "PIG_SPAWN_EGG"
+msgstr "猪刷怪蛋"
+
+msgid "CHICKEN_SPAWN_EGG"
+msgstr "鸡刷怪蛋"
+
+msgid "COW_SPAWN_EGG"
+msgstr "牛刷怪蛋"
+
 msgid "Buy Extra Hopper Success!"
 msgstr "购买漏斗数量扩容成功！"
 
