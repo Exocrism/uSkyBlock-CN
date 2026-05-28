@@ -22,17 +22,13 @@ showLockedChallengeName: true
 
 ranks:
   # ===============================================
-  # 第一层：拓荒时代 - 从零开始到下界之门 (1.21.4)
-  # 初始资源：橡树、2冰、1岩浆桶、西瓜种子、南瓜种子、红蘑菇、棕蘑菇、甘蔗、约60泥土、3沙子
+  # 第一层：拓荒时代 - 初始资源利用 (1.21.4)
   # ===============================================
   Tier1:
     name: '&a拓荒时代'
     displayItem: minecraft:grass_block
     resetInHours: 20
     challenges:
-      # ===============================================
-      # 阶段一：初始资源利用（1-9）
-      # ===============================================
       lumberjack:
         name: '&a要致富，先撸树'
         description: 采集16个橡木原木并种植树苗
@@ -276,9 +272,46 @@ ranks:
           currency: 40
           xp: 40
 
-      # ===============================================
-      # 阶段二：石器与基础工具（10-15）
-      # ===============================================
+      tier1_complete:
+        name: '&6拓荒时代完成'
+        description: 完成拓荒时代所有挑战
+        type: onPlayer
+        requiredChallenges:
+        - lumberjack
+        - cobble_gen
+        - sugar_cane_plant
+        - cactus_plant
+        - melon_farm
+        - pumpkin_farm
+        - sugar_cane_harvest
+        - cactus_harvest
+        - mushroom_farm
+        - mushroom_biome
+        displayItem: minecraft:diamond
+        lockedDisplayItem: red_stained_glass_pane
+        resetInHours: 0
+        repeatable: false
+        showInList: false
+        reward:
+          text: 完成拓荒时代全部挑战
+          commands:
+          - 'console: give {party} minecraft:diamond 8'
+          - 'console: give {party} minecraft:experience_bottle 16'
+          currency: 1000
+          xp: 1000
+
+  # ===============================================
+  # 第二层：石器铁器 - 石器工具到铁器装备 (1.21.4)
+  # ===============================================
+  Tier2:
+    name: '&7石器铁器'
+    displayItem: minecraft:iron_pickaxe
+    resetInHours: 20
+    requires:
+      rankLeeway: 2
+      challenges:
+      - tier1_complete
+    challenges:
       stone_tools:
         name: '&7石器时代'
         description: 制作一套完整的石质工具
@@ -428,9 +461,150 @@ ranks:
           currency: 5
           xp: 5
 
-      # ===============================================
-      # 阶段三：刷怪与怪物资源（16-21）
-      # ===============================================
+      iron_smelting:
+        name: '&7铁锭冶炼'
+        description: 烧制16个铁锭
+        type: onPlayer
+        requiredChallenges:
+        - furnace_basics
+        requiredItems:
+        - minecraft:iron_ingot:16;+4
+        displayItem: minecraft:iron_ingot
+        lockedDisplayItem: light_gray_stained_glass_pane
+        resetInHours: 12
+        reward:
+          text: 8个粗铁，8个煤炭
+          commands:
+          - 'console: give {party} minecraft:raw_iron 8'
+          - 'console: give {party} minecraft:coal 8'
+          currency: 20
+          xp: 20
+        repeatReward:
+          text: 2个铁锭
+          commands:
+          - 'console: give {party} minecraft:iron_ingot 2'
+          currency: 10
+          xp: 10
+
+      bucket_craft:
+        name: '&9铁桶'
+        description: 制作一个铁桶
+        type: onPlayer
+        requiredChallenges:
+        - iron_smelting
+        requiredItems:
+        - minecraft:bucket:1
+        displayItem: minecraft:bucket
+        lockedDisplayItem: light_blue_stained_glass_pane
+        resetInHours: 24
+        reward:
+          text: 2个铁锭，1个水桶，1个岩浆桶
+          commands:
+          - 'console: give {party} minecraft:iron_ingot 2'
+          - 'console: give {party} minecraft:water_bucket 1'
+          - 'console: give {party} minecraft:lava_bucket 1'
+          currency: 15
+          xp: 15
+
+      iron_tools:
+        name: '&7铁器时代'
+        description: 制作一套完整的铁质工具
+        type: onPlayer
+        requiredChallenges:
+        - iron_smelting
+        requiredItems:
+        - minecraft:iron_pickaxe:1
+        - minecraft:iron_axe:1
+        - minecraft:iron_shovel:1
+        - minecraft:iron_hoe:1
+        - minecraft:iron_sword:1
+        displayItem: minecraft:iron_pickaxe
+        lockedDisplayItem: light_gray_stained_glass_pane
+        resetInHours: 0
+        repeatable: false
+        takeItems: true
+        reward:
+          text: 8个铁锭，4个煤炭块，为你的工具附魔
+          commands:
+          - 'console: give {party} minecraft:iron_ingot 8'
+          - 'console: give {party} minecraft:coal_block 4'
+          - 'console: give {party} minecraft:iron_pickaxe 1 [enchantments={levels:{efficiency:1,unbreaking:1}}]'
+          - 'console: give {party} minecraft:iron_axe 1 [enchantments={levels:{efficiency:1,unbreaking:1}}]'
+          - 'console: give {party} minecraft:iron_shovel 1 [enchantments={levels:{efficiency:1,unbreaking:1}}]'
+          - 'console: give {party} minecraft:iron_hoe 1 [enchantments={levels:{efficiency:1,unbreaking:1}}]'
+          - 'console: give {party} minecraft:iron_sword 1 [enchantments={levels:{sharpness:1,unbreaking:1}}]'
+          currency: 25
+          xp: 25
+
+      full_armor:
+        name: '&7全副武装'
+        description: 制作一套完整的铁质盔甲和盾牌
+        type: onPlayer
+        requiredChallenges:
+        - iron_tools
+        requiredItems:
+        - minecraft:iron_helmet:1
+        - minecraft:iron_chestplate:1
+        - minecraft:iron_leggings:1
+        - minecraft:iron_boots:1
+        - minecraft:shield:1
+        displayItem: minecraft:iron_chestplate
+        lockedDisplayItem: light_gray_stained_glass_pane
+        resetInHours: 0
+        repeatable: false
+        takeItems: true
+        reward:
+          text: 8个铁锭，为你的装备附魔
+          commands:
+          - 'console: give {party} minecraft:iron_ingot 8'
+          - 'console: give {party} minecraft:iron_helmet 1 [enchantments={levels:{protection:1,unbreaking:1}}]'
+          - 'console: give {party} minecraft:iron_chestplate 1 [enchantments={levels:{protection:1,unbreaking:1}}]'
+          - 'console: give {party} minecraft:iron_leggings 1 [enchantments={levels:{protection:1,unbreaking:1}}]'
+          - 'console: give {party} minecraft:iron_boots 1 [enchantments={levels:{protection:1,unbreaking:1}}]'
+          - 'console: give {party} minecraft:shield 1 [enchantments={levels:{unbreaking:1}}]'
+          currency: 30
+          xp: 30
+
+      tier2_complete:
+        name: '&6石器铁器完成'
+        description: 完成石器铁器所有挑战
+        type: onPlayer
+        requiredChallenges:
+        - stone_tools
+        - furnace_basics
+        - workstation
+        - torch_master
+        - composter
+        - wheat_farm
+        - iron_smelting
+        - bucket_craft
+        - iron_tools
+        - full_armor
+        displayItem: minecraft:iron_block
+        lockedDisplayItem: red_stained_glass_pane
+        resetInHours: 0
+        repeatable: false
+        showInList: false
+        reward:
+          text: 完成石器铁器全部挑战
+          commands:
+          - 'console: give {party} minecraft:diamond 12'
+          - 'console: give {party} minecraft:experience_bottle 24'
+          currency: 1200
+          xp: 1200
+
+  # ===============================================
+  # 第三层：农业与怪物 - 刷怪到农业扩展 (1.21.4)
+  # ===============================================
+  Tier3:
+    name: '&5农业与怪物'
+    displayItem: minecraft:rotten_flesh
+    resetInHours: 20
+    requires:
+      rankLeeway: 3
+      challenges:
+      - tier2_complete
+    challenges:
       monster_hunter:
         name: '&5怪物猎人'
         description: 收集多种怪物掉落物
@@ -593,9 +767,6 @@ ranks:
           currency: 10
           xp: 10
 
-      # ===============================================
-      # 阶段四：食物与农业扩展（22-28）
-      # ===============================================
       sleep_tight:
         name: '&c安眠'
         description: 制作一张白色床
@@ -863,117 +1034,52 @@ ranks:
           currency: 40
           xp: 40
 
-      # ===============================================
-      # 阶段五：铁器时代（29-32）
-      # ===============================================
-      iron_smelting:
-        name: '&7铁锭冶炼'
-        description: 烧制16个铁锭
+      tier3_complete:
+        name: '&6农业与怪物完成'
+        description: 完成农业与怪物所有挑战
         type: onPlayer
         requiredChallenges:
-        - furnace_basics
+        - monster_hunter
         - zombie_hunter
-        requiredItems:
-        - minecraft:iron_ingot:16;+4
-        displayItem: minecraft:iron_ingot
-        lockedDisplayItem: light_gray_stained_glass_pane
-        resetInHours: 12
-        reward:
-          text: 8个粗铁，8个煤炭
-          commands:
-          - 'console: give {party} minecraft:raw_iron 8'
-          - 'console: give {party} minecraft:coal 8'
-          currency: 20
-          xp: 20
-        repeatReward:
-          text: 2个铁锭
-          commands:
-          - 'console: give {party} minecraft:iron_ingot 2'
-          currency: 10
-          xp: 10
-
-      bucket_craft:
-        name: '&9铁桶'
-        description: 制作一个铁桶
-        type: onPlayer
-        requiredChallenges:
-        - iron_smelting
-        requiredItems:
-        - minecraft:bucket:1
-        displayItem: minecraft:bucket
-        lockedDisplayItem: light_blue_stained_glass_pane
-        resetInHours: 24
-        reward:
-          text: 2个铁锭，1个水桶，1个岩浆桶
-          commands:
-          - 'console: give {party} minecraft:iron_ingot 2'
-          - 'console: give {party} minecraft:water_bucket 1'
-          - 'console: give {party} minecraft:lava_bucket 1'
-          currency: 15
-          xp: 15
-
-      iron_tools:
-        name: '&7铁器时代'
-        description: 制作一套完整的铁质工具
-        type: onPlayer
-        requiredChallenges:
-        - iron_smelting
-        requiredItems:
-        - minecraft:iron_pickaxe:1
-        - minecraft:iron_axe:1
-        - minecraft:iron_shovel:1
-        - minecraft:iron_hoe:1
-        - minecraft:iron_sword:1
-        displayItem: minecraft:iron_pickaxe
-        lockedDisplayItem: light_gray_stained_glass_pane
+        - skeleton_archer
+        - web_collector
+        - demolitionist
+        - archer
+        - sleep_tight
+        - leather_collector
+        - potato_farm
+        - carrot_farm
+        - fisherman
+        - deep_ocean_biome
+        - lukewarm_ocean_biome
+        - feast
+        - flower_biome
+        - savanna_biome
+        displayItem: minecraft:golden_apple
+        lockedDisplayItem: red_stained_glass_pane
         resetInHours: 0
         repeatable: false
-        takeItems: true
+        showInList: false
         reward:
-          text: 8个铁锭，4个煤炭块，为你的工具附魔
+          text: 完成农业与怪物全部挑战
           commands:
-          - 'console: give {party} minecraft:iron_ingot 8'
-          - 'console: give {party} minecraft:coal_block 4'
-          - 'console: give {party} minecraft:iron_pickaxe 1 [enchantments={levels:{efficiency:1,unbreaking:1}}]'
-          - 'console: give {party} minecraft:iron_axe 1 [enchantments={levels:{efficiency:1,unbreaking:1}}]'
-          - 'console: give {party} minecraft:iron_shovel 1 [enchantments={levels:{efficiency:1,unbreaking:1}}]'
-          - 'console: give {party} minecraft:iron_hoe 1 [enchantments={levels:{efficiency:1,unbreaking:1}}]'
-          - 'console: give {party} minecraft:iron_sword 1 [enchantments={levels:{sharpness:1,unbreaking:1}}]'
-          currency: 25
-          xp: 25
+          - 'console: give {party} minecraft:diamond 16'
+          - 'console: give {party} minecraft:experience_bottle 32'
+          currency: 1400
+          xp: 1400
 
-      full_armor:
-        name: '&7全副武装'
-        description: 制作一套完整的铁质盔甲和盾牌
-        type: onPlayer
-        requiredChallenges:
-        - iron_tools
-        requiredItems:
-        - minecraft:iron_helmet:1
-        - minecraft:iron_chestplate:1
-        - minecraft:iron_leggings:1
-        - minecraft:iron_boots:1
-        - minecraft:shield:1
-        displayItem: minecraft:iron_chestplate
-        lockedDisplayItem: light_gray_stained_glass_pane
-        resetInHours: 0
-        repeatable: false
-        takeItems: true
-        reward:
-          text: 8个铁锭，为你的装备附魔
-          commands:
-          - 'console: give {party} minecraft:iron_ingot 8'
-          - 'console: give {party} minecraft:iron_helmet 1 [enchantments={levels:{protection:1,unbreaking:1}}]'
-          - 'console: give {party} minecraft:iron_chestplate 1 [enchantments={levels:{protection:1,unbreaking:1}}]'
-          - 'console: give {party} minecraft:iron_leggings 1 [enchantments={levels:{protection:1,unbreaking:1}}]'
-          - 'console: give {party} minecraft:iron_boots 1 [enchantments={levels:{protection:1,unbreaking:1}}]'
-          - 'console: give {party} minecraft:shield 1 [enchantments={levels:{unbreaking:1}}]'
-          currency: 30
-          xp: 30
-
-      # ===============================================
-      # 阶段六：建筑与下界准备（33-39）
-      # ===============================================
+  # ===============================================
+  # 第四层：下界准备 - 建筑到下界之门 (1.21.4)
+  # ===============================================
+  Tier4:
+    name: '&4下界准备'
+    displayItem: minecraft:obsidian
+    resetInHours: 20
+    requires:
+      rankLeeway: 2
+      challenges:
+      - tier3_complete
+    challenges:
       stonemason:
         name: '&7石匠'
         description: 制作石砖系列方块
@@ -1165,43 +1271,14 @@ ranks:
           xp: 100
 
       page1finished:
-        name: '&6第一章完成'
-        description: 完成第一章所有挑战
+        name: '&6下界准备完成'
+        description: 完成下界准备所有挑战
         type: onPlayer
         requiredChallenges:
-        - lumberjack
-        - cobble_gen
-        - sugar_cane_plant
-        - cactus_plant
-        - melon_farm
-        - pumpkin_farm
-        - sugar_cane_harvest
-        - cactus_harvest
-        - mushroom_farm
-        - stone_tools
-        - furnace_basics
-        - workstation
-        - torch_master
-        - composter
-        - wheat_farm
-        - monster_hunter
-        - zombie_hunter
-        - skeleton_archer
-        - web_collector
-        - demolitionist
-        - archer
-        - sleep_tight
-        - leather_collector
-        - potato_farm
-        - carrot_farm
-        - fisherman
-        - feast
-        - iron_smelting
-        - bucket_craft
-        - iron_tools
-        - full_armor
         - stonemason
         - home_sweet_home
+        - snowy_plains_biome
+        - snowy_slopes_biome
         - novice_builder
         - obsidian_farmer
         - nether_portal
@@ -1211,27 +1288,25 @@ ranks:
         repeatable: false
         showInList: false
         reward:
-          text: 完成第一章全部挑战
-          currency: 50
-          xp: 50
+          text: 完成下界准备全部挑战
+          commands:
+          - 'console: give {party} minecraft:diamond 20'
+          - 'console: give {party} minecraft:experience_bottle 40'
+          currency: 1600
+          xp: 1600
 
   # ===============================================
-  # 第二层：下界征途 - 从进入下界到末地传送门 (1.21.4)
-  # 进入条件：完成第一页所有挑战
-  # 初始资源：下界岩、岩浆、僵尸猪灵、猪灵
+  # 第五层：下界基础 - 初入下界到下界建筑 (1.21.4)
   # ===============================================
-  Tier2:
-    name: '&c下界征途'
+  Tier5:
+    name: '&c下界基础'
     displayItem: minecraft:netherrack
     resetInHours: 24
     requires:
-      rankLeeway: 4
+      rankLeeway: 3
       challenges:
       - page1finished
     challenges:
-      # ===============================================
-      # 阶段一：下界基础生存（1-5）
-      # ===============================================
       nether_entry:
         name: '&c初入下界'
         description: 采集64个地狱岩
@@ -1388,9 +1463,6 @@ ranks:
           currency: 10
           xp: 10
 
-      # ===============================================
-      # 阶段二：下界建筑与扩展（6-11）
-      # ===============================================
       nether_brick_mason:
         name: '&c地狱砖匠'
         description: 制作地狱砖系列方块
@@ -1546,9 +1618,6 @@ ranks:
           currency: 35
           xp: 35
 
-      # ===============================================
-      # 岛屿等级30
-      # ===============================================
       island_level_30:
         name: '&b岛屿等级30'
         description: 达到岛屿等级30
@@ -1570,9 +1639,49 @@ ranks:
           currency: 80
           xp: 80
 
-      # ===============================================
-      # 阶段三：魔法与附魔（12-15）
-      # ===============================================
+      tier5_complete:
+        name: '&6下界基础完成'
+        description: 完成下界基础所有挑战
+        type: onPlayer
+        requiredChallenges:
+        - nether_entry
+        - shiny
+        - bartering
+        - nether_biome
+        - hell_slime
+        - return_to_sender
+        - nether_brick_mason
+        - soul_sand_platform
+        - nether_wart_farm
+        - quartz_collector
+        - glowstone_collector
+        - who_is_cutting_onions
+        - island_level_30
+        displayItem: minecraft:nether_star
+        lockedDisplayItem: red_stained_glass_pane
+        resetInHours: 0
+        repeatable: false
+        showInList: false
+        reward:
+          text: 完成下界基础全部挑战
+          commands:
+          - 'console: give {party} minecraft:diamond 24'
+          - 'console: give {party} minecraft:experience_bottle 48'
+          currency: 1800
+          xp: 1800
+
+  # ===============================================
+  # 第六层：下界工业 - 魔法附魔到信标 (1.21.4)
+  # ===============================================
+  Tier6:
+    name: '&d下界工业'
+    displayItem: minecraft:enchanting_table
+    resetInHours: 24
+    requires:
+      rankLeeway: 3
+      challenges:
+      - tier5_complete
+    challenges:
       knowledge_hall:
         name: '&d知识殿堂'
         description: 收集书籍、木板和青金石用于制作书架
@@ -1668,9 +1777,6 @@ ranks:
           currency: 60
           xp: 60
 
-      # ===============================================
-      # 阶段四：石英与萤石建筑（16-17）
-      # ===============================================
       pure_white:
         name: '&f纯白建筑'
         description: 制作石英系列方块
@@ -1726,9 +1832,6 @@ ranks:
           currency: 10
           xp: 10
 
-      # ===============================================
-      # 岛屿等级40
-      # ===============================================
       island_level_40:
         name: '&b岛屿等级40'
         description: 达到岛屿等级40
@@ -1750,9 +1853,6 @@ ranks:
           currency: 120
           xp: 120
 
-      # ===============================================
-      # 阶段五：凋零之战与信标（18-22）
-      # ===============================================
       wither_bane:
         name: '&8凋零克星'
         description: 提交一个下界之星
@@ -1872,9 +1972,48 @@ ranks:
           currency: 10
           xp: 10
 
-      # ===============================================
-      # 阶段六：高难度挑战（23-26）
-      # ===============================================
+      tier6_complete:
+        name: '&6下界工业完成'
+        description: 完成下界工业所有挑战
+        type: onPlayer
+        requiredChallenges:
+        - knowledge_hall
+        - enchanter
+        - transmutation
+        - enchantment_master
+        - pure_white
+        - glowstone_lighting
+        - island_level_40
+        - wither_bane
+        - beacon_1
+        - beacon_2
+        - beacon_3
+        - chain_craft
+        displayItem: minecraft:beacon
+        lockedDisplayItem: red_stained_glass_pane
+        resetInHours: 0
+        repeatable: false
+        showInList: false
+        reward:
+          text: 完成下界工业全部挑战
+          commands:
+          - 'console: give {party} minecraft:diamond 32'
+          - 'console: give {party} minecraft:experience_bottle 64'
+          currency: 2000
+          xp: 2000
+
+  # ===============================================
+  # 第七层：下界大师 - 高难度挑战到末地传送门 (1.21.4)
+  # ===============================================
+  Tier7:
+    name: '&8下界大师'
+    displayItem: minecraft:end_portal_frame
+    resetInHours: 48
+    requires:
+      rankLeeway: 1
+      challenges:
+      - tier6_complete
+    challenges:
       nether_architect:
         name: '&8地狱建筑师'
         description: 建造一个宏伟的下界砖神殿
@@ -2014,9 +2153,6 @@ ranks:
           currency: 30
           xp: 30
 
-      # ===============================================
-      # 岛屿等级50
-      # ===============================================
       island_level_50:
         name: '&b岛屿等级50'
         description: 达到岛屿等级50
@@ -2039,9 +2175,6 @@ ranks:
           currency: 160
           xp: 160
 
-      # ===============================================
-      # 阶段七：末地准备（27-29）
-      # ===============================================
       ender_pearl_hunter:
         name: '&5末影珍珠猎手'
         description: 收集32个末影珍珠
@@ -2112,54 +2245,31 @@ ranks:
           currency: 200
           xp: 200
 
-      # ===============================================
-      # 第二页完成
-      # ===============================================
-      page2finished:
-        name: '&6第二章完成'
-        description: 完成第二章所有挑战
+      tier7_complete:
+        name: '&6下界大师完成'
+        description: 完成下界大师所有挑战
         type: onPlayer
         requiredChallenges:
-        - nether_entry
-        - shiny
-        - bartering
-        - hell_slime
-        - return_to_sender
-        - nether_brick_mason
-        - soul_sand_platform
-        - nether_wart_farm
-        - quartz_collector
-        - glowstone_collector
-        - who_is_cutting_onions
-        - island_level_30
-        - knowledge_hall
-        - enchanter
-        - transmutation
-        - enchantment_master
-        - pure_white
-        - glowstone_lighting
-        - island_level_40
-        - wither_bane
-        - beacon_1
-        - beacon_2
-        - beacon_3
-        - chain_craft
         - nether_architect
         - valhalla
+        - lush_caves_biome
         - ghast_farm
         - wither_collector
         - island_level_50
         - ender_pearl_hunter
         - end_portal_frame_assembly
         - end_portal
-        displayItem: minecraft:beacon
+        displayItem: minecraft:end_portal_frame
         lockedDisplayItem: red_stained_glass_pane
         resetInHours: 0
         repeatable: false
         showInList: false
         reward:
-          text: 完成第二章全部挑战
-          currency: 50
-          xp: 50
+          text: 完成下界大师全部挑战
+          commands:
+          - 'console: give {party} minecraft:diamond 48'
+          - 'console: give {party} minecraft:experience_bottle 96'
+          currency: 2400
+          xp: 2400
 
 version: 108
