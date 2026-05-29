@@ -402,7 +402,7 @@ public class IslandInfo implements us.talabrek.ultimateskyblock.api.IslandInfo {
 
     @Override
     public String getBiomeName() {
-        return getIslandBiome().getKey().getKey();
+        return tr(getIslandBiome().getKey().getKey());
     }
 
     public void setBiome(@NotNull Biome biome) {

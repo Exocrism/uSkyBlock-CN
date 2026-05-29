@@ -29,6 +29,26 @@ ranks:
     displayItem: minecraft:grass_block
     resetInHours: 20
     challenges:
+      starter_kit:
+        name: '&a新手礼包'
+        description: 领取一套基础石制工具，欢迎来到空岛生存！
+        type: onPlayer
+        displayItem: minecraft:stone_pickaxe
+        lockedDisplayItem: green_stained_glass_pane
+        resetInHours: 0
+        repeatable: false
+        takeItems: false
+        reward:
+          text: 一套基础石制工具
+          commands:
+          - 'console: give {party} minecraft:stone_pickaxe 1'
+          - 'console: give {party} minecraft:stone_axe 1'
+          - 'console: give {party} minecraft:stone_shovel 1'
+          - 'console: give {party} minecraft:stone_hoe 1'
+          - 'console: give {party} minecraft:stone_sword 1'
+          currency: 50
+          xp: 50
+
       lumberjack:
         name: '&a要致富，先撸树'
         description: 采集16个橡木原木并种植树苗
@@ -169,6 +189,25 @@ ranks:
           currency: 5
           xp: 5
 
+      island_level_10:
+        name: '&b崭新的开始'
+        description: 达到岛屿等级10
+        type: islandLevel
+        requiredLevel: 10
+        displayItem: minecraft:stone_pickaxe
+        lockedDisplayItem: light_blue_stained_glass_pane
+        resetInHours: 0
+        repeatable: false
+        reward:
+          text: 钻石，附魔之瓶，精准采集附魔书，效率3附魔书
+          commands:
+          - 'console: give {party} minecraft:diamond 2'
+          - 'console: give {party} minecraft:experience_bottle 8'
+          - 'console: give {party} minecraft:enchanted_book 1 [enchantments={levels:{silk_touch:1}}]'
+          - 'console: give {party} minecraft:enchanted_book 1 [enchantments={levels:{efficiency:3}}]'
+          currency: 500
+          xp: 500
+
       sugar_cane_harvest:
         name: '&a甘蔗收获'
         description: 收获64个甘蔗
@@ -272,11 +311,30 @@ ranks:
           currency: 40
           xp: 40
 
+      island_level_20:
+        name: '&b稳步发展'
+        description: 达到岛屿等级20
+        type: islandLevel
+        requiredLevel: 20
+        displayItem: minecraft:iron_ingot
+        lockedDisplayItem: light_blue_stained_glass_pane
+        resetInHours: 0
+        repeatable: false
+        reward:
+          text: 钻石，附魔之瓶，耐久3附魔书
+          commands:
+          - 'console: give {party} minecraft:diamond 4'
+          - 'console: give {party} minecraft:experience_bottle 12'
+          - 'console: give {party} minecraft:enchanted_book 1 [enchantments={levels:{unbreaking:3}}]'
+          currency: 600
+          xp: 600
+
       tier1_complete:
         name: '&6拓荒时代完成'
         description: 完成拓荒时代所有挑战
         type: onPlayer
         requiredChallenges:
+        - starter_kit
         - lumberjack
         - cobble_gen
         - sugar_cane_plant
@@ -286,7 +344,8 @@ ranks:
         - sugar_cane_harvest
         - cactus_harvest
         - mushroom_farm
-        - mushroom_biome
+        - island_level_10
+        - island_level_20
         displayItem: minecraft:diamond
         lockedDisplayItem: red_stained_glass_pane
         resetInHours: 0
@@ -295,7 +354,7 @@ ranks:
         reward:
           text: 完成拓荒时代全部挑战
           commands:
-          - 'console: give {party} minecraft:diamond 8'
+          - 'console: give {party} minecraft:diamond 4'
           - 'console: give {party} minecraft:experience_bottle 16'
           currency: 1000
           xp: 1000
@@ -565,6 +624,24 @@ ranks:
           currency: 30
           xp: 30
 
+      island_level_30:
+        name: '&b循序渐进'
+        description: 达到岛屿等级30
+        type: islandLevel
+        requiredLevel: 30
+        displayItem: minecraft:iron_block
+        lockedDisplayItem: light_blue_stained_glass_pane
+        resetInHours: 0
+        repeatable: false
+        reward:
+          text: 钻石，附魔之瓶，保护3附魔书
+          commands:
+          - 'console: give {party} minecraft:diamond 6'
+          - 'console: give {party} minecraft:experience_bottle 16'
+          - 'console: give {party} minecraft:enchanted_book 1 [enchantments={levels:{protection:3}}]'
+          currency: 700
+          xp: 700
+
       tier2_complete:
         name: '&6石器铁器完成'
         description: 完成石器铁器所有挑战
@@ -580,6 +657,7 @@ ranks:
         - bucket_craft
         - iron_tools
         - full_armor
+        - island_level_30
         displayItem: minecraft:iron_block
         lockedDisplayItem: red_stained_glass_pane
         resetInHours: 0
@@ -588,7 +666,7 @@ ranks:
         reward:
           text: 完成石器铁器全部挑战
           commands:
-          - 'console: give {party} minecraft:diamond 12'
+          - 'console: give {party} minecraft:diamond 6'
           - 'console: give {party} minecraft:experience_bottle 24'
           currency: 1200
           xp: 1200
@@ -1034,6 +1112,24 @@ ranks:
           currency: 40
           xp: 40
 
+      island_level_40:
+        name: '&b繁荣农业'
+        description: 达到岛屿等级40
+        type: islandLevel
+        requiredLevel: 40
+        displayItem: minecraft:golden_carrot
+        lockedDisplayItem: light_blue_stained_glass_pane
+        resetInHours: 0
+        repeatable: false
+        reward:
+          text: 钻石，附魔之瓶，锋利3附魔书
+          commands:
+          - 'console: give {party} minecraft:diamond 8'
+          - 'console: give {party} minecraft:experience_bottle 20'
+          - 'console: give {party} minecraft:enchanted_book 1 [enchantments={levels:{sharpness:3}}]'
+          currency: 800
+          xp: 800
+
       tier3_complete:
         name: '&6农业与怪物完成'
         description: 完成农业与怪物所有挑战
@@ -1050,11 +1146,8 @@ ranks:
         - potato_farm
         - carrot_farm
         - fisherman
-        - deep_ocean_biome
-        - lukewarm_ocean_biome
         - feast
-        - flower_biome
-        - savanna_biome
+        - island_level_40
         displayItem: minecraft:golden_apple
         lockedDisplayItem: red_stained_glass_pane
         resetInHours: 0
@@ -1063,7 +1156,7 @@ ranks:
         reward:
           text: 完成农业与怪物全部挑战
           commands:
-          - 'console: give {party} minecraft:diamond 16'
+          - 'console: give {party} minecraft:diamond 8'
           - 'console: give {party} minecraft:experience_bottle 32'
           currency: 1400
           xp: 1400
@@ -1197,27 +1290,6 @@ ranks:
           currency: 50
           xp: 50
 
-      novice_builder:
-        name: '&b初级建筑师'
-        description: 达到岛屿等级20
-        type: islandLevel
-        requiredLevel: 20
-        requiredChallenges:
-        - home_sweet_home
-        displayItem: minecraft:coal_ore
-        lockedDisplayItem: light_blue_stained_glass_pane
-        resetInHours: 48
-        reward:
-          text: 16个泥土，8个沙子，8个绿宝石，2个命名牌，1个钻石
-          commands:
-          - 'console: give {party} minecraft:dirt 16'
-          - 'console: give {party} minecraft:sand 8'
-          - 'console: give {party} minecraft:emerald 8'
-          - 'console: give {party} minecraft:name_tag 2'
-          - 'console: give {party} minecraft:diamond 1'
-          currency: 30
-          xp: 30
-
       obsidian_farmer:
         name: '&5黑曜石'
         description: 制作10个黑曜石
@@ -1270,6 +1342,25 @@ ranks:
           currency: 100
           xp: 100
 
+      island_level_60:
+        name: '&b向下探索'
+        description: 达到岛屿等级60
+        type: islandLevel
+        requiredLevel: 60
+        displayItem: minecraft:obsidian
+        lockedDisplayItem: light_blue_stained_glass_pane
+        resetInHours: 0
+        repeatable: false
+        reward:
+          text: 钻石，附魔之瓶，精准采集附魔书，效率5附魔书
+          commands:
+          - 'console: give {party} minecraft:diamond 16'
+          - 'console: give {party} minecraft:experience_bottle 32'
+          - 'console: give {party} minecraft:enchanted_book 1 [enchantments={levels:{silk_touch:1}}]'
+          - 'console: give {party} minecraft:enchanted_book 1 [enchantments={levels:{efficiency:5}}]'
+          currency: 1200
+          xp: 1200
+
       page1finished:
         name: '&6下界准备完成'
         description: 完成下界准备所有挑战
@@ -1277,11 +1368,9 @@ ranks:
         requiredChallenges:
         - stonemason
         - home_sweet_home
-        - snowy_plains_biome
-        - snowy_slopes_biome
-        - novice_builder
         - obsidian_farmer
         - nether_portal
+        - island_level_60
         displayItem: minecraft:diamond
         lockedDisplayItem: red_stained_glass_pane
         resetInHours: 0
@@ -1290,7 +1379,7 @@ ranks:
         reward:
           text: 完成下界准备全部挑战
           commands:
-          - 'console: give {party} minecraft:diamond 20'
+          - 'console: give {party} minecraft:diamond 10'
           - 'console: give {party} minecraft:experience_bottle 40'
           currency: 1600
           xp: 1600
@@ -1618,26 +1707,24 @@ ranks:
           currency: 35
           xp: 35
 
-      island_level_30:
-        name: '&b岛屿等级30'
-        description: 达到岛屿等级30
+      island_level_80:
+        name: '&b下界老手'
+        description: 达到岛屿等级80
         type: islandLevel
-        requiredLevel: 30
-        requiredChallenges:
-        - nether_wart_farm
-        displayItem: minecraft:nether_quartz_ore
+        requiredLevel: 80
+        displayItem: minecraft:nether_star
         lockedDisplayItem: light_blue_stained_glass_pane
         resetInHours: 0
         repeatable: false
         reward:
-          text: 钻石，附魔金苹果，烈焰棒，恶魂之泪
+          text: 钻石，附魔之瓶，耐久3附魔书，保护4附魔书
           commands:
-          - 'console: give {party} minecraft:diamond 4'
-          - 'console: give {party} minecraft:enchanted_golden_apple 1'
-          - 'console: give {party} minecraft:blaze_rod 4'
-          - 'console: give {party} minecraft:ghast_tear 2'
-          currency: 80
-          xp: 80
+          - 'console: give {party} minecraft:diamond 24'
+          - 'console: give {party} minecraft:experience_bottle 48'
+          - 'console: give {party} minecraft:enchanted_book 2 [enchantments={levels:{unbreaking:3}}]'
+          - 'console: give {party} minecraft:enchanted_book 1 [enchantments={levels:{protection:4}}]'
+          currency: 1600
+          xp: 1600
 
       tier5_complete:
         name: '&6下界基础完成'
@@ -1647,7 +1734,6 @@ ranks:
         - nether_entry
         - shiny
         - bartering
-        - nether_biome
         - hell_slime
         - return_to_sender
         - nether_brick_mason
@@ -1656,7 +1742,7 @@ ranks:
         - quartz_collector
         - glowstone_collector
         - who_is_cutting_onions
-        - island_level_30
+        - island_level_80
         displayItem: minecraft:nether_star
         lockedDisplayItem: red_stained_glass_pane
         resetInHours: 0
@@ -1665,7 +1751,7 @@ ranks:
         reward:
           text: 完成下界基础全部挑战
           commands:
-          - 'console: give {party} minecraft:diamond 24'
+          - 'console: give {party} minecraft:diamond 12'
           - 'console: give {party} minecraft:experience_bottle 48'
           currency: 1800
           xp: 1800
@@ -1832,33 +1918,10 @@ ranks:
           currency: 10
           xp: 10
 
-      island_level_40:
-        name: '&b岛屿等级40'
-        description: 达到岛屿等级40
-        type: islandLevel
-        requiredLevel: 40
-        requiredChallenges:
-        - pure_white
-        displayItem: minecraft:gold_ore
-        lockedDisplayItem: light_blue_stained_glass_pane
-        resetInHours: 0
-        repeatable: false
-        reward:
-          text: 钻石，附魔金苹果，凋零骷髅头颅，下界石英
-          commands:
-          - 'console: give {party} minecraft:diamond 8'
-          - 'console: give {party} minecraft:enchanted_golden_apple 2'
-          - 'console: give {party} minecraft:wither_skeleton_skull 1'
-          - 'console: give {party} minecraft:quartz 32'
-          currency: 120
-          xp: 120
-
       wither_bane:
         name: '&8凋零克星'
         description: 提交一个下界之星
         type: onPlayer
-        requiredChallenges:
-        - island_level_40
         requiredItems:
         - minecraft:nether_star:1
         displayItem: minecraft:nether_star
@@ -1869,9 +1932,9 @@ ranks:
         reward:
           text: 下界之星，刷怪笼，烈焰人刷怪蛋，钻石，附魔金苹果，凋零骷髅头颅
           commands:
-          - 'console: give {party} minecraft:nether_star 1'
-          - 'console: give {party} minecraft:spawner 2'
-          - 'console: give {party} minecraft:blaze_spawn_egg 1'
+          - 'console: give {player} minecraft:nether_star 1'
+          - 'console: give {player} minecraft:spawner 2'
+          - 'console: give {player} minecraft:blaze_spawn_egg 1'
           - 'console: give {party} minecraft:diamond 16'
           - 'console: give {party} minecraft:enchanted_golden_apple 8'
           - 'console: give {party} minecraft:wither_skeleton_skull 4'
@@ -1962,7 +2025,7 @@ ranks:
           text: 8个铁块，1个刷怪笼
           commands:
           - 'console: give {party} minecraft:iron_block 8'
-          - 'console: give {party} minecraft:spawner 1'
+          - 'console: give {player} minecraft:spawner 1'
           currency: 40
           xp: 40
         repeatReward:
@@ -1971,6 +2034,26 @@ ranks:
           - 'console: give {party} minecraft:iron_ingot 8'
           currency: 10
           xp: 10
+
+      island_level_110:
+        name: '&b信标之光'
+        description: 达到岛屿等级110
+        type: islandLevel
+        requiredLevel: 110
+        displayItem: minecraft:beacon
+        lockedDisplayItem: light_blue_stained_glass_pane
+        resetInHours: 0
+        repeatable: false
+        reward:
+          text: 钻石，附魔之瓶，保护4附魔书，锋利5附魔书，下界之星
+          commands:
+          - 'console: give {party} minecraft:diamond 36'
+          - 'console: give {party} minecraft:experience_bottle 72'
+          - 'console: give {party} minecraft:enchanted_book 1 [enchantments={levels:{protection:4}}]'
+          - 'console: give {party} minecraft:enchanted_book 1 [enchantments={levels:{sharpness:5}}]'
+          - 'console: give {party} minecraft:nether_star 1'
+          currency: 2200
+          xp: 2200
 
       tier6_complete:
         name: '&6下界工业完成'
@@ -1983,12 +2066,12 @@ ranks:
         - enchantment_master
         - pure_white
         - glowstone_lighting
-        - island_level_40
         - wither_bane
         - beacon_1
         - beacon_2
         - beacon_3
         - chain_craft
+        - island_level_110
         displayItem: minecraft:beacon
         lockedDisplayItem: red_stained_glass_pane
         resetInHours: 0
@@ -1997,7 +2080,7 @@ ranks:
         reward:
           text: 完成下界工业全部挑战
           commands:
-          - 'console: give {party} minecraft:diamond 32'
+          - 'console: give {party} minecraft:diamond 16'
           - 'console: give {party} minecraft:experience_bottle 64'
           currency: 2000
           xp: 2000
@@ -2037,7 +2120,7 @@ ranks:
           text: 附魔书[经验修补]，凋零骷髅刷怪蛋，钻石
           commands:
           - 'console: give {party} minecraft:enchanted_book 1 [enchantments={levels:{mending:1}}]'
-          - 'console: give {party} minecraft:wither_skeleton_spawn_egg 1'
+          - 'console: give {player} minecraft:wither_skeleton_spawn_egg 1'
           - 'console: give {party} minecraft:diamond 8'
           currency: 60
           xp: 60
@@ -2112,7 +2195,7 @@ ranks:
           - 'console: give {party} minecraft:ghast_tear 4'
           - 'console: give {party} minecraft:gold_ingot 32'
           - 'console: give {party} minecraft:ender_pearl 16'
-          - 'console: give {party} minecraft:end_portal_frame 3'
+          - 'console: give {player} minecraft:end_portal_frame 3'
           - 'console: give {party} minecraft:blaze_rod 8'
           - 'console: give {party} minecraft:diamond 4'
           currency: 60
@@ -2143,7 +2226,7 @@ ranks:
           - 'console: give {party} minecraft:wither_skeleton_skull 2'
           - 'console: give {party} minecraft:nether_star 1'
           - 'console: give {party} minecraft:enchanted_book 1 [enchantments={levels:{mending:1}}]'
-          - 'console: give {party} minecraft:end_portal_frame 3'
+          - 'console: give {player} minecraft:end_portal_frame 3'
           currency: 100
           xp: 100
         repeatReward:
@@ -2152,28 +2235,6 @@ ranks:
           - 'console: give {party} minecraft:wither_skeleton_skull 1'
           currency: 30
           xp: 30
-
-      island_level_50:
-        name: '&b岛屿等级50'
-        description: 达到岛屿等级50
-        type: islandLevel
-        requiredLevel: 50
-        requiredChallenges:
-        - wither_collector
-        displayItem: minecraft:diamond_ore
-        lockedDisplayItem: light_blue_stained_glass_pane
-        resetInHours: 0
-        repeatable: false
-        reward:
-          text: 钻石，附魔金苹果，凋零骷髅头颅，萤石，哭泣的黑曜石
-          commands:
-          - 'console: give {party} minecraft:diamond 16'
-          - 'console: give {party} minecraft:enchanted_golden_apple 4'
-          - 'console: give {party} minecraft:wither_skeleton_skull 2'
-          - 'console: give {party} minecraft:glowstone 32'
-          - 'console: give {party} minecraft:crying_obsidian 16'
-          currency: 160
-          xp: 160
 
       ender_pearl_hunter:
         name: '&5末影珍珠猎手'
@@ -2192,7 +2253,7 @@ ranks:
           commands:
           - 'console: give {party} minecraft:ender_pearl 16'
           - 'console: give {party} minecraft:blaze_powder 8'
-          - 'console: give {party} minecraft:end_portal_frame 3'
+          - 'console: give {player} minecraft:end_portal_frame 3'
           currency: 40
           xp: 40
         repeatReward:
@@ -2245,6 +2306,25 @@ ranks:
           currency: 200
           xp: 200
 
+      island_level_150:
+        name: '&b传说的终章'
+        description: 达到岛屿等级150
+        type: islandLevel
+        requiredLevel: 150
+        displayItem: minecraft:dragon_egg
+        lockedDisplayItem: light_blue_stained_glass_pane
+        resetInHours: 0
+        repeatable: false
+        reward:
+          text: 钻石，附魔之瓶，经验修补附魔书，下界之星
+          commands:
+          - 'console: give {party} minecraft:diamond 64'
+          - 'console: give {party} minecraft:experience_bottle 128'
+          - 'console: give {party} minecraft:enchanted_book 2 [enchantments={levels:{mending:1}}]'
+          - 'console: give {party} minecraft:nether_star 2'
+          currency: 3200
+          xp: 3200
+
       tier7_complete:
         name: '&6下界大师完成'
         description: 完成下界大师所有挑战
@@ -2252,13 +2332,12 @@ ranks:
         requiredChallenges:
         - nether_architect
         - valhalla
-        - lush_caves_biome
         - ghast_farm
         - wither_collector
-        - island_level_50
         - ender_pearl_hunter
         - end_portal_frame_assembly
         - end_portal
+        - island_level_150
         displayItem: minecraft:end_portal_frame
         lockedDisplayItem: red_stained_glass_pane
         resetInHours: 0
@@ -2267,8 +2346,8 @@ ranks:
         reward:
           text: 完成下界大师全部挑战
           commands:
-          - 'console: give {party} minecraft:diamond 48'
-          - 'console: give {party} minecraft:experience_bottle 96'
+          - 'console: give {party} minecraft:diamond 20'
+          - 'console: give {party} minecraft:experience_bottle 80'
           currency: 2400
           xp: 2400
 
