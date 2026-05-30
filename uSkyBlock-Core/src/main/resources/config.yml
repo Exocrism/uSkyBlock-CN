@@ -1,56 +1,56 @@
-# The language used in the plugin (en is default).
-language: en
+# 插件使用的语言（默认为 en）。
+language: zh_CN
 options:
   general:
 
-    # [integer] The max number of players allowed in a single party. (including the leader)
+    # [整数] 单个队伍中允许的最大玩家数量。（包括队长）
     maxPartySize: 4
 
-    # [integer] The time in seconds before a player can use the /island info command again. (note: cooldowns are reset when the plugin is reloaded)
+    # [整数] 玩家再次使用 /island info 命令前的冷却时间（秒）。（注意：重载插件时冷却时间会重置）
     cooldownInfo: 20
 
-    # [integer] The time in seconds before a player can use the /island restart command again.
+    # [整数] 玩家再次使用 /island restart 命令前的冷却时间（秒）。
     cooldownRestart: 30
 
-    # [integer] The time in seconds before a player can use the /island biome command again.
+    # [整数] 玩家再次使用 /island biome 命令前的冷却时间（秒）。
     biomeChange: 60
 
-    # [string] The default biome assigned to new islands
+    # [字符串] 分配给新岛屿的默认生物群系
     defaultBiome: ocean
 
-    # [string] The default biome assigned to new islands
+    # [字符串] 分配给新下界岛屿的默认生物群系
     defaultNetherBiome: nether_wastes
 
-    # [integer] The number of milliseconds between the same notification is sent to the player.
-    # This is used when events are triggered heavily - i.e. item-pickup-prevention, damage-prevention etc.
+    # [整数] 向玩家发送相同通知的间隔毫秒数。
+    # 这在事件被频繁触发时使用——例如，防止拾取物品、防止伤害等。
     maxSpam: 2000
 
-    # [string] The name of the skyblock world, will be automatically generated if it doesn't exist.
+    # [字符串] 空岛世界的名称，如果不存在将自动生成。
     worldName: skyworld
 
-    # [integer] Area around 0,0 where islands will not be created to protect spawn.
+    # [整数] 围绕 0,0 坐标，不会创建岛屿以保护出生点的区域。
     spawnSize: 64
   island:
 
-    # [integer] The y-coordinate (height) where islands are spawned.
+    # [整数] 岛屿生成的 Y 坐标（高度）。
     height: 150
 
-    # [integer] The number of blocks between islands.
+    # [整数] 岛屿之间的方块距离。
     distance: 128
 
-    # [integer] The size of the protective region for each island. Can't be higher than 'distance'
-    # and MUST be divisible by 32 if you intend to use nether.
+    # [整数] 每个岛屿的保护区域大小。不能高于 'distance'，
+    # 并且如果你打算使用下界，必须能被 32 整除。
     protectionRange: 128
 
-    # [filename] The schematic to use for island generation.
-    # Put your schematic in the 'uSkyBlock/schematics' folder, you don't need to add the '.schematic' part below.
+    # [文件名] 用于岛屿生成的蓝图。
+    # 将你的蓝图放在 'uSkyBlock/schematics' 文件夹中，你不需要在下面添加 '.schematic' 部分。
     schematicName: default
 
-    # [true/false] If true, remove all hostile mobs when a player teleports back to their island.
+    # [true/false] 如果为 true，当玩家传送回他们的岛屿时，移除所有敌对生物。
     removeCreaturesByTeleport: false
 
-    # [item list] The list of items to place in the chest when a player starts a new island. ITEM_ID:HOW_MANY.
-    # default is 2 ice, 1 watermelon, 1 cactus, 1 lava bucket, 1 red & brown mushroom, 1 pumpkin seed, 1 sugar cane, 1 sign.
+    # [物品列表] 玩家开始新岛屿时放置在箱子中的物品列表。物品ID:数量。
+    # 默认是 2 个冰、1 个西瓜、1 个仙人掌、1 个岩浆桶、1 个红色和棕色蘑菇、1 个南瓜种子、1 个甘蔗、1 个木牌。
     chestItems:
     - ice:2
     - melon_slice:1
@@ -108,177 +108,177 @@ options:
       - flint_and_steel:1
   extras:
 
-    # [true/false] If true, return players that don't have an island (this includes players removed from a party while offline), to the server spawn when they login.
-    # NOTE: Requires EssentialsSpawn or another plugin with the "/spawn" command
+    # [true/false] 如果为 true，将没有岛屿的玩家（包括在离线时被移出队伍的玩家）在登录时送回服务器出生点。
+    # 注意：需要 EssentialsSpawn 或其他带有 "/spawn" 命令的插件
     sendToSpawn: false
 
-    # [true/false] If true, when a player respawns they will respawn on their island. Will first attempt to respawn them at the closest safe location to their island home, then their island spawn, then the server spawn.
-    # NOTE: If this is true, sendToSpawn is ignored unless the player has no island or no viable island home or spawn location.
+    # [true/false] 如果为 true，玩家重生时将重生在他们的岛屿上。将首先尝试将他们重生在最靠近其岛屿家园的安全位置，然后是他们的岛屿出生点，最后是服务器出生点。
+    # 注意：如果此项为 true，则忽略 sendToSpawn，除非玩家没有岛屿或没有可行的岛屿家园或出生点位置。
     respawnAtIsland: true
 
-    # [true/false] If true, a player can right-click on a block of obsidian on their island while holding an empty bucket to remove the obsidian and fill the bucket with lava. This is useful for people that accidentally
-    # turn their lava into obsidian with a bad cobblestone generator design. Will only work on the player's island and if there are no other obsidian blocks nearby (so can't be used on portals).
+    # [true/false] 如果为 true，玩家可以在手持空桶的情况下右键点击其岛屿上的黑曜石方块，以移除黑曜石并将桶装满熔岩。这对于那些不小心
+    # 因糟糕的刷石机设计而将其熔岩变成黑曜石的人很有用。仅在玩家的岛屿上且在附近没有其他黑曜石方块时有效（因此不能用于传送门）。
     obsidianToLava: true
 
-  # Contains flags for enabling PROTECTION of various mechanics.
+  # 包含用于启用各种机制保护的标志。
   protection:
 
-    # Whether or not, items dropped on the ground should be limited to party-members.
+    # 掉落在地上的物品是否应仅限于队伍成员拾取。
     item-drops: true
 
-    # If true, only creepers targeting party-members will explode
+    # 如果为 true，只有以队伍成员为目标的苦力怕才会爆炸
     creepers: true
 
-    # If true, Withers will be limited to harming island-members/island blocks.
+    # 如果为 true，凋零将被限制为只能伤害岛屿成员/岛屿方块。
     withers: true
 
-    # Whether or not the plugin will try to protect the player from accidentally extinguishing lava
+    # 插件是否会尝试保护玩家免于意外熄灭熔岩
     protect-lava: true
 
-    # Whether or not portalling to the nether roof should be blocked.
+    # 是否应阻止传送到下界顶部。
     nether-roof: true
 
-    # Whether or not anyone can trade i skyblock
-    # default: false - since it goes against the core of skyblock
+    # 是否允许在空岛中进行交易
+    # 默认值：false - 因为这违背了空岛的核心玩法
     villager-trading-enabled: false
 
-    # Generally protections against griefers
-    # If the flag is true, it generally means the protection is active
-    # (meaning the action is blocked)
+    # 针对破坏者的常规保护
+    # 如果标志为 true，通常意味着保护处于激活状态
+    # （即该操作被阻止）
     visitors:
 
-      # Protect visitors from trampling your crop
+      # 保护访客免于践踏你的农作物
       trampling: true
 
-      # Protect against visitors attacked animals
+      # 防止访客攻击动物
       kill-animals: true
 
-      # Protect against visitors attacking monsters
+      # 防止访客攻击怪物
       kill-monsters: true
 
-      # Protect from shearing
+      # 防止剪羊毛
       shearing: true
 
-      # Protect from begin bombarded with eggs that hatch
+      # 防止被投掷可孵化的鸡蛋轰炸
       hatching: true
 
-      # Protect from villager-trading
+      # 防止与村民交易
       villager-trading: true
 
-      # Whether or not visitors are protected from fall damage
+      # 访客是否受到摔落伤害保护
       fall: true
 
-      # Whether or not visitors are protected from fire damage (incl. lava)
+      # 访客是否受到火焰伤害保护（包括熔岩）
       fire-damage: true
 
-      # Whether or not visitors are protected from monster damage
+      # 访客是否受到怪物伤害保护
       monster-damage: false
 
-      # Whether or not visitors should be allowed to drop items
+      # 是否允许访客丢弃物品
       item-drops: true
 
-      # Warns online members when a player visits the island.
+      # 当有玩家访问岛屿时，警告在线成员。
       warn-on-warp: true
 
-      # Whether or not to actively block banned players from entering an island (by walking/flying).
+      # 是否主动阻止被封禁的玩家进入岛屿（通过行走/飞行）。
       block-banned-entry: true
 
-      # Whether or not visitors can use portals (default: false)
+      # 访客是否可以使用传送门（默认：false）
       use-portals: false
 
-      # Wheter or not visitors can mount vehicles
+      # 访客是否可以骑乘载具
       vehicle-enter: false
 
-      # Wheter or not visitors can break vehicles
+      # 访客是否可以破坏载具
       vehicle-damage: false
 
-  # Contains flags for controlling monster spawning on islands.
+  # 包含用于控制岛屿上怪物生成的标志。
   spawning:
-    # Controls if Phantoms are allowed to spawn naturally. Non-natural spawns, e.g. from a spawnegg, are not
-    # managed by us.
+    # 控制幻翼是否允许自然生成。非自然生成，例如来自刷怪蛋的生成，不
+    # 由我们管理。
     phantoms:
-      # [true/false] If natural Phantom spawns are allowed in the overworld. True enables Phantom spawning.
+      # [true/false] 主世界是否允许幻翼自然生成。true 启用幻翼生成。
       overworld: true
-      # [true/false] If natural Phantom spawns are allowed in the nether. True enables Phantom spawning.
+      # [true/false] 下界是否允许幻翼自然生成。true 启用幻翼生成。
       nether: false
 
   party:
 
-    # The number of ms before an invite timeouts (1000 ms per second)
+    # 邀请超时前的毫秒数（1000 毫秒 = 1 秒）
     invite-timeout: 30000
 
-    # The format used in /partytalk chat messages
+    # /partytalk 聊天消息中使用的格式
     chat-format: '&9PARTY &r{DISPLAYNAME} &f>&b {MESSAGE}'
 
-    # Extra commands to execute when players join an island
+    # 当玩家加入岛屿时执行的额外命令
     join-commands:
     - op:playsound block.enderchest.open block @p
 
-    # Extra commands to execute when players leave an island
+    # 当玩家离开岛屿时执行的额外命令
     leave-commands:
     - op:playsound block.enderchest.close block @p
 
-  # This section provide some performance tweaking configs
+  # 此部分提供了一些性能调优配置
   advanced:
 
-    # If true, display-name is looked up (might be performance intensive).
+    # 如果为 true，将查找显示名称（可能占用较多性能）。
     useDisplayNames: false
 
-    # [number] The threshold for purging islands.
-    # any island with a level above this, is spared.
+    # [数字] 清理岛屿的阈值。
+    # 任何等级高于此值的岛屿将被豁免。
     purgeLevel: 10
 
-    # [seconds] The number of seconds for confirming a command by
-    # re-executing it (/is leave, /is restart).
+    # [秒] 通过重新执行命令来确认命令的秒数
+    # （/is leave, /is restart）。
     confirmTimeout: 10
 
-    # [number] The number of chunks to regenerate per server tick. Might be decreased or increased based on available
-    # server resources. Default value: 4.
+    # [数字] 每个服务器刻重新生成的区块数量。可能根据可用的
+    # 服务器资源减少或增加。默认值：4。
     chunkRegenSpeed: 4
 
-    # If false, the world spawn will be ignored. You should take care of placing the world spawn location
-    # with /mv setspawn and managing the spawn building.
+    # 如果为 false，世界出生点将被忽略。你应该使用 /mv setspawn 设置世界出生点位置
+    # 并管理出生点建筑。
     manageSpawn: true
 
-    # Controls advanced behaviour reg. the internal playerdb
+    # 控制有关内部玩家数据库的高级行为
     playerdb:
 
-      # valid values are: yml, memory, bukkit
+      # 有效值为：yml, memory, bukkit
       storage: bukkit
 
-  # Section about restarting your island (or accepting an invite).
+  # 关于重置岛屿（或接受邀请）的部分。
   restart:
 
-    # Clears the player's inventory on island create/restart
+    # 在岛屿创建/重置时清除玩家的背包
     clearInventory: true
 
-    # Clears the player's armor on island create/restart
+    # 在岛屿创建/重置时清除玩家的盔甲
     clearArmor: true
 
-    # Clears the player's enderchest on island create/restart
+    # 在岛屿创建/重置时清除玩家的末影箱
     clearEnderChest: true
 
-    # Clears the permissions the player has been granted from rewards
+    # 清除玩家从奖励中获得的权限
     clearPerms: true
 
-    # Clears the users balance (set to 0)
+    # 清除用户的余额（设置为 0）
     clearCurrency: false
 
-    # [ms] The number of ms to wait, before porting the player back
-    # on /is restart or /is create (default: 1000)
+    # [毫秒] 在 /is restart 或 /is create 后将玩家传送回来之前等待的毫秒数
+    # （默认：1000）
     teleportDelay: 1000
 
-    # [true/false] Whether or not the player should be auto teleported to the island when it's ready
+    # [true/false] 当岛屿准备好时，是否应自动将玩家传送到岛屿
     teleportWhenReady: true
 
-    # list of commands to execute after island-creation
-    # i.e.
-    # - me Jumps with &ajoy
+    # 岛屿创建后执行的命令列表
+    # 例如：
+    # - me 高兴地跳了起来
     extra-commands: []
 
-# In this section it's possible to assign additional perks to permission-nodes
+# 在此部分中，可以将额外的增益分配给权限节点
 donor-perks:
-  # the permission node to give to someone
+  # 给予某人的权限节点
   'usb.donor.small':
     extraItems: [bone_meal:1]
     maxPartySize: 5
@@ -286,37 +286,37 @@ donor-perks:
     monsters: 60
     villagers: 20
     golems: 6
-    # 10% more XP
+    # 经验加成 10%
     rewardBonus: 0.1
-    # 10% less hunger
+    # 饥饿值减少 10%
     hungerReduction: 0.1
 
-# Whether or not to show the UI for create/restart
+# 是否显示创建/重置的 UI
 island-schemes-enabled: true
 
-# List of selections for /is create and /is restart
-# the nodes under island-schemes must match the schematic-names from the schematics folder.
+# /is create 和 /is restart 的选项列表
+# island-schemes 下的节点必须与 schematics 文件夹中的蓝图名称匹配。
 island-schemes:
 
-  # name of the schematic
+  # 蓝图名称
   default:
 
-    # permission needed to use island
+    # 使用此岛屿所需的权限
     permission: usb.island.create
 
-    # small discription of the island
-    description: The default uSkyBlock island
+    # 岛屿的简短描述
+    description: 默认的 uSkyBlock 岛屿
 
-    # item to display in the GUI
+    # 在 GUI 中显示的物品
     displayItem: oak_sapling
 
-    # optional, default true (true enabled in GUI, false disabled in GUI)
+    # 可选，默认为 true（true 在 GUI 中启用，false 在 GUI 中禁用）
     enabled: true
 
-    # optional, must be listed in ascending order
+    # 可选，必须按升序排列
     index: 2
 
-    # optional extra's that can be given per island
+    # 可选，每个岛屿可以给予的额外物品
     extraItems: ''
     maxPartySize: 4
     animals: 64
@@ -324,14 +324,14 @@ island-schemes:
     villagers: 16
     golems: 5
 
-    # Get 100% of the normal score
+    # 获得正常分数的 100%
     scoreMultiply: 1.0
 
-    # But start with no offset
+    # 但不带任何偏移量开始
     scoreOffset: 0
   skySMP:
     permission: usb.schematic.skysmp
-    description: The original SkySMP island
+    description: 原始的 SkySMP 岛屿
     displayItem: oak_leaves
     enabled: false
     index: 3
@@ -346,31 +346,31 @@ island-schemes:
     scoreMultiply: 0.9
     scoreOffset: 40
   spawn:
-    description: The default spawn schematic
+    description: 默认的出生点蓝图
     enabled: false
 confirmation:
 
-  # [true/false] Whether to require confirmation (i.e. repeating the command twice).
+  # [true/false] 是否需要确认（即重复输入两次命令）。
   is leave: true
 
-  # [true/false] Whether to require confirmation (i.e. repeating the command twice).
+  # [true/false] 是否需要确认（即重复输入两次命令）。
   is restart: true
 asyncworldedit:
 
-  # Supports disabling the detection of AWE
+  # 支持禁用 AWE 的检测
   enabled: true
 
-  # Show progress to the user every 5 seconds
+  # 每 5 秒向用户显示进度
   progressEveryMs: 5000
 
-  # Or 20pct (what-ever comes first)
+  # 或每 20%（以先到者为准）
   progressEveryPct: 20
   watchDog:
 
-    # The maximum time to wait for AWE paste to complete (2m, 3m20s, etc.)
+    # 等待 AWE 粘贴完成的最长时间（2m、3m20s 等）
     timeout: 15s
 
-    # The number of ms between each heartbeat
+    # 每次心跳之间的毫秒数
     heartBeatMs: 2000
 worldguard:
   entry-message: true
@@ -384,16 +384,16 @@ nether:
   schematicName: uSkyBlockNether
   terraform-enabled: true
 
-  # The distance to search for valid terra-form location.
+  # 搜索有效地形改造位置的距离。
   terraform-distance: 7
 
-  # In what range of pitch (vertical aim) will terraforming be enabled
-  # -90 is looking directly upwards
-  # 90 is looking directly down
+  # 在什么垂直视角范围内启用地形改造
+  # -90 表示直视正上方
+  # 90 表示直视正下方
   terraform-min-pitch: -70.0
   terraform-max-pitch: 90.0
 
-  # The probability of forming blocks
+  # 生成方块的概率
   terraform:
     NETHERRACK:
     - '{p=0.30}NETHERRACK'
@@ -415,7 +415,7 @@ nether:
     - '{p=0.80}GLOWSTONE'
     - '{p=0.15}GLOWSTONE'
 
-  # Weights that is applied to the above terraform chances depending on the tool used
+  # 根据使用的工具，应用于上述地形改造概率的权重
   terraform-weight:
     WOOD: 0
     STONE: 1.0
@@ -424,7 +424,7 @@ nether:
     DIAMOND: 0.2
     NETHERITE: 1.2
 
-  # The chances of changing a pigzombie when spawned on a netherbrick
+  # 在下界砖块上生成时改变僵尸猪灵的概率
   spawn-chances:
     enabled: true
     wither: 0.2
@@ -439,12 +439,12 @@ tool-menu:
     BEDROCK: island spawn
 
 plugin-updates:
-  # Should we check for updates and log a message if an update is available
+  # 我们是否应该检查更新，并在有可用更新时记录一条消息
   check: true
-  # Possible options: RELEASE or STAGING
+  # 可能的选项：RELEASE 或 STAGING
   branch: RELEASE
 
-# Placeholders - enable these to get placeholder substitution
+# 占位符 - 启用这些以获取占位符替换
 # usb_version
 # usb_island_level, usb_island_level_int
 # usb_island_rank, usb_island_partysize_max, usb_island_partysize
@@ -455,16 +455,16 @@ plugin-updates:
 # usb_island_golems, usb_island_monsters, usb_island_animals, usb_island_villagers
 placeholder:
 
-  # Hooks into MVdWPlaceholderAPI
+  # 钩入 MVdWPlaceholderAPI
   mvdwplaceholderapi: false
 
-  # uSkyBlock native placeholders for chat messages and format
+  # 用于聊天消息和格式的 uSkyBlock 原生占位符
   chatplaceholder: false
 
-  # uSkyBlock native placeholders for server-commands
+  # 用于服务器命令的 uSkyBlock 原生占位符
   servercommandplaceholder: false
 
-# DO NOT TOUCH THE FIELDS BELOW
+# 不要触碰下面的字段
 version: 110
 force-replace:
   options.party.invite-timeout: 100

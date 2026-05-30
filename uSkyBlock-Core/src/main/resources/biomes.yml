@@ -3,166 +3,158 @@ biomes:
     displayItem: tropical_fish
     name: 海洋
     description: |
-      海洋生物群系是所有岛屿
-      的基础起始生物群系。
-      被动型生物（如动物）
-      不会生成。敌对生物
-      会正常生成。
+      海洋生物群系是所有岛屿的
+      基础起始生物群系，被动型
+      生物（如动物）不会生成，
+      敌对生物会正常生成
 
   forest:
     displayItem: spruce_sapling
     name: 森林
     description: |
-      森林生物群系将允许
-      你的岛屿生成被动型
-      生物（如动物，包括狼）。
-      敌对生物会正常生成。
+      森林生物群系将允许你的岛
+      屿生成被动型生物（如动物，
+      包括狼），敌对生物会正常
+      生成
 
   desert:
     displayItem: sand
     name: 沙漠
     description: |
-      沙漠生物群系使你的
-      岛屿没有雨或雪。
-      被动型生物不会生成。
-      敌对生物会正常生成。
+      沙漠生物群系使你的岛屿不
+      会下雨或下雪，但被动型生
+      物不会生成，敌对生物会正
+      常生成
 
   jungle:
     displayItem: jungle_sapling
     name: 丛林
     description: |
-      丛林生物群系明亮
-      且色彩缤纷。被动型
-      生物（包括豹猫）会
-      生成。敌对生物
-      会正常生成。
+      丛林生物群系明亮且色彩缤
+      纷，被动型生物（包括豹猫）
+      会正常生成，敌对生物会正
+      常生成
 
   swamp:
     displayItem: lily_pad
     name: 沼泽
     description: |
-      沼泽生物群系阴暗
-      且沉闷。被动型生物
-      会正常生成，史莱姆
-      在夜晚有较小概率
-      根据月相生成。
+      沼泽生物群系阴暗且沉闷，
+      被动型生物会正常生成，史
+      莱姆在夜晚有较小概率根据
+      月相生成，敌对生物会正常
+      生成
 
   taiga:
     displayItem: snow
     name: 针叶林
     description: |
-      针叶林生物群系有雪
-      而不是雨。被动型
-      生物会正常生成
-      （包括狼），敌对
-      生物也会生成。
+      针叶林生物群系只会下雪而
+      不是下雨，被动型生物会正
+      常生成（包括狼），敌对生
+      物也会生成
 
   mushroom_fields:
     displayItem: red_mushroom
     name: 蘑菇岛
     description: |
-      蘑菇生物群系明亮
-      且色彩缤纷。
-      哞菇是唯一会生成的
-      生物。不会生成其他
-      被动或敌对生物。
+      蘑菇生物群系明亮且色彩缤
+      纷，哞菇是唯一会生成的生
+      物，不会生成任何其他被动
+      生物或敌对生物
 
   nether_wastes:
     displayItem: nether_brick
     name: 下界荒地
     description: |
-      下界荒地看起来
-      黑暗且死寂。一些
-      来自下界的生物会
-      在此生物群系中生成
-      （不包括恶魂和烈焰人）。
+      下界荒地看起来黑暗且死寂，
+      一些来自下界的生物（如岩
+      浆怪）会在此生物群系中生
+      成（不包括恶魂和烈焰人）
 
   the_end:
     displayItem: ender_eye
     name: 末地
     description: |
-      末地生物群系赋予你的
-      岛屿一片特殊的黑暗天空。
-      只有末影人会在此
-      生物群系中生成。
+      末地生物群系赋予你的岛屿
+      一片特殊的黑暗天空，有且
+      只有末影人会在此生物群系
+      中生成
 
   plains:
     displayItem: tall_grass
     name: 平原
     description: |
-      平原生物群系有雨
-      而不是雪。被动型
-      生物会正常生成
-      （包括马），敌对
-      生物也会生成。
+      平原生物群系只会下雨不会
+      下雪，被动型生物会正常生
+      成（包括马），敌对生物也
+      会正常生成
 
   windswept_hills:
     displayItem: emerald_ore
     name: 风袭丘陵
     description: |
-      风袭丘陵生物群系。
-      被动型生物会正常
-      生成，敌对生物
-      也会生成。
+      风袭丘陵生物群系中，被动
+      型生物会正常生成，敌对生
+      物也会生成
 
   flower_forest:
     displayItem: rose_bush
     name: 繁花森林
     description: |
-      繁花森林生物群系。
-      被动型生物会正常
-      生成，敌对生物
-      也会生成。
+      繁花森林生物群系，被动型
+      生物会正常生成，敌对生物
+      也会生成
 
   savanna_plateau:
     displayItem: acacia_sapling
     name: 热带高原
     description: |
-      热带高原生物群系。被动型
-      生物会正常生成，包括
-      羊驼、马和驴。
-      敌对生物也会生成。
+      热带高原生物群系，被动型
+      生物会正常生成（包括羊驼、
+      马和驴），敌对生物会生成
 
   lush_caves:
     displayItem: glow_berries
     name: 繁茂洞穴
     description: |
-      繁茂洞穴生物群系。被动型
-      生物会正常生成，包括
-      美西螈和热带鱼。敌对
-      生物也会生成。
+      繁茂洞穴生物群系，被动型
+      生物会正常生成（包括美西
+      螈和热带鱼），敌对生物也
+      会生成
 
   lukewarm_ocean:
     displayItem: tropical_fish
     name: 温水海洋
     description: |
-      温水海洋生物群系是一个高级
-      生物群系。生成包括鳕鱼、鱿鱼、海豚、
-      河豚和热带鱼。
+      温水海洋生物群系是一个高
+      级生物群系，会生成鳕鱼、
+      鱿鱼、海豚、河豚和热带鱼
 
   snowy_slopes:
     displayItem: goat_horn
     name: 雪坡
     description: |
-      雪坡生物群系。被动型生物包括
-      兔子和山羊。敌对生物也会生成。
+      雪坡生物群系。被动型生物
+      只会生成兔子和山羊，敌对
+      生物会正常生成
 
   deep_ocean:
     displayItem: prismarine_shard
     name: 深海
     description: |
-      深海生物群系是一个高级
-      生物群系。被动型生物（如动物）
-      不会生成。敌对生物（包括
-      守卫者）会正常生成。
+      深海生物群系是一个高级生
+      物群系，陆地上的被动型生
+      物不会生成，敌对生物（包
+      括守卫者）会正常生成
 
   snowy_plains:
     displayItem: snow_block
     name: 积雪平原
     description: |
-      积雪平原生物群系是一个高级
-      生物群系。除兔子和北极熊外，
-      没有被动型生物会生成。
-      流浪者会在夜晚生成。
+      积雪平原生物群系是一个高
+      级生物群系，除兔子和北极
+      熊外，没有被动型生物会生
+      成，流浪者会在夜晚生成
 
 version: 1

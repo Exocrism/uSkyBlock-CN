@@ -2652,64 +2652,346 @@ msgid "§7{0}: §a{1}§7 (max. {2})"
 msgstr "§7{0}：§a{1}§7（最大 {2}）"
 
 # ==============================
-# 基础方块
+# 方块
 # ==============================
-msgid "STONE"
-msgstr "石头"
+msgid "GRASS_BLOCK"
+msgstr "草方块"
+
+msgid "OAK_LOG"
+msgstr "橡木原木"
+
+msgid "BIRCH_SAPLING"
+msgstr "白桦树苗"
+
+msgid "SPRUCE_SAPLING"
+msgstr "云杉树苗"
+
+msgid "JUNGLE_SAPLING"
+msgstr "丛林树苗"
+
+msgid "ACACIA_SAPLING"
+msgstr "金合欢树苗"
+
+msgid "DARK_OAK_SAPLING"
+msgstr "深色橡木树苗"
 
 msgid "COBBLESTONE"
 msgstr "圆石"
 
-msgid "MOSSY_COBBLESTONE"
-msgstr "苔石"
-
 msgid "DIRT"
 msgstr "泥土"
-
-msgid "SAND"
-msgstr "沙子"
-
-msgid "RED_SAND"
-msgstr "红沙"
 
 msgid "GRAVEL"
 msgstr "沙砾"
 
-msgid "SANDSTONE"
-msgstr "砂岩"
+msgid "SUGAR_CANE"
+msgstr "甘蔗"
 
-msgid "CHISELED_SANDSTONE"
-msgstr "錾制砂岩"
+msgid "SAND"
+msgstr "沙子"
 
-msgid "SMOOTH_SANDSTONE"
-msgstr "平滑砂岩"
+msgid "CACTUS"
+msgstr "仙人掌"
 
-msgid "OBSIDIAN"
-msgstr "黑曜石"
+msgid "MELON_SLICE"
+msgstr "西瓜片"
 
-msgid "SNOW_BLOCK"
-msgstr "雪块"
+msgid "MELON_SEEDS"
+msgstr "西瓜种子"
 
-msgid "ICE"
-msgstr "冰"
+msgid "PUMPKIN"
+msgstr "南瓜"
 
-msgid "PACKED_ICE"
-msgstr "浮冰"
+msgid "PUMPKIN_SEEDS"
+msgstr "南瓜种子"
 
-msgid "CLAY"
-msgstr "粘土"
+msgid "STONE"
+msgstr "石头"
 
-msgid "PODZOL"
-msgstr "灰化土"
+msgid "RED_MUSHROOM"
+msgstr "红色蘑菇"
+
+msgid "BROWN_MUSHROOM"
+msgstr "棕色蘑菇"
 
 msgid "MYCELIUM"
 msgstr "菌丝"
 
+msgid "PODZOL"
+msgstr "灰化土"
+
+msgid "OAK_PLANKS"
+msgstr "橡木木板"
+
+msgid "GLASS"
+msgstr "玻璃"
+
+msgid "OAK_DOOR"
+msgstr "橡木门"
+
+msgid "CRAFTING_TABLE"
+msgstr "工作台"
+
+msgid "FURNACE"
+msgstr "熔炉"
+
+msgid "CHEST"
+msgstr "箱子"
+
+msgid "WHITE_BED"
+msgstr "白色床"
+
+msgid "TORCH"
+msgstr "火把"
+
+msgid "STONE_BRICKS"
+msgstr "石砖"
+
+msgid "STONE_BRICK_SLAB"
+msgstr "石砖台阶"
+
+msgid "STONE_BRICK_STAIRS"
+msgstr "石砖楼梯"
+
+msgid "STONE_BRICK_WALL"
+msgstr "石砖墙"
+
+msgid "ANDESITE"
+msgstr "安山岩"
+
+msgid "DIORITE"
+msgstr "闪长岩"
+
+msgid "GRANITE"
+msgstr "花岗岩"
+
+msgid "CALCITE"
+msgstr "方解石"
+
+msgid "TUFF"
+msgstr "凝灰岩"
+
+msgid "DEEPSLATE"
+msgstr "深板岩"
+
+msgid "OBSIDIAN"
+msgstr "黑曜石"
+
+msgid "NETHERRACK"
+msgstr "下界岩"
+
+msgid "SOUL_SAND"
+msgstr "灵魂沙"
+
+msgid "QUARTZ"
+msgstr "下界石英"
+
+msgid "GLOWSTONE"
+msgstr "萤石"
+
+msgid "GLOWSTONE_DUST"
+msgstr "萤石粉"
+
+msgid "CRYING_OBSIDIAN"
+msgstr "哭泣的黑曜石"
+
+msgid "NETHER_BRICKS"
+msgstr "下界砖块"
+
+msgid "NETHER_BRICK_SLAB"
+msgstr "下界砖台阶"
+
+msgid "NETHER_BRICK_STAIRS"
+msgstr "下界砖楼梯"
+
+msgid "NETHER_BRICK_FENCE"
+msgstr "下界砖栅栏"
+
+msgid "QUARTZ_BLOCK"
+msgstr "石英块"
+
+msgid "QUARTZ_SLAB"
+msgstr "石英台阶"
+
+msgid "QUARTZ_STAIRS"
+msgstr "石英楼梯"
+
+msgid "QUARTZ_PILLAR"
+msgstr "石英柱"
+
+msgid "SMOOTH_QUARTZ"
+msgstr "平滑石英"
+
+msgid "GOLD_BLOCK"
+msgstr "金块"
+
+msgid "BEACON"
+msgstr "信标"
+
+msgid "END_PORTAL_FRAME"
+msgstr "末地传送门框架"
+
+msgid "BOOKSHELF"
+msgstr "书架"
+
+msgid "ENCHANTING_TABLE"
+msgstr "附魔台"
+
+msgid "SNOW_BLOCK"
+msgstr "雪块"
+
+msgid "PACKED_ICE"
+msgstr "浮冰"
+
+msgid "WHITE_WOOL"
+msgstr "白色羊毛"
+
+msgid "SPRUCE_LOG"
+msgstr "云杉原木"
+
+msgid "BLUE_ICE"
+msgstr "蓝冰"
+
+msgid "POWDER_SNOW_BUCKET"
+msgstr "细雪桶"
+
+msgid "ACACIA_LOG"
+msgstr "金合欢原木"
+
+msgid "HAY_BLOCK"
+msgstr "干草块"
+
+msgid "COAL_BLOCK"
+msgstr "煤炭块"
+
+msgid "REDSTONE_LAMP"
+msgstr "红石灯"
+
+msgid "SEA_LANTERN"
+msgstr "海晶灯"
+
+msgid "PRISMARINE"
+msgstr "海晶石"
+
+msgid "PRISMARINE_CRYSTALS"
+msgstr "海晶砂粒"
+
+msgid "KELP"
+msgstr "海带"
+
+msgid "IRON_BLOCK"
+msgstr "铁块"
+
+msgid "BONE_BLOCK"
+msgstr "骨块"
+
+msgid "DIAMOND_BLOCK"
+msgstr "钻石块"
+
+# ==============================
+# 工具与武器
+# ==============================
+msgid "STONE_PICKAXE"
+msgstr "石镐"
+
+msgid "STONE_AXE"
+msgstr "石斧"
+
+msgid "STONE_SHOVEL"
+msgstr "石锹"
+
+msgid "STONE_HOE"
+msgstr "石锄"
+
+msgid "STONE_SWORD"
+msgstr "石剑"
+
+msgid "IRON_PICKAXE"
+msgstr "铁镐"
+
+msgid "IRON_AXE"
+msgstr "铁斧"
+
+msgid "IRON_SHOVEL"
+msgstr "铁锹"
+
+msgid "IRON_HOE"
+msgstr "铁锄"
+
+msgid "IRON_SWORD"
+msgstr "铁剑"
+
+msgid "IRON_HELMET"
+msgstr "铁头盔"
+
+msgid "IRON_CHESTPLATE"
+msgstr "铁胸甲"
+
+msgid "IRON_LEGGINGS"
+msgstr "铁护腿"
+
+msgid "IRON_BOOTS"
+msgstr "铁靴子"
+
+msgid "SHIELD"
+msgstr "盾牌"
+
+msgid "BOW"
+msgstr "弓"
+
+msgid "ARROW"
+msgstr "箭"
+
+msgid "FISHING_ROD"
+msgstr "钓鱼竿"
+
+msgid "FLINT_AND_STEEL"
+msgstr "打火石"
+
+msgid "BUCKET"
+msgstr "桶"
+
+msgid "WATER_BUCKET"
+msgstr "水桶"
+
+msgid "LAVA_BUCKET"
+msgstr "岩浆桶"
+
+msgid "COMPOSTER"
+msgstr "堆肥桶"
+
+msgid "SHEARS"
+msgstr "剪刀"
+
 # ==============================
 # 矿石与矿物
 # ==============================
-msgid "COAL_ORE"
-msgstr "煤矿石"
+msgid "COAL"
+msgstr "煤炭"
+
+msgid "CHARCOAL"
+msgstr "木炭"
+
+msgid "RAW_IRON"
+msgstr "粗铁"
+
+msgid "RAW_GOLD"
+msgstr "粗金"
+
+msgid "IRON_INGOT"
+msgstr "铁锭"
+
+msgid "GOLD_INGOT"
+msgstr "金锭"
+
+msgid "GOLD_NUGGET"
+msgstr "金粒"
+
+msgid "DIAMOND"
+msgstr "钻石"
+
+msgid "EMERALD"
+msgstr "绿宝石"
 
 msgid "IRON_ORE"
 msgstr "铁矿石"
@@ -2720,89 +3002,413 @@ msgstr "金矿石"
 msgid "REDSTONE_ORE"
 msgstr "红石矿石"
 
-msgid "LAPIS_BLOCK"
-msgstr "青金石块"
+msgid "LAPIS_ORE"
+msgstr "青金石矿石"
 
 msgid "LAPIS_LAZULI"
 msgstr "青金石"
 
-msgid "DIAMOND_ORE"
-msgstr "钻石矿石"
-
-msgid "EMERALD_ORE"
-msgstr "绿宝石矿石"
-
-msgid "DIAMOND_BLOCK"
-msgstr "钻石块"
-
-msgid "EMERALD_BLOCK"
-msgstr "绿宝石块"
-
-msgid "GOLD_BLOCK"
-msgstr "金块"
-
-msgid "IRON_BLOCK"
-msgstr "铁块"
+msgid "REDSTONE"
+msgstr "红石粉"
 
 msgid "REDSTONE_BLOCK"
 msgstr "红石块"
 
-msgid "QUARTZ"
-msgstr "下界石英"
+msgid "NETHER_QUARTZ_ORE"
+msgstr "下界石英矿石"
 
-msgid "QUARTZ_BLOCK"
-msgstr "石英块"
-
-msgid "CHISELED_QUARTZ_BLOCK"
-msgstr "錾制石英块"
-
-msgid "QUARTZ_PILLAR"
-msgstr "石英柱"
-
-msgid "NETHERRACK"
-msgstr "下界岩"
-
-msgid "GLOWSTONE"
-msgstr "荧石"
-
-msgid "SOUL_SAND"
-msgstr "灵魂沙"
-
-msgid "COARSE_DIRT"
-msgstr "砂土"
-
-msgid "NETHER_BRICKS"
-msgstr "下界砖块"
-
-msgid "NETHER_BRICK_SLAB"
-msgstr "下界砖台阶"
-
-msgid "NETHER_BRICK_FENCE"
-msgstr "下界砖栅栏"
-
-msgid "NETHER_BRICK_STAIRS"
-msgstr "下界砖楼梯"
+msgid "FLINT"
+msgstr "燧石"
 
 # ==============================
-# 木头相关
+# 食物与农作物
 # ==============================
-msgid "OAK_LOG"
-msgstr "橡木原木"
+msgid "APPLE"
+msgstr "苹果"
 
-msgid "SPRUCE_LOG"
-msgstr "云杉原木"
+msgid "BREAD"
+msgstr "面包"
 
-msgid "BIRCH_LOG"
-msgstr "白桦原木"
+msgid "WHEAT"
+msgstr "小麦"
 
-msgid "JUNGLE_LOG"
-msgstr "丛林原木"
+msgid "WHEAT_SEEDS"
+msgstr "小麦种子"
 
-msgid "ACACIA_LOG"
-msgstr "金合欢原木"
+msgid "POTATO"
+msgstr "马铃薯"
 
-msgid "DARK_OAK_LOG"
-msgstr "深色橡木原木"
+msgid "BAKED_POTATO"
+msgstr "烤马铃薯"
+
+msgid "CARROT"
+msgstr "胡萝卜"
+
+msgid "GOLDEN_CARROT"
+msgstr "金胡萝卜"
+
+msgid "GOLDEN_APPLE"
+msgstr "金苹果"
+
+msgid "ENCHANTED_GOLDEN_APPLE"
+msgstr "附魔金苹果"
+
+msgid "CAKE"
+msgstr "蛋糕"
+
+msgid "COOKED_PORKCHOP"
+msgstr "熟猪排"
+
+msgid "COOKED_BEEF"
+msgstr "熟牛肉"
+
+msgid "COOKED_CHICKEN"
+msgstr "熟鸡肉"
+
+msgid "COOKED_COD"
+msgstr "熟鳕鱼"
+
+msgid "COOKED_SALMON"
+msgstr "熟鲑鱼"
+
+msgid "MUSHROOM_STEW"
+msgstr "蘑菇煲"
+
+msgid "BEETROOT_SEEDS"
+msgstr "甜菜种子"
+
+msgid "BAMBOO"
+msgstr "竹子"
+
+msgid "PAPER"
+msgstr "纸"
+
+msgid "BOOK"
+msgstr "书"
+
+msgid "HONEY_BOTTLE"
+msgstr "蜂蜜瓶"
+
+msgid "GLOW_BERRIES"
+msgstr "发光浆果"
+
+# ==============================
+# 怪物掉落物
+# ==============================
+msgid "ROTTEN_FLESH"
+msgstr "腐肉"
+
+msgid "BONE"
+msgstr "骨头"
+
+msgid "STRING"
+msgstr "线"
+
+msgid "GUNPOWDER"
+msgstr "火药"
+
+msgid "SPIDER_EYE"
+msgstr "蜘蛛眼"
+
+msgid "LEATHER"
+msgstr "皮革"
+
+msgid "SLIME_BALL"
+msgstr "粘液球"
+
+msgid "BLAZE_ROD"
+msgstr "烈焰棒"
+
+msgid "BLAZE_POWDER"
+msgstr "烈焰粉"
+
+msgid "GHAST_TEAR"
+msgstr "恶魂之泪"
+
+msgid "ENDER_PEARL"
+msgstr "末影珍珠"
+
+msgid "MAGMA_CREAM"
+msgstr "岩浆膏"
+
+msgid "WITHER_SKELETON_SKULL"
+msgstr "凋灵骷髅头颅"
+
+msgid "NETHER_STAR"
+msgstr "下界之星"
+
+msgid "HEART_OF_THE_SEA"
+msgstr "海洋之心"
+
+msgid "NAUTILUS_SHELL"
+msgstr "鹦鹉螺壳"
+
+# ==============================
+# 鱼类
+# ==============================
+msgid "COD"
+msgstr "鳕鱼"
+
+msgid "SALMON"
+msgstr "鲑鱼"
+
+msgid "PUFFERFISH"
+msgstr "河豚"
+
+msgid "TROPICAL_FISH"
+msgstr "热带鱼"
+
+# ==============================
+# 染料
+# ==============================
+msgid "GREEN_DYE"
+msgstr "绿色染料"
+
+msgid "INK_SAC"
+msgstr "墨囊"
+
+msgid "BONE_MEAL"
+msgstr "骨粉"
+
+# ==============================
+# 红石组件
+# ==============================
+msgid "COMPARATOR"
+msgstr "红石比较器"
+
+msgid "REPEATER"
+msgstr "红石中继器"
+
+msgid "OBSERVER"
+msgstr "侦测器"
+
+msgid "PISTON"
+msgstr "活塞"
+
+msgid "DROPPER"
+msgstr "投掷器"
+
+msgid "HOPPER"
+msgstr "漏斗"
+
+msgid "TNT"
+msgstr "TNT"
+
+msgid "CHAIN"
+msgstr "锁链"
+
+# ==============================
+# 刷怪蛋
+# ==============================
+msgid "CHICKEN_SPAWN_EGG"
+msgstr "鸡刷怪蛋"
+
+msgid "PIG_SPAWN_EGG"
+msgstr "猪刷怪蛋"
+
+msgid "COW_SPAWN_EGG"
+msgstr "牛刷怪蛋"
+
+msgid "SHEEP_SPAWN_EGG"
+msgstr "羊刷怪蛋"
+
+msgid "MOOSHROOM_SPAWN_EGG"
+msgstr "哞菇刷怪蛋"
+
+msgid "BEE_SPAWN_EGG"
+msgstr "蜜蜂刷怪蛋"
+
+msgid "LLAMA_SPAWN_EGG"
+msgstr "羊驼刷怪蛋"
+
+msgid "POLAR_BEAR_SPAWN_EGG"
+msgstr "北极熊刷怪蛋"
+
+msgid "GOAT_SPAWN_EGG"
+msgstr "山羊刷怪蛋"
+
+msgid "TURTLE_SPAWN_EGG"
+msgstr "海龟刷怪蛋"
+
+msgid "AXOLOTL_SPAWN_EGG"
+msgstr "美西螈刷怪蛋"
+
+msgid "BLAZE_SPAWN_EGG"
+msgstr "烈焰人刷怪蛋"
+
+msgid "WITHER_SKELETON_SPAWN_EGG"
+msgstr "凋灵骷髅刷怪蛋"
+
+msgid "CATTLE_SPAWN_EGG"
+msgstr "牛刷怪蛋"
+
+# ==============================
+# 附魔与经验
+# ==============================
+msgid "EXPERIENCE_BOTTLE"
+msgstr "附魔之瓶"
+
+msgid "ENCHANTED_BOOK"
+msgstr "附魔书"
+
+# ==============================
+# 装饰与植物
+# ==============================
+msgid "DANDELION"
+msgstr "蒲公英"
+
+msgid "POPPY"
+msgstr "虞美人"
+
+msgid "BLUE_ORCHID"
+msgstr "兰花"
+
+msgid "ALLIUM"
+msgstr "绒球葱"
+
+msgid "AZURE_BLUET"
+msgstr "茜草花"
+
+msgid "RED_TULIP"
+msgstr "红色郁金香"
+
+msgid "ORANGE_TULIP"
+msgstr "橙色郁金香"
+
+msgid "WHITE_TULIP"
+msgstr "白色郁金香"
+
+msgid "PINK_TULIP"
+msgstr "粉红色郁金香"
+
+msgid "ROSE_BUSH"
+msgstr "玫瑰丛"
+
+msgid "SUNFLOWER"
+msgstr "向日葵"
+
+msgid "LILAC"
+msgstr "丁香"
+
+msgid "PEONY"
+msgstr "牡丹"
+
+msgid "VINE"
+msgstr "藤蔓"
+
+msgid "FLOWER_POT"
+msgstr "花盆"
+
+msgid "BEE_NEST"
+msgstr "蜂巢"
+
+msgid "BRAIN_CORAL_BLOCK"
+msgstr "脑珊瑚块"
+
+msgid "BRAIN_CORAL"
+msgstr "脑珊瑚"
+
+msgid "SEA_PICKLE"
+msgstr "海泡菜"
+
+# ==============================
+# 其他
+# ==============================
+msgid "SPAWNER"
+msgstr "刷怪笼"
+
+msgid "DRAGON_EGG"
+msgstr "龙蛋"
+
+msgid "NETHER_WART"
+msgstr "地狱疣"
+
+msgid "WHITE_DYE"
+msgstr "白色染料"
+
+msgid "COCOA_BEANS"
+msgstr "可可豆"
+
+msgid "EGG"
+msgstr "鸡蛋"
+
+msgid "MILK_BUCKET"
+msgstr "牛奶桶"
+
+msgid "SUGAR"
+msgstr "糖"
+
+msgid "COOKIE"
+msgstr "曲奇"
+
+msgid "PUMPKIN_PIE"
+msgstr "南瓜派"
+
+msgid "JACK_O_LANTERN"
+msgstr "南瓜灯"
+
+msgid "LEAD"
+msgstr "拴绳"
+
+msgid "SADDLE"
+msgstr "鞍"
+
+msgid "NAME_TAG"
+msgstr "命名牌"
+
+msgid "IRON_HORSE_ARMOR"
+msgstr "铁马铠"
+
+msgid "GOLDEN_HORSE_ARMOR"
+msgstr "金马铠"
+
+msgid "DIAMOND_HORSE_ARMOR"
+msgstr "钻石马铠"
+
+msgid "DIAMOND_SWORD"
+msgstr "钻石剑"
+
+msgid "DIAMOND_HELMET"
+msgstr "钻石头盔"
+
+msgid "DIAMOND_CHESTPLATE"
+msgstr "钻石胸甲"
+
+msgid "DIAMOND_LEGGINGS"
+msgstr "钻石护腿"
+
+msgid "DIAMOND_BOOTS"
+msgstr "钻石靴子"
+
+msgid "CARROT_ON_A_STICK"
+msgstr "胡萝卜钓竿"
+
+msgid "LADDER"
+msgstr "梯子"
+
+msgid "OAK_TRAPDOOR"
+msgstr "橡木活板门"
+
+msgid "OAK_PRESSURE_PLATE"
+msgstr "橡木压力板"
+
+msgid "OAK_FENCE"
+msgstr "橡木栅栏"
+
+msgid "ACACIA_FENCE"
+msgstr "金合欢栅栏"
+
+msgid "DARK_OAK_FENCE_GATE"
+msgstr "深色橡木栅栏门"
+
+msgid "SPRUCE_DOOR"
+msgstr "云杉门"
+
+msgid "JUNGLE_STAIRS"
+msgstr "丛林楼梯"
+
+msgid "DARK_OAK_SLAB"
+msgstr "深色橡木台阶"
 
 msgid "STRIPPED_OAK_LOG"
 msgstr "去皮橡木原木"
@@ -2822,116 +3428,44 @@ msgstr "去皮金合欢原木"
 msgid "STRIPPED_DARK_OAK_LOG"
 msgstr "去皮深色橡木原木"
 
-msgid "OAK_SAPLING"
-msgstr "橡树树苗"
+msgid "REDSTONE_TORCH"
+msgstr "红石火把"
 
-msgid "SPRUCE_SAPLING"
-msgstr "云杉树苗"
+msgid "LEVER"
+msgstr "拉杆"
 
-msgid "BIRCH_SAPLING"
-msgstr "白桦树苗"
+msgid "STONE_BUTTON"
+msgstr "石头按钮"
 
-msgid "JUNGLE_SAPLING"
-msgstr "丛林树苗"
+msgid "STONE_PRESSURE_PLATE"
+msgstr "石头压力板"
 
-msgid "ACACIA_SAPLING"
-msgstr "金合欢树苗"
+msgid "DAYLIGHT_DETECTOR"
+msgstr "阳光探测器"
 
-msgid "DARK_OAK_SAPLING"
-msgstr "深色橡木树苗"
+msgid "STICKY_PISTON"
+msgstr "粘性活塞"
 
-msgid "OAK_DOOR"
-msgstr "橡木门"
+msgid "EMERALD_BLOCK"
+msgstr "绿宝石块"
 
-msgid "SPRUCE_DOOR"
-msgstr "云杉门"
+msgid "RED_SANDSTONE"
+msgstr "红砂岩"
 
-msgid "OAK_FENCE"
-msgstr "橡木栅栏"
-
-msgid "ACACIA_FENCE"
-msgstr "金合欢栅栏"
-
-msgid "DARK_OAK_FENCE_GATE"
-msgstr "深色橡木栅栏门"
-
-msgid "OAK_TRAPDOOR"
-msgstr "橡木活板门"
-
-msgid "OAK_PRESSURE_PLATE"
-msgstr "橡木压力板"
-
-msgid "LADDER"
-msgstr "梯子"
-
-msgid "CRAFTING_TABLE"
-msgstr "工作台"
-
-msgid "BOOKSHELF"
-msgstr "书架"
-
-msgid "JUKEBOX"
-msgstr "唱片机"
-
-msgid "NOTE_BLOCK"
-msgstr "音符盒"
-
-msgid "CHEST"
-msgstr "箱子"
-
-# ==============================
-# 木制变种
-# ==============================
-msgid "OAK_STAIRS"
-msgstr "橡木楼梯"
-
-msgid "SPRUCE_STAIRS"
-msgstr "云杉楼梯"
-
-msgid "BIRCH_STAIRS"
-msgstr "白桦楼梯"
-
-msgid "JUNGLE_STAIRS"
-msgstr "丛林楼梯"
-
-msgid "ACACIA_STAIRS"
-msgstr "金合欢楼梯"
-
-msgid "DARK_OAK_STAIRS"
-msgstr "深色橡木楼梯"
-
-msgid "OAK_SLAB"
-msgstr "橡木台阶"
-
-msgid "SPRUCE_SLAB"
-msgstr "云杉台阶"
-
-msgid "BIRCH_SLAB"
-msgstr "白桦台阶"
-
-msgid "JUNGLE_SLAB"
-msgstr "丛林台阶"
-
-msgid "ACACIA_SLAB"
-msgstr "金合欢台阶"
-
-msgid "DARK_OAK_SLAB"
-msgstr "深色橡木台阶"
-
-# ==============================
-# 石制变种
-# ==============================
-msgid "STONE_BRICKS"
-msgstr "石砖"
-
-msgid "STONE_BRICK_SLAB"
-msgstr "石砖台阶"
+msgid "CHISELED_QUARTZ_BLOCK"
+msgstr "錾制石英块"
 
 msgid "CHISELED_STONE_BRICKS"
 msgstr "錾制石砖"
 
-msgid "STONE_BRICK_STAIRS"
-msgstr "石砖楼梯"
+msgid "CHISELED_SANDSTONE"
+msgstr "錾制砂岩"
+
+msgid "SMOOTH_SANDSTONE"
+msgstr "平滑砂岩"
+
+msgid "SANDSTONE"
+msgstr "砂岩"
 
 msgid "SANDSTONE_STAIRS"
 msgstr "砂岩楼梯"
@@ -2939,218 +3473,23 @@ msgstr "砂岩楼梯"
 msgid "SANDSTONE_SLAB"
 msgstr "砂岩台阶"
 
-msgid "RED_SANDSTONE"
-msgstr "红砂岩"
+msgid "RED_SAND"
+msgstr "红沙"
 
-msgid "QUARTZ_STAIRS"
-msgstr "石英楼梯"
+msgid "COARSE_DIRT"
+msgstr "砂土"
 
-msgid "QUARTZ_SLAB"
-msgstr "石英台阶"
+msgid "CLAY"
+msgstr "粘土"
 
-# ==============================
-# 装饰与功能
-# ==============================
-msgid "GLASS"
-msgstr "玻璃"
-
-msgid "WHITE_STAINED_GLASS"
-msgstr "白色染色玻璃"
-
-msgid "ORANGE_STAINED_GLASS"
-msgstr "橙色染色玻璃"
-
-msgid "MAGENTA_STAINED_GLASS"
-msgstr "品红色染色玻璃"
-
-msgid "LIGHT_BLUE_STAINED_GLASS"
-msgstr "淡蓝色染色玻璃"
-
-msgid "YELLOW_STAINED_GLASS"
-msgstr "黄色染色玻璃"
-
-msgid "LIME_STAINED_GLASS"
-msgstr "黄绿色染色玻璃"
-
-msgid "PINK_STAINED_GLASS"
-msgstr "粉红色染色玻璃"
-
-msgid "GRAY_STAINED_GLASS"
-msgstr "灰色染色玻璃"
-
-msgid "LIGHT_GRAY_STAINED_GLASS"
-msgstr "淡灰色染色玻璃"
-
-msgid "CYAN_STAINED_GLASS"
-msgstr "青色染色玻璃"
-
-msgid "PURPLE_STAINED_GLASS"
-msgstr "紫色染色玻璃"
-
-msgid "BLUE_STAINED_GLASS"
-msgstr "蓝色染色玻璃"
-
-msgid "BROWN_STAINED_GLASS"
-msgstr "棕色染色玻璃"
-
-msgid "GREEN_STAINED_GLASS"
-msgstr "绿色染色玻璃"
-
-msgid "RED_STAINED_GLASS"
-msgstr "红色染色玻璃"
-
-msgid "BLACK_STAINED_GLASS"
-msgstr "黑色染色玻璃"
-
-msgid "TORCH"
-msgstr "火把"
-
-msgid "FURNACE"
-msgstr "熔炉"
-
-msgid "RED_BED"
-msgstr "红色床"
-
-msgid "BOOKSHELF"
-msgstr "书架"
-
-msgid "HAY_BLOCK"
-msgstr "干草块"
-
-msgid "BEACON"
-msgstr "信标"
+msgid "ICE"
+msgstr "冰"
 
 msgid "CONDUIT"
 msgstr "潮涌核心"
 
-msgid "END_PORTAL_FRAME"
-msgstr "末地传送门框架"
-
-# ==============================
-# 植物与农作物
-# ==============================
-msgid "APPLE"
-msgstr "苹果"
-
-msgid "SUGAR_CANE"
-msgstr "甘蔗"
-
-msgid "MELON_SLICE"
-msgstr "西瓜片"
-
-msgid "MELON"
-msgstr "西瓜"
-
-msgid "CACTUS"
-msgstr "仙人掌"
-
-msgid "PUMPKIN"
-msgstr "南瓜"
-
-msgid "BROWN_MUSHROOM"
-msgstr "棕色蘑菇"
-
-msgid "RED_MUSHROOM"
-msgstr "红色蘑菇"
-
-msgid "POTATO"
-msgstr "马铃薯"
-
-msgid "BAKED_POTATO"
-msgstr "烤马铃薯"
-
-msgid "CARROT"
-msgstr "胡萝卜"
-
-msgid "GOLDEN_CARROT"
-msgstr "金胡萝卜"
-
-msgid "WHEAT"
-msgstr "小麦"
-
-msgid "BEETROOT"
-msgstr "甜菜根"
-
-msgid "BEETROOT_SEEDS"
-msgstr "甜菜种子"
-
-msgid "PUMPKIN_SEEDS"
-msgstr "南瓜种子"
-
-msgid "COCOA_BEANS"
-msgstr "可可豆"
-
-msgid "COOKIE"
-msgstr "曲奇"
-
-msgid "BREAD"
-msgstr "面包"
-
-msgid "CAKE"
-msgstr "蛋糕"
-
-msgid "PUMPKIN_PIE"
-msgstr "南瓜派"
-
-msgid "JACK_O_LANTERN"
-msgstr "南瓜灯"
-
-msgid "GOLDEN_APPLE"
-msgstr "金苹果"
-
-msgid "MUSHROOM_STEW"
-msgstr "蘑菇煲"
-
-# ==============================
-# 动物与怪物掉落物
-# ==============================
-msgid "LEATHER"
-msgstr "皮革"
-
-msgid "ROTTEN_FLESH"
-msgstr "腐肉"
-
-msgid "STRING"
-msgstr "线"
-
-msgid "ARROW"
-msgstr "箭"
-
-msgid "BONE"
-msgstr "骨头"
-
-msgid "GUNPOWDER"
-msgstr "火药"
-
-msgid "SPIDER_EYE"
-msgstr "蜘蛛眼"
-
-msgid "SLIME_BALL"
-msgstr "粘液球"
-
-msgid "ENDER_PEARL"
-msgstr "末影珍珠"
-
-msgid "GHAST_TEAR"
-msgstr "恶魂之泪"
-
-msgid "BLAZE_ROD"
-msgstr "烈焰棒"
-
-msgid "WITHER_SKELETON_SKULL"
-msgstr "凋灵骷髅头颅"
-
-msgid "NETHER_STAR"
-msgstr "下界之星"
-
-msgid "NAUTILUS_SHELL"
-msgstr "鹦鹉螺壳"
-
-msgid "HEART_OF_THE_SEA"
-msgstr "海洋之心"
-
-msgid "PRISMARINE"
-msgstr "海晶石"
+msgid "DRIED_KELP_BLOCK"
+msgstr "干海带块"
 
 msgid "PRISMARINE_BRICKS"
 msgstr "海晶石砖"
@@ -3158,192 +3497,9 @@ msgstr "海晶石砖"
 msgid "DARK_PRISMARINE"
 msgstr "暗海晶石"
 
-msgid "SEA_LANTERN"
-msgstr "海晶灯"
-
-msgid "PRISMARINE_CRYSTALS"
-msgstr "海晶砂粒"
-
 msgid "PRISMARINE_SHARD"
 msgstr "海晶碎片"
 
-msgid "DRIED_KELP_BLOCK"
-msgstr "干海带块"
-
-msgid "KELP"
-msgstr "海带"
-
-msgid "INK_SAC"
-msgstr "墨囊"
-
-# ==============================
-# 毛毯与染料
-# ==============================
-msgid "WHITE_WOOL"
-msgstr "白色羊毛"
-
-msgid "ORANGE_WOOL"
-msgstr "橙色羊毛"
-
-msgid "MAGENTA_WOOL"
-msgstr "品红色羊毛"
-
-msgid "LIGHT_BLUE_WOOL"
-msgstr "淡蓝色羊毛"
-
-msgid "YELLOW_WOOL"
-msgstr "黄色羊毛"
-
-msgid "LIME_WOOL"
-msgstr "黄绿色羊毛"
-
-msgid "PINK_WOOL"
-msgstr "粉红色羊毛"
-
-msgid "GRAY_WOOL"
-msgstr "灰色羊毛"
-
-msgid "LIGHT_GRAY_WOOL"
-msgstr "淡灰色羊毛"
-
-msgid "CYAN_WOOL"
-msgstr "青色羊毛"
-
-msgid "PURPLE_WOOL"
-msgstr "紫色羊毛"
-
-msgid "BLUE_WOOL"
-msgstr "蓝色羊毛"
-
-msgid "BROWN_WOOL"
-msgstr "棕色羊毛"
-
-msgid "GREEN_WOOL"
-msgstr "绿色羊毛"
-
-msgid "RED_WOOL"
-msgstr "红色羊毛"
-
-msgid "BLACK_WOOL"
-msgstr "黑色羊毛"
-
-# ==============================
-# 食物 (进一步)
-# ==============================
-msgid "COOKED_PORKCHOP"
-msgstr "熟猪排"
-
-msgid "COOKED_BEEF"
-msgstr "熟牛肉"
-
-msgid "COOKED_CHICKEN"
-msgstr "熟鸡肉"
-
-msgid "COOKED_COD"
-msgstr "熟鳕鱼"
-
-msgid "COOKED_SALMON"
-msgstr "熟鲑鱼"
-
-msgid "COD"
-msgstr "鳕鱼"
-
-msgid "SALMON"
-msgstr "鲑鱼"
-
-msgid "PUFFERFISH"
-msgstr "河豚"
-
-msgid "TROPICAL_FISH"
-msgstr "热带鱼"
-
-msgid "MILK_BUCKET"
-msgstr "牛奶桶"
-
-msgid "EGG"
-msgstr "鸡蛋"
-
-# ==============================
-# 工具与武器
-# ==============================
-msgid "WOODEN_HOE"
-msgstr "木锄"
-
-msgid "STONE_SHOVEL"
-msgstr "石锹"
-
-msgid "STONE_PICKAXE"
-msgstr "石镐"
-
-msgid "STONE_AXE"
-msgstr "石斧"
-
-msgid "STONE_HOE"
-msgstr "石锄"
-
-msgid "IRON_PICKAXE"
-msgstr "铁镐"
-
-msgid "IRON_SHOVEL"
-msgstr "铁锹"
-
-msgid "IRON_AXE"
-msgstr "铁斧"
-
-msgid "IRON_HOE"
-msgstr "铁锄"
-
-msgid "IRON_HORSE_ARMOR"
-msgstr "铁马铠"
-
-msgid "GOLDEN_HORSE_ARMOR"
-msgstr "金马铠"
-
-msgid "DIAMOND_HORSE_ARMOR"
-msgstr "钻石马铠"
-
-msgid "BOW"
-msgstr "弓"
-
-msgid "DIAMOND_SWORD"
-msgstr "钻石剑"
-
-msgid "DIAMOND_HELMET"
-msgstr "钻石头盔"
-
-msgid "DIAMOND_CHESTPLATE"
-msgstr "钻石胸甲"
-
-msgid "DIAMOND_LEGGINGS"
-msgstr "钻石护腿"
-
-msgid "DIAMOND_BOOTS"
-msgstr "钻石靴子"
-
-msgid "FISHING_ROD"
-msgstr "钓鱼竿"
-
-msgid "SHEARS"
-msgstr "剪刀"
-
-msgid "LEAD"
-msgstr "拴绳"
-
-msgid "SADDLE"
-msgstr "鞍"
-
-msgid "NAME_TAG"
-msgstr "命名牌"
-
-msgid "BUCKET"
-msgstr "桶"
-
-msgid "FLINT"
-msgstr "燧石"
-
-# ==============================
-# 唱片
-# ==============================
 msgid "MUSIC_DISC_13"
 msgstr "音乐唱片"
 
@@ -3380,153 +3536,156 @@ msgstr "音乐唱片"
 msgid "MUSIC_DISC_WAIT"
 msgstr "音乐唱片"
 
-# ==============================
-# 红石组件
-# ==============================
-msgid "REDSTONE"
-msgstr "红石粉"
+msgid "JUKEBOX"
+msgstr "唱片机"
 
-msgid "REDSTONE_TORCH"
-msgstr "红石火把"
+msgid "NOTE_BLOCK"
+msgstr "音符盒"
 
-msgid "REPEATER"
-msgstr "红石中继器"
+msgid "WHITE_BANNER"
+msgstr "白色旗帜"
 
-msgid "COMPARATOR"
-msgstr "红石比较器"
+msgid "BLACK_BANNER"
+msgstr "黑色旗帜"
 
-msgid "PISTON"
-msgstr "活塞"
+msgid "BLUE_BANNER"
+msgstr "蓝色旗帜"
 
-msgid "STICKY_PISTON"
-msgstr "粘性活塞"
+msgid "BROWN_BANNER"
+msgstr "棕色旗帜"
 
-msgid "LEVER"
-msgstr "拉杆"
+msgid "CYAN_BANNER"
+msgstr "青色旗帜"
 
-msgid "STONE_BUTTON"
-msgstr "石头按钮"
+msgid "GRAY_BANNER"
+msgstr "灰色旗帜"
 
-msgid "STONE_PRESSURE_PLATE"
-msgstr "石头压力板"
+msgid "GREEN_BANNER"
+msgstr "绿色旗帜"
 
-msgid "HOPPER"
-msgstr "漏斗"
+msgid "LIGHT_BLUE_BANNER"
+msgstr "淡蓝色旗帜"
 
-msgid "DISPENSER"
-msgstr "发射器"
+msgid "LIGHT_GRAY_BANNER"
+msgstr "淡灰色旗帜"
 
-msgid "DROPPER"
-msgstr "投掷器"
+msgid "LIME_BANNER"
+msgstr "黄绿色旗帜"
 
-msgid "DAYLIGHT_DETECTOR"
-msgstr "阳光探测器"
+msgid "MAGENTA_BANNER"
+msgstr "品红色旗帜"
 
-# ==============================
-# 刷怪蛋
-# ==============================
-msgid "CHICKEN_SPAWN_EGG"
-msgstr "鸡刷怪蛋"
+msgid "ORANGE_BANNER"
+msgstr "橙色旗帜"
 
-msgid "PIG_SPAWN_EGG"
-msgstr "猪刷怪蛋"
+msgid "PINK_BANNER"
+msgstr "粉红色旗帜"
 
-msgid "COW_SPAWN_EGG"
-msgstr "牛刷怪蛋"
+msgid "PURPLE_BANNER"
+msgstr "紫色旗帜"
 
-msgid "SHEEP_SPAWN_EGG"
-msgstr "羊刷怪蛋"
+msgid "RED_BANNER"
+msgstr "红色旗帜"
 
-msgid "HORSE_SPAWN_EGG"
-msgstr "马刷怪蛋"
+msgid "YELLOW_BANNER"
+msgstr "黄色旗帜"
 
-msgid "MULE_SPAWN_EGG"
-msgstr "骡刷怪蛋"
+msgid "BLACK_STAINED_GLASS"
+msgstr "黑色染色玻璃"
 
-msgid "WOLF_SPAWN_EGG"
-msgstr "狼刷怪蛋"
+msgid "BLUE_STAINED_GLASS"
+msgstr "蓝色染色玻璃"
 
-msgid "OCELOT_SPAWN_EGG"
-msgstr "豹猫刷怪蛋"
+msgid "BROWN_STAINED_GLASS"
+msgstr "棕色染色玻璃"
 
-msgid "PARROT_SPAWN_EGG"
-msgstr "鹦鹉刷怪蛋"
+msgid "CYAN_STAINED_GLASS"
+msgstr "青色染色玻璃"
 
-msgid "MOOSHROOM_SPAWN_EGG"
-msgstr "哞菇刷怪蛋"
+msgid "GRAY_STAINED_GLASS"
+msgstr "灰色染色玻璃"
 
-msgid "RABBIT_SPAWN_EGG"
-msgstr "兔子刷怪蛋"
+msgid "GREEN_STAINED_GLASS"
+msgstr "绿色染色玻璃"
 
-msgid "TURTLE_SPAWN_EGG"
-msgstr "海龟刷怪蛋"
+msgid "LIGHT_BLUE_STAINED_GLASS"
+msgstr "淡蓝色染色玻璃"
 
-# ==============================
-# 其他
-# ==============================
-msgid "BOOK"
-msgstr "书"
+msgid "LIGHT_GRAY_STAINED_GLASS"
+msgstr "淡灰色染色玻璃"
 
-msgid "EMERALD"
-msgstr "绿宝石"
+msgid "LIME_STAINED_GLASS"
+msgstr "黄绿色染色玻璃"
 
-msgid "DIAMOND"
-msgstr "钻石"
+msgid "MAGENTA_STAINED_GLASS"
+msgstr "品红色染色玻璃"
 
-msgid "COAL"
-msgstr "煤炭"
+msgid "ORANGE_STAINED_GLASS"
+msgstr "橙色染色玻璃"
 
-msgid "CARROT_ON_A_STICK"
-msgstr "胡萝卜钓竿"
+msgid "PINK_STAINED_GLASS"
+msgstr "粉红色染色玻璃"
 
-msgid "VINE"
-msgstr "藤蔓"
+msgid "PURPLE_STAINED_GLASS"
+msgstr "紫色染色玻璃"
 
-msgid "FLOWER_POT"
-msgstr "花盆"
+msgid "RED_STAINED_GLASS"
+msgstr "红色染色玻璃"
 
-msgid "POPPY"
-msgstr "虞美人"
+msgid "WHITE_STAINED_GLASS"
+msgstr "白色染色玻璃"
 
-msgid "BLUE_ORCHID"
-msgstr "兰花"
+msgid "YELLOW_STAINED_GLASS"
+msgstr "黄色染色玻璃"
 
-msgid "ALLIUM"
-msgstr "绒球葱"
+msgid "BLACK_STAINED_GLASS_PANE"
+msgstr "黑色染色玻璃板"
 
-msgid "AZURE_BLUET"
-msgstr "茜草花"
+msgid "BLUE_STAINED_GLASS_PANE"
+msgstr "蓝色染色玻璃板"
 
-msgid "RED_TULIP"
-msgstr "红色郁金香"
+msgid "BROWN_STAINED_GLASS_PANE"
+msgstr "棕色染色玻璃板"
 
-msgid "ORANGE_TULIP"
-msgstr "橙色郁金香"
+msgid "CYAN_STAINED_GLASS_PANE"
+msgstr "青色染色玻璃板"
 
-msgid "WHITE_TULIP"
-msgstr "白色郁金香"
+msgid "GRAY_STAINED_GLASS_PANE"
+msgstr "灰色染色玻璃板"
 
-msgid "PINK_TULIP"
-msgstr "粉红色郁金香"
+msgid "GREEN_STAINED_GLASS_PANE"
+msgstr "绿色染色玻璃板"
 
-msgid "OXEYE_DAISY"
-msgstr "滨菊"
+msgid "LIGHT_BLUE_STAINED_GLASS_PANE"
+msgstr "淡蓝色染色玻璃板"
 
-msgid "SUNFLOWER"
-msgstr "向日葵"
+msgid "LIGHT_GRAY_STAINED_GLASS_PANE"
+msgstr "淡灰色染色玻璃板"
 
-msgid "LILAC"
-msgstr "丁香"
+msgid "LIME_STAINED_GLASS_PANE"
+msgstr "黄绿色染色玻璃板"
 
-msgid "ROSE_BUSH"
-msgstr "玫瑰丛"
+msgid "MAGENTA_STAINED_GLASS_PANE"
+msgstr "品红色染色玻璃板"
 
-msgid "PEONY"
-msgstr "牡丹"
+msgid "ORANGE_STAINED_GLASS_PANE"
+msgstr "橙色染色玻璃板"
 
-# ==============================
-# 特殊物品/方块 (挑战中特定提及)
-# ==============================
+msgid "PINK_STAINED_GLASS_PANE"
+msgstr "粉红色染色玻璃板"
+
+msgid "PURPLE_STAINED_GLASS_PANE"
+msgstr "紫色染色玻璃板"
+
+msgid "RED_STAINED_GLASS_PANE"
+msgstr "红色染色玻璃板"
+
+msgid "WHITE_STAINED_GLASS_PANE"
+msgstr "白色染色玻璃板"
+
+msgid "YELLOW_STAINED_GLASS_PANE"
+msgstr "黄色染色玻璃板"
+
 msgid "CYAN_TERRACOTTA"
 msgstr "青色陶瓦"
 
@@ -3545,188 +3704,47 @@ msgstr "红色陶瓦"
 msgid "LIGHT_GRAY_TERRACOTTA"
 msgstr "淡灰色陶瓦"
 
-msgid "RED_STAINED_GLASS_PANE"
-msgstr "红色染色玻璃板"
+msgid "BLACK_TERRACOTTA"
+msgstr "黑色陶瓦"
 
-msgid "BLUE_STAINED_GLASS_PANE"
-msgstr "蓝色染色玻璃板"
+msgid "BLUE_TERRACOTTA"
+msgstr "蓝色陶瓦"
 
-msgid "BLACK_STAINED_GLASS_PANE"
-msgstr "黑色染色玻璃板"
+msgid "BROWN_TERRACOTTA"
+msgstr "棕色陶瓦"
 
-msgid "PURPLE_STAINED_GLASS_PANE"
-msgstr "紫色染色玻璃板"
+msgid "GRAY_TERRACOTTA"
+msgstr "灰色陶瓦"
 
-msgid "CYAN_STAINED_GLASS_PANE"
-msgstr "青色染色玻璃板"
+msgid "GREEN_TERRACOTTA"
+msgstr "绿色陶瓦"
 
-msgid "BROWN_STAINED_GLASS_PANE"
-msgstr "棕色染色玻璃板"
+msgid "LIGHT_BLUE_TERRACOTTA"
+msgstr "淡蓝色陶瓦"
 
-msgid "GRAY_STAINED_GLASS_PANE"
-msgstr "灰色染色玻璃板"
+msgid "MAGENTA_TERRACOTTA"
+msgstr "品红色陶瓦"
+
+msgid "PINK_TERRACOTTA"
+msgstr "粉红色陶瓦"
+
+msgid "PURPLE_TERRACOTTA"
+msgstr "紫色陶瓦"
+
+msgid "WHITE_TERRACOTTA"
+msgstr "白色陶瓦"
 
 msgid "RED_MUSHROOM_BLOCK"
 msgstr "红色蘑菇方块"
 
+msgid "BROWN_MUSHROOM_BLOCK"
+msgstr "棕色蘑菇方块"
+
 msgid "NETHER_PORTAL"
 msgstr "下界传送门"
 
-msgid "GRASS_BLOCK"
-msgstr "草方块"
-
-msgid "STONE_SWORD"
-msgstr "石剑"
-
-msgid "CHARCOAL"
-msgstr "木炭"
-
-msgid "RAW_GOLD"
-msgstr "粗金"
-
-msgid "COMPOSTER"
-msgstr "堆肥桶"
-
-msgid "BONE_MEAL"
-msgstr "骨粉"
-
-msgid "WHEAT_SEEDS"
-msgstr "小麦种子"
-
-msgid "SHIELD"
-msgstr "盾牌"
-
-msgid "STONE_BRICK_WALL"
-msgstr "石砖墙"
-
-msgid "ANDESITE"
-msgstr "安山岩"
-
-msgid "DIORITE"
-msgstr "闪长岩"
-
-msgid "GRANITE"
-msgstr "花岗岩"
-
-msgid "CALCITE"
-msgstr "方解石"
-
-msgid "TUFF"
-msgstr "凝灰岩"
-
-msgid "DEEPSLATE"
-msgstr "深板岩"
-
-msgid "WATER_BUCKET"
-msgstr "水桶"
-
-msgid "LAVA_BUCKET"
-msgstr "岩浆桶"
-
-msgid "COAL_BLOCK"
-msgstr "煤炭块"
-
-msgid "GOLD_NUGGET"
-msgstr "金粒"
-
-msgid "GLOWSTONE_DUST"
-msgstr "萤石粉"
-
-msgid "CRYING_OBSIDIAN"
-msgstr "哭泣的黑曜石"
-
-msgid "MAGMA_CREAM"
-msgstr "岩浆膏"
-
-msgid "NETHER_WART"
-msgstr "地狱疣"
-
-msgid "SMOOTH_QUARTZ"
-msgstr "平滑石英"
-
-msgid "NETHER_QUARTZ_ORE"
-msgstr "下界石英矿石"
-
-msgid "ENCHANTED_GOLDEN_APPLE"
-msgstr "附魔金苹果"
-
-msgid "EXPERIENCE_BOTTLE"
-msgstr "附魔之瓶"
-
-msgid "ENCHANTED_BOOK"
-msgstr "附魔书"
-
-msgid "OBSERVER"
-msgstr "侦测器"
-
-msgid "SPAWNER"
-msgstr "刷怪笼"
-
-msgid "BLAZE_POWDER"
-msgstr "烈焰粉"
-
-msgid "ENDER_EYE"
-msgstr "末影之眼"
-
-msgid "BLAZE_SPAWN_EGG"
-msgstr "烈焰人刷怪蛋"
-
-msgid "WITHER_SKELETON_SPAWN_EGG"
-msgstr "凋灵骷髅刷怪蛋"
-
-msgid "GREEN_DYE"
-msgstr "绿色染料"
-
-msgid "BAMBOO"
-msgstr "竹子"
-
-msgid "PAPER"
-msgstr "纸"
-
-msgid "TNT"
-msgstr "TNT"
-
-msgid "APPLE"
-msgstr "苹果"
-
-msgid "FLINT_AND_STEEL"
-msgstr "打火石"
-
-msgid "RAW_IRON"
-msgstr "粗铁"
-
-msgid "IRON_SWORD"
-msgstr "铁剑"
-
-msgid "IRON_HELMET"
-msgstr "铁头盔"
-
-msgid "IRON_CHESTPLATE"
-msgstr "铁胸甲"
-
-msgid "IRON_LEGGINGS"
-msgstr "铁护腿"
-
-msgid "IRON_BOOTS"
-msgstr "铁靴子"
-
-msgid "WHITE_BED"
-msgstr "白色床"
-
-msgid "WHITE_WOOL"
-msgstr "白色羊毛"
-
-msgid "SHEEP_SPAWN_EGG"
-msgstr "羊刷怪蛋"
-
-msgid "PIG_SPAWN_EGG"
-msgstr "猪刷怪蛋"
-
-msgid "CHICKEN_SPAWN_EGG"
-msgstr "鸡刷怪蛋"
-
-msgid "COW_SPAWN_EGG"
-msgstr "牛刷怪蛋"
+msgid "END_PORTAL"
+msgstr "末地传送门"
 
 msgid "Buy Extra Hopper Success!"
 msgstr "购买漏斗数量扩容成功！"
