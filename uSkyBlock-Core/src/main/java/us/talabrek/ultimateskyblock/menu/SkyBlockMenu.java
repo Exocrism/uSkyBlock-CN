@@ -601,8 +601,8 @@ public class SkyBlockMenu {
 
         menuItem = new ItemStack(Material.NETHER_STAR, 1);
         meta4 = menuItem.getItemMeta();
-        meta4.setDisplayName("\u00a7b\u00a7l" + tr("商店"));
-        addLore(lores, "\u00a7f使用\u00a7b天空币\u00a7f购买各类\u00a7a基础或稀有物资\u00a7f，以及\u00a7d特殊权限\u00a7f！\n\u00a7e\u00a7l点击进入商店");
+        meta4.setDisplayName("\u00a7a\u00a7l" + tr("Store"));
+        addLore(lores, tr("\u00a7fUse \u00a7bSkybucks\u00a7f to buy \u00a7abasic\u00a7f or \u00a7orare items\u00a7f, even \u00a7dspecial permissions\u00a7f!"));
         meta4.setLore(lores);
         menuItem.setItemMeta(meta4);
         menu.addItem(menuItem);
@@ -1052,7 +1052,7 @@ public class SkyBlockMenu {
         ShopLogic shopLogic = plugin.getShopLogic();
         List<ShopCategory> categories = shopLogic.getCategories();
         if (categories.isEmpty()) {
-            player.sendMessage(tr("\u00a7c商店暂无物品"));
+            player.sendMessage(tr("\u00a7cStore is currently empty"));
             return createMainMenu(player);
         }
 
@@ -1071,7 +1071,7 @@ public class SkyBlockMenu {
         if (page > totalPages) page = totalPages;
 
         // 使用与挑战菜单相同的大尺寸
-        String title = "\u00a79" + tr("商店") + "-" + stripFormatting(currentCategory.getName()) + " (" + page + "/" + totalPages + ")";
+        String title = "\u00a79" + tr("Store") + "-" + stripFormatting(currentCategory.getName()) + " (" + page + "/" + totalPages + ")";
         Inventory menu = Bukkit.createInventory(
             new UltimateHolder(player, title, MenuType.DEFAULT), SHOP_PAGESIZE + COLS_PER_ROW, title);
 
@@ -1116,8 +1116,8 @@ public class SkyBlockMenu {
             int actualPrice = shopLogic.getActualPrice(shopItem, player.getUniqueId());
             int bought = data.getBuyCount(shopItem.getId());
 
-            lores.add(tr("\u00a7e价格: \u00a7f{0,number,#}", actualPrice));
-            lores.add(tr("\u00a7e已购买: \u00a7f{0}/{1}", bought, shopItem.getMaxBuys()));
+            lores.add(tr("\u00a7ePrice: \u00a7f{0,number,#}", actualPrice));
+            lores.add(tr("\u00a7eBought: \u00a7f{0}/{1}", bought, shopItem.getMaxBuys()));
 
             // 收集所有未满足条件
             List<String> unmetReasons = new ArrayList<>();
@@ -1125,7 +1125,7 @@ public class SkyBlockMenu {
             // 检查岛屿等级
             IslandInfo info = plugin.getIslandInfo(player);
             if (shopItem.getRequiredLevel() > 0 && info.getLevel() < shopItem.getRequiredLevel()) {
-                unmetReasons.add(tr("\u00a7c需要岛屿等级: \u00a7f{0} \u00a77(当前: \u00a7f{1,number,##.#}\u00a77)", shopItem.getRequiredLevel(), info.getLevel()));
+                unmetReasons.add(tr("\u00a7cRequires Island Level: \u00a7f{0} \u00a77(当前: \u00a7f{1,number,##.#}\u00a77)", shopItem.getRequiredLevel(), info.getLevel()));
             }
 
             // 检查任务完成（只显示未完成的）
@@ -1134,7 +1134,7 @@ public class SkyBlockMenu {
                 for (String challengeId : shopItem.getRequiredChallenges()) {
                     if (pi.checkChallenge(challengeId) == 0) {
                         if (!hasUnmet) {
-                            unmetReasons.add(tr("\u00a7c需要任务:"));
+                            unmetReasons.add(tr("\u00a7cRequires Challenges:"));
                             hasUnmet = true;
                         }
                         Challenge challenge = challengeLogic.getChallenge(challengeId);
@@ -1146,17 +1146,17 @@ public class SkyBlockMenu {
 
             // 检查购买上限
             if (bought >= shopItem.getMaxBuys()) {
-                unmetReasons.add(tr("\u00a7c已达购买上限"));
+                unmetReasons.add(tr("\u00a7cPurchase limit reached"));
             }
 
             // 判断是否锁定
             boolean locked = !unmetReasons.isEmpty();
 
             if (locked) {
-                lores.add(tr("\u00a7c\u00a7l商品已锁定"));
+                lores.add(tr("\u00a7c\u00a7lLocked"));
                 lores.addAll(unmetReasons);
             } else {
-                lores.add(tr("\u00a7e\u00a7l点击购买"));
+                lores.add(tr("\u00a7e\u00a7lClick to buy"));
             }
 
             ItemStack itemStack = ItemStackUtil.builder(shopItem.getDisplayItem().clone())
@@ -1185,8 +1185,8 @@ public class SkyBlockMenu {
             int p = pages[i];
             if (i == 8) {
                 // 最后一格：返回主菜单
-                ItemStack backItem = GuiItemUtil.createGuiDisplayItem(Material.OAK_DOOR, tr("\u00a77返回主菜单"));
-                backItem = ItemStackUtil.builder(backItem).displayName(tr("\u00a77返回主菜单")).build();
+                ItemStack backItem = GuiItemUtil.createGuiDisplayItem(Material.OAK_DOOR, tr("\u00a77Back to Main Menu"));
+                backItem = ItemStackUtil.builder(backItem).displayName(tr("\u00a77Back to Main Menu")).build();
                 menu.setItem(SHOP_PAGESIZE + 8, backItem);
             } else if (p >= 1 && p <= totalPages) {
                 ItemStack pageItem;
@@ -1277,7 +1277,7 @@ public class SkyBlockMenu {
 
         IslandInfo islandInfo = plugin.getIslandInfo(player);
         if (islandInfo.getLevel() < item.getRequiredLevel()) {
-            player.sendMessage(tr("\u00a7c你的岛屿等级不足！需要 {0} 级", item.getRequiredLevel()));
+            player.sendMessage(tr("\u00a7cIsland level too low! Requires level {0}", item.getRequiredLevel()));
             return;
         }
 
@@ -1289,13 +1289,13 @@ public class SkyBlockMenu {
                 if (challenge != null) {
                     displayName = stripFormatting(challenge.getDisplayName()); // 获取可读的显示名
                 }
-                player.sendMessage(tr("\u00a7c你需要先完成挑战: {0}", displayName));
+                player.sendMessage(tr("\u00a7cYou need to complete: {0}", displayName));
                 return;
             }
         }
 
         if (data.getBuyCount(item.getId()) >= item.getMaxBuys()) {
-            player.sendMessage(tr("\u00a7c已达到最大购买数量！"));
+            player.sendMessage(tr("\u00a7cPurchase limit reached!"));
             return;
         }
 
@@ -1303,7 +1303,7 @@ public class SkyBlockMenu {
         plugin.getHookManager().getEconomyHook().ifPresent(hook -> {
             double balance = hook.getBalance(player);
             if (balance < actualPrice) {
-                player.sendMessage(tr("\u00a7c余额不足！需要 {0,number,#}，你只有 {1,number,#}", actualPrice, (int) balance));
+                player.sendMessage(tr("\u00a7cNot enough money! Need {0,number,#}, you have {1,number,#}", actualPrice, (int) balance));
                 return;
             }
             hook.withdrawPlayer(player, actualPrice);
@@ -1322,7 +1322,7 @@ public class SkyBlockMenu {
                     player.getWorld().dropItem(player.getLocation(), leftOver);
                 }
                 if (!leftOvers.isEmpty()) {
-                    player.sendMessage(tr("\u00a7e你的背包满了，部分物品掉在地上。"));
+                    player.sendMessage(tr("\u00a7eInventory full, items dropped on ground."));
                 }
             }
 
@@ -1334,8 +1334,8 @@ public class SkyBlockMenu {
             data.incrementBuyCount(item.getId());
             shopLogic.savePlayerData(uuid);  // ← 新增：保存到文件
             double remaining = hook.getBalance(player);
-            player.sendMessage(tr("\u00a7a购买成功！花费 {0,number,#}，余额 {1,number,#}", actualPrice, (int) remaining));
-            player.sendMessage(tr("\u00a7e剩余购买次数: {0}/{1}",
+            player.sendMessage(tr("\u00a7aPurchased! Cost {0,number,#}, balance {1,number,#}", actualPrice, (int) remaining));
+            player.sendMessage(tr("\u00a7eRemaining purchases: {0}/{1}",
                 item.getMaxBuys() - data.getBuyCount(item.getId()), item.getMaxBuys()));
         });
 

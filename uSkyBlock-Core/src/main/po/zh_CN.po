@@ -3829,3 +3829,72 @@ msgstr "深海"
 
 msgid "snowy_plains"
 msgstr "积雪平原"
+
+# ==========================================
+# 商店系统
+# ==========================================
+
+# 主菜单入口
+msgid "Store"
+msgstr "商店"
+
+msgid "\u00a7fUse \u00a7bSkybucks\u00a7f to buy \u00a7abasic\u00a7f or \u00a7orare items\u00a7f, even \u00a7dspecial permissions\u00a7f!"
+msgstr "\u00a7f使用\u00a7b天空币\u00a7f购买\u00a7a基础\u00a7f或\u00a7o稀有物资\u00a7f，甚至\u00a7d特殊权限\u00a7f！"
+
+# 商店 GUI
+msgid "\u00a7ePrice: \u00a7f{0,number,#}"
+msgstr "\u00a7e价格：\u00a7f{0,number,#}"
+
+msgid "\u00a7eBought: \u00a7f{0}/{1}"
+msgstr "\u00a7e已购买：\u00a7f{0}/{1}"
+
+msgid "\u00a7cRequires Island Level: \u00a7f{0} \u00a77(Current: \u00a7f{1,number,##.#}\u00a77)"
+msgstr "\u00a7c需要岛屿等级：\u00a7f{0} \u00a77（当前：\u00a7f{1,number,##.#}\u00a77）"
+
+msgid "\u00a7cRequires Challenges:"
+msgstr "\u00a7c需要完成挑战："
+
+msgid "\u00a7c  {0}"
+msgstr "\u00a7c  {0}"
+
+msgid "\u00a7cPurchase limit reached"
+msgstr "\u00a7c已达到购买上限"
+
+msgid "\u00a7c\u00a7lLocked"
+msgstr "\u00a7c\u00a7l商品已锁定"
+
+msgid "\u00a7e\u00a7lClick to buy"
+msgstr "\u00a7e\u00a7l点击购买"
+
+# 翻页
+msgid "\u00a77Back to Main Menu"
+msgstr "\u00a77返回主菜单"
+
+# 购买提示
+msgid "\u00a7cIsland level too low! Requires level {0}"
+msgstr "\u00a7c岛屿等级不足！需要 {0} 级"
+
+msgid "\u00a7cYou need to complete: {0}"
+msgstr "\u00a7c你需要先完成挑战：{0}"
+
+msgid "\u00a7cPurchase limit reached!"
+msgstr "\u00a7c已达到最大购买数量！"
+
+msgid "\u00a7cNot enough money! Need {0,number,#}, you have {1,number,#}"
+msgstr "\u00a7c余额不足！需要 {0,number,#}，你只有 {1,number,#}"
+
+msgid "\u00a7aPurchased! Cost {0,number,#}, balance {1,number,#}"
+msgstr "\u00a7a购买成功！花费 {0,number,#}，余额 {1,number,#}"
+
+msgid "\u00a7eRemaining purchases: {0}/{1}"
+msgstr "\u00a7e剩余购买次数：{0}/{1}"
+
+msgid "\u00a7eInventory full, items dropped on ground."
+msgstr "\u00a7e背包已满，部分物品掉在地上。"
+
+msgid "\u00a7cShop is empty"
+msgstr "\u00a7c商店暂无物品"
+
+# 购买成功广播
+msgid "\u00a7eItem reward(s):"
+msgstr "\u00a7e物品奖励："
