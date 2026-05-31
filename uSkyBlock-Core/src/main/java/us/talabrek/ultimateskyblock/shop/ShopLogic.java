@@ -9,6 +9,7 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
 import us.talabrek.ultimateskyblock.uSkyBlock;
+import us.talabrek.ultimateskyblock.player.PlayerInfo;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -96,11 +97,28 @@ public class ShopLogic {
     public PlayerShopData getPlayerData(UUID uuid) {
         PlayerShopData data = playerData.get(uuid);
         if (data == null) {
-            data = new PlayerShopData();
+            // 尝试从玩家数据文件加载
+            PlayerInfo pi = plugin.getPlayerInfo(uuid);
+            if (pi != null) {
+                data = PlayerShopData.load(pi.getConfig().getConfigurationSection("shop"));
+            } else {
+                data = new PlayerShopData();
+            }
             playerData.put(uuid, data);
         }
         data.resetIfNeeded(resetMinutes);
         return data;
+    }
+
+    public void savePlayerData(UUID uuid) {
+        PlayerShopData data = playerData.get(uuid);
+        if (data != null) {
+            PlayerInfo pi = plugin.getPlayerInfo(uuid);
+            if (pi != null) {
+                data.save(pi.getConfig().createSection("shop"));
+                pi.save();
+            }
+        }
     }
 
     public double getCurrentPrice(ShopItem item, UUID playerUuid) {

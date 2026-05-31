@@ -1,0 +1,2341 @@
+# ======================================================================================================================
+allowChallenges: true
+challengeSharing: island
+broadcastCompletion: true
+broadcastText: '&6'
+requirePreviousRank: true
+rankLeeway: 8
+defaultResetInHours: 20
+radius: 10
+repeatLimit: 0
+challengeColor: '&e'
+finishedColor: '&2'
+repeatableColor: '&a'
+enableEconomyPlugin: true
+resetChallengesOnCreate: true
+lockedDisplayItem: red_stained_glass_pane
+ISLAND:
+  lockedDisplayItem: blue_stained_glass_pane
+ISLAND_LEVEL:
+  lockedDisplayItem: black_stained_glass_pane
+showLockedChallengeName: true
+
+ranks:
+  # ===============================================
+  # 第一层：拓荒时代 - 初始资源利用 (1.21.4)
+  # ===============================================
+  Tier1:
+    name: '&a拓荒时代'
+    displayItem: minecraft:grass_block
+    resetInHours: 20
+    challenges:
+      starter_kit:
+        name: '&a新手礼包'
+        description: 领取一套基础石制工具，欢迎来到空岛生存！
+        type: onPlayer
+        displayItem: minecraft:stone_pickaxe
+        lockedDisplayItem: green_stained_glass_pane
+        resetInHours: 0
+        repeatable: false
+        takeItems: false
+        reward:
+          text: 一套基础石制工具
+          commands:
+          - 'console: give {party} minecraft:stone_pickaxe 1'
+          - 'console: give {party} minecraft:stone_axe 1'
+          - 'console: give {party} minecraft:stone_shovel 1'
+          - 'console: give {party} minecraft:stone_hoe 1'
+          - 'console: give {party} minecraft:stone_sword 1'
+          currency: 50
+          xp: 50
+
+      lumberjack:
+        name: '&a要致富，先撸树'
+        description: 采集16个橡木原木并种植树苗
+        type: onPlayer
+        requiredItems:
+        - minecraft:oak_log:16;+4
+        displayItem: minecraft:oak_log
+        lockedDisplayItem: green_stained_glass_pane
+        resetInHours: 8
+        reward:
+          text: 6种树苗和4个苹果
+          commands:
+          - 'console: give {party} minecraft:birch_sapling 1'
+          - 'console: give {party} minecraft:spruce_sapling 1'
+          - 'console: give {party} minecraft:jungle_sapling 4'
+          - 'console: give {party} minecraft:acacia_sapling 1'
+          - 'console: give {party} minecraft:dark_oak_sapling 4'
+          - 'console: give {party} minecraft:apple 4'
+          currency: 15
+          xp: 15
+        repeatReward:
+          text: 6种树苗和4个苹果
+          commands:
+          - 'console: give {party} minecraft:birch_sapling 1'
+          - 'console: give {party} minecraft:spruce_sapling 1'
+          - 'console: give {party} minecraft:jungle_sapling 4'
+          - 'console: give {party} minecraft:acacia_sapling 1'
+          - 'console: give {party} minecraft:dark_oak_sapling 4'
+          - 'console: give {party} minecraft:apple 2'
+          currency: 5
+          xp: 5
+
+      cobble_gen:
+        name: '&7刷石机'
+        description: 利用冰和岩浆制作刷石机，采集64个圆石
+        type: onPlayer
+        requiredItems:
+        - minecraft:cobblestone:64;+8
+        displayItem: minecraft:cobblestone
+        lockedDisplayItem: gray_stained_glass_pane
+        resetInHours: 12
+        reward:
+          text: 8个泥土，4个砂砾
+          commands:
+          - 'console: give {party} minecraft:dirt 8'
+          - 'console: give {party} minecraft:gravel 4'
+          currency: 10
+          xp: 10
+        repeatReward:
+          text: 4个泥土
+          commands:
+          - 'console: give {party} minecraft:dirt 4'
+          currency: 5
+          xp: 5
+
+      sugar_cane_plant:
+        name: '&a甘蔗种植'
+        description: 在岛屿上种植甘蔗（至少4个）
+        type: onIsland
+        radius: 10
+        requiredBlocks:
+        - minecraft:sugar_cane:4
+        displayItem: minecraft:sugar_cane
+        lockedDisplayItem: green_stained_glass_pane
+        resetInHours: 6
+        reward:
+          text: 4个沙子，4个泥土，1个海带
+          commands:
+          - 'console: give {party} minecraft:sand 4'
+          - 'console: give {party} minecraft:dirt 4'
+          - 'console: give {party} minecraft:kelp 1'
+          currency: 15
+          xp: 15
+
+      cactus_plant:
+        name: '&a仙人掌种植'
+        description: 在岛屿上种植仙人掌（至少4个）
+        type: onIsland
+        radius: 10
+        requiredBlocks:
+        - minecraft:cactus:4
+        displayItem: minecraft:cactus
+        lockedDisplayItem: green_stained_glass_pane
+        resetInHours: 6
+        reward:
+          text: 4个沙子，4个泥土
+          commands:
+          - 'console: give {party} minecraft:sand 4'
+          - 'console: give {party} minecraft:dirt 4'
+          currency: 15
+          xp: 15
+
+      melon_farm:
+        name: '&a西瓜种植'
+        description: 种植西瓜并收获64个西瓜片
+        type: onPlayer
+        requiredItems:
+        - minecraft:melon_slice:64;+8
+        displayItem: minecraft:melon_slice
+        lockedDisplayItem: lime_stained_glass_pane
+        resetInHours: 8
+        reward:
+          text: 4个泥土，1个西瓜种子，1个鸡刷怪蛋
+          commands:
+          - 'console: give {party} minecraft:dirt 4'
+          - 'console: give {party} minecraft:melon_seeds 1'
+          - 'console: give {party} minecraft:chicken_spawn_egg 1'
+          currency: 15
+          xp: 15
+        repeatReward:
+          text: 2个泥土，1个鸡刷怪蛋
+          commands:
+          - 'console: give {party} minecraft:dirt 2'
+          - 'console: give {party} minecraft:chicken_spawn_egg 1'
+          currency: 5
+          xp: 5
+
+      pumpkin_farm:
+        name: '&a南瓜种植'
+        description: 种植南瓜并收获32个南瓜
+        type: onPlayer
+        requiredItems:
+        - minecraft:pumpkin:32;+4
+        displayItem: minecraft:pumpkin
+        lockedDisplayItem: orange_stained_glass_pane
+        resetInHours: 8
+        reward:
+          text: 4个泥土，1个南瓜种子
+          commands:
+          - 'console: give {party} minecraft:dirt 4'
+          - 'console: give {party} minecraft:pumpkin_seeds 1'
+          currency: 15
+          xp: 15
+        repeatReward:
+          text: 2个泥土
+          commands:
+          - 'console: give {party} minecraft:dirt 2'
+          currency: 5
+          xp: 5
+
+      island_level_10:
+        name: '&b崭新的开始'
+        description: 达到岛屿等级10
+        type: islandLevel
+        requiredLevel: 10
+        displayItem: minecraft:stone_pickaxe
+        lockedDisplayItem: light_blue_stained_glass_pane
+        resetInHours: 0
+        repeatable: false
+        reward:
+          text: 2个钻石，8个附魔之瓶，1本精准采集，1本效率III
+          commands:
+          - 'console: give {party} minecraft:diamond 2'
+          - 'console: give {party} minecraft:experience_bottle 8'
+          - 'console: give {party} minecraft:enchanted_book 1 [enchantments={levels:{silk_touch:1}}]'
+          - 'console: give {party} minecraft:enchanted_book 1 [enchantments={levels:{efficiency:3}}]'
+          currency: 500
+          xp: 500
+
+      sugar_cane_harvest:
+        name: '&a甘蔗收获'
+        description: 收获64个甘蔗
+        type: onPlayer
+        requiredChallenges:
+        - sugar_cane_plant
+        requiredItems:
+        - minecraft:sugar_cane:64;+8
+        displayItem: minecraft:sugar_cane
+        lockedDisplayItem: green_stained_glass_pane
+        resetInHours: 8
+        reward:
+          text: 4个泥土，1本书，1个竹子
+          commands:
+          - 'console: give {party} minecraft:dirt 4'
+          - 'console: give {party} minecraft:book 1'
+          - 'console: give {party} minecraft:bamboo 1'
+          currency: 15
+          xp: 15
+        repeatReward:
+          text: 4个泥土，1个纸
+          commands:
+          - 'console: give {party} minecraft:dirt 4'
+          - 'console: give {party} minecraft:paper 1'
+          currency: 5
+          xp: 5
+
+      cactus_harvest:
+        name: '&a仙人掌收获'
+        description: 收获32个仙人掌
+        type: onPlayer
+        requiredChallenges:
+        - cactus_plant
+        requiredItems:
+        - minecraft:cactus:32;+4
+        displayItem: minecraft:cactus
+        lockedDisplayItem: green_stained_glass_pane
+        resetInHours: 8
+        reward:
+          text: 8个沙子，4个绿色染料
+          commands:
+          - 'console: give {party} minecraft:sand 8'
+          - 'console: give {party} minecraft:green_dye 4'
+          currency: 15
+          xp: 15
+        repeatReward:
+          text: 4个沙子，2个绿色染料
+          commands:
+          - 'console: give {party} minecraft:sand 4'
+          - 'console: give {party} minecraft:green_dye 2'
+          currency: 5
+          xp: 5
+
+      mushroom_farm:
+        name: '&a蘑菇农场'
+        description: 在阴暗处种植并收获蘑菇各32个
+        type: onPlayer
+        requiredItems:
+        - minecraft:red_mushroom:32;+4
+        - minecraft:brown_mushroom:32;+4
+        displayItem: minecraft:red_mushroom
+        lockedDisplayItem: brown_stained_glass_pane
+        resetInHours: 10
+        reward:
+          text: 4个菌丝，4个灰化土，1个牛刷怪蛋
+          commands:
+          - 'console: give {party} minecraft:mycelium 4'
+          - 'console: give {party} minecraft:podzol 4'
+          - 'console: give {party} minecraft:cow_spawn_egg 1'
+          currency: 20
+          xp: 20
+        repeatReward:
+          text: 2个菌丝，1个牛刷怪蛋
+          commands:
+          - 'console: give {party} minecraft:mycelium 2'
+          - 'console: give {party} minecraft:cow_spawn_egg 1'
+          currency: 10
+          xp: 10
+
+      mushroom_biome:
+        name: '&5蘑菇岛居民'
+        description: 收集菌丝、灰化土和蘑菇以解锁蘑菇岛生物群系
+        type: onPlayer
+        requiredChallenges:
+        - mushroom_farm
+        requiredItems:
+        - minecraft:mycelium:16
+        - minecraft:podzol:8
+        - minecraft:red_mushroom:16
+        - minecraft:brown_mushroom:16
+        displayItem: minecraft:mycelium
+        lockedDisplayItem: brown_stained_glass_pane
+        resetInHours: 0
+        repeatable: false
+        reward:
+          text: 1个哞菇刷怪蛋，解锁蘑菇岛生物群系
+          commands:
+          - 'console: give {party} minecraft:mooshroom_spawn_egg 1'
+          - 'console: give {party} minecraft:mushroom_stew 8'
+          permission: usb.biome.mushroom_fields
+          currency: 40
+          xp: 40
+
+      island_level_20:
+        name: '&b稳步发展'
+        description: 达到岛屿等级20
+        type: islandLevel
+        requiredLevel: 20
+        displayItem: minecraft:iron_ingot
+        lockedDisplayItem: light_blue_stained_glass_pane
+        resetInHours: 0
+        repeatable: false
+        reward:
+          text: 4个钻石，12个附魔之瓶，1本耐久III
+          commands:
+          - 'console: give {party} minecraft:diamond 4'
+          - 'console: give {party} minecraft:experience_bottle 12'
+          - 'console: give {party} minecraft:enchanted_book 1 [enchantments={levels:{unbreaking:3}}]'
+          currency: 600
+          xp: 600
+
+      tier1_complete:
+        name: '&6拓荒时代完成'
+        description: 完成拓荒时代所有挑战
+        type: onPlayer
+        requiredChallenges:
+        - starter_kit
+        - lumberjack
+        - cobble_gen
+        - sugar_cane_plant
+        - cactus_plant
+        - melon_farm
+        - pumpkin_farm
+        - sugar_cane_harvest
+        - cactus_harvest
+        - mushroom_farm
+        - island_level_10
+        - island_level_20
+        displayItem: minecraft:diamond
+        lockedDisplayItem: red_stained_glass_pane
+        resetInHours: 0
+        repeatable: false
+        showInList: false
+        reward:
+          text: 完成拓荒时代全部挑战
+          commands:
+          - 'console: give {party} minecraft:diamond 4'
+          - 'console: give {party} minecraft:experience_bottle 16'
+          currency: 1000
+          xp: 1000
+
+  # ===============================================
+  # 第二层：石器铁器 - 石器工具到铁器装备 (1.21.4)
+  # ===============================================
+  Tier2:
+    name: '&7石器铁器'
+    displayItem: minecraft:iron_pickaxe
+    resetInHours: 20
+    requires:
+      rankLeeway: 2
+      challenges:
+      - tier1_complete
+    challenges:
+      stone_tools:
+        name: '&7石器时代'
+        description: 制作一套完整的石质工具
+        type: onPlayer
+        requiredChallenges:
+        - cobble_gen
+        - lumberjack
+        requiredItems:
+        - minecraft:stone_pickaxe:1
+        - minecraft:stone_axe:1
+        - minecraft:stone_shovel:1
+        - minecraft:stone_hoe:1
+        - minecraft:stone_sword:1
+        displayItem: minecraft:stone_pickaxe
+        lockedDisplayItem: gray_stained_glass_pane
+        resetInHours: 0
+        repeatable: false
+        takeItems: true
+        reward:
+          text: 8个圆石，4个煤炭，为你的工具附魔
+          commands:
+          - 'console: give {party} minecraft:cobblestone 8'
+          - 'console: give {party} minecraft:coal 4'
+          - 'console: give {party} minecraft:stone_pickaxe 1 [enchantments={levels:{efficiency:1,unbreaking:1}}]'
+          - 'console: give {party} minecraft:stone_axe 1 [enchantments={levels:{efficiency:1,unbreaking:1}}]'
+          - 'console: give {party} minecraft:stone_shovel 1 [enchantments={levels:{efficiency:1,unbreaking:1}}]'
+          - 'console: give {party} minecraft:stone_hoe 1 [enchantments={levels:{fortune:1,unbreaking:1}}]'
+          - 'console: give {party} minecraft:stone_sword 1 [enchantments={levels:{sharpness:1,unbreaking:1}}]'
+          currency: 20
+          xp: 20
+
+      furnace_basics:
+        name: '&7冶炼入门'
+        description: 制作熔炉，烧制木炭和石头
+        type: onPlayer
+        requiredChallenges:
+        - stone_tools
+        requiredItems:
+        - minecraft:furnace:1
+        - minecraft:charcoal:8
+        - minecraft:stone:16
+        displayItem: minecraft:furnace
+        lockedDisplayItem: gray_stained_glass_pane
+        resetInHours: 24
+        reward:
+          text: 4个粗铁，4个煤炭，1个猪刷怪蛋
+          commands:
+          - 'console: give {party} minecraft:raw_iron 4'
+          - 'console: give {party} minecraft:coal 4'
+          - 'console: give {party} minecraft:pig_spawn_egg 1'
+          currency: 20
+          xp: 20
+
+      workstation:
+        name: '&7工作站'
+        description: 建造带有工作台、熔炉和箱子的工作区
+        type: onIsland
+        radius: 15
+        requiredChallenges:
+        - lumberjack
+        requiredBlocks:
+        - minecraft:crafting_table:1
+        - minecraft:torch:1
+        - minecraft:furnace:3
+        - minecraft:chest:2
+        displayItem: minecraft:crafting_table
+        lockedDisplayItem: brown_stained_glass_pane
+        resetInHours: 24
+        reward:
+          text: 4个粗铁，2个粗金，1个钻石
+          commands:
+          - 'console: give {party} minecraft:raw_iron 4'
+          - 'console: give {party} minecraft:raw_gold 2'
+          - 'console: give {party} minecraft:diamond 1'
+          currency: 15
+          xp: 15
+
+      torch_master:
+        name: '&e火把神'
+        description: 制作64个火把照亮岛屿
+        type: onPlayer
+        requiredChallenges:
+        - furnace_basics
+        requiredItems:
+        - minecraft:torch:64;+8
+        displayItem: minecraft:torch
+        lockedDisplayItem: yellow_stained_glass_pane
+        resetInHours: 10
+        reward:
+          text: 8个煤炭，4个粗铁
+          commands:
+          - 'console: give {party} minecraft:coal 8'
+          - 'console: give {party} minecraft:raw_iron 4'
+          currency: 15
+          xp: 15
+        repeatReward:
+          text: 4个煤炭
+          commands:
+          - 'console: give {party} minecraft:coal 4'
+          currency: 5
+          xp: 5
+
+      composter:
+        name: '&a堆肥'
+        description: 制作堆肥桶并获取16个骨粉
+        type: onPlayer
+        requiredChallenges:
+        - workstation
+        requiredItems:
+        - minecraft:composter:1
+        - minecraft:bone_meal:16
+        displayItem: minecraft:composter
+        lockedDisplayItem: brown_stained_glass_pane
+        resetInHours: 24
+        reward:
+          text: 8个骨粉，4个泥土
+          commands:
+          - 'console: give {party} minecraft:bone_meal 8'
+          - 'console: give {party} minecraft:dirt 4'
+          currency: 15
+          xp: 15
+
+      wheat_farm:
+        name: '&a小麦种植'
+        description: 收获64个小麦
+        type: onPlayer
+        requiredChallenges:
+        - composter
+        requiredItems:
+        - minecraft:wheat:64;+8
+        displayItem: minecraft:wheat
+        lockedDisplayItem: yellow_stained_glass_pane
+        resetInHours: 8
+        reward:
+          text: 4个泥土，4个面包，2个小麦种子
+          commands:
+          - 'console: give {party} minecraft:dirt 4'
+          - 'console: give {party} minecraft:bread 4'
+          - 'console: give {party} minecraft:wheat_seeds 2'
+          currency: 15
+          xp: 15
+        repeatReward:
+          text: 2个泥土，1个小麦种子
+          commands:
+          - 'console: give {party} minecraft:dirt 2'
+          - 'console: give {party} minecraft:wheat_seeds 1'
+          currency: 5
+          xp: 5
+
+      iron_smelting:
+        name: '&7铁锭冶炼'
+        description: 烧制16个铁锭
+        type: onPlayer
+        requiredChallenges:
+        - furnace_basics
+        requiredItems:
+        - minecraft:iron_ingot:16;+4
+        displayItem: minecraft:iron_ingot
+        lockedDisplayItem: light_gray_stained_glass_pane
+        resetInHours: 12
+        reward:
+          text: 8个粗铁，8个煤炭
+          commands:
+          - 'console: give {party} minecraft:raw_iron 8'
+          - 'console: give {party} minecraft:coal 8'
+          currency: 20
+          xp: 20
+        repeatReward:
+          text: 2个铁锭
+          commands:
+          - 'console: give {party} minecraft:iron_ingot 2'
+          currency: 10
+          xp: 10
+
+      bucket_craft:
+        name: '&9铁桶'
+        description: 制作一个铁桶
+        type: onPlayer
+        requiredChallenges:
+        - iron_smelting
+        requiredItems:
+        - minecraft:bucket:1
+        displayItem: minecraft:bucket
+        lockedDisplayItem: light_blue_stained_glass_pane
+        resetInHours: 24
+        reward:
+          text: 2个铁锭，1个水桶，1个岩浆桶
+          commands:
+          - 'console: give {party} minecraft:iron_ingot 2'
+          - 'console: give {party} minecraft:water_bucket 1'
+          - 'console: give {party} minecraft:lava_bucket 1'
+          currency: 15
+          xp: 15
+
+      iron_tools:
+        name: '&7铁器时代'
+        description: 制作一套完整的铁质工具
+        type: onPlayer
+        requiredChallenges:
+        - iron_smelting
+        requiredItems:
+        - minecraft:iron_pickaxe:1
+        - minecraft:iron_axe:1
+        - minecraft:iron_shovel:1
+        - minecraft:iron_hoe:1
+        - minecraft:iron_sword:1
+        displayItem: minecraft:iron_pickaxe
+        lockedDisplayItem: light_gray_stained_glass_pane
+        resetInHours: 0
+        repeatable: false
+        takeItems: true
+        reward:
+          text: 8个铁锭，4个煤炭块，为你的工具附魔
+          commands:
+          - 'console: give {party} minecraft:iron_ingot 8'
+          - 'console: give {party} minecraft:coal_block 4'
+          - 'console: give {party} minecraft:iron_pickaxe 1 [enchantments={levels:{efficiency:2,unbreaking:2}}]'
+          - 'console: give {party} minecraft:iron_axe 1 [enchantments={levels:{efficiency:2,unbreaking:2}}]'
+          - 'console: give {party} minecraft:iron_shovel 1 [enchantments={levels:{efficiency:2,unbreaking:2}}]'
+          - 'console: give {party} minecraft:iron_hoe 1 [enchantments={levels:{fortune:2,unbreaking:2}}]'
+          - 'console: give {party} minecraft:iron_sword 1 [enchantments={levels:{sharpness:2,unbreaking:2}}]'
+          currency: 25
+          xp: 25
+
+      full_armor:
+        name: '&7全副武装'
+        description: 制作一套完整的铁质盔甲和盾牌
+        type: onPlayer
+        requiredChallenges:
+        - iron_tools
+        requiredItems:
+        - minecraft:iron_helmet:1
+        - minecraft:iron_chestplate:1
+        - minecraft:iron_leggings:1
+        - minecraft:iron_boots:1
+        - minecraft:shield:1
+        displayItem: minecraft:iron_chestplate
+        lockedDisplayItem: light_gray_stained_glass_pane
+        resetInHours: 0
+        repeatable: false
+        takeItems: true
+        reward:
+          text: 8个铁锭，为你的装备附魔
+          commands:
+          - 'console: give {party} minecraft:iron_ingot 8'
+          - 'console: give {party} minecraft:iron_helmet 1 [enchantments={levels:{protection:2,unbreaking:2}}]'
+          - 'console: give {party} minecraft:iron_chestplate 1 [enchantments={levels:{protection:2,unbreaking:2}}]'
+          - 'console: give {party} minecraft:iron_leggings 1 [enchantments={levels:{protection:2,unbreaking:2}}]'
+          - 'console: give {party} minecraft:iron_boots 1 [enchantments={levels:{protection:2,unbreaking:2}}]'
+          - 'console: give {party} minecraft:shield 1 [enchantments={levels:{unbreaking:2}}]'
+          currency: 30
+          xp: 30
+
+      island_level_30:
+        name: '&b循序渐进'
+        description: 达到岛屿等级30
+        type: islandLevel
+        requiredLevel: 30
+        displayItem: minecraft:iron_block
+        lockedDisplayItem: light_blue_stained_glass_pane
+        resetInHours: 0
+        repeatable: false
+        reward:
+          text: 6个钻石，16个附魔之瓶，1本保护III
+          commands:
+          - 'console: give {party} minecraft:diamond 6'
+          - 'console: give {party} minecraft:experience_bottle 16'
+          - 'console: give {party} minecraft:enchanted_book 1 [enchantments={levels:{protection:3}}]'
+          currency: 700
+          xp: 700
+
+      tier2_complete:
+        name: '&6石器铁器完成'
+        description: 完成石器铁器所有挑战
+        type: onPlayer
+        requiredChallenges:
+        - stone_tools
+        - furnace_basics
+        - workstation
+        - torch_master
+        - composter
+        - wheat_farm
+        - iron_smelting
+        - bucket_craft
+        - iron_tools
+        - full_armor
+        - island_level_30
+        displayItem: minecraft:iron_block
+        lockedDisplayItem: red_stained_glass_pane
+        resetInHours: 0
+        repeatable: false
+        showInList: false
+        reward:
+          text: 完成石器铁器全部挑战
+          commands:
+          - 'console: give {party} minecraft:diamond 6'
+          - 'console: give {party} minecraft:experience_bottle 24'
+          currency: 1200
+          xp: 1200
+
+  # ===============================================
+  # 第三层：农业与怪物 - 刷怪到农业扩展 (1.21.4)
+  # ===============================================
+  Tier3:
+    name: '&5农业与怪物'
+    displayItem: minecraft:rotten_flesh
+    resetInHours: 20
+    requires:
+      rankLeeway: 3
+      challenges:
+      - tier2_complete
+    challenges:
+      monster_hunter:
+        name: '&5怪物猎人'
+        description: 收集多种怪物掉落物
+        type: onPlayer
+        requiredChallenges:
+        - torch_master
+        requiredItems:
+        - minecraft:rotten_flesh:32;+4
+        - minecraft:bone:32;+4
+        - minecraft:string:32;+4
+        - minecraft:gunpowder:8;+2
+        - minecraft:spider_eye:4;+1
+        displayItem: minecraft:rotten_flesh
+        lockedDisplayItem: purple_stained_glass_pane
+        resetInHours: 10
+        reward:
+          text: 8个铁矿石，4个土豆，8个红石矿石，4个燧石
+          commands:
+          - 'console: give {party} minecraft:iron_ore 8'
+          - 'console: give {party} minecraft:potato 4'
+          - 'console: give {party} minecraft:redstone_ore 8'
+          - 'console: give {party} minecraft:flint 4'
+          currency: 30
+          xp: 30
+        repeatReward:
+          text: 8个粗铁，8个红石粉，4个泥土
+          commands:
+          - 'console: give {party} minecraft:raw_iron 2'
+          - 'console: give {party} minecraft:redstone 8'
+          - 'console: give {party} minecraft:dirt 4'
+          currency: 10
+          xp: 10
+
+      zombie_hunter:
+        name: '&5僵尸猎人'
+        description: 收集64个腐肉
+        type: onPlayer
+        requiredChallenges:
+        - monster_hunter
+        requiredItems:
+        - minecraft:rotten_flesh:64;+4
+        displayItem: minecraft:rotten_flesh
+        lockedDisplayItem: purple_stained_glass_pane
+        resetInHours: 10
+        reward:
+          text: 4个铁矿石，4个金矿石，2个胡萝卜
+          commands:
+          - 'console: give {party} minecraft:iron_ore 4'
+          - 'console: give {party} minecraft:gold_ore 4'
+          - 'console: give {party} minecraft:carrot 2'
+          currency: 15
+          xp: 15
+        repeatReward:
+          text: 2个铁矿石，2个金矿石，1个胡萝卜
+          commands:
+          - 'console: give {party} minecraft:iron_ore 2'
+          - 'console: give {party} minecraft:gold_ore 2'
+          - 'console: give {party} minecraft:carrot 1'
+          currency: 5
+          xp: 5
+
+      skeleton_archer:
+        name: '&5骷髅射手'
+        description: 收集64根骨头
+        type: onPlayer
+        requiredChallenges:
+        - monster_hunter
+        requiredItems:
+        - minecraft:bone:64;+4
+        displayItem: minecraft:bone
+        lockedDisplayItem: white_stained_glass_pane
+        resetInHours: 10
+        reward:
+          text: 16个骨块，4个泥土，4个铁矿石，4个青金石矿石
+          commands:
+          - 'console: give {party} minecraft:bone_block 16'
+          - 'console: give {party} minecraft:dirt 4'
+          - 'console: give {party} minecraft:iron_ore 4'
+          - 'console: give {party} minecraft:lapis_ore 4'
+          currency: 15
+          xp: 15
+        repeatReward:
+          text: 4个泥土，2个铁矿石，2个青金石矿石
+          commands:
+          - 'console: give {party} minecraft:dirt 4'
+          - 'console: give {party} minecraft:iron_ore 2'
+          - 'console: give {party} minecraft:lapis_ore 2'
+          currency: 5
+          xp: 5
+
+      web_collector:
+        name: '&5蛛网收集'
+        description: 收集64根线
+        type: onPlayer
+        requiredChallenges:
+        - monster_hunter
+        requiredItems:
+        - minecraft:string:64;+4
+        displayItem: minecraft:string
+        lockedDisplayItem: white_stained_glass_pane
+        resetInHours: 10
+        reward:
+          text: 1个附魔钓竿，4个铁矿石，4个金矿石，1个羊刷怪蛋
+          commands:
+          - 'console: give {party} minecraft:fishing_rod 1 [enchantments={levels:{luck_of_the_sea:1},{unbreaking:1}}]'
+          - 'console: give {party} minecraft:iron_ore 4'
+          - 'console: give {party} minecraft:gold_ore 4'
+          - 'console: give {party} minecraft:sheep_spawn_egg 1'
+          currency: 15
+          xp: 15
+        repeatReward:
+          text: 2个铁矿石，2个金矿石，1个羊刷怪蛋
+          commands:
+          - 'console: give {party} minecraft:iron_ore 2'
+          - 'console: give {party} minecraft:gold_ore 2'
+          - 'console: give {party} minecraft:sheep_spawn_egg 1'
+          currency: 5
+          xp: 5
+
+      demolitionist:
+        name: '&5爆破专家'
+        description: 收集32个火药
+        type: onPlayer
+        requiredChallenges:
+        - monster_hunter
+        requiredItems:
+        - minecraft:gunpowder:32;+4
+        displayItem: minecraft:gunpowder
+        lockedDisplayItem: gray_stained_glass_pane
+        resetInHours: 10
+        reward:
+          text: 8个沙子，8个红石粉，4个TNT，4个泥土，4个铁矿石，4个青金石矿石
+          commands:
+          - 'console: give {party} minecraft:sand 8'
+          - 'console: give {party} minecraft:redstone 8'
+          - 'console: give {party} minecraft:tnt 4'
+          - 'console: give {party} minecraft:dirt 4'
+          - 'console: give {party} minecraft:iron_ore 4'
+          - 'console: give {party} minecraft:lapis_ore 4'
+          currency: 20
+          xp: 20
+        repeatReward:
+          text: 4个沙子，4个红石粉，2个泥土，2个铁矿石，2个青金石矿石
+          commands:
+          - 'console: give {party} minecraft:sand 4'
+          - 'console: give {party} minecraft:redstone 4'
+          - 'console: give {party} minecraft:dirt 2'
+          - 'console: give {party} minecraft:iron_ore 2'
+          - 'console: give {party} minecraft:lapis_ore 2'
+          currency: 10
+          xp: 10
+
+      archer:
+        name: '&5弓箭手'
+        description: 制作一把弓并收集128支箭
+        type: onPlayer
+        requiredChallenges:
+        - monster_hunter
+        - web_collector
+        requiredItems:
+        - minecraft:bow:1;+1
+        - minecraft:arrow:128;+32
+        displayItem: minecraft:bow
+        lockedDisplayItem: white_stained_glass_pane
+        resetInHours: 10
+        reward:
+          text: 附魔你的弓，8个燧石，4个沙子
+          commands:
+          - 'console: give {party} minecraft:bow 1 [enchantments={levels:{punch:1},{unbreaking:1}}]'
+          - 'console: give {party} minecraft:flint 8'
+          - 'console: give {party} minecraft:sand 4'
+          currency: 20
+          xp: 20
+        repeatReward:
+          text: 4个沙子，4个沙砾
+          commands:
+          - 'console: give {party} minecraft:sand 4'
+          - 'console: give {party} minecraft:gravel 4'
+          currency: 10
+          xp: 10
+
+      sleep_tight:
+        name: '&c安眠'
+        description: 制作一张白色床
+        type: onPlayer
+        requiredChallenges:
+        - web_collector
+        requiredBlocks:
+        - minecraft:white_bed:1
+        displayItem: minecraft:white_bed
+        lockedDisplayItem: red_stained_glass_pane
+        resetInHours: 24
+        reward:
+          text: 4个白色羊毛，8个橡木木板，16个牛排
+          commands:
+          - 'console: give {party} minecraft:white_wool 4'
+          - 'console: give {party} minecraft:oak_planks 8'
+          - 'console: give {party} minecraft:cooked_beef 16'
+          currency: 15
+          xp: 15
+
+      leather_collector:
+        name: '&6皮革收集'
+        description: 收集16个皮革
+        type: onPlayer
+        requiredChallenges:
+        - monster_hunter
+        requiredItems:
+        - minecraft:leather:16;+4
+        displayItem: minecraft:leather
+        lockedDisplayItem: brown_stained_glass_pane
+        resetInHours: 10
+        reward:
+          text: 4个铁锭，4个金锭，2个钻石，1个牛刷怪蛋
+          commands:
+          - 'console: give {party} minecraft:iron_ingot 4'
+          - 'console: give {party} minecraft:gold_ingot 4'
+          - 'console: give {party} minecraft:diamond 2'
+          - 'console: give {party} minecraft:cow_spawn_egg 1'
+          currency: 20
+          xp: 20
+        repeatReward:
+          text: 2个铁锭，2个金锭，1个钻石，1个牛刷怪蛋
+          commands:
+          - 'console: give {party} minecraft:iron_ingot 2'
+          - 'console: give {party} minecraft:gold_ingot 2'
+          - 'console: give {party} minecraft:diamond 1'
+          - 'console: give {party} minecraft:cow_spawn_egg 1'
+          currency: 10
+          xp: 10
+
+      potato_farm:
+        name: '&6土豆种植'
+        description: 种植并收获64个土豆
+        type: onPlayer
+        requiredChallenges:
+        - zombie_hunter
+        requiredItems:
+        - minecraft:potato:64;+8
+        displayItem: minecraft:potato
+        lockedDisplayItem: yellow_stained_glass_pane
+        resetInHours: 8
+        reward:
+          text: 4个泥土，1个甜菜种子
+          commands:
+          - 'console: give {party} minecraft:dirt 4'
+          - 'console: give {party} minecraft:beetroot_seeds 1'
+          currency: 15
+          xp: 15
+        repeatReward:
+          text: 2个泥土，6个烤土豆
+          commands:
+          - 'console: give {party} minecraft:dirt 2'
+          - 'console: give {party} minecraft:baked_potato 6'
+          currency: 5
+          xp: 5
+
+      carrot_farm:
+        name: '&6胡萝卜种植'
+        description: 种植并收获64个胡萝卜
+        type: onPlayer
+        requiredChallenges:
+        - zombie_hunter
+        requiredItems:
+        - minecraft:carrot:64;+8
+        displayItem: minecraft:carrot
+        lockedDisplayItem: orange_stained_glass_pane
+        resetInHours: 8
+        reward:
+          text: 4个泥土，16个金胡萝卜
+          commands:
+          - 'console: give {party} minecraft:dirt 4'
+          - 'console: give {party} minecraft:golden_carrot 16'
+          currency: 15
+          xp: 15
+        repeatReward:
+          text: 2个泥土，8个金胡萝卜
+          commands:
+          - 'console: give {party} minecraft:dirt 2'
+          - 'console: give {party} minecraft:golden_carrot 8'
+          currency: 5
+          xp: 5
+
+      fisherman:
+        name: '&3垂钓'
+        description: 钓到各种鱼类
+        type: onPlayer
+        requiredChallenges:
+        - web_collector
+        requiredItems:
+        - minecraft:cod:10;+2
+        - minecraft:salmon:10;+2
+        - minecraft:pufferfish:5;+1
+        - minecraft:tropical_fish:2;+1
+        displayItem: minecraft:fishing_rod
+        lockedDisplayItem: cyan_stained_glass_pane
+        resetInHours: 8
+        reward:
+          text: 8个海晶石，4个海晶砂粒，1个海洋之心
+          commands:
+          - 'console: give {party} minecraft:prismarine 8'
+          - 'console: give {party} minecraft:prismarine_crystals 4'
+          - 'console: give {party} minecraft:heart_of_the_sea 1'
+          currency: 20
+          xp: 20
+        repeatReward:
+          text: 2个海晶石，2个海晶砂粒
+          commands:
+          - 'console: give {party} minecraft:prismarine 2'
+          - 'console: give {party} minecraft:prismarine_crystals 2'
+          currency: 10
+          xp: 10
+
+      deep_ocean_biome:
+        name: '&9深海探险家'
+        description: 收集海洋物资以解锁深海生物群系
+        type: onPlayer
+        requiredChallenges:
+        - fisherman
+        requiredItems:
+        - minecraft:prismarine:64
+        - minecraft:prismarine_crystals:32
+        - minecraft:kelp:32
+        - minecraft:pufferfish:16
+        displayItem: minecraft:heart_of_the_sea
+        lockedDisplayItem: blue_stained_glass_pane
+        resetInHours: 0
+        repeatable: false
+        reward:
+          text: 解锁深海生物群系，64个海晶石，16个海晶砂粒，16个海晶灯
+          commands:
+          - 'console: give {party} minecraft:prismarine 64'
+          - 'console: give {party} minecraft:sea_lantern 16'
+          - 'console: give {party} minecraft:prismarine_crystals 16'
+          permission: usb.biome.deep_ocean
+          currency: 50
+          xp: 50
+
+      lukewarm_ocean_biome:
+        name: '&3温水海洋'
+        description: 收集热带海洋物资以解锁温水海洋生物群系
+        type: onPlayer
+        requiredChallenges:
+        - deep_ocean_biome
+        requiredItems:
+        - minecraft:tropical_fish:16
+        - minecraft:prismarine:32
+        - minecraft:prismarine_crystals:16
+        - minecraft:kelp:64
+        displayItem: minecraft:tropical_fish
+        lockedDisplayItem: cyan_stained_glass_pane
+        resetInHours: 0
+        repeatable: false
+        reward:
+          text: >
+            解锁温水海洋生物群系，2个海龟刷怪蛋，
+            16个脑珊瑚块8个脑纹珊瑚，8个脑纹珊瑚扇，1个海泡菜
+          commands:
+          - 'console: give {party} minecraft:turtle_spawn_egg 2'
+          - 'console: give {party} minecraft:brain_coral_block 16'
+          - 'console: give {party} minecraft:brain_coral 8'
+          - 'console: give {party} minecraft:sea_pickle 1'
+          - 'console: give {party} minecraft:brain_coral_fan 8'
+          permission: usb.biome.lukewarm_ocean
+          currency: 40
+          xp: 40
+
+      feast:
+        name: '&6满汉全席'
+        description: 制作多种熟食各8个
+        type: onPlayer
+        requiredChallenges:
+        - wheat_farm
+        - carrot_farm
+        - mushroom_farm
+        - fisherman
+        requiredItems:
+        - minecraft:bread:8
+        - minecraft:cooked_porkchop:8
+        - minecraft:cooked_beef:8
+        - minecraft:cooked_chicken:8
+        - minecraft:cooked_cod:8
+        - minecraft:cooked_salmon:8
+        - minecraft:baked_potato:8
+        - minecraft:mushroom_stew:8
+        displayItem: minecraft:bread
+        lockedDisplayItem: yellow_stained_glass_pane
+        resetInHours: 24
+        reward:
+          text: 16个金胡萝卜，4个金苹果，1个蛋糕
+          commands:
+          - 'console: give {party} minecraft:golden_carrot 16'
+          - 'console: give {party} minecraft:golden_apple 4'
+          - 'console: give {party} minecraft:cake 1'
+          currency: 25
+          xp: 25
+        repeatReward:
+          text: 8个金胡萝卜，2个金苹果，1个蛋糕
+          commands:
+          - 'console: give {party} minecraft:golden_carrot 8'
+          - 'console: give {party} minecraft:golden_apple 2'
+          - 'console: give {party} minecraft:cake 1'
+          currency: 10
+          xp: 10
+
+      flower_biome:
+        name: '&d繁花花匠'
+        description: 收集各种花朵以解锁繁花森林生物群系
+        type: onPlayer
+        requiredChallenges:
+        - feast
+        requiredItems:
+        - minecraft:dandelion:8
+        - minecraft:poppy:8
+        - minecraft:blue_orchid:8
+        - minecraft:allium:8
+        - minecraft:azure_bluet:8
+        - minecraft:red_tulip:8
+        - minecraft:orange_tulip:8
+        - minecraft:white_tulip:8
+        - minecraft:pink_tulip:8
+        displayItem: minecraft:rose_bush
+        lockedDisplayItem: pink_stained_glass_pane
+        resetInHours: 0
+        repeatable: false
+        reward:
+          text: 解锁繁花森林生物群系，2个蜜蜂刷怪蛋，1个蜂巢，8个蜂蜜瓶
+          commands:
+          - 'console: give {party} minecraft:bee_spawn_egg 2'
+          - 'console: give {party} minecraft:bee_nest 1'
+          - 'console: give {party} minecraft:honey_bottle 8'
+          permission: usb.biome.flower_forest
+          currency: 40
+          xp: 40
+
+      savanna_biome:
+        name: '&6热带高原'
+        description: 收集金合欢相关物资以解锁热带高原生物群系
+        type: onPlayer
+        requiredChallenges:
+        - feast
+        - leather_collector
+        requiredItems:
+        - minecraft:acacia_log:64
+        - minecraft:acacia_sapling:8
+        - minecraft:leather:32
+        - minecraft:hay_block:32
+        displayItem: minecraft:acacia_log
+        lockedDisplayItem: orange_stained_glass_pane
+        resetInHours: 0
+        repeatable: false
+        reward:
+          text: 解锁热带高原生物群系，2个羊驼刷怪蛋，64个干草块
+          commands:
+          - 'console: give {party} minecraft:llama_spawn_egg 2'
+          - 'console: give {party} minecraft:hay_block 64'
+          permission: usb.biome.savanna_plateau
+          currency: 40
+          xp: 40
+
+      island_level_40:
+        name: '&b繁荣农业'
+        description: 达到岛屿等级40
+        type: islandLevel
+        requiredLevel: 40
+        displayItem: minecraft:golden_carrot
+        lockedDisplayItem: light_blue_stained_glass_pane
+        resetInHours: 0
+        repeatable: false
+        reward:
+          text: 8个钻石，20个附魔之瓶，1本锋利III
+          commands:
+          - 'console: give {party} minecraft:diamond 8'
+          - 'console: give {party} minecraft:experience_bottle 20'
+          - 'console: give {party} minecraft:enchanted_book 1 [enchantments={levels:{sharpness:3}}]'
+          currency: 800
+          xp: 800
+
+      tier3_complete:
+        name: '&6农业与怪物完成'
+        description: 完成农业与怪物所有挑战
+        type: onPlayer
+        requiredChallenges:
+        - monster_hunter
+        - zombie_hunter
+        - skeleton_archer
+        - web_collector
+        - demolitionist
+        - archer
+        - sleep_tight
+        - leather_collector
+        - potato_farm
+        - carrot_farm
+        - fisherman
+        - feast
+        - island_level_40
+        displayItem: minecraft:golden_apple
+        lockedDisplayItem: red_stained_glass_pane
+        resetInHours: 0
+        repeatable: false
+        showInList: false
+        reward:
+          text: 8个钻石，32个附魔之瓶
+          commands:
+          - 'console: give {party} minecraft:diamond 8'
+          - 'console: give {party} minecraft:experience_bottle 32'
+          currency: 1400
+          xp: 1400
+
+  # ===============================================
+  # 第四层：下界准备 - 建筑到下界之门 (1.21.4)
+  # ===============================================
+  Tier4:
+    name: '&4下界准备'
+    displayItem: minecraft:obsidian
+    resetInHours: 20
+    requires:
+      rankLeeway: 2
+      challenges:
+      - tier3_complete
+    challenges:
+      stonemason:
+        name: '&7石匠'
+        description: 制作石砖系列方块
+        type: onPlayer
+        requiredChallenges:
+        - furnace_basics
+        requiredItems:
+        - minecraft:stone_bricks:64;+8
+        - minecraft:stone_brick_slab:32;+4
+        - minecraft:stone_brick_stairs:16;+2
+        - minecraft:stone_brick_wall:16;+2
+        displayItem: minecraft:stone_bricks
+        lockedDisplayItem: gray_stained_glass_pane
+        resetInHours: 12
+        reward:
+          text: 各种主世界岩石若干
+          commands:
+          - 'console: give {party} minecraft:stone 64'
+          - 'console: give {party} minecraft:andesite 32'
+          - 'console: give {party} minecraft:diorite 32'
+          - 'console: give {party} minecraft:granite 32'
+          - 'console: give {party} minecraft:calcite 16'
+          - 'console: give {party} minecraft:tuff 32'
+          - 'console: give {party} minecraft:deepslate 32'
+          currency: 20
+          xp: 20
+        repeatReward:
+          text: 各种主世界岩石若干
+          commands:
+          - 'console: give {party} minecraft:stone 32'
+          - 'console: give {party} minecraft:andesite 16'
+          - 'console: give {party} minecraft:diorite 16'
+          - 'console: give {party} minecraft:granite 8'
+          - 'console: give {party} minecraft:tuff 16'
+          - 'console: give {party} minecraft:deepslate 16'
+          currency: 10
+          xp: 10
+
+      home_sweet_home:
+        name: '&9安家立业'
+        description: 建造一个完整的房屋
+        type: onIsland
+        radius: 20
+        requiredChallenges:
+        - workstation
+        - torch_master
+        - sleep_tight
+        requiredBlocks:
+        - minecraft:oak_planks:64
+        - minecraft:glass:16
+        - minecraft:oak_door:1
+        - minecraft:crafting_table:1
+        - minecraft:furnace:1
+        - minecraft:chest:2
+        - minecraft:white_bed:1
+        - minecraft:torch:8
+        displayItem: minecraft:oak_door
+        lockedDisplayItem: blue_stained_glass_pane
+        resetInHours: 48
+        reward:
+          text: 16个粗铁，8个红石粉，8个煤炭，1把附魔铁镐
+          commands:
+          - 'console: give {party} minecraft:raw_iron 16'
+          - 'console: give {party} minecraft:redstone 8'
+          - 'console: give {party} minecraft:coal 8'
+          - 'console: give {party} minecraft:iron_pickaxe 1 [enchantments={levels:{efficiency:2,unbreaking:2}}]'
+          currency: 30
+          xp: 30
+
+      snowy_plains_biome:
+        name: '&f积雪平原'
+        description: 收集雪地物资以解锁积雪平原生物群系
+        type: onPlayer
+        requiredChallenges:
+        - home_sweet_home
+        requiredItems:
+        - minecraft:snow_block:64
+        - minecraft:packed_ice:32
+        - minecraft:white_wool:32
+        - minecraft:spruce_log:64
+        displayItem: minecraft:snow_block
+        lockedDisplayItem: white_stained_glass_pane
+        resetInHours: 0
+        repeatable: false
+        reward:
+          text: 解锁积雪平原生物群系，2个北极熊刷怪蛋
+          commands:
+          - 'console: give {party} minecraft:polar_bear_spawn_egg 1'
+          permission: usb.biome.snowy_plains
+          currency: 50
+          xp: 50
+
+      snowy_slopes_biome:
+        name: '&b雪坡'
+        description: 收集冰和雪以解锁雪坡生物群系
+        type: onPlayer
+        requiredChallenges:
+        - snowy_plains_biome
+        requiredItems:
+        - minecraft:packed_ice:64
+        - minecraft:blue_ice:32
+        - minecraft:powder_snow_bucket:8
+        - minecraft:white_wool:64
+        displayItem: minecraft:blue_ice
+        lockedDisplayItem: light_blue_stained_glass_pane
+        resetInHours: 0
+        repeatable: false
+        reward:
+          text: 解锁雪坡生物群系，2个山羊刷怪蛋
+          commands:
+          - 'console: give {party} minecraft:goat_spawn_egg 2'
+          permission: usb.biome.snowy_slopes
+          currency: 50
+          xp: 50
+
+      obsidian_farmer:
+        name: '&5黑曜石'
+        description: 制作10个黑曜石
+        type: onPlayer
+        requiredChallenges:
+        - bucket_craft
+        - iron_tools
+        requiredItems:
+        - minecraft:obsidian:10;+2
+        displayItem: minecraft:obsidian
+        lockedDisplayItem: purple_stained_glass_pane
+        resetInHours: 12
+        reward:
+          text: 10个黑曜石，2个钻石
+          commands:
+          - 'console: give {party} minecraft:obsidian 10'
+          - 'console: give {party} minecraft:diamond 2'
+          currency: 25
+          xp: 25
+        repeatReward:
+          text: 4个钻石
+          commands:
+          - 'console: give {party} minecraft:diamond 4'
+          currency: 10
+          xp: 10
+
+      nether_portal:
+        name: '&4下界之门'
+        description: 在你的岛屿上建造一个下界传送门
+        type: onIsland
+        radius: 10
+        requiredChallenges:
+        - obsidian_farmer
+        - iron_smelting
+        requiredBlocks:
+        - minecraft:obsidian:10
+        displayItem: minecraft:flint_and_steel
+        lockedDisplayItem: magenta_stained_glass_pane
+        resetInHours: 24
+        reward:
+          text: |-
+            1个金苹果，2个钻石，4个金锭，
+            8个铁锭，16个熟猪排，1把附魔铁剑与铁镐"
+          commands:
+          - 'console: give {party} minecraft:golden_apple 1'
+          - 'console: give {party} minecraft:diamond 2'
+          - 'console: give {party} minecraft:gold_ingot 4'
+          - 'console: give {party} minecraft:iron_ingot 8'
+          - 'console: give {party} minecraft:cooked_porkchop 16'
+          - 'console: give {party} minecraft:iron_sword 1 [enchantments={levels:{sharpness:2,unbreaking:2}}]'
+          - 'console: give {party} minecraft:iron_pickaxe 1 [enchantments={levels:{efficiency:3,unbreaking:3}}]'
+          currency: 100
+          xp: 100
+
+      island_level_60:
+        name: '&b向下探索'
+        description: 达到岛屿等级60
+        type: islandLevel
+        requiredLevel: 60
+        displayItem: minecraft:obsidian
+        lockedDisplayItem: light_blue_stained_glass_pane
+        resetInHours: 0
+        repeatable: false
+        reward:
+          text: 16个钻石，32个附魔之瓶，1本精准采集，1本效率V
+          commands:
+          - 'console: give {party} minecraft:diamond 16'
+          - 'console: give {party} minecraft:experience_bottle 32'
+          - 'console: give {party} minecraft:enchanted_book 1 [enchantments={levels:{silk_touch:1}}]'
+          - 'console: give {party} minecraft:enchanted_book 1 [enchantments={levels:{efficiency:5}}]'
+          currency: 1200
+          xp: 1200
+
+      page1finished:
+        name: '&6下界准备完成'
+        description: 完成下界准备所有挑战
+        type: onPlayer
+        requiredChallenges:
+        - stonemason
+        - home_sweet_home
+        - obsidian_farmer
+        - nether_portal
+        - island_level_60
+        displayItem: minecraft:diamond
+        lockedDisplayItem: red_stained_glass_pane
+        resetInHours: 0
+        repeatable: false
+        showInList: false
+        reward:
+          text: 10个钻石，40个附魔之瓶
+          commands:
+          - 'console: give {party} minecraft:diamond 10'
+          - 'console: give {party} minecraft:experience_bottle 40'
+          currency: 1600
+          xp: 1600
+
+  # ===============================================
+  # 第五层：下界基础 - 初入下界到下界建筑 (1.21.4)
+  # ===============================================
+  Tier5:
+    name: '&c下界基础'
+    displayItem: minecraft:netherrack
+    resetInHours: 24
+    requires:
+      rankLeeway: 3
+      challenges:
+      - page1finished
+    challenges:
+      nether_entry:
+        name: '&c初入下界'
+        description: 采集64个地狱岩
+        type: onPlayer
+        requiredItems:
+        - minecraft:netherrack:64;+8
+        displayItem: minecraft:netherrack
+        lockedDisplayItem: red_stained_glass_pane
+        resetInHours: 8
+        reward:
+          text: 32个石英矿石，4个粗铁
+          commands:
+          - 'console: give {party} minecraft:nether_quartz_ore 32'
+          - 'console: give {party} minecraft:raw_iron 4'
+          currency: 20
+          xp: 20
+        repeatReward:
+          text: 16个石英矿石
+          commands:
+          - 'console: give {party} minecraft:nether_quartz_ore 16'
+          currency: 5
+          xp: 5
+
+      shiny:
+        name: '&e亮闪闪！'
+        description: 收集128个金粒
+        type: onPlayer
+        requiredChallenges:
+        - nether_entry
+        requiredItems:
+        - minecraft:gold_nugget:128;+16
+        displayItem: minecraft:gold_nugget
+        lockedDisplayItem: yellow_stained_glass_pane
+        resetInHours: 10
+        reward:
+          text: 16个金锭，16个铁锭，8个青金石矿石
+          commands:
+          - 'console: give {party} minecraft:gold_ingot 16'
+          - 'console: give {party} minecraft:iron_ingot 16'
+          - 'console: give {party} minecraft:lapis_ore 8'
+          currency: 25
+          xp: 25
+        repeatReward:
+          text: 8个金锭，8个铁锭，4个青金石矿石
+          commands:
+          - 'console: give {party} minecraft:gold_ingot 8'
+          - 'console: give {party} minecraft:iron_ingot 8'
+          - 'console: give {party} minecraft:lapis_ore 4'
+          currency: 5
+          xp: 5
+
+      bartering:
+        name: '&e以物易物'
+        description: 通过猪灵交易收集各类下界物资
+        type: onPlayer
+        requiredChallenges:
+        - shiny
+        requiredItems:
+        - minecraft:gold_ingot:64
+        - minecraft:quartz:64
+        - minecraft:glowstone_dust:32
+        - minecraft:soul_sand:32
+        - minecraft:crying_obsidian:16
+        - minecraft:gravel:64
+        - minecraft:leather:16
+        - minecraft:string:32
+        - minecraft:nether_bricks:64
+        displayItem: minecraft:gold_ingot
+        lockedDisplayItem: yellow_stained_glass_pane
+        resetInHours: 0
+        repeatable: false
+        reward:
+          text: 1个凋零骷髅头，32个石英矿石，32个荧石，32个灵魂沙，16个哭泣的黑曜石，1个恶魂之泪，3个末地传送门框架
+          commands:
+          - 'console: give {party} minecraft:wither_skeleton_skull 2'
+          - 'console: give {party} minecraft:nether_quartz_ore 32'
+          - 'console: give {party} minecraft:glowstone 32'
+          - 'console: give {party} minecraft:soul_sand 32'
+          - 'console: give {party} minecraft:crying_obsidian 16'
+          - 'console: give {party} minecraft:ghast_tear 1'
+          - 'console: give {party} minecraft:end_portal_frame 3'
+          currency: 60
+          xp: 60
+
+      nether_biome:
+        name: '&c下界荒地之主'
+        description: 收集大量下界物资以解锁下界荒地生物群系
+        type: onPlayer
+        requiredChallenges:
+        - bartering
+        requiredItems:
+        - minecraft:netherrack:256
+        - minecraft:soul_sand:64
+        - minecraft:quartz:128
+        - minecraft:glowstone:32
+        displayItem: minecraft:netherrack
+        lockedDisplayItem: red_stained_glass_pane
+        resetInHours: 0
+        repeatable: false
+        reward:
+          text: 解锁下界荒地生物群系
+          permission: usb.biome.nether_wastes
+          currency: 60
+          xp: 60
+
+      hell_slime:
+        name: '&c地狱粘液'
+        description: 收集16个岩浆膏
+        type: onPlayer
+        requiredChallenges:
+        - nether_entry
+        requiredItems:
+        - minecraft:magma_cream:16;+4
+        displayItem: minecraft:magma_cream
+        lockedDisplayItem: red_stained_glass_pane
+        resetInHours: 10
+        reward:
+          text: 8个粘液球，4个烈焰棒
+          commands:
+          - 'console: give {party} minecraft:slime_ball 8'
+          - 'console: give {party} minecraft:blaze_rod 4'
+          currency: 25
+          xp: 25
+        repeatReward:
+          text: 4个粘液球，4个烈焰棒
+          commands:
+          - 'console: give {party} minecraft:slime_ball 4'
+          - 'console: give {party} minecraft:blaze_rod 4'
+          currency: 5
+          xp: 5
+
+      return_to_sender:
+        name: '&c见鬼去吧'
+        description: 收集3个恶魂之泪
+        type: onPlayer
+        requiredChallenges:
+        - nether_entry
+        requiredItems:
+        - minecraft:ghast_tear:3;+1
+        displayItem: minecraft:ghast_tear
+        lockedDisplayItem: white_stained_glass_pane
+        resetInHours: 12
+        reward:
+          text: 8个金锭，4个末影珍珠，1个恶魂之泪
+          commands:
+          - 'console: give {party} minecraft:gold_ingot 8'
+          - 'console: give {party} minecraft:ender_pearl 4'
+          - 'console: give {party} minecraft:ghast_tear 1'
+          currency: 35
+          xp: 35
+        repeatReward:
+          text: 2个金锭，2个烈焰棒，1个末影珍珠
+          commands:
+          - 'console: give {party} minecraft:gold_ingot 2'
+          - 'console: give {party} minecraft:blaze_rod 2'
+          - 'console: give {party} minecraft:ender_pearl 1'
+          currency: 10
+          xp: 10
+
+      nether_brick_mason:
+        name: '&c地狱砖匠'
+        description: 制作地狱砖系列方块
+        type: onPlayer
+        requiredChallenges:
+        - nether_entry
+        requiredItems:
+        - minecraft:nether_bricks:64;+8
+        - minecraft:nether_brick_slab:32;+4
+        - minecraft:nether_brick_stairs:16;+2
+        - minecraft:nether_brick_fence:16;+2
+        displayItem: minecraft:nether_bricks
+        lockedDisplayItem: red_stained_glass_pane
+        resetInHours: 12
+        reward:
+          text: 32个地狱砖，8个灵魂沙，8个钻石
+          commands:
+          - 'console: give {party} minecraft:nether_bricks 32'
+          - 'console: give {party} minecraft:soul_sand 8'
+          - 'console: give {party} minecraft:diamond 8'
+          currency: 25
+          xp: 25
+        repeatReward:
+          text: 8个灵魂沙，4个钻石
+          commands:
+          - 'console: give {party} minecraft:soul_sand 8'
+          - 'console: give {party} minecraft:diamond 4'
+          currency: 10
+          xp: 10
+
+      soul_sand_platform:
+        name: '&c灵魂沙平台'
+        description: 在你的岛屿上放置32个灵魂沙
+        type: onIsland
+        radius: 15
+        requiredChallenges:
+        - bartering
+        requiredBlocks:
+        - minecraft:soul_sand:32
+        displayItem: minecraft:soul_sand
+        lockedDisplayItem: brown_stained_glass_pane
+        resetInHours: 24
+        reward:
+          text: 4个地狱疣
+          commands:
+          - 'console: give {party} minecraft:nether_wart 4'
+          currency: 30
+          xp: 30
+
+      nether_wart_farm:
+        name: '&c地狱疣农场'
+        description: 收获32个地狱疣
+        type: onPlayer
+        requiredChallenges:
+        - soul_sand_platform
+        requiredItems:
+        - minecraft:nether_wart:32;+8
+        displayItem: minecraft:nether_wart
+        lockedDisplayItem: red_stained_glass_pane
+        resetInHours: 10
+        reward:
+          text: 4个烈焰棒，8个灵魂沙，4个萤石，1个钻石
+          commands:
+          - 'console: give {party} minecraft:blaze_rod 4'
+          - 'console: give {party} minecraft:soul_sand 8'
+          - 'console: give {party} minecraft:glowstone 4'
+          - 'console: give {party} minecraft:diamond 1'
+          currency: 30
+          xp: 30
+        repeatReward:
+          text: 4个烈焰棒，4个灵魂沙，1个钻石
+          commands:
+          - 'console: give {party} minecraft:blaze_rod 4'
+          - 'console: give {party} minecraft:soul_sand 4'
+          - 'console: give {party} minecraft:diamond 1'
+          currency: 10
+          xp: 10
+
+      quartz_collector:
+        name: '&c石英收集者'
+        description: 收集32个下界石英
+        type: onPlayer
+        requiredChallenges:
+        - bartering
+        requiredItems:
+        - minecraft:quartz:32;+4
+        displayItem: minecraft:quartz
+        lockedDisplayItem: white_stained_glass_pane
+        resetInHours: 12
+        reward:
+          text: 红石部件套装
+          commands:
+          - 'console: give {party} minecraft:comparator 8'
+          - 'console: give {party} minecraft:repeater 16'
+          - 'console: give {party} minecraft:observer 8'
+          - 'console: give {party} minecraft:piston 16'
+          - 'console: give {party} minecraft:dropper 8'
+          - 'console: give {party} minecraft:redstone_block 8'
+          - 'console: give {party} minecraft:hopper 2'
+          currency: 30
+          xp: 30
+        repeatReward:
+          text: 红石部件套装
+          commands:
+          - 'console: give {party} minecraft:comparator 2'
+          - 'console: give {party} minecraft:repeater 4'
+          - 'console: give {party} minecraft:observer 2'
+          - 'console: give {party} minecraft:piston 4'
+          - 'console: give {party} minecraft:dropper 2'
+          - 'console: give {party} minecraft:redstone_block 2'
+          - 'console: give {party} minecraft:hopper 1'
+          currency: 10
+          xp: 10
+
+      glowstone_collector:
+        name: '&c萤石收集者'
+        description: 收集萤石、红石矿石和烈焰棒
+        type: onPlayer
+        requiredChallenges:
+        - bartering
+        requiredItems:
+        - minecraft:glowstone:32
+        - minecraft:redstone_ore:8
+        - minecraft:blaze_rod:4
+        displayItem: minecraft:glowstone
+        lockedDisplayItem: yellow_stained_glass_pane
+        resetInHours: 12
+        reward:
+          text: 12个铁锭，12个金锭，16个青金石，4个钻石
+          commands:
+          - 'console: give {party} minecraft:iron_ingot 12'
+          - 'console: give {party} minecraft:gold_ingot 12'
+          - 'console: give {party} minecraft:lapis_lazuli 16'
+          - 'console: give {party} minecraft:diamond 4'
+          currency: 35
+          xp: 35
+        repeatReward:
+          text: 6个铁锭，6个金锭，8个青金石，2个钻石
+          commands:
+          - 'console: give {party} minecraft:iron_ingot 6'
+          - 'console: give {party} minecraft:gold_ingot 6'
+          - 'console: give {party} minecraft:lapis_lazuli 8'
+          - 'console: give {party} minecraft:diamond 2'
+          currency: 10
+          xp: 10
+
+      who_is_cutting_onions:
+        name: '&c谁在切洋葱？'
+        description: 收集24个哭泣的黑曜石
+        type: onPlayer
+        requiredChallenges:
+        - bartering
+        requiredItems:
+        - minecraft:crying_obsidian:24
+        displayItem: minecraft:crying_obsidian
+        lockedDisplayItem: purple_stained_glass_pane
+        resetInHours: 0
+        repeatable: false
+        takeItems: true
+        reward:
+          text: 8个烈焰棒，8个岩浆膏，8个钻石，1本保护IV
+          commands:
+          - 'console: give {party} minecraft:blaze_rod 8'
+          - 'console: give {party} minecraft:magma_cream 8'
+          - 'console: give {party} minecraft:diamond 8'
+          - 'console: give {party} minecraft:enchanted_book 1 [enchantments={levels:{protection:4}}]'
+          currency: 35
+          xp: 35
+
+      island_level_80:
+        name: '&b下界老手'
+        description: 达到岛屿等级80
+        type: islandLevel
+        requiredLevel: 80
+        displayItem: minecraft:nether_star
+        lockedDisplayItem: light_blue_stained_glass_pane
+        resetInHours: 0
+        repeatable: false
+        reward:
+          text: 24个钻石，48个附魔之瓶，1本耐久III，1本保护IV
+          commands:
+          - 'console: give {party} minecraft:diamond 24'
+          - 'console: give {party} minecraft:experience_bottle 48'
+          - 'console: give {party} minecraft:enchanted_book 2 [enchantments={levels:{unbreaking:3}}]'
+          - 'console: give {party} minecraft:enchanted_book 1 [enchantments={levels:{protection:4}}]'
+          currency: 1600
+          xp: 1600
+
+      tier5_complete:
+        name: '&6下界基础完成'
+        description: 完成下界基础所有挑战
+        type: onPlayer
+        requiredChallenges:
+        - nether_entry
+        - shiny
+        - bartering
+        - hell_slime
+        - return_to_sender
+        - nether_brick_mason
+        - soul_sand_platform
+        - nether_wart_farm
+        - quartz_collector
+        - glowstone_collector
+        - who_is_cutting_onions
+        - island_level_80
+        displayItem: minecraft:nether_star
+        lockedDisplayItem: red_stained_glass_pane
+        resetInHours: 0
+        repeatable: false
+        showInList: false
+        reward:
+          text: 12个钻石，48个附魔之瓶
+          commands:
+          - 'console: give {party} minecraft:diamond 12'
+          - 'console: give {party} minecraft:experience_bottle 48'
+          currency: 1800
+          xp: 1800
+
+  # ===============================================
+  # 第六层：下界工业 - 魔法附魔到信标 (1.21.4)
+  # ===============================================
+  Tier6:
+    name: '&d下界工业'
+    displayItem: minecraft:enchanting_table
+    resetInHours: 24
+    requires:
+      rankLeeway: 3
+      challenges:
+      - tier5_complete
+    challenges:
+      knowledge_hall:
+        name: '&d知识殿堂'
+        description: 收集书籍、木板和青金石用于制作书架
+        type: onPlayer
+        requiredItems:
+        - minecraft:book:45
+        - minecraft:oak_planks:90
+        - minecraft:lapis_lazuli:16
+        displayItem: minecraft:bookshelf
+        lockedDisplayItem: purple_stained_glass_pane
+        resetInHours: 24
+        reward:
+          text: 15个书架，32个青金石，4个钻石
+          commands:
+          - 'console: give {party} minecraft:bookshelf 15'
+          - 'console: give {party} minecraft:lapis_lazuli 32'
+          - 'console: give {party} minecraft:diamond 4'
+          currency: 40
+          xp: 40
+
+      enchanter:
+        name: '&d附魔师'
+        description: 建造附魔台并放置书架
+        type: onIsland
+        radius: 10
+        requiredChallenges:
+        - knowledge_hall
+        requiredBlocks:
+        - minecraft:enchanting_table:1
+        - minecraft:bookshelf:15
+        displayItem: minecraft:enchanting_table
+        lockedDisplayItem: purple_stained_glass_pane
+        resetInHours: 0
+        repeatable: false
+        reward:
+          text: 64个青金石，32个附魔之瓶，8个钻石
+          commands:
+          - 'console: give {party} minecraft:lapis_lazuli 64'
+          - 'console: give {party} minecraft:experience_bottle 32'
+          - 'console: give {party} minecraft:diamond 8'
+          currency: 50
+          xp: 50
+
+      transmutation:
+        name: '&d嬗变'
+        description: 32个金锭，32个铁锭，32个青金石，8个钻石，1本书
+        type: onPlayer
+        requiredChallenges:
+        - enchanter
+        requiredItems:
+        - minecraft:gold_ingot:32;+8
+        - minecraft:iron_ingot:32;+8
+        - minecraft:lapis_lazuli:32
+        - minecraft:diamond:8
+        - minecraft:book:1
+        displayItem: minecraft:lapis_lazuli
+        lockedDisplayItem: purple_stained_glass_pane
+        resetInHours: 12
+        reward:
+          text: 1本经验修补（真的只有一本）
+          commands:
+          - enchanted_book[enchantments={levels:{mending:1}}]:1
+          currency: 40
+          xp: 40
+        repeatReward:
+          text: 1本经验修补（真的只有一本）
+          commands:
+          - enchanted_book[enchantments={levels:{mending:1}}]:1
+          currency: 40
+          xp: 40
+
+      pure_white:
+        name: '&f纯白建筑'
+        description: 制作石英系列方块
+        type: onPlayer
+        requiredChallenges:
+        - quartz_collector
+        requiredItems:
+        - minecraft:quartz_block:128;+8
+        - minecraft:quartz_slab:64;+4
+        - minecraft:quartz_stairs:32;+2
+        - minecraft:quartz_pillar:32;+2
+        - minecraft:smooth_quartz:64;+4
+        displayItem: minecraft:quartz_block
+        lockedDisplayItem: white_stained_glass_pane
+        resetInHours: 12
+        reward:
+          text: 64个青金石，8个金锭，8个铁锭,8个烈焰棒，4个钻石
+          commands:
+          - 'console: give {party} minecraft:lapis_lazuli 64'
+          - 'console: give {party} minecraft:gold_ingot 8'
+          - 'console: give {party} minecraft:iron_ingot 8'
+          - 'console: give {party} minecraft:blaze_rod 8'
+          - 'console: give {party} minecraft:diamond 4'
+          currency: 35
+          xp: 35
+        repeatReward:
+          text: 32个青金石，4个金锭，4个铁锭,4个烈焰棒，2个钻石
+          commands:
+          - 'console: give {party} minecraft:lapis_lazuli 32'
+          - 'console: give {party} minecraft:gold_ingot 4'
+          - 'console: give {party} minecraft:iron_ingot 4'
+          - 'console: give {party} minecraft:blaze_rod 4'
+          - 'console: give {party} minecraft:diamond 2'
+          currency: 10
+          xp: 10
+
+      glowstone_lighting:
+        name: '&e萤石灯饰'
+        description: 收集64个萤石
+        type: onPlayer
+        requiredChallenges:
+        - glowstone_collector
+        requiredItems:
+        - minecraft:glowstone:64;+4
+        displayItem: minecraft:glowstone
+        lockedDisplayItem: yellow_stained_glass_pane
+        resetInHours: 12
+        reward:
+          text: 16个红石灯,16个海晶灯
+          commands:
+          - 'console: give {party} minecraft:redstone_lamp 16'
+          - 'console: give {party} minecraft:sea_lantern 16'
+          currency: 35
+          xp: 35
+        repeatReward:
+          text: 8个红石灯,8个海晶灯
+          commands:
+          - 'console: give {party} minecraft:redstone_lamp 8'
+          - 'console: give {party} minecraft:sea_lantern 8'
+          currency: 10
+          xp: 10
+
+      wither_bane:
+        name: '&8凋零克星'
+        description: 提交一个下界之星
+        type: onPlayer
+        requiredItems:
+        - minecraft:nether_star:1
+        displayItem: minecraft:nether_star
+        lockedDisplayItem: black_stained_glass_pane
+        resetInHours: 0
+        repeatable: false
+        takeItems: true
+        reward:
+          text: 2个刷怪笼，1个烈焰人刷怪蛋，16个钻石，4个附魔金苹果，3个凋零骷髅头
+          commands:
+          - 'console: give {player} minecraft:spawner 2'
+          - 'console: give {player} minecraft:blaze_spawn_egg 1'
+          - 'console: give {party} minecraft:diamond 16'
+          - 'console: give {party} minecraft:enchanted_golden_apple 4'
+          - 'console: give {party} minecraft:wither_skeleton_skull 3'
+          currency: 120
+          xp: 120
+
+      beacon_1:
+        name: '&6一级信标'
+        description: 建造一个一级金信标
+        type: onIsland
+        radius: 10
+        requiredChallenges:
+        - wither_bane
+        requiredBlocks:
+        - minecraft:beacon:1
+        - minecraft:gold_block:9
+        displayItem: minecraft:beacon
+        lockedDisplayItem: yellow_stained_glass_pane
+        resetInHours: 0
+        repeatable: false
+        reward:
+          text: 16个钻石，32个青金石,1本经验修补
+          commands:
+          - 'console: give {party} minecraft:diamond 16'
+          - 'console: give {party} minecraft:lapis_lazuli 32'
+          - 'console: give {party} minecraft:enchanted_book 1 [enchantments={levels:{mending:1}}]'
+          currency: 80
+          xp: 80
+
+      beacon_2:
+        name: '&6二级信标'
+        description: 建造一个二级金信标
+        type: onIsland
+        radius: 15
+        requiredChallenges:
+        - beacon_1
+        requiredBlocks:
+        - minecraft:beacon:1
+        - minecraft:gold_block:34
+        displayItem: minecraft:beacon
+        lockedDisplayItem: yellow_stained_glass_pane
+        resetInHours: 0
+        repeatable: false
+        reward:
+          text: 32个钻石，64个青金石，2本经验修补
+          commands:
+          - 'console: give {party} minecraft:diamond 32'
+          - 'console: give {party} minecraft:lapis_lazuli 64'
+          - 'console: give {party} minecraft:enchanted_book 2 [enchantments={levels:{mending:1}}]'
+          currency: 120
+          xp: 120
+
+      beacon_3:
+        name: '&6三级信标'
+        description: 建造一个三级金信标
+        type: onIsland
+        radius: 20
+        requiredChallenges:
+        - beacon_2
+        requiredBlocks:
+        - minecraft:beacon:1
+        - minecraft:gold_block:83
+        displayItem: minecraft:beacon
+        lockedDisplayItem: yellow_stained_glass_pane
+        resetInHours: 0
+        repeatable: false
+        reward:
+          text: 64个钻石，128个青金石，3本经验修补，4个附魔金苹果
+          commands:
+          - 'console: give {party} minecraft:diamond 64'
+          - 'console: give {party} minecraft:lapis_lazuli 128'
+          - 'console: give {party} minecraft:enchanted_book 3 [enchantments={levels:{mending:1}}]'
+          - 'console: give {party} minecraft:enchanted_golden_apple 4'
+          currency: 200
+          xp: 200
+
+      chain_craft:
+        name: '&7锁链工艺'
+        description: 收集64个锁链
+        type: onPlayer
+        requiredChallenges:
+        - nether_brick_mason
+        requiredItems:
+        - minecraft:chain:64;+8
+        displayItem: minecraft:chain
+        lockedDisplayItem: gray_stained_glass_pane
+        resetInHours: 12
+        repeatable: false
+        reward:
+          text: 8个铁块，1个刷怪笼
+          commands:
+          - 'console: give {party} minecraft:iron_block 8'
+          - 'console: give {player} minecraft:spawner 1'
+          currency: 40
+          xp: 40
+
+      island_level_110:
+        name: '&b信标之光'
+        description: 达到岛屿等级110
+        type: islandLevel
+        requiredLevel: 110
+        displayItem: minecraft:beacon
+        lockedDisplayItem: light_blue_stained_glass_pane
+        resetInHours: 0
+        repeatable: false
+        reward:
+          text: 36个钻石，72个附魔之瓶，1本保护IV，1本锋利V，1个下界之星
+          commands:
+          - 'console: give {party} minecraft:diamond 36'
+          - 'console: give {party} minecraft:experience_bottle 72'
+          - 'console: give {party} minecraft:enchanted_book 1 [enchantments={levels:{protection:4}}]'
+          - 'console: give {party} minecraft:enchanted_book 1 [enchantments={levels:{sharpness:5}}]'
+          - 'console: give {party} minecraft:nether_star 1'
+          currency: 2200
+          xp: 2200
+
+      tier6_complete:
+        name: '&6下界工业完成'
+        description: 完成下界工业所有挑战
+        type: onPlayer
+        requiredChallenges:
+        - knowledge_hall
+        - enchanter
+        - transmutation
+        - pure_white
+        - glowstone_lighting
+        - wither_bane
+        - beacon_1
+        - beacon_2
+        - beacon_3
+        - chain_craft
+        - island_level_110
+        displayItem: minecraft:beacon
+        lockedDisplayItem: red_stained_glass_pane
+        resetInHours: 0
+        repeatable: false
+        showInList: false
+        reward:
+          text: 2个钻石块，64个附魔之瓶，2个附魔金苹果
+          commands:
+          - 'console: give {party} minecraft:diamond_block 2'
+          - 'console: give {party} minecraft:experience_bottle 64'
+          - 'console: give {party} minecraft:enchanted_golden_apple 2'
+          currency: 2000
+          xp: 2000
+
+  # ===============================================
+  # 第七层：下界大师 - 高难度挑战到末地传送门 (1.21.4)
+  # ===============================================
+  Tier7:
+    name: '&8下界大师'
+    displayItem: minecraft:end_portal_frame
+    resetInHours: 48
+    requires:
+      rankLeeway: 1
+      challenges:
+      - tier6_complete
+    challenges:
+      nether_architect:
+        name: '&8地狱建筑师'
+        description: 尝试复刻下届要塞（）
+        type: onIsland
+        radius: 160
+        requiredChallenges:
+        - nether_brick_mason
+        - soul_sand_platform
+        - glowstone_collector
+        requiredBlocks:
+        - minecraft:nether_bricks:512
+        - minecraft:nether_brick_slab:128
+        - minecraft:nether_brick_fence:64
+        - minecraft:nether_brick_stairs:64
+        - minecraft:soul_sand:32
+        - minecraft:glowstone:32
+        displayItem: minecraft:nether_bricks
+        lockedDisplayItem: red_stained_glass_pane
+        resetInHours: 0
+        repeatable: false
+        reward:
+          text: 1本经验修补，1个凋零骷髅刷怪蛋，8个钻石
+          commands:
+          - 'console: give {party} minecraft:enchanted_book 1 [enchantments={levels:{mending:1}}]'
+          - 'console: give {player} minecraft:wither_skeleton_spawn_egg 1'
+          - 'console: give {party} minecraft:diamond 8'
+          currency: 60
+          xp: 60
+
+      valhalla:
+        name: '&f英灵神殿'
+        description: 建造一个带有装饰的石英宫殿
+        type: onIsland
+        radius: 150
+        requiredChallenges:
+        - pure_white
+        - glowstone_collector
+        requiredBlocks:
+        - minecraft:quartz_block:256
+        - minecraft:quartz_pillar:64
+        - minecraft:quartz_slab:128
+        - minecraft:quartz_stairs:64
+        - minecraft:glowstone:32
+        displayItem: minecraft:quartz_block
+        lockedDisplayItem: white_stained_glass_pane
+        resetInHours: 0
+        repeatable: false
+        reward:
+          text: 1本经验修补，1本保护IV，1个刷怪笼
+          commands:
+          - 'console: give {party} minecraft:enchanted_book 1 [enchantments={levels:{mending:1}}]'
+          - 'console: give {party} minecraft:enchanted_book 1 [enchantments={levels:{protection:4}}]'
+          - 'console: give {party} minecraft:spawner 1'
+          currency: 60
+          xp: 60
+
+      lush_caves_biome:
+        name: '&a洞穴居民'
+        description: 收集洞穴相关物资以解锁繁茂洞穴生物群系
+        type: onPlayer
+        requiredChallenges:
+        - valhalla
+        - beacon_3
+        requiredItems:
+        - minecraft:glowstone:64
+        - minecraft:experience_bottle:32
+        - minecraft:lapis_lazuli:128
+        displayItem: minecraft:glow_berries
+        lockedDisplayItem: green_stained_glass_pane
+        resetInHours: 0
+        repeatable: false
+        reward:
+          text: 解锁繁茂洞穴生物群系，2个美西螈刷怪蛋，64个发光浆果
+          commands:
+          - 'console: give {party} minecraft:axolotl_spawn_egg 2'
+          - 'console: give {party} minecraft:glow_berries 64'
+          permission: usb.biome.lush_caves
+          currency: 80
+          xp: 80
+
+      ghast_farm:
+        name: '&c恶魂农场'
+        description: 收集16个恶魂之泪
+        type: onPlayer
+        requiredChallenges:
+        - return_to_sender
+        requiredItems:
+        - minecraft:ghast_tear:16;+2
+        displayItem: minecraft:ghast_tear
+        lockedDisplayItem: white_stained_glass_pane
+        resetInHours: 0
+        repeatable: false
+        reward:
+          text: 32个金锭，1组末影珍珠，3个末地传送门框架，8个烈焰棒，4个钻石，2本耐久III
+          commands:
+          - minecraft:gold_ingot 32
+          - minecraft:ender_pearl 16
+          - minecraft:end_portal_frame 3
+          - minecraft:blaze_rod 8
+          - minecraft:diamond 4
+          - minecraft:enchanted_book[enchantments={levels:{unbreaking:3}}] 2
+          currency: 60
+          xp: 60
+
+      wither_collector:
+        name: '&8凋零收藏家'
+        description: 收集6个凋零骷髅头颅
+        type: onPlayer
+        requiredChallenges:
+        - bartering
+        requiredItems:
+        - minecraft:wither_skeleton_skull:6
+        displayItem: minecraft:wither_skeleton_skull
+        lockedDisplayItem: black_stained_glass_pane
+        resetInHours: 0
+        repeatable: false
+        reward:
+          text: 1个刷怪笼，1个下界之星，1本经验修补，3个末地传送门框架
+          commands:
+          - minecraft:wither_skeleton_skull 2
+          - minecraft:nether_star 1
+          - minecraft:enchanted_book[enchantments={levels:{mending:1}}] 1
+          - minecraft:end_portal_frame 3
+          currency: 100
+          xp: 100
+
+      ender_pearl_hunter:
+        name: '&5珍珠海'
+        description: 收集32个末影珍珠
+        type: onPlayer
+        requiredChallenges:
+        - return_to_sender
+        requiredItems:
+        - minecraft:ender_pearl:32;+4
+        displayItem: minecraft:ender_pearl
+        lockedDisplayItem: purple_stained_glass_pane
+        resetInHours: 0
+        repeatable: false
+        reward:
+          text: 8个烈焰粉，3个末地传送门框架
+          commands:
+          - minecraft:blaze_powder 8
+          - minecraft:end_portal_frame 3
+          currency: 40
+          xp: 40
+
+      end_portal:
+        name: '&5末地传送门'
+        description: 放置并激活末地传送门
+        type: onIsland
+        radius: 10
+        requiredChallenges:
+        - end_portal_frame_assembly
+        requiredBlocks:
+        - minecraft:end_portal_frame:12
+        displayItem: minecraft:end_portal_frame
+        lockedDisplayItem: magenta_stained_glass_pane
+        resetInHours: 0
+        repeatable: false
+        reward:
+          text: 8个金苹果，8个钻石
+          commands:
+          - 'console: give {party} minecraft:golden_apple 8'
+          - 'console: give {party} minecraft:diamond 8'
+          currency: 200
+          xp: 200
+
+      island_level_150:
+        name: '&b传说建筑师'
+        description: 达到岛屿等级150
+        type: islandLevel
+        requiredLevel: 150
+        displayItem: minecraft:dragon_egg
+        lockedDisplayItem: light_blue_stained_glass_pane
+        resetInHours: 0
+        repeatable: false
+        reward:
+          text: 64个钻石，128个附魔之瓶，1本经验修补，2个下界之星
+          commands:
+          - 'console: give {party} minecraft:diamond 64'
+          - 'console: give {party} minecraft:experience_bottle 128'
+          - 'console: give {party} minecraft:enchanted_book 2 [enchantments={levels:{mending:1}}]'
+          - 'console: give {party} minecraft:nether_star 2'
+          currency: 3200
+          xp: 3200
+
+      tier7_complete:
+        name: '&6下界大师完成'
+        description: 完成下界大师所有挑战
+        type: onPlayer
+        requiredChallenges:
+        - nether_architect
+        - valhalla
+        - ghast_farm
+        - wither_collector
+        - ender_pearl_hunter
+        - end_portal
+        - island_level_150
+        displayItem: minecraft:end_portal_frame
+        lockedDisplayItem: red_stained_glass_pane
+        resetInHours: 0
+        repeatable: false
+        showInList: false
+        reward:
+          text: 20个钻石，80个附魔之瓶，1本经验修补，1本保护IV，1本锋利V，1本耐久III
+          commands:
+          - 'console: give {party} minecraft:diamond 20'
+          - 'console: give {party} minecraft:experience_bottle 80'
+          - 'console: give {party} minecraft:enchanted_book 1 [enchantments={levels:{mending:1}}]'
+          - 'console: give {party} minecraft:enchanted_book 1 [enchantments={levels:{protection:4}}]'
+          - 'console: give {party} minecraft:enchanted_book 1 [enchantments={levels:{sharpness:5}}]'
+          - 'console: give {party} minecraft:enchanted_book 1 [enchantments={levels:{unbreaking:3}}]'
+          currency: 2400
+          xp: 2400
+
+version: 108

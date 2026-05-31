@@ -1,0 +1,1174 @@
+# 商店全局价格递增设置
+price-increase:
+  enabled: true
+  increase-percent: 10
+  reset-minutes: 60
+
+# 商品分类
+categories:
+  # 基础资源
+  basic_resources:
+    name: '&a基础资源'
+    displayItem: 'oak_sapling'
+    items:
+      oak_sapling:
+        displayItem: oak_sapling
+        cost: 5
+        max-buys: 64
+        required-level: 0
+        required-challenges: []
+        items:
+          - oak_sapling:1
+      spruce_sapling:
+        displayItem: spruce_sapling
+        cost: 5
+        max-buys: 64
+        required-level: 0
+        required-challenges: []
+        items:
+          - spruce_sapling:1
+      birch_sapling:
+        displayItem: birch_sapling
+        cost: 5
+        max-buys: 64
+        required-level: 0
+        required-challenges: []
+        items:
+          - birch_sapling:1
+      jungle_sapling:
+        displayItem: jungle_sapling
+        cost: 5
+        max-buys: 64
+        required-level: 0
+        required-challenges:
+          - lumberjack
+        items:
+          - jungle_sapling:1
+      acacia_sapling:
+        displayItem: acacia_sapling
+        cost: 5
+        max-buys: 64
+        required-level: 0
+        required-challenges:
+          - lumberjack
+        items:
+          - acacia_sapling:1
+      dark_oak_sapling:
+        displayItem: dark_oak_sapling
+        cost: 5
+        max-buys: 64
+        required-level: 0
+        required-challenges:
+          - lumberjack
+        items:
+          - dark_oak_sapling:1
+      mangrove_propagule:
+        displayItem: mangrove_propagule
+        cost: 10
+        max-buys: 32
+        required-level: 1
+        required-challenges: []
+        items:
+          - mangrove_propagule:1
+      cherry_sapling:
+        displayItem: cherry_sapling
+        cost: 10
+        max-buys: 32
+        required-level: 1
+        required-challenges: []
+        items:
+          - cherry_sapling:1
+      pale_oak_sapling:
+        displayItem: pale_oak_sapling
+        cost: 15
+        max-buys: 32
+        required-level: 1
+        required-challenges: []
+        items:
+          - pale_oak_sapling:1
+      dirt:
+        displayItem: dirt
+        cost: 1
+        max-buys: 256
+        required-level: 0
+        required-challenges: []
+        items:
+          - dirt:1
+      coarse_dirt:
+        displayItem: coarse_dirt
+        cost: 2
+        max-buys: 128
+        required-level: 0
+        required-challenges: []
+        items:
+          - coarse_dirt:1
+      sand:
+        displayItem: sand
+        cost: 2
+        max-buys: 128
+        required-level: 0
+        required-challenges:
+          - sugar_cane_plant
+        items:
+          - sand:1
+      red_sand:
+        displayItem: red_sand
+        cost: 3
+        max-buys: 128
+        required-level: 0
+        required-challenges: []
+        items:
+          - red_sand:1
+      gravel:
+        displayItem: gravel
+        cost: 2
+        max-buys: 128
+        required-level: 0
+        required-challenges:
+          - cobble_gen
+        items:
+          - gravel:1
+      clay_ball:
+        displayItem: clay_ball
+        cost: 1
+        max-buys: 256
+        required-level: 0
+        required-challenges: []
+        items:
+          - clay_ball:4
+      ice:
+        displayItem: ice
+        cost: 50
+        max-buys: 16
+        required-level: 2
+        required-challenges:
+          - cobble_gen
+        items:
+          - ice:2
+      water_bucket:
+        displayItem: water_bucket
+        cost: 100
+        max-buys: 4
+        required-level: 1
+        required-challenges:
+          - bucket_craft
+        items:
+          - water_bucket:1
+      lava_bucket:
+        displayItem: lava_bucket
+        cost: 200
+        max-buys: 4
+        required-level: 5
+        required-challenges:
+          - bucket_craft
+        items:
+          - lava_bucket:1
+      powder_snow_bucket:
+        displayItem: powder_snow_bucket
+        cost: 80
+        max-buys: 8
+        required-level: 3
+        required-challenges:
+          - snowy_slopes_biome
+        items:
+          - powder_snow_bucket:1
+
+  # 农业与作物
+  farming:
+    name: '&a农业与作物'
+    displayItem: 'wheat_seeds'
+    items:
+      wheat_seeds:
+        displayItem: wheat_seeds
+        cost: 2
+        max-buys: 64
+        required-level: 0
+        required-challenges:
+          - wheat_farm
+        items:
+          - wheat_seeds:1
+      carrot:
+        displayItem: carrot
+        cost: 5
+        max-buys: 64
+        required-level: 0
+        required-challenges:
+          - zombie_hunter
+        items:
+          - carrot:1
+      potato:
+        displayItem: potato
+        cost: 5
+        max-buys: 64
+        required-level: 0
+        required-challenges:
+          - monster_hunter
+        items:
+          - potato:1
+      beetroot_seeds:
+        displayItem: beetroot_seeds
+        cost: 3
+        max-buys: 64
+        required-level: 0
+        required-challenges:
+          - potato_farm
+        items:
+          - beetroot_seeds:1
+      melon_seeds:
+        displayItem: melon_seeds
+        cost: 5
+        max-buys: 32
+        required-level: 1
+        required-challenges:
+          - melon_farm
+        items:
+          - melon_seeds:1
+      pumpkin_seeds:
+        displayItem: pumpkin_seeds
+        cost: 5
+        max-buys: 32
+        required-level: 1
+        required-challenges:
+          - pumpkin_farm
+        items:
+          - pumpkin_seeds:1
+      sugar_cane:
+        displayItem: sugar_cane
+        cost: 5
+        max-buys: 64
+        required-level: 1
+        required-challenges:
+          - sugar_cane_plant
+        items:
+          - sugar_cane:1
+      bamboo:
+        displayItem: bamboo
+        cost: 10
+        max-buys: 64
+        required-level: 2
+        required-challenges:
+          - sugar_cane_harvest
+        items:
+          - bamboo:1
+      kelp:
+        displayItem: kelp
+        cost: 10
+        max-buys: 64
+        required-level: 2
+        required-challenges:
+          - sugar_cane_plant
+        items:
+          - kelp:1
+      cocoa_beans:
+        displayItem: cocoa_beans
+        cost: 10
+        max-buys: 32
+        required-level: 2
+        required-challenges: []
+        items:
+          - cocoa_beans:1
+      sweet_berries:
+        displayItem: sweet_berries
+        cost: 5
+        max-buys: 32
+        required-level: 0
+        required-challenges: []
+        items:
+          - sweet_berries:1
+      glow_berries:
+        displayItem: glow_berries
+        cost: 10
+        max-buys: 32
+        required-level: 2
+        required-challenges:
+          - lush_caves_biome
+        items:
+          - glow_berries:1
+      torchflower_seeds:
+        displayItem: torchflower_seeds
+        cost: 10
+        max-buys: 32
+        required-level: 2
+        required-challenges: []
+        items:
+          - torchflower_seeds:1
+      pitcher_pod:
+        displayItem: pitcher_pod
+        cost: 10
+        max-buys: 32
+        required-level: 2
+        required-challenges: []
+        items:
+          - pitcher_pod:1
+
+  # 矿物与宝石
+  ores_minerals:
+    name: '&e矿物与宝石'
+    displayItem: 'iron_ingot'
+    items:
+      coal:
+        displayItem: coal
+        cost: 5
+        max-buys: 128
+        required-level: 0
+        required-challenges:
+          - furnace_basics
+        items:
+          - coal:1
+      raw_iron:
+        displayItem: raw_iron
+        cost: 15
+        max-buys: 64
+        required-level: 3
+        required-challenges:
+          - furnace_basics
+        items:
+          - raw_iron:1
+      raw_copper:
+        displayItem: raw_copper
+        cost: 10
+        max-buys: 64
+        required-level: 2
+        required-challenges: []
+        items:
+          - raw_copper:1
+      raw_gold:
+        displayItem: raw_gold
+        cost: 20
+        max-buys: 64
+        required-level: 4
+        required-challenges:
+          - workstation
+        items:
+          - raw_gold:1
+      iron_ingot:
+        displayItem: iron_ingot
+        cost: 25
+        max-buys: 64
+        required-level: 3
+        required-challenges:
+          - iron_smelting
+        items:
+          - iron_ingot:1
+      copper_ingot:
+        displayItem: copper_ingot
+        cost: 15
+        max-buys: 64
+        required-level: 2
+        required-challenges: []
+        items:
+          - copper_ingot:1
+      gold_ingot:
+        displayItem: gold_ingot
+        cost: 35
+        max-buys: 64
+        required-level: 4
+        required-challenges:
+          - shiny
+        items:
+          - gold_ingot:1
+      lapis_lazuli:
+        displayItem: lapis_lazuli
+        cost: 10
+        max-buys: 64
+        required-level: 2
+        required-challenges:
+          - skeleton_archer
+        items:
+          - lapis_lazuli:1
+      redstone:
+        displayItem: redstone
+        cost: 10
+        max-buys: 64
+        required-level: 2
+        required-challenges:
+          - monster_hunter
+        items:
+          - redstone:1
+      diamond:
+        displayItem: diamond
+        cost: 100
+        max-buys: 16
+        required-level: 6
+        required-challenges:
+          - island_level_10
+        items:
+          - diamond:1
+      emerald:
+        displayItem: emerald
+        cost: 80
+        max-buys: 16
+        required-level: 6
+        required-challenges: []
+        items:
+          - emerald:1
+      quartz:
+        displayItem: quartz
+        cost: 20
+        max-buys: 64
+        required-level: 5
+        required-challenges:
+          - nether_entry
+        items:
+          - quartz:1
+      amethyst_shard:
+        displayItem: amethyst_shard
+        cost: 25
+        max-buys: 64
+        required-level: 3
+        required-challenges: []
+        items:
+          - amethyst_shard:1
+      ancient_debris:
+        displayItem: ancient_debris
+        cost: 300
+        max-buys: 8
+        required-level: 8
+        required-challenges:
+          - nether_biome
+        items:
+          - ancient_debris:1
+      netherite_scrap:
+        displayItem: netherite_scrap
+        cost: 500
+        max-buys: 4
+        required-level: 9
+        required-challenges:
+          - nether_biome
+        items:
+          - netherite_scrap:1
+      netherite_ingot:
+        displayItem: netherite_ingot
+        cost: 2000
+        max-buys: 2
+        required-level: 10
+        required-challenges:
+          - nether_biome
+        items:
+          - netherite_ingot:1
+
+  # 下界材料与稀有掉落
+  nether_materials:
+    name: '&c下界材料与稀有掉落'
+    displayItem: 'blaze_rod'
+    items:
+      nether_wart:
+        displayItem: nether_wart
+        cost: 30
+        max-buys: 32
+        required-level: 5
+        required-challenges:
+          - soul_sand_platform
+        items:
+          - nether_wart:1
+      blaze_rod:
+        displayItem: blaze_rod
+        cost: 80
+        max-buys: 16
+        required-level: 6
+        required-challenges:
+          - hell_slime
+        items:
+          - blaze_rod:1
+      magma_cream:
+        displayItem: magma_cream
+        cost: 40
+        max-buys: 32
+        required-level: 5
+        required-challenges:
+          - hell_slime
+        items:
+          - magma_cream:1
+      ghast_tear:
+        displayItem: ghast_tear
+        cost: 120
+        max-buys: 8
+        required-level: 7
+        required-challenges:
+          - return_to_sender
+        items:
+          - ghast_tear:1
+      wither_skeleton_skull:
+        displayItem: wither_skeleton_skull
+        cost: 800
+        max-buys: 1
+        required-level: 8
+        required-challenges:
+          - bartering
+        items:
+          - wither_skeleton_skull:1
+      ender_pearl:
+        displayItem: ender_pearl
+        cost: 50
+        max-buys: 32
+        required-level: 5
+        required-challenges:
+          - return_to_sender
+        items:
+          - ender_pearl:1
+      phantom_membrane:
+        displayItem: phantom_membrane
+        cost: 60
+        max-buys: 16
+        required-level: 4
+        required-challenges: []
+        items:
+          - phantom_membrane:1
+      shulker_shell:
+        displayItem: shulker_shell
+        cost: 300
+        max-buys: 8
+        required-level: 9
+        required-challenges:
+          - end_portal
+        items:
+          - shulker_shell:1
+      nether_star:
+        displayItem: nether_star
+        cost: 5000
+        max-buys: 1
+        required-level: 10
+        required-challenges:
+          - wither_bane
+        items:
+          - nether_star:1
+      breeze_rod:
+        displayItem: breeze_rod
+        cost: 90
+        max-buys: 16
+        required-level: 6
+        required-challenges: []
+        items:
+          - breeze_rod:1
+      slime_ball:
+        displayItem: slime_ball
+        cost: 20
+        max-buys: 32
+        required-level: 4
+        required-challenges:
+          - hell_slime
+        items:
+          - slime_ball:1
+      spider_eye:
+        displayItem: spider_eye
+        cost: 15
+        max-buys: 32
+        required-level: 3
+        required-challenges:
+          - monster_hunter
+        items:
+          - spider_eye:1
+      gunpowder:
+        displayItem: gunpowder
+        cost: 20
+        max-buys: 64
+        required-level: 3
+        required-challenges:
+          - demolitionist
+        items:
+          - gunpowder:1
+      bone:
+        displayItem: bone
+        cost: 10
+        max-buys: 64
+        required-level: 2
+        required-challenges:
+          - monster_hunter
+        items:
+          - bone:1
+      rotten_flesh:
+        displayItem: rotten_flesh
+        cost: 5
+        max-buys: 64
+        required-level: 2
+        required-challenges:
+          - monster_hunter
+        items:
+          - rotten_flesh:1
+      string:
+        displayItem: string
+        cost: 10
+        max-buys: 64
+        required-level: 2
+        required-challenges:
+          - web_collector
+        items:
+          - string:1
+      leather:
+        displayItem: leather
+        cost: 15
+        max-buys: 32
+        required-level: 2
+        required-challenges:
+          - leather_collector
+        items:
+          - leather:1
+
+  # 稀有方块
+  rare_blocks:
+    name: '&5稀有方块'
+    displayItem: 'mycelium'
+    items:
+      mycelium:
+        displayItem: mycelium
+        cost: 150
+        max-buys: 8
+        required-level: 4
+        required-challenges:
+          - mushroom_farm
+        items:
+          - mycelium:1
+      podzol:
+        displayItem: podzol
+        cost: 100
+        max-buys: 8
+        required-level: 4
+        required-challenges:
+          - mushroom_farm
+        items:
+          - podzol:1
+      packed_ice:
+        displayItem: packed_ice
+        cost: 80
+        max-buys: 16
+        required-level: 3
+        required-challenges:
+          - snowy_plains_biome
+        items:
+          - packed_ice:1
+      blue_ice:
+        displayItem: blue_ice
+        cost: 150
+        max-buys: 8
+        required-level: 5
+        required-challenges:
+          - snowy_slopes_biome
+        items:
+          - blue_ice:1
+      moss_block:
+        displayItem: moss_block
+        cost: 120
+        max-buys: 8
+        required-level: 4
+        required-challenges:
+          - lush_caves_biome
+        items:
+          - moss_block:1
+      rooted_dirt:
+        displayItem: rooted_dirt
+        cost: 60
+        max-buys: 16
+        required-level: 3
+        required-challenges:
+          - lush_caves_biome
+        items:
+          - rooted_dirt:1
+      mud:
+        displayItem: mud
+        cost: 50
+        max-buys: 16
+        required-level: 2
+        required-challenges: []
+        items:
+          - mud:1
+      mud_bricks:
+        displayItem: mud_bricks
+        cost: 60
+        max-buys: 16
+        required-level: 2
+        required-challenges: []
+        items:
+          - mud_bricks:1
+      packed_mud:
+        displayItem: packed_mud
+        cost: 55
+        max-buys: 16
+        required-level: 2
+        required-challenges: []
+        items:
+          - packed_mud:1
+      soul_sand:
+        displayItem: soul_sand
+        cost: 30
+        max-buys: 64
+        required-level: 5
+        required-challenges:
+          - bartering
+        items:
+          - soul_sand:1
+      soul_soil:
+        displayItem: soul_soil
+        cost: 35
+        max-buys: 64
+        required-level: 5
+        required-challenges:
+          - bartering
+        items:
+          - soul_soil:1
+      glowstone:
+        displayItem: glowstone
+        cost: 40
+        max-buys: 32
+        required-level: 5
+        required-challenges:
+          - glowstone_collector
+        items:
+          - glowstone:1
+      crying_obsidian:
+        displayItem: crying_obsidian
+        cost: 120
+        max-buys: 8
+        required-level: 6
+        required-challenges:
+          - who_is_cutting_onions
+        items:
+          - crying_obsidian:1
+      obsidian:
+        displayItem: obsidian
+        cost: 80
+        max-buys: 16
+        required-level: 5
+        required-challenges:
+          - obsidian_farmer
+        items:
+          - obsidian:1
+      tuff:
+        displayItem: tuff
+        cost: 5
+        max-buys: 128
+        required-level: 3
+        required-challenges:
+          - stonemason
+        items:
+          - tuff:1
+      calcite:
+        displayItem: calcite
+        cost: 10
+        max-buys: 64
+        required-level: 3
+        required-challenges:
+          - stonemason
+        items:
+          - calcite:1
+      dripstone_block:
+        displayItem: dripstone_block
+        cost: 10
+        max-buys: 64
+        required-level: 2
+        required-challenges: []
+        items:
+          - dripstone_block:1
+
+  # 生物蛋与刷怪笼
+  spawners_eggs:
+    name: '&d生物蛋与刷怪笼'
+    displayItem: 'spawner'
+    items:
+      spawner:
+        displayItem: spawner
+        cost: 1500
+        max-buys: 1
+        required-level: 10
+        required-challenges:
+          - wither_bane
+        items:
+          - spawner:1
+      # 被动生物蛋
+      chicken_spawn_egg:
+        displayItem: chicken_spawn_egg
+        cost: 50
+        max-buys: 8
+        required-level: 2
+        required-challenges:
+          - melon_farm
+        items:
+          - chicken_spawn_egg:1
+      cow_spawn_egg:
+        displayItem: cow_spawn_egg
+        cost: 50
+        max-buys: 8
+        required-level: 2
+        required-challenges:
+          - mushroom_farm
+        items:
+          - cow_spawn_egg:1
+      pig_spawn_egg:
+        displayItem: pig_spawn_egg
+        cost: 50
+        max-buys: 8
+        required-level: 2
+        required-challenges:
+          - furnace_basics
+        items:
+          - pig_spawn_egg:1
+      sheep_spawn_egg:
+        displayItem: sheep_spawn_egg
+        cost: 50
+        max-buys: 8
+        required-level: 2
+        required-challenges:
+          - web_collector
+        items:
+          - sheep_spawn_egg:1
+      rabbit_spawn_egg:
+        displayItem: rabbit_spawn_egg
+        cost: 50
+        max-buys: 8
+        required-level: 2
+        required-challenges: []
+        items:
+          - rabbit_spawn_egg:1
+      horse_spawn_egg:
+        displayItem: horse_spawn_egg
+        cost: 100
+        max-buys: 4
+        required-level: 3
+        required-challenges:
+          - savanna_biome
+        items:
+          - horse_spawn_egg:1
+      donkey_spawn_egg:
+        displayItem: donkey_spawn_egg
+        cost: 100
+        max-buys: 4
+        required-level: 3
+        required-challenges:
+          - savanna_biome
+        items:
+          - donkey_spawn_egg:1
+      mule_spawn_egg:
+        displayItem: mule_spawn_egg
+        cost: 150
+        max-buys: 4
+        required-level: 4
+        required-challenges:
+          - savanna_biome
+        items:
+          - mule_spawn_egg:1
+      llama_spawn_egg:
+        displayItem: llama_spawn_egg
+        cost: 100
+        max-buys: 4
+        required-level: 3
+        required-challenges:
+          - savanna_biome
+        items:
+          - llama_spawn_egg:1
+      cat_spawn_egg:
+        displayItem: cat_spawn_egg
+        cost: 80
+        max-buys: 4
+        required-level: 3
+        required-challenges: []
+        items:
+          - cat_spawn_egg:1
+      wolf_spawn_egg:
+        displayItem: wolf_spawn_egg
+        cost: 80
+        max-buys: 4
+        required-level: 3
+        required-challenges: []
+        items:
+          - wolf_spawn_egg:1
+      fox_spawn_egg:
+        displayItem: fox_spawn_egg
+        cost: 100
+        max-buys: 4
+        required-level: 4
+        required-challenges: []
+        items:
+          - fox_spawn_egg:1
+      axolotl_spawn_egg:
+        displayItem: axolotl_spawn_egg
+        cost: 100
+        max-buys: 4
+        required-level: 4
+        required-challenges:
+          - lush_caves_biome
+        items:
+          - axolotl_spawn_egg:1
+      frog_spawn_egg:
+        displayItem: frog_spawn_egg
+        cost: 80
+        max-buys: 4
+        required-level: 3
+        required-challenges: []
+        items:
+          - frog_spawn_egg:1
+      turtle_spawn_egg:
+        displayItem: turtle_spawn_egg
+        cost: 100
+        max-buys: 4
+        required-level: 4
+        required-challenges:
+          - lukewarm_ocean_biome
+        items:
+          - turtle_spawn_egg:1
+      villager_spawn_egg:
+        displayItem: villager_spawn_egg
+        cost: 200
+        max-buys: 2
+        required-level: 5
+        required-challenges:
+          - home_sweet_home
+        items:
+          - villager_spawn_egg:1
+      bee_spawn_egg:
+        displayItem: bee_spawn_egg
+        cost: 100
+        max-buys: 4
+        required-level: 3
+        required-challenges:
+          - flower_biome
+        items:
+          - bee_spawn_egg:1
+      goat_spawn_egg:
+        displayItem: goat_spawn_egg
+        cost: 150
+        max-buys: 4
+        required-level: 4
+        required-challenges:
+          - snowy_slopes_biome
+        items:
+          - goat_spawn_egg:1
+      mooshroom_spawn_egg:
+        displayItem: mooshroom_spawn_egg
+        cost: 150
+        max-buys: 4
+        required-level: 4
+        required-challenges:
+          - mushroom_biome
+        items:
+          - mooshroom_spawn_egg:1
+      polar_bear_spawn_egg:
+        displayItem: polar_bear_spawn_egg
+        cost: 150
+        max-buys: 4
+        required-level: 4
+        required-challenges:
+          - snowy_plains_biome
+        items:
+          - polar_bear_spawn_egg:1
+      armadillo_spawn_egg:
+        displayItem: armadillo_spawn_egg
+        cost: 100
+        max-buys: 4
+        required-level: 3
+        required-challenges: []
+        items:
+          - armadillo_spawn_egg:1
+      # 敌对生物蛋
+      zombie_spawn_egg:
+        displayItem: zombie_spawn_egg
+        cost: 100
+        max-buys: 4
+        required-level: 5
+        required-challenges:
+          - monster_hunter
+        items:
+          - zombie_spawn_egg:1
+      skeleton_spawn_egg:
+        displayItem: skeleton_spawn_egg
+        cost: 100
+        max-buys: 4
+        required-level: 5
+        required-challenges:
+          - monster_hunter
+        items:
+          - skeleton_spawn_egg:1
+      spider_spawn_egg:
+        displayItem: spider_spawn_egg
+        cost: 80
+        max-buys: 4
+        required-level: 4
+        required-challenges:
+          - monster_hunter
+        items:
+          - spider_spawn_egg:1
+      cave_spider_spawn_egg:
+        displayItem: cave_spider_spawn_egg
+        cost: 80
+        max-buys: 4
+        required-level: 4
+        required-challenges:
+          - monster_hunter
+        items:
+          - cave_spider_spawn_egg:1
+      creeper_spawn_egg:
+        displayItem: creeper_spawn_egg
+        cost: 150
+        max-buys: 2
+        required-level: 6
+        required-challenges:
+          - demolitionist
+        items:
+          - creeper_spawn_egg:1
+      enderman_spawn_egg:
+        displayItem: enderman_spawn_egg
+        cost: 200
+        max-buys: 2
+        required-level: 7
+        required-challenges:
+          - ender_pearl_hunter
+        items:
+          - enderman_spawn_egg:1
+      blaze_spawn_egg:
+        displayItem: blaze_spawn_egg
+        cost: 300
+        max-buys: 2
+        required-level: 7
+        required-challenges:
+          - wither_bane
+        items:
+          - blaze_spawn_egg:1
+      wither_skeleton_spawn_egg:
+        displayItem: wither_skeleton_spawn_egg
+        cost: 500
+        max-buys: 1
+        required-level: 8
+        required-challenges:
+          - nether_architect
+        items:
+          - wither_skeleton_spawn_egg:1
+      witch_spawn_egg:
+        displayItem: witch_spawn_egg
+        cost: 200
+        max-buys: 2
+        required-level: 6
+        required-challenges: []
+        items:
+          - witch_spawn_egg:1
+      guardian_spawn_egg:
+        displayItem: guardian_spawn_egg
+        cost: 250
+        max-buys: 2
+        required-level: 7
+        required-challenges:
+          - deep_ocean_biome
+        items:
+          - guardian_spawn_egg:1
+      elder_guardian_spawn_egg:
+        displayItem: elder_guardian_spawn_egg
+        cost: 500
+        max-buys: 1
+        required-level: 9
+        required-challenges:
+          - deep_ocean_biome
+        items:
+          - elder_guardian_spawn_egg:1
+      shulker_spawn_egg:
+        displayItem: shulker_spawn_egg
+        cost: 1000
+        max-buys: 1
+        required-level: 9
+        required-challenges:
+          - end_portal
+        items:
+          - shulker_spawn_egg:1
+      hoglin_spawn_egg:
+        displayItem: hoglin_spawn_egg
+        cost: 200
+        max-buys: 2
+        required-level: 6
+        required-challenges:
+          - nether_biome
+        items:
+          - hoglin_spawn_egg:1
+      piglin_spawn_egg:
+        displayItem: piglin_spawn_egg
+        cost: 200
+        max-buys: 2
+        required-level: 6
+        required-challenges:
+          - bartering
+        items:
+          - piglin_spawn_egg:1
+      piglin_brute_spawn_egg:
+        displayItem: piglin_brute_spawn_egg
+        cost: 400
+        max-buys: 1
+        required-level: 8
+        required-challenges:
+          - bartering
+        items:
+          - piglin_brute_spawn_egg:1
+      zoglin_spawn_egg:
+        displayItem: zoglin_spawn_egg
+        cost: 200
+        max-buys: 2
+        required-level: 6
+        required-challenges:
+          - nether_biome
+        items:
+          - zoglin_spawn_egg:1
+      breeze_spawn_egg:
+        displayItem: breeze_spawn_egg
+        cost: 350
+        max-buys: 2
+        required-level: 7
+        required-challenges: []
+        items:
+          - breeze_spawn_egg:1
+      bogged_spawn_egg:
+        displayItem: bogged_spawn_egg
+        cost: 150
+        max-buys: 4
+        required-level: 5
+        required-challenges: []
+        items:
+          - bogged_spawn_egg:1
+
+  # 特殊权限与经验
+  permissions_extras:
+    name: '&6特殊权限与经验'
+    displayItem: 'enchanted_command_block'
+    items:
+      xp_10_levels:
+        displayItem: experience_bottle
+        cost: 50
+        max-buys: 10
+        required-level: 0
+        required-challenges: []
+        items: []
+        commands:
+          - 'console: xp add {player} 10 levels'
+      xp_30_levels:
+        displayItem: experience_bottle
+        cost: 120
+        max-buys: 10
+        required-level: 2
+        required-challenges:
+          - enchanter
+        items: []
+        commands:
+          - 'console: xp add {player} 30 levels'
+      xp_50_levels:
+        displayItem: experience_bottle
+        cost: 180
+        max-buys: 5
+        required-level: 5
+        required-challenges:
+          - enchanter
+        items: []
+        commands:
+          - 'console: xp add {player} 50 levels'
+      fly_permission:
+        displayItem: command_block
+        cost: 2000
+        max-buys: 1
+        required-level: 10
+        required-challenges:
+          - beacon_3
+        items: []
+        commands:
+          - 'console: lp user {player} permission set essentials.fly true'
+      home_permission:
+        displayItem: command_block
+        cost: 800
+        max-buys: 1
+        required-level: 5
+        required-challenges:
+          - home_sweet_home
+        items: []
+        commands:
+          - 'console: lp user {player} permission set essentials.sethome.multiple.unlimited'

@@ -1332,6 +1332,7 @@ public class SkyBlockMenu {
             }
 
             data.incrementBuyCount(item.getId());
+            shopLogic.savePlayerData(uuid);  // ← 新增：保存到文件
             player.sendMessage(tr("\u00a7a购买成功！花费 {0,number,###.##}", price));
             player.sendMessage(tr("\u00a7e剩余购买次数: {0}/{1}",
                 item.getMaxBuys() - data.getBuyCount(item.getId()), item.getMaxBuys()));
