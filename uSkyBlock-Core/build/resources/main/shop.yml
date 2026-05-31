@@ -1,0 +1,37 @@
+shop:
+  price-increase:
+    enabled: true
+    increase-percent: 25
+    reset-minutes: 60
+
+  categories:
+    blocks:
+      name: '&a方块'
+      displayItem: minecraft:grass_block
+      items:
+        dirt:
+          displayItem: minecraft:dirt
+          cost: 10
+          max-buys: 64
+          required-level: 0
+          required-challenges: []
+          items:
+            - minecraft:dirt:1
+        stone:
+          displayItem: minecraft:stone
+          cost: 20
+          max-buys: 128
+          required-level: 10
+          required-challenges:
+            - cobble_gen
+          items:
+            - minecraft:stone:1
+        enchanted_pickaxe:
+          displayItem: minecraft:iron_pickaxe
+          cost: 500
+          max-buys: 5
+          required-level: 50
+          required-challenges:
+            - iron_tools
+          commands:
+            - 'console: give {player} minecraft:iron_pickaxe 1 [enchantments={levels:{efficiency:2,unbreaking:2}}]'

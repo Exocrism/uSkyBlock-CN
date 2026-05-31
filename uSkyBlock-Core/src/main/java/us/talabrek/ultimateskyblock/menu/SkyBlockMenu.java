@@ -18,6 +18,7 @@ import org.bukkit.profile.PlayerProfile;
 import org.bukkit.scheduler.BukkitTask;
 import org.jetbrains.annotations.NotNull;
 import us.talabrek.ultimateskyblock.PluginConfig;
+import us.talabrek.ultimateskyblock.challenge.Challenge;
 import us.talabrek.ultimateskyblock.challenge.ChallengeLogic;
 import us.talabrek.ultimateskyblock.handler.ConfirmHandler;
 import us.talabrek.ultimateskyblock.island.IslandGenerator;
@@ -31,10 +32,15 @@ import us.talabrek.ultimateskyblock.player.UltimateHolder.MenuType;
 import us.talabrek.ultimateskyblock.uSkyBlock;
 import us.talabrek.ultimateskyblock.util.GuiItemUtil;
 import us.talabrek.ultimateskyblock.util.Scheduler;
+import us.talabrek.ultimateskyblock.shop.ShopCategory;
+import us.talabrek.ultimateskyblock.shop.ShopItem;
+import us.talabrek.ultimateskyblock.shop.PlayerShopData;
+import us.talabrek.ultimateskyblock.shop.ShopLogic;
 
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
 import java.util.UUID;
@@ -59,6 +65,7 @@ import static us.talabrek.ultimateskyblock.util.LogUtil.log;
 public class SkyBlockMenu {
     private final Pattern PERM_VALUE_PATTERN = Pattern.compile("(\\[(?<perm>(?<not>[!])?[^\\]]+)\\])?(?<value>.*)");
     private final Pattern CHALLENGE_PAGE_HEADER = Pattern.compile(tr("Challenge Menu") + ".*\\((?<p>[0-9]+)/(?<max>[0-9]+)\\)");
+    private final Pattern SHOP_PAGE_HEADER = Pattern.compile(stripFormatting(tr("商店")) + ".*\\((?<p>[0-9]+)/(?<max>[0-9]+)\\)");
 
     private final uSkyBlock plugin;
     private final ChallengeLogic challengeLogic;
@@ -591,10 +598,10 @@ public class SkyBlockMenu {
         menu.addItem(menuItem);
         lores.clear();
 
-        menuItem = new ItemStack(Material.HOPPER, 1);
+        menuItem = new ItemStack(Material.NETHER_STAR, 1);
         meta4 = menuItem.getItemMeta();
-        meta4.setDisplayName("\u00a7b\u00a7l" + tr("Buy Extra Hopper Limit"));
-        addLore(lores, "\u00a7e" + tr("Current Limit: {0,number,##}(Default) + {1,number,##}(Extra)", plugin.getBlockLimitLogic().getLimits().getOrDefault(Material.HOPPER, 0), islandInfo.getHopperLimit()));
+        meta4.setDisplayName("\u00a7b\u00a7l" + tr("功能入口"));
+        addLore(lores, "\u00a7e" + tr("详细功能稍后添加"));
         meta4.setLore(lores);
         menuItem.setItemMeta(meta4);
         menu.addItem(menuItem);
@@ -697,7 +704,10 @@ public class SkyBlockMenu {
             onClickCreateMenu(event, p, meta, slotIndex, menuSize);
         } else if (inventoryName.equalsIgnoreCase(stripFormatting(tr("Island Restart Menu")))) {
             onClickRestartMenu(event, p, meta, slotIndex, currentItem);
+        } else if (inventoryName.startsWith(stripFormatting(tr("商店")))) {
+            onClickShopMenu(event, currentItem, p, inventoryName, slotIndex);
         }
+
     }
 
     private void onClickRestartMenu(final InventoryClickEvent event, final Player p, ItemMeta meta, int slotIndex, ItemStack currentItem) {
@@ -769,9 +779,8 @@ public class SkyBlockMenu {
         } else if (currentItem.getType() == Material.BEACON) {
             player.performCommand("island setwarp");
             player.performCommand("island");
-        } else if (currentItem.getType() == Material.HOPPER) {
-            player.closeInventory();
-            player.performCommand("island hopper");
+        } else if (currentItem.getType() == Material.NETHER_STAR) {
+            player.openInventory(displayShopGUI(player, null, 1));
         } else if (currentItem.getType() == Material.WRITABLE_BOOK) {
             player.performCommand("island log");
         } else if (currentItem.getType() == Material.OAK_DOOR) {
@@ -1028,5 +1037,298 @@ public class SkyBlockMenu {
 
     public List<PartyPermissionMenuItem> getPermissionMenuItems() {
         return permissionMenuItems;
+    }
+    // ==================== 商店 GUI (仿 Challenge GUI 布局) ====================
+
+    // 商店菜单：与挑战菜单高度一致，6行物品 + 1行分页
+    private static final int SHOP_PAGESIZE = CHALLENGE_PAGESIZE;
+    // 第一列（分类）不算在可用物品区，实际物品从第2列开始
+    private static final int SHOP_ITEM_COLS = COLS_PER_ROW - 1;
+    // 每页显示物品数：5行 * 8列 = 40个
+    private static final int SHOP_ITEMS_PER_PAGE = (SHOP_PAGESIZE / COLS_PER_ROW) * SHOP_ITEM_COLS;
+
+    public Inventory displayShopGUI(Player player, String categoryId, int page) {
+        ShopLogic shopLogic = plugin.getShopLogic();
+        List<ShopCategory> categories = shopLogic.getCategories();
+        if (categories.isEmpty()) {
+            player.sendMessage(tr("\u00a7c商店暂无物品"));
+            return createMainMenu(player);
+        }
+
+        // 默认选中第一个分类
+        if (categoryId == null && !categories.isEmpty()) {
+            categoryId = categories.getFirst().getId();
+        }
+        ShopCategory currentCategory = shopLogic.getCategory(categoryId);
+        if (currentCategory == null && !categories.isEmpty()) {
+            currentCategory = categories.getFirst();
+            categoryId = currentCategory.getId();
+        }
+
+        int totalPages = Math.max(1, (int) Math.ceil(currentCategory.getItems().size() / (double) SHOP_ITEMS_PER_PAGE));
+        if (page < 1) page = 1;
+        if (page > totalPages) page = totalPages;
+
+        // 使用与挑战菜单相同的大尺寸
+        String title = "\u00a79" + tr("商店") + "-" + stripFormatting(currentCategory.getName()) + " (" + page + "/" + totalPages + ")";
+        Inventory menu = Bukkit.createInventory(
+            new UltimateHolder(player, title, MenuType.DEFAULT), SHOP_PAGESIZE + COLS_PER_ROW, title);
+
+        // 第一列：分类列表
+        int catSlot = 0;
+        for (ShopCategory cat : categories) {
+            if (catSlot >= SHOP_PAGESIZE) break;
+            // 使用 GuiItemUtil 来正确处理颜色
+            ItemStack catItem = GuiItemUtil.createGuiDisplayItem(
+                cat.getDisplayItem().getType().name(),
+                cat.getId().equals(categoryId) ? "\u00a7a\u00a7l" + cat.getName() : "\u00a77" + cat.getName()
+            );
+            menu.setItem(catSlot, catItem);
+            catSlot += COLS_PER_ROW;
+        }
+
+        // 物品区域
+        List<ShopItem> items = currentCategory.getItems();
+        int startIndex = (page - 1) * SHOP_ITEMS_PER_PAGE;
+        int endIndex = Math.min(startIndex + SHOP_ITEMS_PER_PAGE, items.size());
+
+        int slot = 1; // 从第二列开始
+        for (int i = startIndex; i < endIndex; i++) {
+            if (slot % COLS_PER_ROW == 0) slot++; // 跳过第一列（分类）
+            if (slot >= SHOP_PAGESIZE) break; // 不要覆盖到翻页行
+
+            List<String> unmetChallenges = new ArrayList<>();
+
+            ShopItem shopItem = items.get(i);
+            List<String> lores = new ArrayList<>();
+            PlayerInfo pi = plugin.getPlayerInfo(player);
+            PlayerShopData data = shopLogic.getPlayerData(player.getUniqueId());
+
+            double currentPrice = shopLogic.getCurrentPrice(shopItem, player.getUniqueId());
+            int bought = data.getBuyCount(shopItem.getId());
+
+            lores.add(tr("\u00a7e价格: \u00a7f{0,number,###.##}", currentPrice));
+            lores.add(tr("\u00a7e已购买: \u00a7f{0}/{1}", bought, shopItem.getMaxBuys()));
+
+            // 收集所有未满足条件
+            List<String> unmetReasons = new ArrayList<>();
+
+            // 检查岛屿等级
+            IslandInfo info = plugin.getIslandInfo(player);
+            if (shopItem.getRequiredLevel() > 0 && info.getLevel() < shopItem.getRequiredLevel()) {
+                unmetReasons.add(tr("\u00a7c需要岛屿等级: \u00a7f{0} \u00a77(当前: \u00a7f{1,number,##.#}\u00a77)", shopItem.getRequiredLevel(), info.getLevel()));
+            }
+
+            // 检查任务完成（只显示未完成的）
+            if (!shopItem.getRequiredChallenges().isEmpty()) {
+                boolean hasUnmet = false;
+                for (String challengeId : shopItem.getRequiredChallenges()) {
+                    if (pi.checkChallenge(challengeId) == 0) {
+                        if (!hasUnmet) {
+                            unmetReasons.add(tr("\u00a7c需要任务:"));
+                            hasUnmet = true;
+                        }
+                        Challenge challenge = challengeLogic.getChallenge(challengeId);
+                        String displayName = challenge != null ? challenge.getDisplayName() : challengeId;
+                        unmetReasons.add(tr("\u00a7c  {0}", displayName));
+                    }
+                }
+            }
+
+            // 检查购买上限
+            if (bought >= shopItem.getMaxBuys()) {
+                unmetReasons.add(tr("\u00a7c已达购买上限"));
+            }
+
+            // 判断是否锁定
+            boolean locked = !unmetReasons.isEmpty();
+
+            if (locked) {
+                lores.add(tr("\u00a7c\u00a7l商品已锁定"));
+                lores.addAll(unmetReasons);
+            } else {
+                lores.add(tr("\u00a7e\u00a7l点击购买"));
+            }
+
+            ItemStack itemStack = ItemStackUtil.builder(shopItem.getDisplayItem().clone())
+                .lore(lores)
+                .build();
+
+            menu.setItem(slot, itemStack);
+            slot++;
+        }
+
+        // 底部分页（最后一格返回主菜单）
+        int[] pages = new int[9];
+        pages[0] = 1;
+        pages[8] = 0; // 最后一格用于返回主菜单
+        int startOffset = 2;
+        if (page > 5) {
+            startOffset = (int) ((Math.round(page / 2d)) - 1);
+            if (startOffset > totalPages - 7) {
+                startOffset = totalPages - 7;
+            }
+        }
+        for (int i = 0; i < 7; i++) {
+            pages[i + 1] = startOffset + i;
+        }
+        for (int i = 0; i < pages.length; i++) {
+            int p = pages[i];
+            if (i == 8) {
+                // 最后一格：返回主菜单
+                ItemStack backItem = GuiItemUtil.createGuiDisplayItem(Material.OAK_DOOR, tr("\u00a77返回主菜单"));
+                backItem = ItemStackUtil.builder(backItem).displayName(tr("\u00a77返回主菜单")).build();
+                menu.setItem(SHOP_PAGESIZE + 8, backItem);
+            } else if (p >= 1 && p <= totalPages) {
+                ItemStack pageItem;
+                if (p == page) {
+                    pageItem = GuiItemUtil.createGuiDisplayItem(Material.WRITABLE_BOOK, tr("\u00a77Current page"));
+                } else {
+                    pageItem = GuiItemUtil.createGuiDisplayItem(Material.BOOK, tr("\u00a77Page {0}", p));
+                }
+                if (i == 0) {
+                    pageItem = ItemStackUtil.builder(pageItem)
+                        .displayName(tr("\u00a77First Page"))
+                        .build();
+                }
+                pageItem.setAmount(p);
+                menu.setItem(i + SHOP_PAGESIZE, pageItem);
+            }
+        }
+
+        return menu;
+    }
+
+    private void onClickShopMenu(InventoryClickEvent event, ItemStack currentItem,
+                                  Player player, String inventoryName, int slotIndex) {
+        event.setCancelled(true);
+
+        // 只处理商店 GUI 内的点击，忽略玩家背包的点击
+        if (event.getRawSlot() != event.getSlot()) {
+            return;
+        }
+
+        ShopLogic shopLogic = plugin.getShopLogic();
+
+        // 点击分类
+        if (slotIndex % COLS_PER_ROW == 0 && slotIndex < SHOP_PAGESIZE) {
+            List<ShopCategory> categories = shopLogic.getCategories();
+            int catIndex = slotIndex / COLS_PER_ROW;
+            if (catIndex < categories.size()) {
+                player.openInventory(displayShopGUI(player, categories.get(catIndex).getId(), 1));
+            }
+            return;
+        }
+
+        // 翻页 / 返回主菜单
+        if (slotIndex >= SHOP_PAGESIZE && slotIndex < SHOP_PAGESIZE + COLS_PER_ROW
+            && currentItem != null && currentItem.getType() != Material.AIR) {
+            if (slotIndex == SHOP_PAGESIZE + 8) {
+                // 最后一格：返回主菜单
+                player.openInventory(createMainMenu(player));
+            } else {
+                // 翻页
+                player.openInventory(displayShopGUI(player, getCategoryIdFromInventoryName(inventoryName), currentItem.getAmount()));
+            }
+            return;
+        }
+
+        // 点击物品 - 购买（通过 Material + 物品内部ID匹配）
+        String categoryId = getCategoryIdFromInventoryName(inventoryName);
+        if (categoryId != null) {
+            ShopCategory category = shopLogic.getCategory(categoryId);
+            if (category != null && currentItem != null && currentItem.getType() != Material.AIR) {
+                Material clickedType = currentItem.getType();
+                for (ShopItem item : category.getItems()) {
+                    if (item.getDisplayItem().getType() == clickedType) {
+                        buyShopItem(player, category, item);
+                        return;
+                    }
+                }
+            }
+        }
+        player.openInventory(displayShopGUI(player, categoryId, 1));
+    }
+
+    private String getCategoryIdFromInventoryName(String inventoryName) {
+        ShopLogic shopLogic = plugin.getShopLogic();
+        for (ShopCategory cat : shopLogic.getCategories()) {
+            if (stripFormatting(inventoryName).contains(stripFormatting(cat.getName()))) {
+                return cat.getId();
+            }
+        }
+        return null;
+    }
+
+    private void buyShopItem(Player player, ShopCategory category, ShopItem item) {
+        PlayerInfo pi = plugin.getPlayerInfo(player);
+        UUID uuid = player.getUniqueId();
+        ShopLogic shopLogic = plugin.getShopLogic();
+        PlayerShopData data = shopLogic.getPlayerData(uuid);
+
+        IslandInfo islandInfo = plugin.getIslandInfo(player);
+        if (islandInfo.getLevel() < item.getRequiredLevel()) {
+            player.sendMessage(tr("\u00a7c你的岛屿等级不足！需要 {0} 级", item.getRequiredLevel()));
+            return;
+        }
+
+        for (String challengeId : item.getRequiredChallenges()) {
+            if (pi.checkChallenge(challengeId) == 0) {
+                // 尝试根据挑战ID获取其在配置文件中的显示名称
+                String displayName = challengeId;
+                Challenge challenge = challengeLogic.getChallenge(challengeId);
+                if (challenge != null) {
+                    displayName = stripFormatting(challenge.getDisplayName()); // 获取可读的显示名
+                }
+                player.sendMessage(tr("\u00a7c你需要先完成挑战: {0}", displayName));
+                return;
+            }
+        }
+
+        if (data.getBuyCount(item.getId()) >= item.getMaxBuys()) {
+            player.sendMessage(tr("\u00a7c已达到最大购买数量！"));
+            return;
+        }
+
+        double price = shopLogic.getCurrentPrice(item, uuid);
+        plugin.getHookManager().getEconomyHook().ifPresent(hook -> {
+            if (hook.getBalance(player) < price) {
+                player.sendMessage(tr("\u00a7c余额不足！需要 {0,number,###.##}", price));
+                return;
+            }
+
+            hook.withdrawPlayer(player, price);
+
+            // === 物品发放（完全复刻 ChallengeLogic.giveReward） ===
+
+            // 方式一：items 列表
+            if (!item.getItemRewards().isEmpty()) {
+                List<ItemStackUtil.ItemProbability> probs = ItemStackUtil.createItemsWithProbability(item.getItemRewards());
+                List<ItemStack> rewardItems = new ArrayList<>();
+                for (ItemStackUtil.ItemProbability prob : probs) {
+                    rewardItems.add(prob.item().clone());
+                }
+                HashMap<Integer, ItemStack> leftOvers = player.getInventory().addItem(rewardItems.toArray(new ItemStack[0]));
+                for (ItemStack leftOver : leftOvers.values()) {
+                    player.getWorld().dropItem(player.getLocation(), leftOver);
+                }
+                if (!leftOvers.isEmpty()) {
+                    player.sendMessage(tr("\u00a7e你的背包满了，部分物品掉在地上。"));
+                }
+            }
+
+            // 方式二：commands 列表
+            for (String cmd : item.getCommands()) {
+                plugin.execCommand(player, cmd, true);
+            }
+
+            data.incrementBuyCount(item.getId());
+            data.incrementBuyCount(item.getId());
+            player.sendMessage(tr("\u00a7a购买成功！花费 {0,number,###.##}", price));
+            player.sendMessage(tr("\u00a7e剩余购买次数: {0}/{1}",
+                item.getMaxBuys() - data.getBuyCount(item.getId()), item.getMaxBuys()));
+        });
+
+        player.openInventory(displayShopGUI(player, category.getId(), 1));
     }
 }

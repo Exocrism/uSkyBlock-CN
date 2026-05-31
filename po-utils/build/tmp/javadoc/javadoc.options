@@ -1,8 +1,0 @@
--classpath 'Y:\\VSCode库\\uSkyBlock\\po-utils\\build\\classes\\java\\main;Y:\\VSCode库\\uSkyBlock\\po-utils\\build\\classes\\kotlin\\main;Y:\\VSCode库\\uSkyBlock\\po-utils\\build\\resources\\main;Y:\\VSCode库\\uSkyBlock\\build\\libs\\uSkyBlock-3.2.0-SNAPSHOT.jar;C:\\Users\\好家伙\\.gradle\\caches\\modules-2\\files-2.1\\org.jetbrains.kotlin\\kotlin-script-runtime\\2.1.10\\70000e6ef453308e55d42ea4ace5b8c32325ce75\\kotlin-script-runtime-2.1.10.jar;C:\\Users\\好家伙\\.gradle\\caches\\modules-2\\files-2.1\\org.jetbrains.kotlin\\kotlin-stdlib\\2.1.10\\d3028429e7151d7a7c1a0d63a4f60eac86a87b91\\kotlin-stdlib-2.1.10.jar;C:\\Users\\好家伙\\.gradle\\caches\\modules-2\\files-2.1\\org.jetbrains\\annotations\\23.0.0\\8cc20c07506ec18e0834947b84a864bfc094484e\\annotations-23.0.0.jar'
--d 'Y:\\VSCode库\\uSkyBlock\\po-utils\\build\\docs\\javadoc'
--doctitle 'po-utils API'
--notimestamp 
--quiet 
--windowtitle 'po-utils API'
-'Y:\\VSCode库\\uSkyBlock\\po-utils\\src\\main\\java\\dk\\lockfuglsang\\minecraft\\po\\I18nUtil.java'
-'Y:\\VSCode库\\uSkyBlock\\po-utils\\src\\main\\java\\dk\\lockfuglsang\\minecraft\\po\\POParser.java'

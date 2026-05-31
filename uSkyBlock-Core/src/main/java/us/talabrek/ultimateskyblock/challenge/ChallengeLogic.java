@@ -375,7 +375,13 @@ public class ChallengeLogic implements Listener {
             Bukkit.getServer().broadcastMessage(FormatUtil.normalize(config.getString("broadcastText")) + tr("\u00a79{0}\u00a7f has completed the \u00a79{1}\u00a7f challenge!", player.getName(), challenge.getDisplayName()));
             wasBroadcast = true;
         }
-        player.sendMessage(tr("\u00a7eItem reward(s): \u00a7f{0}", reward.getRewardText()));
+        String rewardText = reward.getRewardText();
+        if (rewardText != null && !rewardText.isEmpty()) {
+            player.sendMessage(tr("\u00a7eItem reward(s):"));
+            for (String line : rewardText.split("\\R")) {
+                player.sendMessage(tr("\u00a7f{0}", line));
+            }
+        }
         player.sendMessage(tr("\u00a7eExp reward: \u00a7f{0,number,#.#}", reward.getXpReward()));
         if (defaults.enableEconomyPlugin) {
             double rewBonus = 1;

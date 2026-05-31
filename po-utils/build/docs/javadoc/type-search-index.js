@@ -1,1 +1,0 @@
-typeSearchIndex = [{"p":"dk.lockfuglsang.minecraft.po","l":"I18nUtil.I18n"},{"p":"dk.lockfuglsang.minecraft.po","l":"I18nUtil"},{"p":"dk.lockfuglsang.minecraft.po","l":"POParser"},{"l":"所有类和接口","u":"allclasses-index.html"}];updateSearchResults();

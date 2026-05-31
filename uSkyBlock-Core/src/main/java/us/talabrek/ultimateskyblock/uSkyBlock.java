@@ -74,6 +74,7 @@ import us.talabrek.ultimateskyblock.util.Scheduler;
 import us.talabrek.ultimateskyblock.util.ServerUtil;
 import us.talabrek.ultimateskyblock.uuid.PlayerDB;
 import us.talabrek.ultimateskyblock.world.WorldManager;
+import us.talabrek.ultimateskyblock.shop.ShopLogic;
 
 import java.time.Duration;
 import java.util.Collections;
@@ -153,6 +154,8 @@ public class uSkyBlock extends JavaPlugin implements uSkyBlockAPI, CommandManage
     private SkyUpdateChecker updateChecker;
     @Inject
     private Scheduler scheduler;
+    @Inject
+    private ShopLogic shopLogic;
 
     private UltimateSkyblockApi api;
 
@@ -959,5 +962,8 @@ public class uSkyBlock extends JavaPlugin implements uSkyBlockAPI, CommandManage
 
     public Scheduler getScheduler() {
         return new Scheduler(this);
+    }
+    public ShopLogic getShopLogic() {
+        return shopLogic;
     }
 }

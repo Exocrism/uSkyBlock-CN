@@ -1,0 +1,114 @@
+# ======================================================================================================================
+#
+# 以下是商店系统的格式与说明
+# 单注释 (#) 是最常用的设置，双注释 (##) 是可选设置，如果你喜欢使用这些设置的话
+#
+# 物品类型格式
+# 物品类型定义方式与 Minecraft /give 命令相同，即使用它们的 Minecraft 键以及可能的组件，放入方括号中
+# 例如，'minecraft:diamond_sword[damage=42]'请参阅 Minecraft Wiki 了解更多信息：
+# https://minecraft.wiki/w/Data_component_format
+# 你也可以使用命令 '/usb iteminfo' 来获取信息
+#
+# 此物品类型根据使用位置的不同，会补充额外的信息：
+#
+# display-item: <类型>
+# 要在 GUI 中显示的物品，它仅定义如上所述的物品类型，不带任何额外信息
+# 例如：'cobblestone', 'minecraft:stone', 'diamond_sword[damage=42]'
+#
+# item-reward: [{p=<概率>}]<类型>:<数量>
+# 商店的物品奖励数量是要给予的物品数量可选的 {p=<概率>} 是
+# 给予该物品的概率例如，'cobblestone:64' 每次购买都会给予 64 个圆石，
+# 而 '{p=0.1}cobblestone:64' 有 10% 的概率给予 64 个圆石
+#
+# ======================================================================================================================
+# 所有商品都在 categories 部分中定义每个 category 是商店侧边栏的一个分类
+#
+# categories:
+#   # [文本] 分类名称所有分类名称应为小写英文
+#   blocks:
+#     # [文本] 在商店侧边栏中显示的分类名称（支持大写和颜色代码）
+#     name: '&a方块'
+#     # [display-item] 在商店侧边栏中为分类显示的物品
+#     displayItem: 'minecraft:grass_block'
+#     # 这些是该分类下的商品列表
+#     items:
+#       # [文本] 商品名称所有商品名称应为小写英文
+#       dirt:
+#         # [文本] 在商店中显示的商品名称（支持大写和颜色代码）
+#         # 目前使用 displayItem 的默认名称，暂不支持自定义
+#         # name: '&a泥土'
+#         # [display-item] 在商店中为商品显示的物品
+#         displayItem: minecraft:dirt
+#         # [数字] 购买此商品所需的基础货币数量
+#         cost: 10
+#         # [整数] 在价格重置周期内可购买的最大次数
+#         max-buys: 64
+#         # [整数] 购买此商品所需的岛屿等级 0 表示无等级限制
+#         required-level: 0
+#         # [列表[文本]] 购买此商品所需完成的任务列表
+#         required-challenges: []
+#         # [列表[物品奖励]] 购买时给予玩家的物品列表
+#         items:
+#         - minecraft:dirt:1
+#         # [列表[文本]] 购买时执行给定的命令前面加上 "op" 或 "console" 以以 OP 身份
+#         #               或从控制台运行命令示例：
+#         # 可能的命令参数有：
+#         # {player}     - 玩家名称
+#         # {playerName} - 玩家的显示名称
+#         # {party}      - 为队伍中的每个成员执行一次命令（替换名称）
+#         ## commands:
+#         ## - 'console: give {player} minecraft:dirt 1'
+#         ## - 'op: me are the GOD of things'
+#
+# ======================================================================================================================
+
+# [true/false] 启用价格递增功能
+# 如果为 true，同一商品多次购买时价格会递增
+price-increase:
+  enabled: true
+
+  # [数字] 每次购买后价格增加的百分比
+  # 例如：25 表示每次购买后价格变为原来的 125%
+  increase-percent: 10
+
+  # [整数] 价格重置时间（分钟）
+  # 超过此时间后，购买计数重置，价格恢复为基础价格
+  reset-minutes: 60
+
+# ===============================================
+# 文件底部可以找到设置你自己的商品的说明
+# ===============================================
+categories:
+  blocks:
+    name: '&a方块'
+    displayItem: minecraft:grass_block
+    items:
+      dirt:
+        displayItem: minecraft:dirt
+        cost: 10
+        max-buys: 64
+        required-level: 0
+        required-challenges: []
+        items:
+          - minecraft:dirt:1
+      stone:
+        displayItem: minecraft:stone
+        cost: 20
+        max-buys: 128
+        required-level: 10
+        required-challenges:
+          - cobble_gen
+        items:
+          - minecraft:stone:1
+      enchanted_pickaxe:
+        displayItem: minecraft:iron_pickaxe
+        cost: 500
+        max-buys: 5
+        required-level: 50
+        required-challenges:
+          - iron_tools
+        commands:
+          - 'console: give {player} minecraft:iron_pickaxe 1 [enchantments={levels:{efficiency:2,unbreaking:2}}]'
+
+# 不要更改版本！你会破坏转换过程，意想不到的事情将会发生！
+version: 0
