@@ -1113,10 +1113,10 @@ public class SkyBlockMenu {
             PlayerInfo pi = plugin.getPlayerInfo(player);
             PlayerShopData data = shopLogic.getPlayerData(player.getUniqueId());
 
-            double currentPrice = shopLogic.getCurrentPrice(shopItem, player.getUniqueId());
+            int actualPrice = shopLogic.getActualPrice(shopItem, player.getUniqueId());
             int bought = data.getBuyCount(shopItem.getId());
 
-            lores.add(tr("\u00a7e价格: \u00a7f{0,number,#}", Math.round(currentPrice)));
+            lores.add(tr("\u00a7e价格: \u00a7f{0,number,#}", actualPrice));
             lores.add(tr("\u00a7e已购买: \u00a7f{0}/{1}", bought, shopItem.getMaxBuys()));
 
             // 收集所有未满足条件
@@ -1299,14 +1299,14 @@ public class SkyBlockMenu {
             return;
         }
 
-        double price = shopLogic.getCurrentPrice(item, uuid);
+        int actualPrice = shopLogic.getActualPrice(item, uuid);
         plugin.getHookManager().getEconomyHook().ifPresent(hook -> {
-            if (hook.getBalance(player) < price) {
-                player.sendMessage(tr("\u00a7c余额不足！需要 {0,number,###.##}", price));
+            double balance = hook.getBalance(player);
+            if (balance < actualPrice) {
+                player.sendMessage(tr("\u00a7c余额不足！需要 {0,number,#}，你只有 {1,number,#}", actualPrice, (int) balance));
                 return;
             }
-
-            hook.withdrawPlayer(player, price);
+            hook.withdrawPlayer(player, actualPrice);
 
             // === 物品发放（完全复刻 ChallengeLogic.giveReward） ===
 
@@ -1333,7 +1333,8 @@ public class SkyBlockMenu {
 
             data.incrementBuyCount(item.getId());
             shopLogic.savePlayerData(uuid);  // ← 新增：保存到文件
-            player.sendMessage(tr("\u00a7a购买成功！花费 {0,number,###.##}", price));
+            double remaining = hook.getBalance(player);
+            player.sendMessage(tr("\u00a7a购买成功！花费 {0,number,#}，余额 {1,number,#}", actualPrice, (int) remaining));
             player.sendMessage(tr("\u00a7e剩余购买次数: {0}/{1}",
                 item.getMaxBuys() - data.getBuyCount(item.getId()), item.getMaxBuys()));
         });

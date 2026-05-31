@@ -131,6 +131,10 @@ public class ShopLogic {
         return price;
     }
 
+    public int getActualPrice(ShopItem item, UUID playerUuid) {
+        return (int) Math.floor(getCurrentPrice(item, playerUuid));
+    }
+
     public boolean canBuy(ShopItem item, UUID playerUuid) {
         PlayerShopData data = getPlayerData(playerUuid);
         // 检查最大购买数量
