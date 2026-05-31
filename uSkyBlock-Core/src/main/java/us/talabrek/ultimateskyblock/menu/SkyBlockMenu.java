@@ -601,8 +601,9 @@ public class SkyBlockMenu {
 
         menuItem = new ItemStack(Material.NETHER_STAR, 1);
         meta4 = menuItem.getItemMeta();
-        meta4.setDisplayName("\u00a7b\u00a7l" + tr("功能入口"));
-        addLore(lores, "\u00a7e" + tr("详细功能稍后添加"));
+        meta4.setDisplayName("\u00a7b\u00a7l" + tr("商店"));
+        addLore(lores, "\u00a7e" + tr("使用天空币兑换各类物资"));
+        addLore(lores, "\u00a7e" + tr("以及特殊权限！"));
         meta4.setLore(lores);
         menuItem.setItemMeta(meta4);
         menu.addItem(menuItem);
