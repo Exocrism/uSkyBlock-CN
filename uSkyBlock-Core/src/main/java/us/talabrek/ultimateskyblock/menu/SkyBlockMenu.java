@@ -11,6 +11,7 @@ import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.SkullMeta;
@@ -1083,6 +1084,14 @@ public class SkyBlockMenu {
                 cat.getDisplayItem().getType().name(),
                 cat.getId().equals(categoryId) ? "\u00a7a\u00a7l" + cat.getName() : "\u00a77" + cat.getName()
             );
+            if (cat.getId().equals(categoryId) && catItem != null) {
+                ItemMeta catMeta = catItem.getItemMeta();
+                if (catMeta != null) {
+                    catMeta.addEnchant(org.bukkit.enchantments.Enchantment.LOYALTY, 1, true);
+                                        catMeta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+                    catItem.setItemMeta(catMeta);
+                }
+            }
             menu.setItem(catSlot, catItem);
             catSlot += COLS_PER_ROW;
         }
@@ -1107,7 +1116,7 @@ public class SkyBlockMenu {
             double currentPrice = shopLogic.getCurrentPrice(shopItem, player.getUniqueId());
             int bought = data.getBuyCount(shopItem.getId());
 
-            lores.add(tr("\u00a7e价格: \u00a7f{0,number,###.##}", currentPrice));
+            lores.add(tr("\u00a7e价格: \u00a7f{0,number,#}", Math.round(currentPrice)));
             lores.add(tr("\u00a7e已购买: \u00a7f{0}/{1}", bought, shopItem.getMaxBuys()));
 
             // 收集所有未满足条件
@@ -1322,7 +1331,6 @@ public class SkyBlockMenu {
                 plugin.execCommand(player, cmd, true);
             }
 
-            data.incrementBuyCount(item.getId());
             data.incrementBuyCount(item.getId());
             player.sendMessage(tr("\u00a7a购买成功！花费 {0,number,###.##}", price));
             player.sendMessage(tr("\u00a7e剩余购买次数: {0}/{1}",
