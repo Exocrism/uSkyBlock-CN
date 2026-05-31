@@ -602,8 +602,7 @@ public class SkyBlockMenu {
         menuItem = new ItemStack(Material.NETHER_STAR, 1);
         meta4 = menuItem.getItemMeta();
         meta4.setDisplayName("\u00a7b\u00a7l" + tr("商店"));
-        addLore(lores, "\u00a7e" + tr("使用天空币兑换各类物资"));
-        addLore(lores, "\u00a7e" + tr("以及特殊权限！"));
+        addLore(lores, "\u00a7f使用\u00a7b天空币\u00a7f购买各类\u00a7a基础或稀有物资\u00a7f，以及\u00a7d特殊权限\u00a7f！\n\u00a7e\u00a7l点击进入商店");
         meta4.setLore(lores);
         menuItem.setItemMeta(meta4);
         menu.addItem(menuItem);
