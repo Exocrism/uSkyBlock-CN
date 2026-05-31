@@ -705,7 +705,7 @@ public class SkyBlockMenu {
             onClickCreateMenu(event, p, meta, slotIndex, menuSize);
         } else if (inventoryName.equalsIgnoreCase(stripFormatting(tr("Island Restart Menu")))) {
             onClickRestartMenu(event, p, meta, slotIndex, currentItem);
-        } else if (inventoryName.startsWith(stripFormatting(tr("商店")))) {
+        } else if (inventoryName.startsWith("Store") || inventoryName.startsWith(stripFormatting(tr("商店")))) {
             onClickShopMenu(event, currentItem, p, inventoryName, slotIndex);
         }
 

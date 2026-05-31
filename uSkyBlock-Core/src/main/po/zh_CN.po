@@ -3830,71 +3830,63 @@ msgstr "深海"
 msgid "snowy_plains"
 msgstr "积雪平原"
 
-# ==========================================
 # 商店系统
-# ==========================================
-
-# 主菜单入口
 msgid "Store"
 msgstr "商店"
 
-msgid "\u00a7fUse \u00a7bSkybucks\u00a7f to buy \u00a7abasic\u00a7f or \u00a7orare items\u00a7f, even \u00a7dspecial permissions\u00a7f!"
-msgstr "\u00a7f使用\u00a7b天空币\u00a7f购买\u00a7a基础\u00a7f或\u00a7o稀有物资\u00a7f，甚至\u00a7d特殊权限\u00a7f！"
+msgid "§fUse §bSkybucks§f to buy §abasic§f or §orare items§f, even §dspecial permissions§f!"
+msgstr "§f使用§b天空币§f购买§a基础§f或§o稀有物资§f，甚至§d特殊权限§f！"
 
-# 商店 GUI
-msgid "\u00a7ePrice: \u00a7f{0,number,#}"
-msgstr "\u00a7e价格：\u00a7f{0,number,#}"
+msgid "§ePrice: §f{0,number,#}"
+msgstr "§e价格：§f{0,number,#}"
 
-msgid "\u00a7eBought: \u00a7f{0}/{1}"
-msgstr "\u00a7e已购买：\u00a7f{0}/{1}"
+msgid "§eBought: §f{0}/{1}"
+msgstr "§e已购买：§f{0}/{1}"
 
-msgid "\u00a7cRequires Island Level: \u00a7f{0} \u00a77(Current: \u00a7f{1,number,##.#}\u00a77)"
-msgstr "\u00a7c需要岛屿等级：\u00a7f{0} \u00a77（当前：\u00a7f{1,number,##.#}\u00a77）"
+msgid "§cRequires Island Level: §f{0} §7(Current: §f{1,number,##.#}§7)"
+msgstr "§c需要岛屿等级：§f{0} §7（当前：§f{1,number,##.#}§7）"
 
-msgid "\u00a7cRequires Challenges:"
-msgstr "\u00a7c需要完成挑战："
+msgid "§cRequires Challenges:"
+msgstr "§c需要完成挑战："
 
-msgid "\u00a7c  {0}"
-msgstr "\u00a7c  {0}"
+msgid "§c  {0}"
+msgstr "§c  {0}"
 
-msgid "\u00a7cPurchase limit reached"
-msgstr "\u00a7c已达到购买上限"
+msgid "§cPurchase limit reached"
+msgstr "§c已达到购买上限"
 
-msgid "\u00a7c\u00a7lLocked"
-msgstr "\u00a7c\u00a7l商品已锁定"
+msgid "§c§lLocked"
+msgstr "§c§l商品已锁定"
 
-msgid "\u00a7e\u00a7lClick to buy"
-msgstr "\u00a7e\u00a7l点击购买"
+msgid "§e§lClick to buy"
+msgstr "§e§l点击购买"
 
-# 翻页
-msgid "\u00a77Back to Main Menu"
-msgstr "\u00a77返回主菜单"
+msgid "§7Back to Main Menu"
+msgstr "§7返回主菜单"
 
-# 购买提示
-msgid "\u00a7cIsland level too low! Requires level {0}"
-msgstr "\u00a7c岛屿等级不足！需要 {0} 级"
+msgid "§cIsland level too low! Requires level {0}"
+msgstr "§c岛屿等级不足！需要 {0} 级"
 
-msgid "\u00a7cYou need to complete: {0}"
-msgstr "\u00a7c你需要先完成挑战：{0}"
+msgid "§cYou need to complete: {0}"
+msgstr "§c你需要先完成挑战：{0}"
 
-msgid "\u00a7cPurchase limit reached!"
-msgstr "\u00a7c已达到最大购买数量！"
+msgid "§cPurchase limit reached!"
+msgstr "§c已达到最大购买数量！"
 
-msgid "\u00a7cNot enough money! Need {0,number,#}, you have {1,number,#}"
-msgstr "\u00a7c余额不足！需要 {0,number,#}，你只有 {1,number,#}"
+msgid "§cNot enough money! Need {0,number,#}, you have {1,number,#}"
+msgstr "§c余额不足！需要 {0,number,#}，你只有 {1,number,#}"
 
-msgid "\u00a7aPurchased! Cost {0,number,#}, balance {1,number,#}"
-msgstr "\u00a7a购买成功！花费 {0,number,#}，余额 {1,number,#}"
+msgid "§aPurchased! Cost {0,number,#}, balance {1,number,#}"
+msgstr "§a购买成功！花费 {0,number,#}，余额 {1,number,#}"
 
-msgid "\u00a7eRemaining purchases: {0}/{1}"
-msgstr "\u00a7e剩余购买次数：{0}/{1}"
+msgid "§eRemaining purchases: {0}/{1}"
+msgstr "§e剩余购买次数：{0}/{1}"
 
-msgid "\u00a7eInventory full, items dropped on ground."
-msgstr "\u00a7e背包已满，部分物品掉在地上。"
+msgid "§eInventory full, items dropped on ground."
+msgstr "§e背包已满，部分物品掉在地上。"
 
-msgid "\u00a7cShop is empty"
-msgstr "\u00a7c商店暂无物品"
+msgid "§cShop is empty"
+msgstr "§c商店暂无物品"
 
-# 购买成功广播
-msgid "\u00a7eItem reward(s):"
-msgstr "\u00a7e物品奖励："
+msgid "§eItem reward(s):"
+msgstr "§e物品奖励："

@@ -24,7 +24,8 @@ categories:
         cost: 5
         max-buys: 64
         required-level: 0
-        required-challenges: []
+        required-challenges:
+          - lumberjack
         items:
           - spruce_sapling:1
       birch_sapling:
@@ -32,7 +33,8 @@ categories:
         cost: 5
         max-buys: 64
         required-level: 0
-        required-challenges: []
+        required-challenges:
+          - lumberjack
         items:
           - birch_sapling:1
       jungle_sapling:
@@ -67,7 +69,8 @@ categories:
         cost: 10
         max-buys: 32
         required-level: 1
-        required-challenges: []
+        required-challenges:
+          - lukewarm_ocean_biome
         items:
           - mangrove_propagule:1
       cherry_sapling:
@@ -75,7 +78,8 @@ categories:
         cost: 10
         max-buys: 32
         required-level: 1
-        required-challenges: []
+        required-challenges:
+          - flower_biome
         items:
           - cherry_sapling:1
       pale_oak_sapling:
@@ -99,7 +103,8 @@ categories:
         cost: 2
         max-buys: 128
         required-level: 0
-        required-challenges: []
+        required-challenges:
+          - cobble_gen
         items:
           - coarse_dirt:1
       sand:
@@ -133,7 +138,8 @@ categories:
         cost: 1
         max-buys: 256
         required-level: 0
-        required-challenges: []
+        required-challenges:
+          - fisherman
         items:
           - clay_ball:4
       ice:
@@ -264,7 +270,8 @@ categories:
         cost: 10
         max-buys: 32
         required-level: 2
-        required-challenges: []
+        required-challenges:
+          - jungle_sapling
         items:
           - cocoa_beans:1
       sweet_berries:
@@ -289,7 +296,8 @@ categories:
         cost: 10
         max-buys: 32
         required-level: 2
-        required-challenges: []
+        required-challenges:
+          - flower_biome
         items:
           - torchflower_seeds:1
       pitcher_pod:
@@ -297,7 +305,8 @@ categories:
         cost: 10
         max-buys: 32
         required-level: 2
-        required-challenges: []
+        required-challenges:
+          - flower_biome
         items:
           - pitcher_pod:1
 
@@ -329,7 +338,8 @@ categories:
         cost: 10
         max-buys: 64
         required-level: 2
-        required-challenges: []
+        required-challenges:
+          - furnace_basics
         items:
           - raw_copper:1
       raw_gold:
@@ -355,7 +365,8 @@ categories:
         cost: 15
         max-buys: 64
         required-level: 2
-        required-challenges: []
+        required-challenges:
+          - furnace_basics
         items:
           - copper_ingot:1
       gold_ingot:
@@ -399,7 +410,8 @@ categories:
         cost: 80
         max-buys: 16
         required-level: 6
-        required-challenges: []
+        required-challenges:
+          - tier1_complete
         items:
           - emerald:1
       quartz:
@@ -416,7 +428,8 @@ categories:
         cost: 25
         max-buys: 64
         required-level: 3
-        required-challenges: []
+        required-challenges:
+          - island_level_30
         items:
           - amethyst_shard:1
       ancient_debris:
@@ -443,7 +456,7 @@ categories:
         max-buys: 2
         required-level: 10
         required-challenges:
-          - nether_biome
+          - beacon_1
         items:
           - netherite_ingot:1
 
@@ -494,7 +507,7 @@ categories:
         max-buys: 1
         required-level: 8
         required-challenges:
-          - bartering
+          - wither_collector
         items:
           - wither_skeleton_skull:1
       ender_pearl:
@@ -511,7 +524,8 @@ categories:
         cost: 60
         max-buys: 16
         required-level: 4
-        required-challenges: []
+        required-challenges:
+          - sleep_tight
         items:
           - phantom_membrane:1
       shulker_shell:
@@ -537,7 +551,8 @@ categories:
         cost: 90
         max-buys: 16
         required-level: 6
-        required-challenges: []
+        required-challenges:
+          - island_level_80
         items:
           - breeze_rod:1
       slime_ball:
@@ -668,7 +683,8 @@ categories:
         cost: 50
         max-buys: 16
         required-level: 2
-        required-challenges: []
+        required-challenges:
+          - wheat_farm
         items:
           - mud:1
       mud_bricks:
@@ -676,7 +692,8 @@ categories:
         cost: 60
         max-buys: 16
         required-level: 2
-        required-challenges: []
+        required-challenges:
+          - wheat_farm
         items:
           - mud_bricks:1
       packed_mud:
@@ -684,7 +701,8 @@ categories:
         cost: 55
         max-buys: 16
         required-level: 2
-        required-challenges: []
+        required-challenges:
+          - wheat_farm
         items:
           - packed_mud:1
       soul_sand:
@@ -755,7 +773,8 @@ categories:
         cost: 10
         max-buys: 64
         required-level: 2
-        required-challenges: []
+        required-challenges:
+          - lush_caves_biome
         items:
           - dripstone_block:1
 
@@ -815,7 +834,8 @@ categories:
         cost: 50
         max-buys: 8
         required-level: 2
-        required-challenges: []
+        required-challenges:
+          - carrot_farm
         items:
           - rabbit_spawn_egg:1
       horse_spawn_egg:
@@ -859,7 +879,8 @@ categories:
         cost: 80
         max-buys: 4
         required-level: 3
-        required-challenges: []
+        required-challenges:
+          - home_sweet_home
         items:
           - cat_spawn_egg:1
       wolf_spawn_egg:
@@ -867,7 +888,8 @@ categories:
         cost: 80
         max-buys: 4
         required-level: 3
-        required-challenges: []
+        required-challenges:
+          - bone
         items:
           - wolf_spawn_egg:1
       fox_spawn_egg:
@@ -875,7 +897,8 @@ categories:
         cost: 100
         max-buys: 4
         required-level: 4
-        required-challenges: []
+        required-challenges:
+          - sweet_berries
         items:
           - fox_spawn_egg:1
       axolotl_spawn_egg:
@@ -892,7 +915,8 @@ categories:
         cost: 80
         max-buys: 4
         required-level: 3
-        required-challenges: []
+        required-challenges:
+          - swamp_biome
         items:
           - frog_spawn_egg:1
       turtle_spawn_egg:
@@ -954,7 +978,8 @@ categories:
         cost: 100
         max-buys: 4
         required-level: 3
-        required-challenges: []
+        required-challenges:
+          - savanna_biome
         items:
           - armadillo_spawn_egg:1
       # 敌对生物蛋
@@ -973,7 +998,7 @@ categories:
         max-buys: 4
         required-level: 5
         required-challenges:
-          - monster_hunter
+          - skeleton_archer
         items:
           - skeleton_spawn_egg:1
       spider_spawn_egg:
@@ -1035,7 +1060,8 @@ categories:
         cost: 200
         max-buys: 2
         required-level: 6
-        required-challenges: []
+        required-challenges:
+          - nether_wart_farm
         items:
           - witch_spawn_egg:1
       guardian_spawn_egg:
@@ -1106,7 +1132,8 @@ categories:
         cost: 350
         max-buys: 2
         required-level: 7
-        required-challenges: []
+        required-challenges:
+          - island_level_110
         items:
           - breeze_spawn_egg:1
       bogged_spawn_egg:
@@ -1114,21 +1141,23 @@ categories:
         cost: 150
         max-buys: 4
         required-level: 5
-        required-challenges: []
+        required-challenges:
+          - swamp_biome
         items:
           - bogged_spawn_egg:1
 
   # 特殊权限与经验
   permissions_extras:
     name: '&6特殊权限与经验'
-    displayItem: 'enchanted_command_block'
+    displayItem: 'command_block'
     items:
       xp_10_levels:
         displayItem: experience_bottle
         cost: 50
         max-buys: 10
         required-level: 0
-        required-challenges: []
+        required-challenges:
+          - island_level_10
         items: []
         commands:
           - 'console: xp add {player} 10 levels'
@@ -1148,7 +1177,7 @@ categories:
         max-buys: 5
         required-level: 5
         required-challenges:
-          - enchanter
+          - beacon_1
         items: []
         commands:
           - 'console: xp add {player} 50 levels'
