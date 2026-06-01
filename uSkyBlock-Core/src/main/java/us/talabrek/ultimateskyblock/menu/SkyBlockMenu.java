@@ -1144,9 +1144,6 @@ public class SkyBlockMenu {
 
             lores.add(tr("\u00a7ePrice: \u00a7f{0,number,#}", actualPrice));
             lores.add(tr("\u00a7eBought: \u00a7f{0}/{1}", bought, shopItem.getMaxBuys()));
-            plugin.getLogger().info("DEBUG shopItem: " + shopItem.getId()
-                + " bundleName=" + shopItem.getBundleName()
-                + " bundleDesc=" + shopItem.getBundleDescription());
             // 捆绑包描述
             if (!shopItem.getBundleDescription().isEmpty()) {
                 if (shopItem.getBundleName() != null && !shopItem.getBundleName().isEmpty()) {
