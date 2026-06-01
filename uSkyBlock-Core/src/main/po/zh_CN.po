@@ -3830,12 +3830,15 @@ msgstr "深海"
 msgid "snowy_plains"
 msgstr "积雪平原"
 
+# ==========================================
 # 商店系统
+# ==========================================
+
 msgid "Store"
 msgstr "商店"
 
 msgid "§fUse §bSkybucks§f to buy §abasic§f or §orare items§f, even §dspecial permissions§f!"
-msgstr "§f使用§b天空币§f购买§a基础§f或§o稀有物资§f，甚至§d特殊权限§f！"
+msgstr "§f使用§b天空币§f购买§a基础§f或§6稀有物资§f，甚至§d特殊权限§f！"
 
 msgid "§ePrice: §f{0,number,#}"
 msgstr "§e价格：§f{0,number,#}"
@@ -3879,6 +3882,9 @@ msgstr "§c余额不足！需要 {0,number,#}，你只有 {1,number,#}"
 msgid "§aPurchased! Cost {0,number,#}, balance {1,number,#}"
 msgstr "§a购买成功！花费 {0,number,#}，余额 {1,number,#}"
 
+msgid "§aPurchased {0}x! Cost {1,number,#}, balance {2,number,#}"
+msgstr "§a成功购买 {0} 个！花费 {1,number,#}，余额 {2,number,#}"
+
 msgid "§eRemaining purchases: {0}/{1}"
 msgstr "§e剩余购买次数：{0}/{1}"
 
@@ -3890,3 +3896,16 @@ msgstr "§c商店暂无物品"
 
 msgid "§eItem reward(s):"
 msgstr "§e物品奖励："
+
+# 捆绑包购买成功
+msgid "§aPurchased {0} x{1}! Cost {2,number,#}, balance {3,number,#}"
+msgstr "§a成功购买 {0} x{1}！花费 {2,number,#}，余额 {3,number,#}"
+
+msgid "§aPurchased {0}x! Cost {1,number,#}, balance {2,number,#}"
+msgstr "§a成功购买 {0} 个！花费 {1,number,#}，余额 {2,number,#}"
+
+msgid "§aPurchased {0}! Cost {1,number,#}, balance {2,number,#}"
+msgstr "§a成功购买 {0}！花费 {1,number,#}，余额 {2,number,#}"
+
+msgid "§e§lClick to open the store!"
+msgstr "§e§l点击打开商店！"

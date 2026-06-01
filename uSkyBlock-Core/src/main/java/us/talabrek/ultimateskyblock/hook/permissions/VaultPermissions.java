@@ -1,6 +1,7 @@
 package us.talabrek.ultimateskyblock.hook.permissions;
 
 import net.milkbowl.vault2.permission.Permission;
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -29,18 +30,35 @@ public class VaultPermissions extends PermissionsHook implements Listener {
             plugin.getLogger().info("Using " + permission.getName() + " as permission provider.");
             return Optional.of(permission);
         }
-
         return Optional.empty();
     }
 
     @Override
     public boolean addPermission(@NotNull Player player, @NotNull String perk) {
-        return permission.playerAdd(player, perk);
+        if (permission == null) {
+            setupPermission().ifPresent(p -> this.permission = p);
+        }
+        if (permission != null) {
+            return permission.playerAdd(player, perk);
+        }
+        // 兜底方案：直接用控制台命令添加权限
+        Bukkit.dispatchCommand(Bukkit.getConsoleSender(),
+            "lp user " + player.getName() + " permission set " + perk + " true");
+        return true;
     }
 
     @Override
     public boolean removePermission(@NotNull Player player, @NotNull String perk) {
-        return permission.playerRemove(player, perk);
+        if (permission == null) {
+            setupPermission().ifPresent(p -> this.permission = p);
+        }
+        if (permission != null) {
+            return permission.playerRemove(player, perk);
+        }
+        // 兜底方案：直接用控制台命令移除权限
+        Bukkit.dispatchCommand(Bukkit.getConsoleSender(),
+            "lp user " + player.getName() + " permission unset " + perk);
+        return true;
     }
 
     @EventHandler

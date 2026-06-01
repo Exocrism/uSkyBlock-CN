@@ -1,114 +1,1796 @@
 # ======================================================================================================================
 #
-# 以下是商店系统的格式与说明
-# 单注释 (#) 是最常用的设置，双注释 (##) 是可选设置，如果你喜欢使用这些设置的话
+# 以下是商店系统的格式与说明单注释 (#) 是最常用的设置，双注释 (##) 是可选设置，如果你喜欢使用这些设置的话
 #
 # 物品类型格式
 # 物品类型定义方式与 Minecraft /give 命令相同，即使用它们的 Minecraft 键以及可能的组件，放入方括号中
 # 例如，'minecraft:diamond_sword[damage=42]'请参阅 Minecraft Wiki 了解更多信息：
-# https://minecraft.wiki/w/Data_component_format
-# 你也可以使用命令 '/usb iteminfo' 来获取信息
+# https://minecraft.wiki/w/Data_component_format你也可以使用命令 '/usb iteminfo' 来获取信息
 #
 # 此物品类型根据使用位置的不同，会补充额外的信息：
 #
 # display-item: <类型>
-# 要在 GUI 中显示的物品，它仅定义如上所述的物品类型，不带任何额外信息
+# 要在 GUI 中显示的物品它仅定义如上所述的物品类型，不带任何额外信息
 # 例如：'cobblestone', 'minecraft:stone', 'diamond_sword[damage=42]'
+#
+# displayName: <文本>
+# 商品在商店中显示的自定义名称（支持颜色代码）如果不设置，则使用物品的原版名称
+# 例如：'&d经验等级 x10'、'&6新手礼包'
 #
 # item-reward: [{p=<概率>}]<类型>:<数量>
 # 商店的物品奖励数量是要给予的物品数量可选的 {p=<概率>} 是
 # 给予该物品的概率例如，'cobblestone:64' 每次购买都会给予 64 个圆石，
 # 而 '{p=0.1}cobblestone:64' 有 10% 的概率给予 64 个圆石
 #
+# 命令格式
+# 购买时执行的命令与挑战系统的 commands 格式完全相同
+# 支持变量：{player}（玩家名）、{playerName}（显示名）、{party}（队伍成员）
+# 以 'console:' 开头表示从控制台执行，以 'op:' 开头表示以 OP 身份执行
+# 例如：'console: give {player} minecraft:diamond 1'
+# 例如：'console: xp give {player} 10 levels'（给予10级经验，非附魔之瓶）
+#
 # ======================================================================================================================
 # 所有商品都在 categories 部分中定义每个 category 是商店侧边栏的一个分类
 #
 # categories:
-#   # [文本] 分类名称所有分类名称应为小写英文
+#   # [文本] 分类 ID，用于内部标识（小写英文）
 #   blocks:
-#     # [文本] 在商店侧边栏中显示的分类名称（支持大写和颜色代码）
+#     # [文本] 在商店侧边栏中显示的分类名称（支持颜色代码）
 #     name: '&a方块'
 #     # [display-item] 在商店侧边栏中为分类显示的物品
 #     displayItem: 'minecraft:grass_block'
 #     # 这些是该分类下的商品列表
 #     items:
-#       # [文本] 商品名称所有商品名称应为小写英文
+#       # [文本] 商品 ID，用于内部标识（小写英文）
 #       dirt:
-#         # [文本] 在商店中显示的商品名称（支持大写和颜色代码）
-#         # 目前使用 displayItem 的默认名称，暂不支持自定义
-#         # name: '&a泥土'
 #         # [display-item] 在商店中为商品显示的物品
 #         displayItem: minecraft:dirt
-#         # [数字] 购买此商品所需的基础货币数量
+#         # [文本] 商品在商店中显示的自定义名称（支持颜色代码）可选，不设置则使用物品原版名称
+#         ## displayName: '&a泥土'
+#         # [数字] 购买此商品所需的基础货币数量（首次购买的价格）
 #         cost: 10
-#         # [整数] 在价格重置周期内可购买的最大次数
+#         # [整数] 在价格重置周期内可购买的最大次数达到后商品将被锁定
 #         max-buys: 64
 #         # [整数] 购买此商品所需的岛屿等级 0 表示无等级限制
 #         required-level: 0
-#         # [列表[文本]] 购买此商品所需完成的任务列表
+#         # [列表[文本]] 购买此商品所需完成的任务 ID 列表空列表表示无限制
 #         required-challenges: []
-#         # [列表[物品奖励]] 购买时给予玩家的物品列表
+#         # [列表[物品奖励]] 购买时给予玩家的物品列表格式与挑战 reward.items 完全一致
 #         items:
 #         - minecraft:dirt:1
-#         # [列表[文本]] 购买时执行给定的命令前面加上 "op" 或 "console" 以以 OP 身份
-#         #               或从控制台运行命令示例：
-#         # 可能的命令参数有：
-#         # {player}     - 玩家名称
-#         # {playerName} - 玩家的显示名称
-#         # {party}      - 为队伍中的每个成员执行一次命令（替换名称）
+#         # [列表[文本]] 购买时执行的命令格式与挑战 reward.commands 完全一致
 #         ## commands:
-#         ## - 'console: give {player} minecraft:dirt 1'
-#         ## - 'op: me are the GOD of things'
+#         ## - 'console: give {player} minecraft:diamond 1'
+#         ## - 'console: xp give {player} 10 levels'
+#         # 捆绑包设置（可选）用于在商店中显示一个包含多种物品的礼包
+#         # bundle:
+#         #   # [文本] 捆绑包显示名称（支持颜色代码）
+#         #   name: '&6新手礼包'
+#         #   # [列表[文本]] 捆绑包内容描述显示在物品 lore 中
+#         #   description:
+#         #   - '&f泥土 x4'
+#         #   - '&f石头 x8'
+#         #所有空值请直接省略该键，否则可能会导致商店无法加载
 #
 # ======================================================================================================================
 
-# [true/false] 启用价格递增功能
-# 如果为 true，同一商品多次购买时价格会递增
-price-increase:
-  enabled: true
+# [true/false] 启用价格递增功能如果为 true，同一商品多次购买时价格会递增
+#price-increase:
+#  enabled: true
 
-  # [数字] 每次购买后价格增加的百分比
-  # 例如：25 表示每次购买后价格变为原来的 125%
-  increase-percent: 10
+  # [数字] 每次购买后价格增加的百分比例如：25 表示每次购买后价格变为原来的 125%
+#  increase-percent: 25
 
-  # [整数] 价格重置时间（分钟）
-  # 超过此时间后，购买计数重置，价格恢复为基础价格
-  reset-minutes: 60
+  # [整数] 价格重置时间（分钟）超过此时间后，购买计数重置，价格恢复为基础价格
+#  reset-minutes: 60
 
 # ===============================================
 # 文件底部可以找到设置你自己的商品的说明
 # ===============================================
+# 商店全局价格递增设置
+price-increase:
+  enabled: true
+  increase-percent: 10
+  reset-minutes: 60
+
+# 商品分类
 categories:
-  blocks:
-    name: '&a方块'
-    displayItem: minecraft:grass_block
+  # 基础资源
+  basic_resources:
+    name: '&a基础资源'
+    displayItem: 'minecraft:oak_sapling'
     items:
-      dirt:
-        displayItem: minecraft:dirt
-        cost: 10
+      oak_sapling:
+        displayItem: minecraft:oak_sapling
+        displayName: '&f橡树树苗 x1'
+        cost: 5
         max-buys: 64
         required-level: 0
-        required-challenges: []
+        items:
+          - minecraft:oak_sapling:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&f橡树树苗'
+      spruce_sapling:
+        displayItem: minecraft:spruce_sapling
+        displayName: '&f云杉树苗 x1'
+        cost: 5
+        max-buys: 64
+        required-level: 0
+        required-challenges:
+          - lumberjack
+        items:
+          - minecraft:spruce_sapling:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&f云杉树苗'
+      birch_sapling:
+        displayItem: minecraft:birch_sapling
+        displayName: '&f白桦树苗 x1'
+        cost: 5
+        max-buys: 64
+        required-level: 0
+        required-challenges:
+          - lumberjack
+        items:
+          - minecraft:birch_sapling:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&f白桦树苗'
+      jungle_sapling:
+        displayItem: minecraft:jungle_sapling
+        displayName: '&f丛林树苗 x1'
+        cost: 5
+        max-buys: 64
+        required-level: 0
+        required-challenges:
+          - lumberjack
+        items:
+          - minecraft:jungle_sapling:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&f丛林树苗'
+      acacia_sapling:
+        displayItem: minecraft:acacia_sapling
+        displayName: '&f金合欢树苗 x1'
+        cost: 5
+        max-buys: 64
+        required-level: 0
+        required-challenges:
+          - lumberjack
+        items:
+          - minecraft:acacia_sapling:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&f金合欢树苗'
+      dark_oak_sapling:
+        displayItem: minecraft:dark_oak_sapling
+        displayName: '&f深色橡树树苗 x1'
+        cost: 5
+        max-buys: 64
+        required-level: 0
+        required-challenges:
+          - lumberjack
+        items:
+          - minecraft:dark_oak_sapling:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&f深色橡树树苗'
+      mangrove_propagule:
+        displayItem: minecraft:mangrove_propagule
+        displayName: '&a红树胎生苗 x1'
+        cost: 15
+        max-buys: 32
+        required-level: 30
+        required-challenges:
+          - lukewarm_ocean_biome
+        items:
+          - minecraft:mangrove_propagule:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&a红树胎生苗'
+      cherry_sapling:
+        displayItem: minecraft:cherry_sapling
+        displayName: '&a樱花树苗 x1'
+        cost: 20
+        max-buys: 32
+        required-level: 30
+        required-challenges:
+          - flower_biome
+        items:
+          - minecraft:cherry_sapling:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&a樱花树苗'
+      pale_oak_sapling:
+        displayItem: minecraft:pale_oak_sapling
+        displayName: '&a苍白橡树树苗 x1'
+        cost: 25
+        max-buys: 32
+        required-level: 20
+        items:
+          - minecraft:pale_oak_sapling:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&a苍白橡树树苗'
+      dirt:
+        displayItem: minecraft:dirt
+        displayName: '&f泥土 x1'
+        cost: 1
+        max-buys: 256
+        required-level: 0
         items:
           - minecraft:dirt:1
-      stone:
-        displayItem: minecraft:stone
-        cost: 20
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&f泥土'
+      coarse_dirt:
+        displayItem: minecraft:coarse_dirt
+        displayName: '&f砂土 x1'
+        cost: 2
         max-buys: 128
-        required-level: 10
+        required-level: 5
         required-challenges:
           - cobble_gen
         items:
-          - minecraft:stone:1
-      enchanted_pickaxe:
-        displayItem: minecraft:iron_pickaxe
+          - minecraft:coarse_dirt:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&f砂土'
+      sand:
+        displayItem: minecraft:sand
+        displayName: '&f沙子 x1'
+        cost: 2
+        max-buys: 128
+        required-level: 5
+        required-challenges:
+          - sugar_cane_plant
+        items:
+          - minecraft:sand:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&f沙子'
+      red_sand:
+        displayItem: minecraft:red_sand
+        displayName: '&f红沙 x1'
+        cost: 5
+        max-buys: 128
+        required-level: 10
+        items:
+          - minecraft:red_sand:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&f红沙'
+      gravel:
+        displayItem: minecraft:gravel
+        displayName: '&f砂砾 x1'
+        cost: 2
+        max-buys: 128
+        required-level: 5
+        required-challenges:
+          - cobble_gen
+        items:
+          - minecraft:gravel:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&f砂砾'
+      clay_ball:
+        displayItem: minecraft:clay_ball
+        displayName: '&f粘土球 x4'
+        cost: 1
+        max-buys: 256
+        required-level: 10
+        required-challenges:
+          - fisherman
+        items:
+          - minecraft:clay_ball:4
+        bundle:
+          description:
+            - '&7购买后获得 &f4x&f粘土球'
+      ice:
+        displayItem: minecraft:ice
+        displayName: '&a冰 x2'
+        cost: 50
+        max-buys: 16
+        required-level: 5
+        required-challenges:
+          - cobble_gen
+        items:
+          - minecraft:ice:2
+        bundle:
+          description:
+            - '&7购买后获得 &f2x&a冰'
+      water_bucket:
+        displayItem: minecraft:water_bucket
+        displayName: '&9水桶 x1'
+        cost: 150
+        max-buys: 8
+        required-level: 10
+        required-challenges:
+          - bucket_craft
+        items:
+          - minecraft:water_bucket:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&9水桶'
+      lava_bucket:
+        displayItem: minecraft:lava_bucket
+        displayName: '&9岩浆桶 x1'
+        cost: 400
+        max-buys: 8
+        required-level: 20
+        required-challenges:
+          - bucket_craft
+          - nether_entry
+        items:
+          - minecraft:lava_bucket:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&9岩浆桶'
+      powder_snow_bucket:
+        displayItem: minecraft:powder_snow_bucket
+        displayName: '&9细雪桶 x1'
+        cost: 200
+        max-buys: 8
+        required-level: 40
+        required-challenges:
+          - snowy_slopes_biome
+        items:
+          - minecraft:powder_snow_bucket:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&9细雪桶'
+
+  # 农业与作物
+  farming:
+    name: '&a农业与作物'
+    displayItem: 'minecraft:wheat_seeds'
+    items:
+      wheat_seeds:
+        displayItem: minecraft:wheat_seeds
+        displayName: '&f小麦种子 x1'
+        cost: 2
+        max-buys: 64
+        required-level: 5
+        required-challenges:
+          - wheat_farm
+        items:
+          - minecraft:wheat_seeds:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&f小麦种子'
+      carrot:
+        displayItem: minecraft:carrot
+        displayName: '&f胡萝卜 x1'
+        cost: 5
+        max-buys: 64
+        required-level: 15
+        required-challenges:
+          - zombie_hunter
+        items:
+          - minecraft:carrot:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&f胡萝卜'
+      potato:
+        displayItem: minecraft:potato
+        displayName: '&f土豆 x1'
+        cost: 5
+        max-buys: 64
+        required-level: 15
+        required-challenges:
+          - monster_hunter
+        items:
+          - minecraft:potato:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&f土豆'
+      beetroot_seeds:
+        displayItem: minecraft:beetroot_seeds
+        displayName: '&f甜菜种子 x1'
+        cost: 3
+        max-buys: 64
+        required-level: 20
+        required-challenges:
+          - potato_farm
+        items:
+          - minecraft:beetroot_seeds:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&f甜菜种子'
+      melon_seeds:
+        displayItem: minecraft:melon_seeds
+        displayName: '&f西瓜种子 x1'
+        cost: 5
+        max-buys: 32
+        required-level: 10
+        required-challenges:
+          - melon_farm
+        items:
+          - minecraft:melon_seeds:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&f西瓜种子'
+      pumpkin_seeds:
+        displayItem: minecraft:pumpkin_seeds
+        displayName: '&f南瓜种子 x1'
+        cost: 5
+        max-buys: 32
+        required-level: 10
+        required-challenges:
+          - pumpkin_farm
+        items:
+          - minecraft:pumpkin_seeds:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&f南瓜种子'
+      sugar_cane:
+        displayItem: minecraft:sugar_cane
+        displayName: '&f甘蔗 x1'
+        cost: 5
+        max-buys: 64
+        required-level: 5
+        required-challenges:
+          - sugar_cane_plant
+        items:
+          - minecraft:sugar_cane:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&f甘蔗'
+      bamboo:
+        displayItem: minecraft:bamboo
+        displayName: '&f竹子 x1'
+        cost: 10
+        max-buys: 64
+        required-level: 10
+        required-challenges:
+          - sugar_cane_harvest
+        items:
+          - minecraft:bamboo:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&f竹子'
+      kelp:
+        displayItem: minecraft:kelp
+        displayName: '&f海带 x1'
+        cost: 10
+        max-buys: 64
+        required-level: 10
+        required-challenges:
+          - sugar_cane_plant
+        items:
+          - minecraft:kelp:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&f海带'
+      cocoa_beans:
+        displayItem: minecraft:cocoa_beans
+        displayName: '&f可可豆 x1'
+        cost: 15
+        max-buys: 32
+        required-level: 20
+        items:
+          - minecraft:cocoa_beans:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&f可可豆'
+      sweet_berries:
+        displayItem: minecraft:sweet_berries
+        displayName: '&f甜浆果 x1'
+        cost: 5
+        max-buys: 32
+        required-level: 5
+        items:
+          - minecraft:sweet_berries:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&f甜浆果'
+      glow_berries:
+        displayItem: minecraft:glow_berries
+        displayName: '&a发光浆果 x1'
+        cost: 15
+        max-buys: 32
+        required-level: 60
+        required-challenges:
+          - lush_caves_biome
+        items:
+          - minecraft:glow_berries:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&a发光浆果'
+      torchflower_seeds:
+        displayItem: minecraft:torchflower_seeds
+        displayName: '&a火把花种子 x1'
+        cost: 20
+        max-buys: 32
+        required-level: 30
+        required-challenges:
+          - flower_biome
+        items:
+          - minecraft:torchflower_seeds:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&a火把花种子'
+      pitcher_pod:
+        displayItem: minecraft:pitcher_pod
+        displayName: '&a瓶子草荚果 x1'
+        cost: 20
+        max-buys: 32
+        required-level: 30
+        required-challenges:
+          - flower_biome
+        items:
+          - minecraft:pitcher_pod:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&a瓶子草荚果'
+
+  # 矿物与宝石
+  ores_minerals:
+    name: '&e矿物与宝石'
+    displayItem: 'minecraft:iron_ingot'
+    items:
+      coal:
+        displayItem: minecraft:coal
+        displayName: '&f煤炭 x1'
+        cost: 5
+        max-buys: 128
+        required-level: 5
+        required-challenges:
+          - furnace_basics
+        items:
+          - minecraft:coal:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&f煤炭'
+      raw_iron:
+        displayItem: minecraft:raw_iron
+        displayName: '&f粗铁 x1'
+        cost: 15
+        max-buys: 64
+        required-level: 10
+        required-challenges:
+          - furnace_basics
+        items:
+          - minecraft:raw_iron:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&f粗铁'
+      raw_copper:
+        displayItem: minecraft:raw_copper
+        displayName: '&f粗铜 x1'
+        cost: 10
+        max-buys: 64
+        required-level: 10
+        required-challenges:
+          - furnace_basics
+        items:
+          - minecraft:raw_copper:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&f粗铜'
+      raw_gold:
+        displayItem: minecraft:raw_gold
+        displayName: '&f粗金 x1'
+        cost: 20
+        max-buys: 64
+        required-level: 20
+        required-challenges:
+          - workstation
+        items:
+          - minecraft:raw_gold:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&f粗金'
+      iron_ingot:
+        displayItem: minecraft:iron_ingot
+        displayName: '&f铁锭 x1'
+        cost: 25
+        max-buys: 64
+        required-level: 15
+        required-challenges:
+          - iron_smelting
+        items:
+          - minecraft:iron_ingot:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&f铁锭'
+      copper_ingot:
+        displayItem: minecraft:copper_ingot
+        displayName: '&f铜锭 x1'
+        cost: 15
+        max-buys: 64
+        required-level: 10
+        required-challenges:
+          - furnace_basics
+        items:
+          - minecraft:copper_ingot:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&f铜锭'
+      gold_ingot:
+        displayItem: minecraft:gold_ingot
+        displayName: '&f金锭 x1'
+        cost: 35
+        max-buys: 64
+        required-level: 25
+        required-challenges:
+          - shiny
+        items:
+          - minecraft:gold_ingot:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&f金锭'
+      lapis_lazuli:
+        displayItem: minecraft:lapis_lazuli
+        displayName: '&a青金石 x1'
+        cost: 15
+        max-buys: 64
+        required-level: 15
+        required-challenges:
+          - skeleton_archer
+        items:
+          - minecraft:lapis_lazuli:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&a青金石'
+      redstone:
+        displayItem: minecraft:redstone
+        displayName: '&a红石粉 x1'
+        cost: 15
+        max-buys: 64
+        required-level: 15
+        required-challenges:
+          - monster_hunter
+        items:
+          - minecraft:redstone:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&a红石粉'
+      diamond:
+        displayItem: minecraft:diamond
+        displayName: '&b钻石 x1'
+        cost: 150
+        max-buys: 32
+        required-level: 30
+        required-challenges:
+          - island_level_10
+        items:
+          - minecraft:diamond:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&b钻石'
+      emerald:
+        displayItem: minecraft:emerald
+        displayName: '&b绿宝石 x1'
+        cost: 120
+        max-buys: 32
+        required-level: 40
+        required-challenges:
+          - tier1_complete
+        items:
+          - minecraft:emerald:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&b绿宝石'
+      quartz:
+        displayItem: minecraft:quartz
+        displayName: '&f下界石英 x1'
+        cost: 20
+        max-buys: 64
+        required-level: 30
+        required-challenges:
+          - nether_entry
+        items:
+          - minecraft:quartz:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&f下界石英'
+      amethyst_shard:
+        displayItem: minecraft:amethyst_shard
+        displayName: '&a紫水晶碎片 x1'
+        cost: 30
+        max-buys: 64
+        required-level: 20
+        required-challenges:
+          - island_level_30
+        items:
+          - minecraft:amethyst_shard:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&a紫水晶碎片'
+      ancient_debris:
+        displayItem: minecraft:ancient_debris
+        displayName: '&5远古残骸 x1'
         cost: 500
-        max-buys: 5
+        max-buys: 16
+        required-level: 80
+        required-challenges:
+          - nether_biome
+        items:
+          - minecraft:ancient_debris:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&5远古残骸'
+      netherite_scrap:
+        displayItem: minecraft:netherite_scrap
+        displayName: '&5下界合金碎片 x1'
+        cost: 800
+        max-buys: 8
+        required-level: 100
+        required-challenges:
+          - nether_biome
+        items:
+          - minecraft:netherite_scrap:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&5下界合金碎片'
+      netherite_ingot:
+        displayItem: minecraft:netherite_ingot
+        displayName: '&5下界合金锭 x1'
+        cost: 3500
+        max-buys: 4
+        required-level: 110
+        required-challenges:
+          - beacon_1
+        items:
+          - minecraft:netherite_ingot:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&5下界合金锭'
+
+  # 下界材料与稀有掉落
+  nether_materials:
+    name: '&c下界材料与稀有掉落'
+    displayItem: 'minecraft:blaze_rod'
+    items:
+      nether_wart:
+        displayItem: minecraft:nether_wart
+        displayName: '&a地狱疣 x1'
+        cost: 50
+        max-buys: 32
+        required-level: 30
+        required-challenges:
+          - soul_sand_platform
+        items:
+          - minecraft:nether_wart:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&a地狱疣'
+      blaze_rod:
+        displayItem: minecraft:blaze_rod
+        displayName: '&9烈焰棒 x1'
+        cost: 150
+        max-buys: 32
         required-level: 50
         required-challenges:
-          - iron_tools
-        commands:
-          - 'console: give {player} minecraft:iron_pickaxe 1 [enchantments={levels:{efficiency:2,unbreaking:2}}]'
+          - hell_slime
+        items:
+          - minecraft:blaze_rod:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&9烈焰棒'
+      magma_cream:
+        displayItem: minecraft:magma_cream
+        displayName: '&a岩浆膏 x1'
+        cost: 80
+        max-buys: 32
+        required-level: 35
+        required-challenges:
+          - hell_slime
+        items:
+          - minecraft:magma_cream:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&a岩浆膏'
+      ghast_tear:
+        displayItem: minecraft:ghast_tear
+        displayName: '&9恶魂之泪 x1'
+        cost: 250
+        max-buys: 16
+        required-level: 60
+        required-challenges:
+          - return_to_sender
+        items:
+          - minecraft:ghast_tear:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&9恶魂之泪'
+      wither_skeleton_skull:
+        displayItem: minecraft:wither_skeleton_skull
+        displayName: '&5凋零骷髅头颅 x1'
+        cost: 1500
+        max-buys: 2
+        required-level: 100
+        required-challenges:
+          - wither_collector
+        items:
+          - minecraft:wither_skeleton_skull:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&5凋零骷髅头颅'
+      ender_pearl:
+        displayItem: minecraft:ender_pearl
+        displayName: '&9末影珍珠 x1'
+        cost: 100
+        max-buys: 32
+        required-level: 40
+        required-challenges:
+          - return_to_sender
+        items:
+          - minecraft:ender_pearl:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&9末影珍珠'
+      phantom_membrane:
+        displayItem: minecraft:phantom_membrane
+        displayName: '&a幻翼膜 x1'
+        cost: 100
+        max-buys: 16
+        required-level: 25
+        required-challenges:
+          - sleep_tight
+        items:
+          - minecraft:phantom_membrane:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&a幻翼膜'
+      shulker_shell:
+        displayItem: minecraft:shulker_shell
+        displayName: '&5潜影壳 x1'
+        cost: 500
+        max-buys: 16
+        required-level: 120
+        required-challenges:
+          - end_portal
+        items:
+          - minecraft:shulker_shell:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&5潜影壳'
+      nether_star:
+        displayItem: minecraft:nether_star
+        displayName: '&5下界之星 x1'
+        cost: 8000
+        max-buys: 2
+        required-level: 130
+        required-challenges:
+          - wither_bane
+        items:
+          - minecraft:nether_star:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&5下界之星'
+      breeze_rod:
+        displayItem: minecraft:breeze_rod
+        displayName: '&9旋风棒 x1'
+        cost: 180
+        max-buys: 32
+        required-level: 80
+        required-challenges:
+          - island_level_80
+        items:
+          - minecraft:breeze_rod:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&9旋风棒'
+      slime_ball:
+        displayItem: minecraft:slime_ball
+        displayName: '&f粘液球 x1'
+        cost: 30
+        max-buys: 32
+        required-level: 25
+        required-challenges:
+          - hell_slime
+        items:
+          - minecraft:slime_ball:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&f粘液球'
+      spider_eye:
+        displayItem: minecraft:spider_eye
+        displayName: '&f蜘蛛眼 x1'
+        cost: 20
+        max-buys: 32
+        required-level: 10
+        required-challenges:
+          - monster_hunter
+        items:
+          - minecraft:spider_eye:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&f蜘蛛眼'
+      gunpowder:
+        displayItem: minecraft:gunpowder
+        displayName: '&f火药 x1'
+        cost: 25
+        max-buys: 64
+        required-level: 15
+        required-challenges:
+          - demolitionist
+        items:
+          - minecraft:gunpowder:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&f火药'
+      bone:
+        displayItem: minecraft:bone
+        displayName: '&f骨头 x1'
+        cost: 10
+        max-buys: 64
+        required-level: 5
+        required-challenges:
+          - monster_hunter
+        items:
+          - minecraft:bone:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&f骨头'
+      rotten_flesh:
+        displayItem: minecraft:rotten_flesh
+        displayName: '&f腐肉 x1'
+        cost: 5
+        max-buys: 64
+        required-level: 5
+        required-challenges:
+          - monster_hunter
+        items:
+          - minecraft:rotten_flesh:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&f腐肉'
+      string:
+        displayItem: minecraft:string
+        displayName: '&f线 x1'
+        cost: 10
+        max-buys: 64
+        required-level: 10
+        required-challenges:
+          - web_collector
+        items:
+          - minecraft:string:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&f线'
+      leather:
+        displayItem: minecraft:leather
+        displayName: '&f皮革 x1'
+        cost: 15
+        max-buys: 32
+        required-level: 10
+        required-challenges:
+          - leather_collector
+        items:
+          - minecraft:leather:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&f皮革'
 
-# 不要更改版本！你会破坏转换过程，意想不到的事情将会发生！
-version: 0
+  # 稀有方块
+  rare_blocks:
+    name: '&5稀有方块'
+    displayItem: 'minecraft:mycelium'
+    items:
+      mycelium:
+        displayItem: minecraft:mycelium
+        displayName: '&5菌丝 x1'
+        cost: 250
+        max-buys: 16
+        required-level: 30
+        required-challenges:
+          - mushroom_farm
+        items:
+          - minecraft:mycelium:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&5菌丝'
+      podzol:
+        displayItem: minecraft:podzol
+        displayName: '&5灰化土 x1'
+        cost: 180
+        max-buys: 16
+        required-level: 30
+        required-challenges:
+          - mushroom_farm
+        items:
+          - minecraft:podzol:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&5灰化土'
+      packed_ice:
+        displayItem: minecraft:packed_ice
+        displayName: '&a浮冰 x1'
+        cost: 120
+        max-buys: 32
+        required-level: 40
+        required-challenges:
+          - snowy_plains_biome
+        items:
+          - minecraft:packed_ice:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&a浮冰'
+      blue_ice:
+        displayItem: minecraft:blue_ice
+        displayName: '&9蓝冰 x1'
+        cost: 250
+        max-buys: 16
+        required-level: 60
+        required-challenges:
+          - snowy_slopes_biome
+        items:
+          - minecraft:blue_ice:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&9蓝冰'
+      moss_block:
+        displayItem: minecraft:moss_block
+        displayName: '&a苔藓块 x1'
+        cost: 200
+        max-buys: 16
+        required-level: 60
+        required-challenges:
+          - lush_caves_biome
+        items:
+          - minecraft:moss_block:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&a苔藓块'
+      rooted_dirt:
+        displayItem: minecraft:rooted_dirt
+        displayName: '&a缠根泥土 x1'
+        cost: 100
+        max-buys: 32
+        required-level: 50
+        required-challenges:
+          - lush_caves_biome
+        items:
+          - minecraft:rooted_dirt:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&a缠根泥土'
+      mud:
+        displayItem: minecraft:mud
+        displayName: '&f泥巴 x1'
+        cost: 60
+        max-buys: 32
+        required-level: 10
+        required-challenges:
+          - wheat_farm
+        items:
+          - minecraft:mud:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&f泥巴'
+      mud_bricks:
+        displayItem: minecraft:mud_bricks
+        displayName: '&f泥砖 x1'
+        cost: 80
+        max-buys: 32
+        required-level: 10
+        required-challenges:
+          - wheat_farm
+        items:
+          - minecraft:mud_bricks:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&f泥砖'
+      packed_mud:
+        displayItem: minecraft:packed_mud
+        displayName: '&f泥坯 x1'
+        cost: 70
+        max-buys: 32
+        required-level: 10
+        required-challenges:
+          - wheat_farm
+        items:
+          - minecraft:packed_mud:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&f泥坯'
+      soul_sand:
+        displayItem: minecraft:soul_sand
+        displayName: '&a灵魂沙 x1'
+        cost: 50
+        max-buys: 64
+        required-level: 40
+        required-challenges:
+          - bartering
+        items:
+          - minecraft:soul_sand:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&a灵魂沙'
+      soul_soil:
+        displayItem: minecraft:soul_soil
+        displayName: '&a灵魂土 x1'
+        cost: 60
+        max-buys: 64
+        required-level: 40
+        required-challenges:
+          - bartering
+        items:
+          - minecraft:soul_soil:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&a灵魂土'
+      glowstone:
+        displayItem: minecraft:glowstone
+        displayName: '&a荧石 x1'
+        cost: 60
+        max-buys: 32
+        required-level: 40
+        required-challenges:
+          - glowstone_collector
+        items:
+          - minecraft:glowstone:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&a荧石'
+      crying_obsidian:
+        displayItem: minecraft:crying_obsidian
+        displayName: '&5哭泣的黑曜石 x1'
+        cost: 200
+        max-buys: 16
+        required-level: 70
+        required-challenges:
+          - who_is_cutting_onions
+        items:
+          - minecraft:crying_obsidian:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&5哭泣的黑曜石'
+      obsidian:
+        displayItem: minecraft:obsidian
+        displayName: '&5黑曜石 x1'
+        cost: 120
+        max-buys: 32
+        required-level: 30
+        required-challenges:
+          - obsidian_farmer
+        items:
+          - minecraft:obsidian:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&5黑曜石'
+      tuff:
+        displayItem: minecraft:tuff
+        displayName: '&f凝灰岩 x1'
+        cost: 5
+        max-buys: 128
+        required-level: 15
+        required-challenges:
+          - stonemason
+        items:
+          - minecraft:tuff:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&f凝灰岩'
+      calcite:
+        displayItem: minecraft:calcite
+        displayName: '&f方解石 x1'
+        cost: 10
+        max-buys: 64
+        required-level: 15
+        required-challenges:
+          - stonemason
+        items:
+          - minecraft:calcite:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&f方解石'
+      dripstone_block:
+        displayItem: minecraft:dripstone_block
+        displayName: '&f滴水石块 x1'
+        cost: 15
+        max-buys: 64
+        required-level: 40
+        required-challenges:
+          - lush_caves_biome
+        items:
+          - minecraft:dripstone_block:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&f滴水石块'
+
+  # 生物蛋与刷怪笼
+  spawners_eggs:
+    name: '&d生物蛋与刷怪笼'
+    displayItem: 'minecraft:spawner'
+    items:
+      spawner:
+        displayItem: minecraft:spawner
+        displayName: '&5刷怪笼 x1'
+        cost: 5000
+        max-buys: 2
+        required-level: 130
+        required-challenges:
+          - wither_bane
+        items:
+          - minecraft:spawner:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&5刷怪笼'
+      # 被动生物蛋
+      chicken_spawn_egg:
+        displayItem: minecraft:chicken_spawn_egg
+        displayName: '&f鸡刷怪蛋 x1'
+        cost: 200
+        max-buys: 8
+        required-level: 10
+        required-challenges:
+          - melon_farm
+        items:
+          - minecraft:chicken_spawn_egg:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&f鸡刷怪蛋'
+      cow_spawn_egg:
+        displayItem: minecraft:cow_spawn_egg
+        displayName: '&f牛刷怪蛋 x1'
+        cost: 200
+        max-buys: 8
+        required-level: 15
+        required-challenges:
+          - mushroom_farm
+        items:
+          - minecraft:cow_spawn_egg:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&f牛刷怪蛋'
+      pig_spawn_egg:
+        displayItem: minecraft:pig_spawn_egg
+        displayName: '&f猪刷怪蛋 x1'
+        cost: 200
+        max-buys: 8
+        required-level: 10
+        required-challenges:
+          - furnace_basics
+        items:
+          - minecraft:pig_spawn_egg:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&f猪刷怪蛋'
+      sheep_spawn_egg:
+        displayItem: minecraft:sheep_spawn_egg
+        displayName: '&f羊刷怪蛋 x1'
+        cost: 200
+        max-buys: 8
+        required-level: 15
+        required-challenges:
+          - web_collector
+        items:
+          - minecraft:sheep_spawn_egg:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&f羊刷怪蛋'
+      rabbit_spawn_egg:
+        displayItem: minecraft:rabbit_spawn_egg
+        displayName: '&f兔子刷怪蛋 x1'
+        cost: 200
+        max-buys: 8
+        required-level: 20
+        required-challenges:
+          - carrot_farm
+        items:
+          - minecraft:rabbit_spawn_egg:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&f兔子刷怪蛋'
+      horse_spawn_egg:
+        displayItem: minecraft:horse_spawn_egg
+        displayName: '&a马刷怪蛋 x1'
+        cost: 500
+        max-buys: 4
+        required-level: 40
+        required-challenges:
+          - savanna_biome
+        items:
+          - minecraft:horse_spawn_egg:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&a马刷怪蛋'
+      donkey_spawn_egg:
+        displayItem: minecraft:donkey_spawn_egg
+        displayName: '&a驴刷怪蛋 x1'
+        cost: 500
+        max-buys: 4
+        required-level: 40
+        required-challenges:
+          - savanna_biome
+        items:
+          - minecraft:donkey_spawn_egg:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&a驴刷怪蛋'
+      mule_spawn_egg:
+        displayItem: minecraft:mule_spawn_egg
+        displayName: '&a骡刷怪蛋 x1'
+        cost: 600
+        max-buys: 4
+        required-level: 50
+        required-challenges:
+          - savanna_biome
+        items:
+          - minecraft:mule_spawn_egg:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&a骡刷怪蛋'
+      llama_spawn_egg:
+        displayItem: minecraft:llama_spawn_egg
+        displayName: '&a羊驼刷怪蛋 x1'
+        cost: 500
+        max-buys: 4
+        required-level: 40
+        required-challenges:
+          - savanna_biome
+        items:
+          - minecraft:llama_spawn_egg:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&a羊驼刷怪蛋'
+      cat_spawn_egg:
+        displayItem: minecraft:cat_spawn_egg
+        displayName: '&a猫刷怪蛋 x1'
+        cost: 400
+        max-buys: 4
+        required-level: 30
+        required-challenges:
+          - home_sweet_home
+        items:
+          - minecraft:cat_spawn_egg:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&a猫刷怪蛋'
+      wolf_spawn_egg:
+        displayItem: minecraft:wolf_spawn_egg
+        displayName: '&a狼刷怪蛋 x1'
+        cost: 400
+        max-buys: 4
+        required-level: 25
+        required-challenges:
+          - skeleton_archer
+        items:
+          - minecraft:wolf_spawn_egg:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&a狼刷怪蛋'
+      fox_spawn_egg:
+        displayItem: minecraft:fox_spawn_egg
+        displayName: '&a狐狸刷怪蛋 x1'
+        cost: 500
+        max-buys: 4
+        required-level: 40
+        required-challenges:
+          - snowy_plains_biome
+        items:
+          - minecraft:fox_spawn_egg:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&a狐狸刷怪蛋'
+      axolotl_spawn_egg:
+        displayItem: minecraft:axolotl_spawn_egg
+        displayName: '&9美西螈刷怪蛋 x1'
+        cost: 600
+        max-buys: 4
+        required-level: 60
+        required-challenges:
+          - lush_caves_biome
+        items:
+          - minecraft:axolotl_spawn_egg:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&9美西螈刷怪蛋'
+      frog_spawn_egg:
+        displayItem: minecraft:frog_spawn_egg
+        displayName: '&a青蛙刷怪蛋 x1'
+        cost: 400
+        max-buys: 4
+        required-level: 40
+        required-challenges:
+          - deep_ocean_biome
+        items:
+          - minecraft:frog_spawn_egg:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&a青蛙刷怪蛋'
+      turtle_spawn_egg:
+        displayItem: minecraft:turtle_spawn_egg
+        displayName: '&a海龟刷怪蛋 x1'
+        cost: 500
+        max-buys: 4
+        required-level: 50
+        required-challenges:
+          - lukewarm_ocean_biome
+        items:
+          - minecraft:turtle_spawn_egg:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&a海龟刷怪蛋'
+      villager_spawn_egg:
+        displayItem: minecraft:villager_spawn_egg
+        displayName: '&9村民刷怪蛋 x1'
+        cost: 1000
+        max-buys: 4
+        required-level: 50
+        required-challenges:
+          - home_sweet_home
+          - feast
+        items:
+          - minecraft:villager_spawn_egg:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&9村民刷怪蛋'
+      bee_spawn_egg:
+        displayItem: minecraft:bee_spawn_egg
+        displayName: '&a蜜蜂刷怪蛋 x1'
+        cost: 400
+        max-buys: 4
+        required-level: 30
+        required-challenges:
+          - flower_biome
+        items:
+          - minecraft:bee_spawn_egg:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&a蜜蜂刷怪蛋'
+      goat_spawn_egg:
+        displayItem: minecraft:goat_spawn_egg
+        displayName: '&a山羊刷怪蛋 x1'
+        cost: 600
+        max-buys: 4
+        required-level: 60
+        required-challenges:
+          - snowy_slopes_biome
+        items:
+          - minecraft:goat_spawn_egg:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&a山羊刷怪蛋'
+      mooshroom_spawn_egg:
+        displayItem: minecraft:mooshroom_spawn_egg
+        displayName: '&9哞菇刷怪蛋 x1'
+        cost: 800
+        max-buys: 4
+        required-level: 50
+        required-challenges:
+          - mushroom_biome
+        items:
+          - minecraft:mooshroom_spawn_egg:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&9哞菇刷怪蛋'
+      polar_bear_spawn_egg:
+        displayItem: minecraft:polar_bear_spawn_egg
+        displayName: '&9北极熊刷怪蛋 x1'
+        cost: 800
+        max-buys: 4
+        required-level: 50
+        required-challenges:
+          - snowy_plains_biome
+        items:
+          - minecraft:polar_bear_spawn_egg:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&9北极熊刷怪蛋'
+      armadillo_spawn_egg:
+        displayItem: minecraft:armadillo_spawn_egg
+        displayName: '&a犰狳刷怪蛋 x1'
+        cost: 500
+        max-buys: 4
+        required-level: 40
+        required-challenges:
+          - savanna_biome
+        items:
+          - minecraft:armadillo_spawn_egg:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&a犰狳刷怪蛋'
+      # 敌对生物蛋
+      zombie_spawn_egg:
+        displayItem: minecraft:zombie_spawn_egg
+        displayName: '&a僵尸刷怪蛋 x1'
+        cost: 400
+        max-buys: 8
+        required-level: 20
+        required-challenges:
+          - monster_hunter
+        items:
+          - minecraft:zombie_spawn_egg:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&a僵尸刷怪蛋'
+      skeleton_spawn_egg:
+        displayItem: minecraft:skeleton_spawn_egg
+        displayName: '&a骷髅刷怪蛋 x1'
+        cost: 400
+        max-buys: 8
+        required-level: 25
+        required-challenges:
+          - skeleton_archer
+        items:
+          - minecraft:skeleton_spawn_egg:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&a骷髅刷怪蛋'
+      spider_spawn_egg:
+        displayItem: minecraft:spider_spawn_egg
+        displayName: '&a蜘蛛刷怪蛋 x1'
+        cost: 350
+        max-buys: 8
+        required-level: 15
+        required-challenges:
+          - monster_hunter
+        items:
+          - minecraft:spider_spawn_egg:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&a蜘蛛刷怪蛋'
+      cave_spider_spawn_egg:
+        displayItem: minecraft:cave_spider_spawn_egg
+        displayName: '&a洞穴蜘蛛刷怪蛋 x1'
+        cost: 350
+        max-buys: 8
+        required-level: 20
+        required-challenges:
+          - monster_hunter
+        items:
+          - minecraft:cave_spider_spawn_egg:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&a洞穴蜘蛛刷怪蛋'
+      creeper_spawn_egg:
+        displayItem: minecraft:creeper_spawn_egg
+        displayName: '&9苦力怕刷怪蛋 x1'
+        cost: 800
+        max-buys: 4
+        required-level: 40
+        required-challenges:
+          - demolitionist
+        items:
+          - minecraft:creeper_spawn_egg:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&9苦力怕刷怪蛋'
+      enderman_spawn_egg:
+        displayItem: minecraft:enderman_spawn_egg
+        displayName: '&5末影人刷怪蛋 x1'
+        cost: 1200
+        max-buys: 4
+        required-level: 70
+        required-challenges:
+          - ender_pearl_hunter
+        items:
+          - minecraft:enderman_spawn_egg:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&5末影人刷怪蛋'
+      blaze_spawn_egg:
+        displayItem: minecraft:blaze_spawn_egg
+        displayName: '&9烈焰人刷怪蛋 x1'
+        cost: 1500
+        max-buys: 4
+        required-level: 80
+        required-challenges:
+          - wither_bane
+        items:
+          - minecraft:blaze_spawn_egg:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&9烈焰人刷怪蛋'
+      wither_skeleton_spawn_egg:
+        displayItem: minecraft:wither_skeleton_spawn_egg
+        displayName: '&5凋零骷髅刷怪蛋 x1'
+        cost: 2500
+        max-buys: 2
+        required-level: 110
+        required-challenges:
+          - nether_architect
+        items:
+          - minecraft:wither_skeleton_spawn_egg:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&5凋零骷髅刷怪蛋'
+      witch_spawn_egg:
+        displayItem: minecraft:witch_spawn_egg
+        displayName: '&9女巫刷怪蛋 x1'
+        cost: 1000
+        max-buys: 4
+        required-level: 60
+        required-challenges:
+          - nether_wart_farm
+        items:
+          - minecraft:witch_spawn_egg:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&9女巫刷怪蛋'
+      guardian_spawn_egg:
+        displayItem: minecraft:guardian_spawn_egg
+        displayName: '&9守卫者刷怪蛋 x1'
+        cost: 1200
+        max-buys: 4
+        required-level: 70
+        required-challenges:
+          - deep_ocean_biome
+        items:
+          - minecraft:guardian_spawn_egg:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&9守卫者刷怪蛋'
+      elder_guardian_spawn_egg:
+        displayItem: minecraft:elder_guardian_spawn_egg
+        displayName: '&5远古守卫者刷怪蛋 x1'
+        cost: 3000
+        max-buys: 2
+        required-level: 120
+        required-challenges:
+          - deep_ocean_biome
+        items:
+          - minecraft:elder_guardian_spawn_egg:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&5远古守卫者刷怪蛋'
+      shulker_spawn_egg:
+        displayItem: minecraft:shulker_spawn_egg
+        displayName: '&5潜影贝刷怪蛋 x1'
+        cost: 4000
+        max-buys: 2
+        required-level: 130
+        required-challenges:
+          - end_portal
+        items:
+          - minecraft:shulker_spawn_egg:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&5潜影贝刷怪蛋'
+      hoglin_spawn_egg:
+        displayItem: minecraft:hoglin_spawn_egg
+        displayName: '&a疣猪兽刷怪蛋 x1'
+        cost: 600
+        max-buys: 4
+        required-level: 50
+        required-challenges:
+          - nether_biome
+        items:
+          - minecraft:hoglin_spawn_egg:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&a疣猪兽刷怪蛋'
+      piglin_spawn_egg:
+        displayItem: minecraft:piglin_spawn_egg
+        displayName: '&a猪灵刷怪蛋 x1'
+        cost: 600
+        max-buys: 4
+        required-level: 50
+        required-challenges:
+          - bartering
+        items:
+          - minecraft:piglin_spawn_egg:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&a猪灵刷怪蛋'
+      piglin_brute_spawn_egg:
+        displayItem: minecraft:piglin_brute_spawn_egg
+        displayName: '&9猪灵蛮兵刷怪蛋 x1'
+        cost: 1500
+        max-buys: 2
+        required-level: 100
+        required-challenges:
+          - bartering
+        items:
+          - minecraft:piglin_brute_spawn_egg:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&9猪灵蛮兵刷怪蛋'
+      zoglin_spawn_egg:
+        displayItem: minecraft:zoglin_spawn_egg
+        displayName: '&9僵尸疣猪兽刷怪蛋 x1'
+        cost: 800
+        max-buys: 4
+        required-level: 60
+        required-challenges:
+          - nether_biome
+        items:
+          - minecraft:zoglin_spawn_egg:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&9僵尸疣猪兽刷怪蛋'
+      breeze_spawn_egg:
+        displayItem: minecraft:breeze_spawn_egg
+        displayName: '&9旋风人刷怪蛋 x1'
+        cost: 1800
+        max-buys: 4
+        required-level: 90
+        required-challenges:
+          - island_level_110
+        items:
+          - minecraft:breeze_spawn_egg:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&9旋风人刷怪蛋'
+      bogged_spawn_egg:
+        displayItem: minecraft:bogged_spawn_egg
+        displayName: '&a泥泞骷髅刷怪蛋 x1'
+        cost: 500
+        max-buys: 4
+        required-level: 40
+        required-challenges:
+          - deep_ocean_biome
+        items:
+          - minecraft:bogged_spawn_egg:1
+        bundle:
+          description:
+            - '&7购买后获得 &f1x&a泥泞骷髅刷怪蛋'
+
+  # 特殊权限与经验
+  permissions_extras:
+    name: '&6特殊权限与经验'
+    displayItem: 'minecraft:command_block'
+    items:
+      xp_10_levels:
+        displayItem: minecraft:experience_bottle
+        displayName: '&a10级经验'
+        cost: 50
+        max-buys: 10
+        required-level: 10
+        required-challenges:
+          - island_level_10
+        bundle:
+          description:
+            - '&7购买后获得 &f10级&7经验'
+        commands:
+          - 'console: xp give {player} 10l'
+      xp_30_levels:
+        displayItem: minecraft:experience_bottle
+        displayName: '&a30级经验'
+        cost: 120
+        max-buys: 10
+        required-level: 30
+        required-challenges:
+          - enchanter
+        bundle:
+          description:
+            - '&7购买后获得 &f30级&7经验'
+        commands:
+          - 'console: xp give {player} 30l'
+      xp_50_levels:
+        displayItem: minecraft:experience_bottle
+        displayName: '&a50级经验'
+        cost: 180
+        max-buys: 5
+        required-level: 60
+        required-challenges:
+          - beacon_1
+        bundle:
+          description:
+            - '&7购买后获得 &f50级&7经验'
+        commands:
+          - 'console: xp give {player} 50l'
+      fly_permission:
+        displayItem: minecraft:command_block
+        displayName: '&6飞行权限'
+        cost: 5000
+        max-buys: 1
+        required-level: 110
+        required-challenges:
+          - beacon_3
+        bundle:
+          description:
+            - '&7购买后解锁 &f/飞行&7权限'
+            - '&7可在岛屿内自由飞行'
+        commands:
+          - 'console: lp user {player} permission set essentials.fly true'
+      home_permission:
+        displayItem: minecraft:command_block
+        displayName: '&6无限家传送'
+        cost: 3000
+        max-buys: 1
+        required-level: 60
+        required-challenges:
+          - home_sweet_home
+        bundle:
+          description:
+            - '&7购买后解锁 &f/sethome&7无限制'
+            - '&7可设置多个传送点'
+        commands:
+          - 'console: lp user {player} permission set essentials.sethome.multiple.unlimited'

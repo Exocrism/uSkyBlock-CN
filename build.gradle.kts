@@ -18,11 +18,13 @@ subprojects {
 
 allprojects {
     repositories {
+        maven ("https://maven.aliyun.com/repository/public/")
+        maven ("https://maven.aliyun.com/repository/central/")
         gradlePluginPortal()
         mavenLocal()
         mavenCentral()
         maven("https://hub.spigotmc.org/nexus/content/repositories/public")
-        maven("https://papermc.io/repo/repository/maven-public/")
+        maven("https://repo.papermc.io/repository/maven-public/")
         maven("https://maven.enginehub.org/repo/")
         maven("https://oss.sonatype.org/content/repositories/snapshots/")
         maven("https://repo.codemc.org/repository/maven-public")

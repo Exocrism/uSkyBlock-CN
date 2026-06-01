@@ -203,8 +203,8 @@ ranks:
           commands:
           - 'console: give {party} minecraft:diamond 2'
           - 'console: give {party} minecraft:experience_bottle 8'
-          - 'console: give {party} minecraft:enchanted_book 1 [enchantments={levels:{silk_touch:1}}]'
-          - 'console: give {party} minecraft:enchanted_book 1 [enchantments={levels:{efficiency:3}}]'
+          - 'console: give {party} minecraft:enchanted_book 1 [stored_enchantments={levels:{silk_touch:1}}]'
+          - 'console: give {party} minecraft:enchanted_book 1 [stored_enchantments={levels:{efficiency:3}}]'
           currency: 500
           xp: 500
 
@@ -300,14 +300,12 @@ ranks:
         - minecraft:brown_mushroom:16
         displayItem: minecraft:mycelium
         lockedDisplayItem: brown_stained_glass_pane
-        resetInHours: 0
         repeatable: false
         reward:
           text: 1个哞菇刷怪蛋，解锁蘑菇岛生物群系
           commands:
           - 'console: give {party} minecraft:mooshroom_spawn_egg 1'
-          - 'console: give {party} minecraft:mushroom_stew 8'
-          permission: usb.biome.mushroom_fields
+          permission: 'usb.biome.mushroom_fields'
           currency: 40
           xp: 40
 
@@ -325,7 +323,7 @@ ranks:
           commands:
           - 'console: give {party} minecraft:diamond 4'
           - 'console: give {party} minecraft:experience_bottle 12'
-          - 'console: give {party} minecraft:enchanted_book 1 [enchantments={levels:{unbreaking:3}}]'
+          - 'console: give {party} minecraft:enchanted_book 1 [stored_enchantments={levels:{unbreaking:3}}]'
           currency: 600
           xp: 600
 
@@ -638,7 +636,7 @@ ranks:
           commands:
           - 'console: give {party} minecraft:diamond 6'
           - 'console: give {party} minecraft:experience_bottle 16'
-          - 'console: give {party} minecraft:enchanted_book 1 [enchantments={levels:{protection:3}}]'
+          - 'console: give {party} minecraft:enchanted_book 1 [stored_enchantments={levels:{protection:3}}]'
           currency: 700
           xp: 700
 
@@ -679,7 +677,7 @@ ranks:
     displayItem: minecraft:rotten_flesh
     resetInHours: 20
     requires:
-      rankLeeway: 3
+      rankLeeway: 4
       challenges:
       - tier2_complete
     challenges:
@@ -1017,7 +1015,7 @@ ranks:
           - 'console: give {party} minecraft:prismarine 64'
           - 'console: give {party} minecraft:sea_lantern 16'
           - 'console: give {party} minecraft:prismarine_crystals 16'
-          permission: usb.biome.deep_ocean
+          permission: 'usb.biome.deep_ocean'
           currency: 50
           xp: 50
 
@@ -1046,7 +1044,7 @@ ranks:
           - 'console: give {party} minecraft:brain_coral 8'
           - 'console: give {party} minecraft:sea_pickle 1'
           - 'console: give {party} minecraft:brain_coral_fan 8'
-          permission: usb.biome.lukewarm_ocean
+          permission: 'usb.biome.lukewarm_ocean'
           currency: 40
           xp: 40
 
@@ -1114,7 +1112,7 @@ ranks:
           - 'console: give {party} minecraft:bee_spawn_egg 2'
           - 'console: give {party} minecraft:bee_nest 1'
           - 'console: give {party} minecraft:honey_bottle 8'
-          permission: usb.biome.flower_forest
+          permission: 'usb.biome.flower_forest'
           currency: 40
           xp: 40
 
@@ -1139,7 +1137,7 @@ ranks:
           commands:
           - 'console: give {party} minecraft:llama_spawn_egg 2'
           - 'console: give {party} minecraft:hay_block 64'
-          permission: usb.biome.savanna_plateau
+          permission: 'usb.biome.savanna_plateau'
           currency: 40
           xp: 40
 
@@ -1157,7 +1155,7 @@ ranks:
           commands:
           - 'console: give {party} minecraft:diamond 8'
           - 'console: give {party} minecraft:experience_bottle 20'
-          - 'console: give {party} minecraft:enchanted_book 1 [enchantments={levels:{sharpness:3}}]'
+          - 'console: give {party} minecraft:enchanted_book 1 [stored_enchantments={levels:{sharpness:3}}]'
           currency: 800
           xp: 800
 
@@ -1200,7 +1198,7 @@ ranks:
     displayItem: minecraft:obsidian
     resetInHours: 20
     requires:
-      rankLeeway: 2
+      rankLeeway: 3
       challenges:
       - tier3_complete
     challenges:
@@ -1292,7 +1290,7 @@ ranks:
           text: 解锁积雪平原生物群系，2个北极熊刷怪蛋
           commands:
           - 'console: give {party} minecraft:polar_bear_spawn_egg 1'
-          permission: usb.biome.snowy_plains
+          permission: 'usb.biome.snowy_plains'
           currency: 50
           xp: 50
 
@@ -1315,7 +1313,7 @@ ranks:
           text: 解锁雪坡生物群系，2个山羊刷怪蛋
           commands:
           - 'console: give {party} minecraft:goat_spawn_egg 2'
-          permission: usb.biome.snowy_slopes
+          permission: 'usb.biome.snowy_slopes'
           currency: 50
           xp: 50
 
@@ -1387,8 +1385,8 @@ ranks:
           commands:
           - 'console: give {party} minecraft:diamond 16'
           - 'console: give {party} minecraft:experience_bottle 32'
-          - 'console: give {party} minecraft:enchanted_book 1 [enchantments={levels:{silk_touch:1}}]'
-          - 'console: give {party} minecraft:enchanted_book 1 [enchantments={levels:{efficiency:5}}]'
+          - 'console: give {party} minecraft:enchanted_book 1 [stored_enchantments={levels:{silk_touch:1}}]'
+          - 'console: give {party} minecraft:enchanted_book 1 [stored_enchantments={levels:{efficiency:5}}]'
           currency: 1200
           xp: 1200
 
@@ -1528,7 +1526,7 @@ ranks:
         repeatable: false
         reward:
           text: 解锁下界荒地生物群系
-          permission: usb.biome.nether_wastes
+          permission: 'usb.biome.nether_wastes'
           currency: 60
           xp: 60
 
@@ -1751,7 +1749,7 @@ ranks:
           - 'console: give {party} minecraft:blaze_rod 8'
           - 'console: give {party} minecraft:magma_cream 8'
           - 'console: give {party} minecraft:diamond 8'
-          - 'console: give {party} minecraft:enchanted_book 1 [enchantments={levels:{protection:4}}]'
+          - 'console: give {party} minecraft:enchanted_book 1 [stored_enchantments={levels:{protection:4}}]'
           currency: 35
           xp: 35
 
@@ -1769,8 +1767,8 @@ ranks:
           commands:
           - 'console: give {party} minecraft:diamond 24'
           - 'console: give {party} minecraft:experience_bottle 48'
-          - 'console: give {party} minecraft:enchanted_book 2 [enchantments={levels:{unbreaking:3}}]'
-          - 'console: give {party} minecraft:enchanted_book 1 [enchantments={levels:{protection:4}}]'
+          - 'console: give {party} minecraft:enchanted_book 2 [stored_enchantments={levels:{unbreaking:3}}]'
+          - 'console: give {party} minecraft:enchanted_book 1 [stored_enchantments={levels:{protection:4}}]'
           currency: 1600
           xp: 1600
 
@@ -1990,7 +1988,7 @@ ranks:
           commands:
           - 'console: give {party} minecraft:diamond 16'
           - 'console: give {party} minecraft:lapis_lazuli 32'
-          - 'console: give {party} minecraft:enchanted_book 1 [enchantments={levels:{mending:1}}]'
+          - 'console: give {party} minecraft:enchanted_book 1 [stored_enchantments={levels:{mending:1}}]'
           currency: 80
           xp: 80
 
@@ -2013,7 +2011,7 @@ ranks:
           commands:
           - 'console: give {party} minecraft:diamond 32'
           - 'console: give {party} minecraft:lapis_lazuli 64'
-          - 'console: give {party} minecraft:enchanted_book 2 [enchantments={levels:{mending:1}}]'
+          - 'console: give {party} minecraft:enchanted_book 2 [stored_enchantments={levels:{mending:1}}]'
           currency: 120
           xp: 120
 
@@ -2036,7 +2034,7 @@ ranks:
           commands:
           - 'console: give {party} minecraft:diamond 64'
           - 'console: give {party} minecraft:lapis_lazuli 128'
-          - 'console: give {party} minecraft:enchanted_book 3 [enchantments={levels:{mending:1}}]'
+          - 'console: give {party} minecraft:enchanted_book 3 [stored_enchantments={levels:{mending:1}}]'
           - 'console: give {party} minecraft:enchanted_golden_apple 4'
           currency: 200
           xp: 200
@@ -2075,8 +2073,8 @@ ranks:
           commands:
           - 'console: give {party} minecraft:diamond 36'
           - 'console: give {party} minecraft:experience_bottle 72'
-          - 'console: give {party} minecraft:enchanted_book 1 [enchantments={levels:{protection:4}}]'
-          - 'console: give {party} minecraft:enchanted_book 1 [enchantments={levels:{sharpness:5}}]'
+          - 'console: give {party} minecraft:enchanted_book 1 [stored_enchantments={levels:{protection:4}}]'
+          - 'console: give {party} minecraft:enchanted_book 1 [stored_enchantments={levels:{sharpness:5}}]'
           - 'console: give {party} minecraft:nether_star 1'
           currency: 2200
           xp: 2200
@@ -2146,7 +2144,7 @@ ranks:
         reward:
           text: 1本经验修补，1个凋零骷髅刷怪蛋，8个钻石
           commands:
-          - 'console: give {party} minecraft:enchanted_book 1 [enchantments={levels:{mending:1}}]'
+          - 'console: give {party} minecraft:enchanted_book 1 [stored_enchantments={levels:{mending:1}}]'
           - 'console: give {player} minecraft:wither_skeleton_spawn_egg 1'
           - 'console: give {party} minecraft:diamond 8'
           currency: 60
@@ -2173,8 +2171,8 @@ ranks:
         reward:
           text: 1本经验修补，1本保护IV，1个刷怪笼
           commands:
-          - 'console: give {party} minecraft:enchanted_book 1 [enchantments={levels:{mending:1}}]'
-          - 'console: give {party} minecraft:enchanted_book 1 [enchantments={levels:{protection:4}}]'
+          - 'console: give {party} minecraft:enchanted_book 1 [stored_enchantments={levels:{mending:1}}]'
+          - 'console: give {party} minecraft:enchanted_book 1 [stored_enchantments={levels:{protection:4}}]'
           - 'console: give {party} minecraft:spawner 1'
           currency: 60
           xp: 60
@@ -2199,7 +2197,7 @@ ranks:
           commands:
           - 'console: give {party} minecraft:axolotl_spawn_egg 2'
           - 'console: give {party} minecraft:glow_berries 64'
-          permission: usb.biome.lush_caves
+          permission: 'usb.biome.lush_caves'
           currency: 80
           xp: 80
 
@@ -2304,7 +2302,7 @@ ranks:
           commands:
           - 'console: give {party} minecraft:diamond 64'
           - 'console: give {party} minecraft:experience_bottle 128'
-          - 'console: give {party} minecraft:enchanted_book 2 [enchantments={levels:{mending:1}}]'
+          - 'console: give {party} minecraft:enchanted_book 2 [stored_enchantments={levels:{mending:1}}]'
           - 'console: give {party} minecraft:nether_star 2'
           currency: 3200
           xp: 3200
@@ -2331,10 +2329,10 @@ ranks:
           commands:
           - 'console: give {party} minecraft:diamond 20'
           - 'console: give {party} minecraft:experience_bottle 80'
-          - 'console: give {party} minecraft:enchanted_book 1 [enchantments={levels:{mending:1}}]'
-          - 'console: give {party} minecraft:enchanted_book 1 [enchantments={levels:{protection:4}}]'
-          - 'console: give {party} minecraft:enchanted_book 1 [enchantments={levels:{sharpness:5}}]'
-          - 'console: give {party} minecraft:enchanted_book 1 [enchantments={levels:{unbreaking:3}}]'
+          - 'console: give {party} minecraft:enchanted_book 1 [stored_enchantments={levels:{mending:1}}]'
+          - 'console: give {party} minecraft:enchanted_book 1 [stored_enchantments={levels:{protection:4}}]'
+          - 'console: give {party} minecraft:enchanted_book 1 [stored_enchantments={levels:{sharpness:5}}]'
+          - 'console: give {party} minecraft:enchanted_book 1 [stored_enchantments={levels:{unbreaking:3}}]'
           currency: 2400
           xp: 2400
 

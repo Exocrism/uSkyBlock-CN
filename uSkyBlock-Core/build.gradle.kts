@@ -39,3 +39,8 @@ dependencies {
 }
 
 description = "uSkyBlock-Core"
+repositories {
+    maven { url = uri("https://maven.aliyun.com/repository/public/") }
+    maven { url = uri("https://maven.aliyun.com/repository/central/") }
+    maven { url = uri("https://repo.papermc.io/repository/maven-public/") }
+}

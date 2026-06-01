@@ -62,25 +62,29 @@ public class ShopLogic {
 
                     ItemStack itemDisplay = ItemStackUtil.createItemStack(
                         item.getString("displayItem", "STONE"));
+                    String displayName = item.getString("displayName");
                     double cost = item.getDouble("cost", 10);
                     int maxBuys = item.getInt("max-buys", 64);
                     int requiredLevel = item.getInt("required-level", 0);
                     List<String> requiredChallenges = item.getStringList("required-challenges");
 
-                    // 解析 items 列表（与挑战配置格式一致）
                     List<String> itemRewards = item.getStringList("items");
                     if (itemRewards.isEmpty() && item.getString("items") != null) {
                         itemRewards.addAll(Arrays.asList(item.getString("items").split(" ")));
                     }
 
-                    // 解析 commands 列表
                     List<String> commands = item.getStringList("commands");
                     if (commands.isEmpty() && item.getString("commands") != null) {
                         commands.add(item.getString("commands"));
                     }
 
-                    items.add(new ShopItem(itemId, itemDisplay, cost, maxBuys,
-                        requiredLevel, requiredChallenges, itemRewards, commands));                }
+                    String bundleName = item.getString("bundle.name");
+                    List<String> bundleDesc = item.getStringList("bundle.description");
+
+                    items.add(new ShopItem(itemId, itemDisplay, displayName, cost, maxBuys,
+                        requiredLevel, requiredChallenges, itemRewards, commands,
+                        bundleName, bundleDesc));
+                }
             }
             categories.put(catId, new ShopCategory(catId, name, displayItem, items));
         }
