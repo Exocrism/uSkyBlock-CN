@@ -189,6 +189,30 @@ ranks:
           currency: 5
           xp: 5
 
+      forest_biome:
+        name: '&a森林探索者'
+        description: 收集木材和苹果以解锁森林生物群系
+        type: onPlayer
+        requiredChallenges:
+        - lumberjack
+        requiredItems:
+        - minecraft:oak_log:32
+        - minecraft:spruce_log:16
+        - minecraft:birch_log:16
+        - minecraft:apple:8
+        displayItem: minecraft:spruce_sapling
+        lockedDisplayItem: green_stained_glass_pane
+        resetInHours: 0
+        repeatable: false
+        reward:
+          text: 解锁森林生物群系，1个狼刷怪蛋
+          commands:
+          - 'console: give {party} minecraft:wolf_spawn_egg 1'
+          permission: 'usb.biome.forest'
+          currency: 40
+          xp: 40
+
+
       island_level_10:
         name: '&b崭新的开始'
         description: 达到岛屿等级10
@@ -203,8 +227,8 @@ ranks:
           commands:
           - 'console: give {party} minecraft:diamond 2'
           - 'console: give {party} minecraft:experience_bottle 8'
-          - 'console: give {party} minecraft:enchanted_book 1 [stored_enchantments={levels:{silk_touch:1}}]'
-          - 'console: give {party} minecraft:enchanted_book 1 [stored_enchantments={levels:{efficiency:3}}]'
+          - 'console: give {party} minecraft:enchanted_book 1 [stored_enchantments={silk_touch:1}]'
+          - 'console: give {party} minecraft:enchanted_book 1 [stored_enchantments={efficiency:3}]'
           currency: 500
           xp: 500
 
@@ -323,7 +347,7 @@ ranks:
           commands:
           - 'console: give {party} minecraft:diamond 4'
           - 'console: give {party} minecraft:experience_bottle 12'
-          - 'console: give {party} minecraft:enchanted_book 1 [stored_enchantments={levels:{unbreaking:3}}]'
+          - 'console: give {party} minecraft:enchanted_book 1 [stored_enchantments={unbreaking:3}]'
           currency: 600
           xp: 600
 
@@ -365,7 +389,7 @@ ranks:
     displayItem: minecraft:iron_pickaxe
     resetInHours: 20
     requires:
-      rankLeeway: 2
+      rankLeeway: 4
       challenges:
       - tier1_complete
     challenges:
@@ -518,6 +542,29 @@ ranks:
           currency: 5
           xp: 5
 
+      plains_biome:
+        name: '&a平原开拓者'
+        description: 收集小麦、种子和泥土以解锁平原生物群系
+        type: onPlayer
+        requiredChallenges:
+        - wheat_farm
+        requiredItems:
+        - minecraft:wheat:32
+        - minecraft:wheat_seeds:8
+        - minecraft:dirt:32
+        - minecraft:oak_sapling:8
+        displayItem: minecraft:tall_grass
+        lockedDisplayItem: green_stained_glass_pane
+        resetInHours: 0
+        repeatable: false
+        reward:
+          text: 解锁平原生物群系，1个马刷怪蛋
+          commands:
+          - 'console: give {party} minecraft:horse_spawn_egg 1'
+          permission: 'usb.biome.plains'
+          currency: 40
+          xp: 40
+
       iron_smelting:
         name: '&7铁锭冶炼'
         description: 烧制16个铁锭
@@ -636,7 +683,7 @@ ranks:
           commands:
           - 'console: give {party} minecraft:diamond 6'
           - 'console: give {party} minecraft:experience_bottle 16'
-          - 'console: give {party} minecraft:enchanted_book 1 [stored_enchantments={levels:{protection:3}}]'
+          - 'console: give {party} minecraft:enchanted_book 1 [stored_enchantments={protection:3}]'
           currency: 700
           xp: 700
 
@@ -677,7 +724,7 @@ ranks:
     displayItem: minecraft:rotten_flesh
     resetInHours: 20
     requires:
-      rankLeeway: 4
+      rankLeeway: 5
       challenges:
       - tier2_complete
     challenges:
@@ -861,6 +908,29 @@ ranks:
           - 'console: give {party} minecraft:gravel 4'
           currency: 10
           xp: 10
+
+      swamp_biome:
+        name: '&5沼泽居民'
+        description: 收集粘液球、骨头和腐肉以解锁沼泽生物群系
+        type: onPlayer
+        requiredChallenges:
+        - monster_hunter
+        requiredItems:
+        - minecraft:slime_ball:16
+        - minecraft:bone:32
+        - minecraft:rotten_flesh:32
+        - minecraft:lily_pad:4
+        displayItem: minecraft:lily_pad
+        lockedDisplayItem: dark_green_stained_glass_pane
+        resetInHours: 0
+        repeatable: false
+        reward:
+          text: 解锁沼泽生物群系，1个史莱姆刷怪蛋
+          commands:
+          - 'console: give {party} minecraft:slime_spawn_egg 1'
+          permission: 'usb.biome.swamp'
+          currency: 45
+          xp: 45
 
       sleep_tight:
         name: '&c安眠'
@@ -1141,6 +1211,29 @@ ranks:
           currency: 40
           xp: 40
 
+      jungle_biome:
+        name: '&a丛林探险家'
+        description: 收集丛林原木、可可豆和西瓜以解锁丛林生物群系
+        type: onPlayer
+        requiredChallenges:
+        - feast
+        requiredItems:
+        - minecraft:jungle_log:32
+        - minecraft:cocoa_beans:8
+        - minecraft:melon_slice:32
+        - minecraft:jungle_sapling:8
+        displayItem: minecraft:jungle_sapling
+        lockedDisplayItem: green_stained_glass_pane
+        resetInHours: 0
+        repeatable: false
+        reward:
+          text: 解锁丛林生物群系，1个豹猫刷怪蛋
+          commands:
+          - 'console: give {party} minecraft:ocelot_spawn_egg 1'
+          permission: 'usb.biome.jungle'
+          currency: 45
+          xp: 45
+
       island_level_40:
         name: '&b繁荣农业'
         description: 达到岛屿等级40
@@ -1155,7 +1248,7 @@ ranks:
           commands:
           - 'console: give {party} minecraft:diamond 8'
           - 'console: give {party} minecraft:experience_bottle 20'
-          - 'console: give {party} minecraft:enchanted_book 1 [stored_enchantments={levels:{sharpness:3}}]'
+          - 'console: give {party} minecraft:enchanted_book 1 [stored_enchantments={sharpness:3}]'
           currency: 800
           xp: 800
 
@@ -1271,6 +1364,29 @@ ranks:
           currency: 30
           xp: 30
 
+      desert_biome:
+        name: '&e沙漠旅者'
+        description: 收集沙子、仙人掌和沙砾以解锁沙漠生物群系
+        type: onPlayer
+        requiredChallenges:
+        - cactus_harvest
+        requiredItems:
+        - minecraft:sand:64
+        - minecraft:cactus:32
+        - minecraft:gravel:32
+        - minecraft:sandstone:32
+        displayItem: minecraft:sand
+        lockedDisplayItem: yellow_stained_glass_pane
+        resetInHours: 0
+        repeatable: false
+        reward:
+          text: 解锁沙漠生物群系，1个骆驼刷怪蛋
+          commands:
+          - 'console: give {party} minecraft:camel_spawn_egg 1'
+          permission: 'usb.biome.desert'
+          currency: 50
+          xp: 50
+
       snowy_plains_biome:
         name: '&f积雪平原'
         description: 收集雪地物资以解锁积雪平原生物群系
@@ -1314,6 +1430,52 @@ ranks:
           commands:
           - 'console: give {party} minecraft:goat_spawn_egg 2'
           permission: 'usb.biome.snowy_slopes'
+          currency: 50
+          xp: 50
+
+      taiga_biome:
+        name: '&f针叶林居民'
+        description: 收集云杉原木、雪球和泥土以解锁针叶林生物群系
+        type: onPlayer
+        requiredChallenges:
+        - snowy_plains_biome
+        requiredItems:
+        - minecraft:spruce_log:64
+        - minecraft:snowball:32
+        - minecraft:dirt:32
+        - minecraft:spruce_sapling:8
+        displayItem: minecraft:snow
+        lockedDisplayItem: white_stained_glass_pane
+        resetInHours: 0
+        repeatable: false
+        reward:
+          text: 解锁针叶林生物群系，1个狐狸刷怪蛋
+          commands:
+          - 'console: give {party} minecraft:fox_spawn_egg 1'
+          permission: 'usb.biome.taiga'
+          currency: 50
+          xp: 50
+
+      windswept_hills_biome:
+        name: '&7风袭丘陵'
+        description: 收集绿宝石、石头和煤矿石以解锁风袭丘陵生物群系
+        type: onPlayer
+        requiredChallenges:
+        - stonemason
+        requiredItems:
+        - minecraft:emerald:8
+        - minecraft:stone:64
+        - minecraft:coal_ore:16
+        - minecraft:emerald_ore:4
+        displayItem: minecraft:emerald_ore
+        lockedDisplayItem: light_gray_stained_glass_pane
+        resetInHours: 0
+        repeatable: false
+        reward:
+          text: 解锁风袭丘陵生物群系，1个驴刷怪蛋
+          commands:
+          - 'console: give {party} minecraft:donkey_spawn_egg 1'
+          permission: 'usb.biome.windswept_hills'
           currency: 50
           xp: 50
 
@@ -1385,8 +1547,8 @@ ranks:
           commands:
           - 'console: give {party} minecraft:diamond 16'
           - 'console: give {party} minecraft:experience_bottle 32'
-          - 'console: give {party} minecraft:enchanted_book 1 [stored_enchantments={levels:{silk_touch:1}}]'
-          - 'console: give {party} minecraft:enchanted_book 1 [stored_enchantments={levels:{efficiency:5}}]'
+          - 'console: give {party} minecraft:enchanted_book 1 [stored_enchantments={silk_touch:1}]'
+          - 'console: give {party} minecraft:enchanted_book 1 [stored_enchantments={efficiency:5}]'
           currency: 1200
           xp: 1200
 
@@ -1749,7 +1911,7 @@ ranks:
           - 'console: give {party} minecraft:blaze_rod 8'
           - 'console: give {party} minecraft:magma_cream 8'
           - 'console: give {party} minecraft:diamond 8'
-          - 'console: give {party} minecraft:enchanted_book 1 [stored_enchantments={levels:{protection:4}}]'
+          - 'console: give {party} minecraft:enchanted_book 1 [stored_enchantments={protection:4}]'
           currency: 35
           xp: 35
 
@@ -1767,8 +1929,8 @@ ranks:
           commands:
           - 'console: give {party} minecraft:diamond 24'
           - 'console: give {party} minecraft:experience_bottle 48'
-          - 'console: give {party} minecraft:enchanted_book 2 [stored_enchantments={levels:{unbreaking:3}}]'
-          - 'console: give {party} minecraft:enchanted_book 1 [stored_enchantments={levels:{protection:4}}]'
+          - 'console: give {party} minecraft:enchanted_book 2 [stored_enchantments={unbreaking:3}]'
+          - 'console: give {party} minecraft:enchanted_book 1 [stored_enchantments={protection:4}]'
           currency: 1600
           xp: 1600
 
@@ -1988,7 +2150,7 @@ ranks:
           commands:
           - 'console: give {party} minecraft:diamond 16'
           - 'console: give {party} minecraft:lapis_lazuli 32'
-          - 'console: give {party} minecraft:enchanted_book 1 [stored_enchantments={levels:{mending:1}}]'
+          - 'console: give {party} minecraft:enchanted_book 1 [stored_enchantments={mending:1}]'
           currency: 80
           xp: 80
 
@@ -2011,7 +2173,7 @@ ranks:
           commands:
           - 'console: give {party} minecraft:diamond 32'
           - 'console: give {party} minecraft:lapis_lazuli 64'
-          - 'console: give {party} minecraft:enchanted_book 2 [stored_enchantments={levels:{mending:1}}]'
+          - 'console: give {party} minecraft:enchanted_book 2 [stored_enchantments={mending:1}]'
           currency: 120
           xp: 120
 
@@ -2034,7 +2196,7 @@ ranks:
           commands:
           - 'console: give {party} minecraft:diamond 64'
           - 'console: give {party} minecraft:lapis_lazuli 128'
-          - 'console: give {party} minecraft:enchanted_book 3 [stored_enchantments={levels:{mending:1}}]'
+          - 'console: give {party} minecraft:enchanted_book 3 [stored_enchantments={mending:1}]'
           - 'console: give {party} minecraft:enchanted_golden_apple 4'
           currency: 200
           xp: 200
@@ -2073,8 +2235,8 @@ ranks:
           commands:
           - 'console: give {party} minecraft:diamond 36'
           - 'console: give {party} minecraft:experience_bottle 72'
-          - 'console: give {party} minecraft:enchanted_book 1 [stored_enchantments={levels:{protection:4}}]'
-          - 'console: give {party} minecraft:enchanted_book 1 [stored_enchantments={levels:{sharpness:5}}]'
+          - 'console: give {party} minecraft:enchanted_book 1 [stored_enchantments={protection:4}]'
+          - 'console: give {party} minecraft:enchanted_book 1 [stored_enchantments={sharpness:5}]'
           - 'console: give {party} minecraft:nether_star 1'
           currency: 2200
           xp: 2200
@@ -2144,7 +2306,7 @@ ranks:
         reward:
           text: 1本经验修补，1个凋零骷髅刷怪蛋，8个钻石
           commands:
-          - 'console: give {party} minecraft:enchanted_book 1 [stored_enchantments={levels:{mending:1}}]'
+          - 'console: give {party} minecraft:enchanted_book 1 [stored_enchantments={mending:1}]'
           - 'console: give {player} minecraft:wither_skeleton_spawn_egg 1'
           - 'console: give {party} minecraft:diamond 8'
           currency: 60
@@ -2171,8 +2333,8 @@ ranks:
         reward:
           text: 1本经验修补，1本保护IV，1个刷怪笼
           commands:
-          - 'console: give {party} minecraft:enchanted_book 1 [stored_enchantments={levels:{mending:1}}]'
-          - 'console: give {party} minecraft:enchanted_book 1 [stored_enchantments={levels:{protection:4}}]'
+          - 'console: give {party} minecraft:enchanted_book 1 [stored_enchantments={mending:1}]'
+          - 'console: give {party} minecraft:enchanted_book 1 [stored_enchantments={protection:4}]'
           - 'console: give {party} minecraft:spawner 1'
           currency: 60
           xp: 60
@@ -2302,7 +2464,7 @@ ranks:
           commands:
           - 'console: give {party} minecraft:diamond 64'
           - 'console: give {party} minecraft:experience_bottle 128'
-          - 'console: give {party} minecraft:enchanted_book 2 [stored_enchantments={levels:{mending:1}}]'
+          - 'console: give {party} minecraft:enchanted_book 2 [stored_enchantments={mending:1}]'
           - 'console: give {party} minecraft:nether_star 2'
           currency: 3200
           xp: 3200
@@ -2329,10 +2491,10 @@ ranks:
           commands:
           - 'console: give {party} minecraft:diamond 20'
           - 'console: give {party} minecraft:experience_bottle 80'
-          - 'console: give {party} minecraft:enchanted_book 1 [stored_enchantments={levels:{mending:1}}]'
-          - 'console: give {party} minecraft:enchanted_book 1 [stored_enchantments={levels:{protection:4}}]'
-          - 'console: give {party} minecraft:enchanted_book 1 [stored_enchantments={levels:{sharpness:5}}]'
-          - 'console: give {party} minecraft:enchanted_book 1 [stored_enchantments={levels:{unbreaking:3}}]'
+          - 'console: give {party} minecraft:enchanted_book 1 [stored_enchantments={mending:1}]'
+          - 'console: give {party} minecraft:enchanted_book 1 [stored_enchantments={protection:4}]'
+          - 'console: give {party} minecraft:enchanted_book 1 [stored_enchantments={sharpness:5}]'
+          - 'console: give {party} minecraft:enchanted_book 1 [stored_enchantments={unbreaking:3}]'
           currency: 2400
           xp: 2400
 

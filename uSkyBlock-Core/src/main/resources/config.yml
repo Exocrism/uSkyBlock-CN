@@ -3,7 +3,7 @@ language: zh_CN
 options:
   general:
 
-    # [整数] 单个队伍中允许的最大玩家数量。（包括队长）
+    # [整数] 单个队伍中允许的最大玩家数量。（不包括队长）
     maxPartySize: 4
 
     # [整数] 玩家再次使用 /island info 命令前的冷却时间（秒）。（注意：重载插件时冷却时间会重置）
@@ -305,7 +305,7 @@ island-schemes:
     permission: usb.island.create
 
     # 岛屿的简短描述
-    description: 默认的 uSkyBlock 岛屿
+    description: 基础岛屿
 
     # 在 GUI 中显示的物品
     displayItem: oak_sapling
@@ -321,7 +321,7 @@ island-schemes:
     maxPartySize: 4
     animals: 64
     monsters: 50
-    villagers: 16
+    villagers: 24
     golems: 5
 
     # 获得正常分数的 100%
@@ -331,7 +331,7 @@ island-schemes:
     scoreOffset: 0
   skySMP:
     permission: usb.schematic.skysmp
-    description: 原始的 SkySMP 岛屿
+    description: 高级岛屿
     displayItem: oak_leaves
     enabled: false
     index: 3
@@ -341,7 +341,7 @@ island-schemes:
     maxPartySize: 4
     animals: 64
     monsters: 50
-    villagers: 16
+    villagers: 24
     golems: 5
     scoreMultiply: 0.9
     scoreOffset: 40

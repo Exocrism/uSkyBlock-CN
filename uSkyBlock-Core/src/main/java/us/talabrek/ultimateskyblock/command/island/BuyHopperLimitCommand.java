@@ -19,14 +19,7 @@ public class BuyHopperLimitCommand extends RequireIslandCommand {
     }
 
     private int calcPrice(int curlimit) {
-        int price;
-        if (curlimit <= 40) price = 25 * curlimit;
-        else if (curlimit >= 90) price = 10000;
-        else {
-            price = (int) (1000 * Math.pow(1.05, curlimit - 40));
-            if (price > 10000) price = 10000;
-        }
-        return price;
+        return curlimit * 5;
     }
 
     @Override
