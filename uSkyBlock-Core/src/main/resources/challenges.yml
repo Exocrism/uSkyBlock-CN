@@ -921,7 +921,7 @@ ranks:
         - minecraft:rotten_flesh:32
         - minecraft:lily_pad:4
         displayItem: minecraft:lily_pad
-        lockedDisplayItem: dark_green_stained_glass_pane
+        lockedDisplayItem: green_stained_glass_pane
         resetInHours: 0
         repeatable: false
         reward:
