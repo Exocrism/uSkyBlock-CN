@@ -3740,6 +3740,54 @@ msgstr "红色蘑菇方块"
 msgid "BROWN_MUSHROOM_BLOCK"
 msgstr "棕色蘑菇方块"
 
+msgid "GRASS_BLOCK"
+msgstr "草方块"
+
+msgid "BIRCH_LOG"
+msgstr "白桦原木"
+
+msgid "OAK_SAPLING"
+msgstr "橡树树苗"
+
+msgid "TALL_GRASS"
+msgstr "高草丛"
+
+msgid "WOLF_SPAWN_EGG"
+msgstr "狼刷怪蛋"
+
+msgid "HORSE_SPAWN_EGG"
+msgstr "马刷怪蛋"
+
+msgid "SLIME_SPAWN_EGG"
+msgstr "史莱姆刷怪蛋"
+
+msgid "LILY_PAD"
+msgstr "睡莲"
+
+msgid "CAMEL_SPAWN_EGG"
+msgstr "骆驼刷怪蛋"
+
+msgid "FOX_SPAWN_EGG"
+msgstr "狐狸刷怪蛋"
+
+msgid "DONKEY_SPAWN_EGG"
+msgstr "驴刷怪蛋"
+
+msgid "OCELOT_SPAWN_EGG"
+msgstr "豹猫刷怪蛋"
+
+msgid "SNOWBALL"
+msgstr "雪球"
+
+msgid "SNOW"
+msgstr "雪"
+
+msgid "EMERALD_ORE"
+msgstr "绿宝石矿石"
+
+msgid "BRAIN_CORAL_FAN"
+msgstr "脑纹珊瑚扇"
+
 msgid "NETHER_PORTAL"
 msgstr "下界传送门"
 
