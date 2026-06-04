@@ -3788,6 +3788,9 @@ msgstr "绿宝石矿石"
 msgid "BRAIN_CORAL_FAN"
 msgstr "脑纹珊瑚扇"
 
+msgid "JUNGLE_LOG"
+msgstr "丛林原木"
+
 msgid "NETHER_PORTAL"
 msgstr "下界传送门"
 

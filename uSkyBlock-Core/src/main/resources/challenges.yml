@@ -207,9 +207,8 @@ ranks:
         reward:
           text: 解锁森林生物群系，1个狼刷怪蛋
           commands:
-          - 'console: give {party} minecraft:wolf_spawn_egg 1'
-          commands:
-            - 'console: lp user \{player\} permission set usb.biome.forest true'
+            - 'console: give {party} minecraft:wolf_spawn_egg 1'
+            - 'console: lp user {party} permission set usb.biome.forest true'
           currency: 40
           xp: 40
 
@@ -331,7 +330,7 @@ ranks:
           commands:
           - 'console: give {party} minecraft:mooshroom_spawn_egg 1'
           commands:
-            - 'console: lp user \{player\} permission set usb.biome.mushroom_fields true'
+            - 'console: lp user {player} permission set usb.biome.mushroom_fields true'
           currency: 40
           xp: 40
 
@@ -562,9 +561,8 @@ ranks:
         reward:
           text: 解锁平原生物群系，1个马刷怪蛋
           commands:
-          - 'console: give {party} minecraft:horse_spawn_egg 1'
-          commands:
-            - 'console: lp user \{player\} permission set usb.biome.plains true'
+            - 'console: lp user {party} permission set usb.biome.plains true'
+            - 'console: give {party} minecraft:horse_spawn_egg 1'
           currency: 40
           xp: 40
 
@@ -930,9 +928,8 @@ ranks:
         reward:
           text: 解锁沼泽生物群系，1个史莱姆刷怪蛋
           commands:
-          - 'console: give {party} minecraft:slime_spawn_egg 1'
-          commands:
-            - 'console: lp user \{player\} permission set usb.biome.swamp true'
+            - 'console: lp user {party} permission set usb.biome.swamp true'
+            - 'console: give {party} minecraft:slime_spawn_egg 1'
           currency: 45
           xp: 45
 
@@ -1086,11 +1083,11 @@ ranks:
         reward:
           text: 解锁深海生物群系，64个海晶石，16个海晶砂粒，16个海晶灯
           commands:
-          - 'console: give {party} minecraft:prismarine 64'
-          - 'console: give {party} minecraft:sea_lantern 16'
-          - 'console: give {party} minecraft:prismarine_crystals 16'
-          commands:
-            - 'console: lp user \{player\} permission set usb.biome.deep_ocean true'
+            - 'console: lp user {party} permission set usb.biome.deep_ocean true'
+            - 'console: give {party} minecraft:prismarine 64'
+            - 'console: give {party} minecraft:sea_lantern 16'
+            - 'console: give {party} minecraft:prismarine_crystals 16'
+
           currency: 50
           xp: 50
 
@@ -1114,13 +1111,13 @@ ranks:
             解锁温水海洋生物群系，2个海龟刷怪蛋，
             16个脑珊瑚块8个脑纹珊瑚，8个脑纹珊瑚扇，1个海泡菜
           commands:
-          - 'console: give {party} minecraft:turtle_spawn_egg 2'
-          - 'console: give {party} minecraft:brain_coral_block 16'
-          - 'console: give {party} minecraft:brain_coral 8'
-          - 'console: give {party} minecraft:sea_pickle 1'
-          - 'console: give {party} minecraft:brain_coral_fan 8'
-          commands:
-            - 'console: lp user \{player\} permission set usb.biome.lukewarm_ocean true'
+            - 'console: lp user {party} permission set usb.biome.lukewarm_ocean true'
+            - 'console: give {party} minecraft:turtle_spawn_egg 2'
+            - 'console: give {party} minecraft:brain_coral_block 16'
+            - 'console: give {party} minecraft:brain_coral 8'
+            - 'console: give {party} minecraft:sea_pickle 1'
+            - 'console: give {party} minecraft:brain_coral_fan 8'
+
           currency: 40
           xp: 40
 
@@ -1185,11 +1182,11 @@ ranks:
         reward:
           text: 解锁繁花森林生物群系，2个蜜蜂刷怪蛋，1个蜂巢，8个蜂蜜瓶
           commands:
-          - 'console: give {party} minecraft:bee_spawn_egg 2'
-          - 'console: give {party} minecraft:bee_nest 1'
-          - 'console: give {party} minecraft:honey_bottle 8'
-          commands:
-            - 'console: lp user \{player\} permission set usb.biome.flower_forest true'
+            - 'console: lp user {party} permission set usb.biome.flower_forest true'
+            - 'console: give {party} minecraft:bee_spawn_egg 2'
+            - 'console: give {party} minecraft:bee_nest 1'
+            - 'console: give {party} minecraft:honey_bottle 8'
+
           currency: 40
           xp: 40
 
@@ -1212,10 +1209,9 @@ ranks:
         reward:
           text: 解锁热带高原生物群系，2个羊驼刷怪蛋，64个干草块
           commands:
-          - 'console: give {party} minecraft:llama_spawn_egg 2'
-          - 'console: give {party} minecraft:hay_block 64'
-          commands:
-            - 'console: lp user \{player\} permission set usb.biome.savanna_plateau true'
+            - 'console: give {party} minecraft:llama_spawn_egg 2'
+            - 'console: give {party} minecraft:hay_block 64'
+            - 'console: lp user {party} permission set usb.biome.savanna_plateau true'
           currency: 40
           xp: 40
 
@@ -1237,9 +1233,9 @@ ranks:
         reward:
           text: 解锁丛林生物群系，1个豹猫刷怪蛋
           commands:
-          - 'console: give {party} minecraft:ocelot_spawn_egg 1'
-          commands:
-            - 'console: lp user \{player\} permission set usb.biome.jungle true'
+            - 'console: lp user {party} permission set usb.biome.jungle true'
+            - 'console: give {party} minecraft:ocelot_spawn_egg 1'
+
           currency: 45
           xp: 45
 
@@ -1391,9 +1387,8 @@ ranks:
         reward:
           text: 解锁沙漠生物群系，1个骆驼刷怪蛋
           commands:
-          - 'console: give {party} minecraft:camel_spawn_egg 1'
-          commands:
-            - 'console: lp user \{player\} permission set usb.biome.desert true'
+            - 'console: lp user {party} permission set usb.biome.desert true'
+            - 'console: give {party} minecraft:camel_spawn_egg 1'
           currency: 50
           xp: 50
 
@@ -1415,9 +1410,8 @@ ranks:
         reward:
           text: 解锁积雪平原生物群系，2个北极熊刷怪蛋
           commands:
-          - 'console: give {party} minecraft:polar_bear_spawn_egg 1'
-          commands:
-            - 'console: lp user \{player\} permission set usb.biome.snowy_plains true'
+            - 'console: lp user {party} permission set usb.biome.snowy_plains true'
+            - 'console: give {party} minecraft:polar_bear_spawn_egg 1'
           currency: 50
           xp: 50
 
@@ -1439,9 +1433,8 @@ ranks:
         reward:
           text: 解锁雪坡生物群系，2个山羊刷怪蛋
           commands:
-          - 'console: give {party} minecraft:goat_spawn_egg 2'
-          commands:
-            - 'console: lp user \{player\} permission set usb.biome.snowy_slopes true'
+            - 'console: lp user {party} permission set usb.biome.snowy_slopes true'
+            - 'console: give {party} minecraft:goat_spawn_egg 2'
           currency: 50
           xp: 50
 
@@ -1463,9 +1456,8 @@ ranks:
         reward:
           text: 解锁针叶林生物群系，1个狐狸刷怪蛋
           commands:
-          - 'console: give {party} minecraft:fox_spawn_egg 1'
-          commands:
-            - 'console: lp user \{player\} permission set usb.biome.taiga true'
+            - 'console: lp user {party} permission set usb.biome.taiga true'
+            - 'console: give {party} minecraft:fox_spawn_egg 1'
           currency: 50
           xp: 50
 
@@ -1487,9 +1479,8 @@ ranks:
         reward:
           text: 解锁风袭丘陵生物群系，1个驴刷怪蛋
           commands:
-          - 'console: give {party} minecraft:donkey_spawn_egg 1'
-          commands:
-            - 'console: lp user \{player\} permission set usb.biome.windswept_hills true'
+            - 'console: lp user {party} permission set usb.biome.windswept_hills true'
+            - 'console: give {party} minecraft:donkey_spawn_egg 1'
           currency: 50
           xp: 50
 
@@ -1703,7 +1694,7 @@ ranks:
         reward:
           text: 解锁下界荒地生物群系
           commands:
-            - 'console: lp user \{player\} permission set usb.biome.nether_wastes true'
+            - 'console: lp user {party} permission set usb.biome.nether_wastes true'
           currency: 60
           xp: 60
 
@@ -2294,7 +2285,7 @@ ranks:
     displayItem: minecraft:end_portal_frame
     resetInHours: 48
     requires:
-      rankLeeway: 1
+      rankLeeway: 3
       challenges:
       - tier6_complete
     challenges:
@@ -2372,10 +2363,9 @@ ranks:
         reward:
           text: 解锁繁茂洞穴生物群系，2个美西螈刷怪蛋，64个发光浆果
           commands:
-          - 'console: give {party} minecraft:axolotl_spawn_egg 2'
-          - 'console: give {party} minecraft:glow_berries 64'
-          commands:
-            - 'console: lp user \{player\} permission set usb.biome.lush_caves true'
+            - 'console: lp user {party} permission set usb.biome.lush_caves true'
+            - 'console: give {party} minecraft:axolotl_spawn_egg 2'
+            - 'console: give {party} minecraft:glow_berries 64'
           currency: 80
           xp: 80
 
