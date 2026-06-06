@@ -607,7 +607,7 @@ public class SkyBlockMenu {
         addLore(lores, tr("\u00a7fUse \u00a7bSkybucks\u00a7f to buy \u00a7abasic\u00a7f or \u00a7orare items\u00a7f, even \u00a7dspecial permissions\u00a7f!"));
         addLore(lores, tr("\u00a7f\u53e6\u6709\u00a7d\u9650\u65f6\u5546\u5e97\u00a7f\uff0c\u4ee5\u968f\u673a\u00a7b\u6298\u6263\u00a7f\u8d2d\u4e70\u4f60\u9700\u8981\u7684\u5546\u54c1"));
         addLore(lores, tr("\u00a7f\u6216\u00a7c\u52a0\u4ef7\u00a7f\u83b7\u53d6\u6682\u65f6\u00a7c\u6ca1\u6709\u89e3\u9501\u00a7f\u7684\u7269\u54c1\uff01"));
-        addLore(lores, tr("\u00a7b\u9650\u65f6\u5546\u5e97\u6bcf\u65e5\u00a7a6/12/18\u70b9\u6574\u00a7b\u5237\u65b0."));
+        addLore(lores, tr("\u00a7b\u9650\u65f6\u5546\u5e97\u6bcf\u65e5\u00a7a0/6/12/18\u70b9\u6574\u00a7b\u5237\u65b0."));
         addLore(lores, tr("\u00a7e\u00a7l\u70b9\u51fb\u8fdb\u5165\u5546\u5e97"));
         meta4.setLore(lores);
         menuItem.setItemMeta(meta4);
@@ -1072,16 +1072,18 @@ public class SkyBlockMenu {
             }
             hook.withdrawPlayer(player, price);
 
-            // 捆绑包：发放 itemRewards；纯命令商品不发放物品；普通商品发放 displayItem × giveAmount
+            // 捆绑包：发放 itemRewards × giveAmount 次；纯命令商品不发放物品；普通商品发放 displayItem × giveAmount
             if (isBundle && !original.getItemRewards().isEmpty()) {
                 List<ItemStackUtil.ItemProbability> probs = ItemStackUtil.createItemsWithProbability(original.getItemRewards());
-                List<ItemStack> rewardItems = new ArrayList<>();
-                for (ItemStackUtil.ItemProbability prob : probs) {
-                    rewardItems.add(prob.item().clone());
-                }
-                HashMap<Integer, ItemStack> leftovers = player.getInventory().addItem(rewardItems.toArray(new ItemStack[0]));
-                for (ItemStack leftOver : leftovers.values()) {
-                    player.getWorld().dropItem(player.getLocation(), leftOver);
+                for (int n = 0; n < rItem.getGiveAmount(); n++) {
+                    List<ItemStack> rewardItems = new ArrayList<>();
+                    for (ItemStackUtil.ItemProbability prob : probs) {
+                        rewardItems.add(prob.item().clone());
+                    }
+                    HashMap<Integer, ItemStack> leftovers = player.getInventory().addItem(rewardItems.toArray(new ItemStack[0]));
+                    for (ItemStack leftOver : leftovers.values()) {
+                        player.getWorld().dropItem(player.getLocation(), leftOver);
+                    }
                 }
             } else if (!isBundle && !hasCommands) {
                 // 普通商品：发放 displayItem × giveAmount
@@ -1093,10 +1095,12 @@ public class SkyBlockMenu {
                 }
             }
 
-            // 执行命令（捆绑包或纯命令商品）
+            // 执行命令（捆绑包或纯命令商品），执行 giveAmount 次
             if (isBundle || hasCommands) {
-                for (String cmd : original.getCommands()) {
-                    plugin.execCommand(player, cmd, true);
+                for (int n = 0; n < rItem.getGiveAmount(); n++) {
+                    for (String cmd : original.getCommands()) {
+                        plugin.execCommand(player, cmd, true);
+                    }
                 }
             }
 
@@ -1192,6 +1196,7 @@ public class SkyBlockMenu {
 
         // 限时物品商店（totalPages 已在上面根据 rItems 计算）
         if (ShopLogic.RANDOM_SHOP_CATEGORY_ID.equals(categoryId)) {
+            shopLogic.markRandomShopOpened(player.getUniqueId());
             List<RandomShopItem> rItems = shopLogic.getRandomShopItems(player);
             int startIdx = (page - 1) * SHOP_ITEMS_PER_PAGE;
             int endIdx = Math.min(startIdx + SHOP_ITEMS_PER_PAGE, rItems.size());

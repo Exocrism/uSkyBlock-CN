@@ -10,6 +10,7 @@ public class PlayerShopData {
     private final Map<String, Long> lastBuyTime = new HashMap<>();
     private final Map<String, Integer> randomShopBuys = new HashMap<>();
     private long lastResetTime = Instant.now().getEpochSecond();
+    private long lastRandomShopOpenTime = 0; // 最后打开限时商店的时间戳
 
     public int getBuyCount(String itemId) {
         return buyCounts.getOrDefault(itemId, 0);
@@ -68,5 +69,8 @@ public class PlayerShopData {
     public void resetRandomShopBuys() {
         randomShopBuys.clear();
     }
+
+    public long getLastRandomShopOpenTime() { return lastRandomShopOpenTime; }
+    public void setLastRandomShopOpenTime(long time) { this.lastRandomShopOpenTime = time; }
 
 }

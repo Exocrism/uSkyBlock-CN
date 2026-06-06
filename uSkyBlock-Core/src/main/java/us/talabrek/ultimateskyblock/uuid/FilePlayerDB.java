@@ -244,5 +244,16 @@ public class FilePlayerDB implements PlayerDB {
     @EventHandler(priority = EventPriority.LOW)
     public void onPlayerJoin(PlayerJoinEvent e) {
         updatePlayer(e.getPlayer().getUniqueId(), e.getPlayer().getName(), e.getPlayer().getDisplayName());
+        // 检查限时商店是否刷新后未打开
+        uSkyBlock skyblock = uSkyBlock.getInstance();
+        if (skyblock != null) {
+            us.talabrek.ultimateskyblock.shop.ShopLogic shop = skyblock.getShopLogic();
+            if (shop != null && shop.hasNotOpenedSinceRefresh(e.getPlayer().getUniqueId())) {
+                e.getPlayer().sendMessage("\u00a7b\u9650\u65f6\u5546\u5e97\u5df2\u5237\u65b0\uff01");
+                skyblock.execCommand(e.getPlayer(), "console:tellraw " + e.getPlayer().getName()
+                    + " [{\"text\":\"\u00a7e\u00a7l\u70b9\u6b64\u8fdb\u5165\",\"clickEvent\":{\"action\":\"run_command\","
+                    + "\"value\":\"/is\"}}]", false);
+            }
+        }
     }
 }

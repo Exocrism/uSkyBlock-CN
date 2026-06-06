@@ -43,6 +43,7 @@ public class ShopLogic {
     // 限时商店：每个玩家独立生成 40 件商品
     private final Map<UUID, List<RandomShopItem>> playerRandomShops = new ConcurrentHashMap<>();
     private final Random random = new Random();
+    private long lastRefreshTime = System.currentTimeMillis(); // 上次刷新时间
 
     @Inject
     public ShopLogic(@NotNull uSkyBlock plugin) {
@@ -122,7 +123,7 @@ public class ShopLogic {
 
         // 尝试 6,12,18 点，找到下一个最近的时间
         long delay = Long.MAX_VALUE;
-        int[] hours = {6, 12, 18};
+        int[] hours = {0, 6, 12, 18};
         for (int h : hours) {
             cal.set(Calendar.HOUR_OF_DAY, h);
             long time = cal.getTimeInMillis();
@@ -138,20 +139,44 @@ public class ShopLogic {
         // 使用 uSkyBlock 调度器
         plugin.getScheduler().sync(() -> {
             refreshRandomShop();
+            broadcastRefresh();
             // 之后每 6 小时刷新一次
-            plugin.getScheduler().sync(this::refreshRandomShop, Duration.ofHours(6), Duration.ofHours(6));
+            plugin.getScheduler().sync(() -> {
+                refreshRandomShop();
+                broadcastRefresh();
+            }, Duration.ofHours(6), Duration.ofHours(6));
         }, Duration.ofMillis(delay));
     }
 
-    public void refreshRandomShop() {
-        // 清空所有玩家的限时商店缓存，下次各自打开时重新生成
-        playerRandomShops.clear();
+    private void broadcastRefresh() {
+        for (org.bukkit.entity.Player p : plugin.getServer().getOnlinePlayers()) {
+            p.sendMessage("\u00a7b\u9650\u65f6\u5546\u5e97\u5df2\u5237\u65b0\uff01");
+            plugin.execCommand(p, "console:tellraw " + p.getName()
+                + " [{\"text\":\"\u00a7e\u00a7l\u70b9\u51fb\u6b64\u5904\u6253\u5f00\",\"clickEvent\":{\"action\":\"run_command\","
+                + "\"value\":\"/is\"}}]", false);
+        }
+    }
 
-        // 重置所有玩家的限时购买次数
+    public void refreshRandomShop() {
+        playerRandomShops.clear();
+        lastRefreshTime = System.currentTimeMillis();
+
         for (PlayerShopData data : playerData.values()) {
             data.resetRandomShopBuys();
         }
         logger.info("限时商店已刷新，所有玩家下次打开时生成新商品");
+    }
+
+    /** 玩家打开限时商店时调用，更新最后打开时间 */
+    public void markRandomShopOpened(UUID uuid) {
+        PlayerShopData data = getPlayerData(uuid);
+        data.setLastRandomShopOpenTime(System.currentTimeMillis());
+    }
+
+    /** 检查玩家是否在最近一次刷新后还没打开过限时商店 */
+    public boolean hasNotOpenedSinceRefresh(UUID uuid) {
+        PlayerShopData data = getPlayerData(uuid);
+        return data.getLastRandomShopOpenTime() < lastRefreshTime;
     }
 
     /**

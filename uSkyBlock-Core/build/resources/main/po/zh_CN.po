@@ -3960,3 +3960,82 @@ msgstr "§a成功购买 {0}！花费 {1,number,#}，余额 {2,number,#}"
 
 msgid "§e§lClick to open the store!"
 msgstr "§e§l点击打开商店！"
+
+# 刷怪蛋
+msgid "ARMADILLO_SPAWN_EGG"
+msgstr "犰狳刷怪蛋"
+
+msgid "AXOLOTL_SPAWN_EGG"
+msgstr "美西螈刷怪蛋"
+
+msgid "BOGGED_SPAWN_EGG"
+msgstr "泥泞骷髅刷怪蛋"
+
+msgid "BREEZE_SPAWN_EGG"
+msgstr "旋风人刷怪蛋"
+
+msgid "CAT_SPAWN_EGG"
+msgstr "猫刷怪蛋"
+
+msgid "CAVE_SPIDER_SPAWN_EGG"
+msgstr "洞穴蜘蛛刷怪蛋"
+
+msgid "COAL_ORE"
+msgstr "煤矿石"
+
+msgid "COMMAND_BLOCK"
+msgstr "命令方块"
+
+msgid "CREEPER_SPAWN_EGG"
+msgstr "苦力怕刷怪蛋"
+
+msgid "ELDER_GUARDIAN_SPAWN_EGG"
+msgstr "远古守卫者刷怪蛋"
+
+msgid "ENDERMAN_SPAWN_EGG"
+msgstr "末影人刷怪蛋"
+
+msgid "FROG_SPAWN_EGG"
+msgstr "青蛙刷怪蛋"
+
+msgid "GUARDIAN_SPAWN_EGG"
+msgstr "守卫者刷怪蛋"
+
+msgid "HOGLIN_SPAWN_EGG"
+msgstr "疣猪兽刷怪蛋"
+
+msgid "MULE_SPAWN_EGG"
+msgstr "骡刷怪蛋"
+
+msgid "NETHERITE_UPGRADE_SMITHING_TEMPLATE"
+msgstr "下界合金升级锻造模板"
+
+msgid "PIGLIN_BRUTE_SPAWN_EGG"
+msgstr "猪灵蛮兵刷怪蛋"
+
+msgid "PIGLIN_SPAWN_EGG"
+msgstr "猪灵刷怪蛋"
+
+msgid "RABBIT_SPAWN_EGG"
+msgstr "兔子刷怪蛋"
+
+msgid "SHULKER_SPAWN_EGG"
+msgstr "潜影贝刷怪蛋"
+
+msgid "SKELETON_SPAWN_EGG"
+msgstr "骷髅刷怪蛋"
+
+msgid "SPIDER_SPAWN_EGG"
+msgstr "蜘蛛刷怪蛋"
+
+msgid "VILLAGER_SPAWN_EGG"
+msgstr "村民刷怪蛋"
+
+msgid "WITCH_SPAWN_EGG"
+msgstr "女巫刷怪蛋"
+
+msgid "ZOGLIN_SPAWN_EGG"
+msgstr "僵尸疣猪兽刷怪蛋"
+
+msgid "ZOMBIE_SPAWN_EGG"
+msgstr "僵尸刷怪蛋"

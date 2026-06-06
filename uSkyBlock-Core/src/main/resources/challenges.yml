@@ -389,7 +389,7 @@ ranks:
     displayItem: minecraft:iron_pickaxe
     resetInHours: 20
     requires:
-      rankLeeway: 4
+      rankLeeway: 3
       challenges:
       - tier1_complete
     challenges:
@@ -724,7 +724,7 @@ ranks:
     displayItem: minecraft:rotten_flesh
     resetInHours: 20
     requires:
-      rankLeeway: 5
+      rankLeeway: 8
       challenges:
       - tier2_complete
     challenges:
@@ -1041,9 +1041,9 @@ ranks:
         requiredChallenges:
         - web_collector
         requiredItems:
-        - minecraft:cod:10;+2
-        - minecraft:salmon:10;+2
-        - minecraft:pufferfish:5;+1
+        - minecraft:cod:4;+2
+        - minecraft:salmon:4;+2
+        - minecraft:pufferfish:3;+1
         - minecraft:tropical_fish:2;+1
         displayItem: minecraft:fishing_rod
         lockedDisplayItem: cyan_stained_glass_pane
@@ -1057,10 +1057,10 @@ ranks:
           currency: 20
           xp: 20
         repeatReward:
-          text: 2个海晶石，2个海晶砂粒
+          text: 6个海晶石，4个海晶砂粒
           commands:
-          - 'console: give {party} minecraft:prismarine 2'
-          - 'console: give {party} minecraft:prismarine_crystals 2'
+          - 'console: give {party} minecraft:prismarine 6'
+          - 'console: give {party} minecraft:prismarine_crystals 4'
           currency: 10
           xp: 10
 
@@ -1071,10 +1071,10 @@ ranks:
         requiredChallenges:
         - fisherman
         requiredItems:
-        - minecraft:prismarine:64
-        - minecraft:prismarine_crystals:32
-        - minecraft:kelp:32
-        - minecraft:pufferfish:16
+        - minecraft:prismarine:16
+        - minecraft:prismarine_crystals:4
+        - minecraft:kelp:16
+        - minecraft:pufferfish:8
         displayItem: minecraft:heart_of_the_sea
         lockedDisplayItem: blue_stained_glass_pane
         resetInHours: 0
@@ -1160,20 +1160,13 @@ ranks:
 
       flower_biome:
         name: '&d繁花花匠'
-        description: 收集各种花朵以解锁繁花森林生物群系
+        description: 收集花朵以解锁繁花森林生物群系
         type: onPlayer
         requiredChallenges:
         - feast
         requiredItems:
-        - minecraft:dandelion:8
-        - minecraft:poppy:8
-        - minecraft:blue_orchid:8
-        - minecraft:allium:8
-        - minecraft:azure_bluet:8
-        - minecraft:red_tulip:8
-        - minecraft:orange_tulip:8
-        - minecraft:white_tulip:8
-        - minecraft:pink_tulip:8
+        - minecraft:dandelion:64
+        - minecraft:poppy:64
         displayItem: minecraft:rose_bush
         lockedDisplayItem: pink_stained_glass_pane
         resetInHours: 0
@@ -1295,7 +1288,7 @@ ranks:
     displayItem: minecraft:obsidian
     resetInHours: 20
     requires:
-      rankLeeway: 3
+      rankLeeway: 7
       challenges:
       - tier3_complete
     challenges:
@@ -1587,7 +1580,7 @@ ranks:
     displayItem: minecraft:netherrack
     resetInHours: 24
     requires:
-      rankLeeway: 3
+      rankLeeway: 4
       challenges:
       - page1finished
     challenges:
@@ -1977,7 +1970,7 @@ ranks:
     displayItem: minecraft:enchanting_table
     resetInHours: 24
     requires:
-      rankLeeway: 3
+      rankLeeway: 2
       challenges:
       - tier5_complete
     challenges:
@@ -2284,7 +2277,7 @@ ranks:
     displayItem: minecraft:end_portal_frame
     resetInHours: 48
     requires:
-      rankLeeway: 3
+      rankLeeway: 2
       challenges:
       - tier6_complete
     challenges:
