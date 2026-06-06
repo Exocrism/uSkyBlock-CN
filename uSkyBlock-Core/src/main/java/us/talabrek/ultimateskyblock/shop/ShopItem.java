@@ -16,12 +16,15 @@ public class ShopItem {
     private final List<String> commands;
     private final String bundleName;
     private final List<String> bundleDescription;
+    private final boolean customPricing;
+    private final boolean noPriceIncrease;
 
 
     public ShopItem(String id, ItemStack displayItem, String displayName, double baseCost, int maxBuys,
                     int requiredLevel, List<String> requiredChallenges,
                     List<String> itemRewards, List<String> commands,
-                    String bundleName, List<String> bundleDescription) {
+                    String bundleName, List<String> bundleDescription,
+                    boolean customPricing, boolean noPriceIncrease) {
         this.id = id;
         this.displayItem = displayItem;
         this.displayName = displayName;
@@ -33,6 +36,8 @@ public class ShopItem {
         this.commands = commands != null ? commands : new ArrayList<>();
         this.bundleName = bundleName;
         this.bundleDescription = bundleDescription != null ? bundleDescription : new ArrayList<>();
+        this.customPricing = customPricing;
+        this.noPriceIncrease = noPriceIncrease;
     }
 
     public String getId() { return id; }
@@ -46,4 +51,6 @@ public class ShopItem {
     public List<String> getCommands() { return commands; }
     public String getBundleName() { return bundleName; }
     public List<String> getBundleDescription() { return bundleDescription; }
+    public boolean isCustomPricing() { return customPricing; }
+    public boolean isNoPriceIncrease() { return noPriceIncrease; }
 }

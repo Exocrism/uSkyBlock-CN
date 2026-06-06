@@ -38,6 +38,7 @@ import us.talabrek.ultimateskyblock.shop.ShopCategory;
 import us.talabrek.ultimateskyblock.shop.ShopItem;
 import us.talabrek.ultimateskyblock.shop.PlayerShopData;
 import us.talabrek.ultimateskyblock.shop.ShopLogic;
+import us.talabrek.ultimateskyblock.shop.RandomShopItem;
 
 import java.time.Duration;
 import java.util.ArrayList;
@@ -67,7 +68,7 @@ import static us.talabrek.ultimateskyblock.util.LogUtil.log;
 public class SkyBlockMenu {
     private final Pattern PERM_VALUE_PATTERN = Pattern.compile("(\\[(?<perm>(?<not>[!])?[^\\]]+)\\])?(?<value>.*)");
     private final Pattern CHALLENGE_PAGE_HEADER = Pattern.compile(tr("Challenge Menu") + ".*\\((?<p>[0-9]+)/(?<max>[0-9]+)\\)");
-    private final Pattern SHOP_PAGE_HEADER = Pattern.compile(stripFormatting(tr("商店")) + ".*\\((?<p>[0-9]+)/(?<max>[0-9]+)\\)");
+    private final Pattern SHOP_PAGE_HEADER = Pattern.compile(stripFormatting(tr("Store")) + ".*\\((?<p>[0-9]+)/(?<max>[0-9]+)\\)");
 
     private final uSkyBlock plugin;
     private final ChallengeLogic challengeLogic;
@@ -604,7 +605,10 @@ public class SkyBlockMenu {
         meta4 = menuItem.getItemMeta();
         meta4.setDisplayName("\u00a7a\u00a7l" + tr("Store"));
         addLore(lores, tr("\u00a7fUse \u00a7bSkybucks\u00a7f to buy \u00a7abasic\u00a7f or \u00a7orare items\u00a7f, even \u00a7dspecial permissions\u00a7f!"));
-        addLore(lores, tr("\u00a7e\u00a7lClick to open the store!"));
+        addLore(lores, tr("\u00a7f\u53e6\u6709\u00a7d\u9650\u65f6\u5546\u5e97\u00a7f\uff0c\u4ee5\u968f\u673a\u00a7b\u6298\u6263\u00a7f\u8d2d\u4e70\u4f60\u9700\u8981\u7684\u5546\u54c1"));
+        addLore(lores, tr("\u00a7f\u6216\u00a7c\u52a0\u4ef7\u00a7f\u83b7\u53d6\u6682\u65f6\u00a7c\u6ca1\u6709\u89e3\u9501\u00a7f\u7684\u7269\u54c1\uff01"));
+        addLore(lores, tr("\u00a7b\u9650\u65f6\u5546\u5e97\u6bcf\u65e5\u00a7a6/12/18\u70b9\u6574\u00a7b\u5237\u65b0."));
+        addLore(lores, tr("\u00a7e\u00a7l\u70b9\u51fb\u8fdb\u5165\u5546\u5e97"));
         meta4.setLore(lores);
         menuItem.setItemMeta(meta4);
         menu.addItem(menuItem);
@@ -1045,6 +1049,64 @@ public class SkyBlockMenu {
     public List<PartyPermissionMenuItem> getPermissionMenuItems() {
         return permissionMenuItems;
     }
+
+    private void buyRandomShopItem(Player player, RandomShopItem rItem) {
+        UUID uuid = player.getUniqueId();
+        ShopLogic shopLogic = plugin.getShopLogic();
+        PlayerShopData data = shopLogic.getPlayerData(uuid);
+
+        if (!rItem.isUnlimited() && data.getRandomShopBuyCount(rItem.getOriginalItem().getId()) >= rItem.getMaxBuys()) {
+            player.sendMessage(tr("\u00a7c\u5df2\u8fbe\u5230\u9650\u8d2d\u6b21\u6570\uff01"));
+            return;
+        }
+
+        // 价格：折扣单价 × 数量
+        double price = rItem.getDiscountedPrice() * rItem.getGiveAmount();
+        ShopItem original = rItem.getOriginalItem();
+        boolean isBundle = original.getBundleName() != null && !original.getBundleName().isEmpty();
+        boolean hasCommands = original.getCommands() != null && !original.getCommands().isEmpty();
+        plugin.getHookManager().getEconomyHook().ifPresent(hook -> {
+            if (hook.getBalance(player) < price) {
+                player.sendMessage(tr("\u00a7c\u4f59\u989d\u4e0d\u8db3\uff01"));
+                return;
+            }
+            hook.withdrawPlayer(player, price);
+
+            // 捆绑包：发放 itemRewards；纯命令商品不发放物品；普通商品发放 displayItem × giveAmount
+            if (isBundle && !original.getItemRewards().isEmpty()) {
+                List<ItemStackUtil.ItemProbability> probs = ItemStackUtil.createItemsWithProbability(original.getItemRewards());
+                List<ItemStack> rewardItems = new ArrayList<>();
+                for (ItemStackUtil.ItemProbability prob : probs) {
+                    rewardItems.add(prob.item().clone());
+                }
+                HashMap<Integer, ItemStack> leftovers = player.getInventory().addItem(rewardItems.toArray(new ItemStack[0]));
+                for (ItemStack leftOver : leftovers.values()) {
+                    player.getWorld().dropItem(player.getLocation(), leftOver);
+                }
+            } else if (!isBundle && !hasCommands) {
+                // 普通商品：发放 displayItem × giveAmount
+                ItemStack reward = original.getDisplayItem().clone();
+                reward.setAmount(rItem.getGiveAmount());
+                HashMap<Integer, ItemStack> leftovers = player.getInventory().addItem(reward);
+                for (ItemStack leftOver : leftovers.values()) {
+                    player.getWorld().dropItem(player.getLocation(), leftOver);
+                }
+            }
+
+            // 执行命令（捆绑包或纯命令商品）
+            if (isBundle || hasCommands) {
+                for (String cmd : original.getCommands()) {
+                    plugin.execCommand(player, cmd, true);
+                }
+            }
+
+            data.incrementRandomShopBuyCount(rItem.getOriginalItem().getId());
+            shopLogic.savePlayerData(uuid);
+            double remainingBal = hook.getBalance(player);
+            player.sendMessage(tr("\u00a76\u8d2d\u4e70\u6210\u529f\uff01 \u00a7a\u82b1\u8d39: \u00a7f{0,number,#}\u00a7a \u4f59\u989d: \u00a7f{1,number,#}", price, (int) remainingBal));
+        });
+        player.openInventory(displayShopGUI(player, ShopLogic.RANDOM_SHOP_CATEGORY_ID, 1));
+    }
     // ==================== 商店 GUI (仿 Challenge GUI 布局) ====================
 
     // 商店菜单：与挑战菜单高度一致，6行物品 + 1行分页
@@ -1072,7 +1134,13 @@ public class SkyBlockMenu {
             categoryId = currentCategory.getId();
         }
 
-        int totalPages = Math.max(1, (int) Math.ceil(currentCategory.getItems().size() / (double) SHOP_ITEMS_PER_PAGE));
+        int totalPages;
+        if (ShopLogic.RANDOM_SHOP_CATEGORY_ID.equals(categoryId)) {
+            List<RandomShopItem> rItems = shopLogic.getRandomShopItems(player);
+            totalPages = Math.max(1, (int) Math.ceil(rItems.size() / (double) SHOP_ITEMS_PER_PAGE));
+        } else {
+            totalPages = Math.max(1, (int) Math.ceil(currentCategory.getItems().size() / (double) SHOP_ITEMS_PER_PAGE));
+        }
         if (page < 1) page = 1;
         if (page > totalPages) page = totalPages;
 
@@ -1122,6 +1190,120 @@ public class SkyBlockMenu {
             catSlot += COLS_PER_ROW;
         }
 
+        // 限时物品商店（totalPages 已在上面根据 rItems 计算）
+        if (ShopLogic.RANDOM_SHOP_CATEGORY_ID.equals(categoryId)) {
+            List<RandomShopItem> rItems = shopLogic.getRandomShopItems(player);
+            int startIdx = (page - 1) * SHOP_ITEMS_PER_PAGE;
+            int endIdx = Math.min(startIdx + SHOP_ITEMS_PER_PAGE, rItems.size());
+
+            int slot2 = 1;
+            for (int i = startIdx; i < endIdx; i++) {
+                if (slot2 % COLS_PER_ROW == 0) slot2++;
+                if (slot2 >= SHOP_PAGESIZE) break;
+
+                RandomShopItem rItem = rItems.get(i);
+                ShopItem original = rItem.getOriginalItem();
+                List<String> lores = new ArrayList<>();
+                PlayerShopData data = shopLogic.getPlayerData(player.getUniqueId());
+                int bought = data.getRandomShopBuyCount(rItem.getOriginalItem().getId());
+                boolean isBundle = original.getBundleName() != null && !original.getBundleName().isEmpty();
+                boolean hasCommands = original.getCommands() != null && !original.getCommands().isEmpty();
+
+                // 价格：折扣单价 × 数量
+                double displayPrice = rItem.getDiscountedPrice() * rItem.getGiveAmount();
+                lores.add(tr("\u00a7e\u4ef7\u683c: \u00a7f{0,number,#} " + rItem.getDiscountColor() + rItem.getDiscountLabel(), displayPrice));
+
+                // 数量
+                lores.add(tr("\u00a7e\u6570\u91cf: \u00a7f{0}\u4e2a", rItem.getGiveAmount()));
+
+                // 捆绑包/命令显示原描述；普通商品简化为"购买后获得物品×数量"
+                boolean showSpecialDesc = isBundle || hasCommands;
+                if (isBundle && !original.getBundleDescription().isEmpty()) {
+                    if (original.getBundleName() != null && !original.getBundleName().isEmpty()) {
+                        lores.add(tr("\u00a7e\u00a7l{0}", original.getBundleName()));
+                    }
+                    for (String descLine : original.getBundleDescription()) {
+                        lores.add(FormatUtil.normalize(descLine));
+                    }
+                } else if (!showSpecialDesc) {
+                    String itemName = original.getDisplayName() != null && !original.getDisplayName().isEmpty()
+                        ? stripFormatting(FormatUtil.normalize(original.getDisplayName()))
+                            .replaceAll(" [x\u00d7]\\d+$", "")
+                        : ItemStackUtil.getItemName(original.getDisplayItem());
+                    lores.add(tr("\u00a77\u8d2d\u4e70\u540e\u83b7\u5f97" + itemName + "\u00d7{0}", rItem.getGiveAmount()));
+                }
+
+                if (!rItem.isUnlimited()) {
+                    int remaining = rItem.getMaxBuys() - bought;
+                    if (remaining < 0) remaining = 0;
+                    lores.add(tr("\u00a7e\u9650\u8d2d: \u00a7f{0}\u6b21 (\u5269\u4f59\u00a7f{1}\u6b21\u00a7f)", rItem.getMaxBuys(), remaining));
+                }
+                if (rItem.hasUnmetCondition()) {
+                    lores.add(tr("\u00a75\u4f60\u53ef\u4ee5\u65e0\u89c6\u6761\u4ef6\u52a0\u4ef7\u8d2d\u4e70\u6b64\u5546\u54c1"));
+                    lores.add(tr("\u00a7c\u00a7l\u6761\u4ef6\u672a\u8fbe\u6210\u00a77(\u4ecd\u53ef\u8d2d\u4e70)"));
+                }
+                if (!rItem.isUnlimited() && bought >= rItem.getMaxBuys()) {
+                    lores.add(tr("\u00a7c\u00a7l\u5df2\u552e\u7f44"));
+                } else {
+                    lores.add(tr("\u00a7e\u00a7l\u70b9\u51fb\u8d2d\u4e70"));
+                }
+                ItemStack icon;
+                if (!showSpecialDesc) {
+                    String baseName = original.getDisplayName() != null && !original.getDisplayName().isEmpty()
+                        ? FormatUtil.normalize(original.getDisplayName())
+                        : tr(ItemStackUtil.getItemName(original.getDisplayItem()));
+                    icon = ItemStackUtil.builder(original.getDisplayItem().clone())
+                        .displayName("\u00a7f" + baseName)
+                        .lore(lores).build();
+                } else if (original.getDisplayName() != null && !original.getDisplayName().isEmpty()) {
+                    icon = ItemStackUtil.builder(original.getDisplayItem().clone())
+                        .displayName(FormatUtil.normalize(original.getDisplayName()))
+                        .lore(lores).build();
+                } else {
+                    icon = ItemStackUtil.builder(original.getDisplayItem().clone()).lore(lores).build();
+                }
+                icon.setAmount(Math.min(rItem.getGiveAmount(), 64));
+                menu.setItem(slot2, icon);
+                slot2++;
+            }
+
+            // 翻页
+            int[] pages = new int[9];
+            pages[0] = 1;
+            pages[8] = 0;
+            int startOffset = 2;
+            if (page > 5) {
+                startOffset = (int) ((Math.round(page / 2d)) - 1);
+                if (startOffset > totalPages - 7) {
+                    startOffset = totalPages - 7;
+                }
+            }
+            for (int i = 0; i < 7; i++) {
+                pages[i + 1] = startOffset + i;
+            }
+            for (int i = 0; i < pages.length; i++) {
+                int p = pages[i];
+                if (i == 8) {
+                    ItemStack backItem = GuiItemUtil.createGuiDisplayItem(Material.OAK_DOOR, tr("\u00a77Back to Main Menu"));
+                    backItem = ItemStackUtil.builder(backItem).displayName(tr("\u00a77Back to Main Menu")).build();
+                    menu.setItem(SHOP_PAGESIZE + 8, backItem);
+                } else if (p >= 1 && p <= totalPages) {
+                    ItemStack pageItem;
+                    if (p == page) {
+                        pageItem = GuiItemUtil.createGuiDisplayItem(Material.WRITABLE_BOOK, tr("\u00a77Current page"));
+                    } else {
+                        pageItem = GuiItemUtil.createGuiDisplayItem(Material.BOOK, tr("\u00a77Page {0}", p));
+                    }
+                    if (i == 0) {
+                        pageItem = ItemStackUtil.builder(pageItem).displayName(tr("\u00a77First Page")).build();
+                    }
+                    pageItem.setAmount(p);
+                    menu.setItem(i + SHOP_PAGESIZE, pageItem);
+                }
+            }
+            return menu;
+        }
+
         // 物品区域
         List<ShopItem> items = currentCategory.getItems();
         int startIndex = (page - 1) * SHOP_ITEMS_PER_PAGE;
@@ -1139,11 +1321,26 @@ public class SkyBlockMenu {
             PlayerInfo pi = plugin.getPlayerInfo(player);
             PlayerShopData data = shopLogic.getPlayerData(player.getUniqueId());
 
-            int actualPrice = shopLogic.getActualPrice(shopItem, player.getUniqueId());
+            IslandInfo info = plugin.getIslandInfo(player);
+
+            int actualPrice;
+            if (shopItem.isCustomPricing() && "hopper_limit".equals(shopItem.getId())) {
+                // 初始上限从 blockLimits 读取
+                int initial = plugin.getBlockLimitLogic().getLimits()
+                    .getOrDefault(org.bukkit.Material.HOPPER, 0);
+                int extra = info.getHopperLimit();
+                actualPrice = extra * 5;
+                lores.add(tr("\u00a7e当前上限: \u00a7f{0} \u00a77(初始\u00a7f{1}\u00a77 + 额外\u00a7f{2}\u00a77)",
+                    initial + extra, initial, extra));
+            } else {
+                actualPrice = shopLogic.getActualPrice(shopItem, player.getUniqueId());
+            }
             int bought = data.getBuyCount(shopItem.getId());
 
             lores.add(tr("\u00a7ePrice: \u00a7f{0,number,#}", actualPrice));
-            lores.add(tr("\u00a7eBought: \u00a7f{0}/{1}", bought, shopItem.getMaxBuys()));
+            if (!shopItem.isCustomPricing() && !shopItem.isNoPriceIncrease()) {
+                lores.add(tr("\u00a7eBought: \u00a7f{0}/{1}", bought, shopItem.getMaxBuys()));
+            }
             // 捆绑包描述
             if (!shopItem.getBundleDescription().isEmpty()) {
                 if (shopItem.getBundleName() != null && !shopItem.getBundleName().isEmpty()) {
@@ -1158,7 +1355,6 @@ public class SkyBlockMenu {
             List<String> unmetReasons = new ArrayList<>();
 
             // 检查岛屿等级
-            IslandInfo info = plugin.getIslandInfo(player);
             if (shopItem.getRequiredLevel() > 0 && info.getLevel() < shopItem.getRequiredLevel()) {
                 unmetReasons.add(tr("\u00a7cRequires Island Level: \u00a7f{0} \u00a77(当前: \u00a7f{1,number,##.#}\u00a77)", shopItem.getRequiredLevel(), info.getLevel()));
             }
@@ -1179,8 +1375,8 @@ public class SkyBlockMenu {
                 }
             }
 
-            // 检查购买上限
-            if (bought >= shopItem.getMaxBuys()) {
+            // 检查购买上限（maxBuys=0为不限购）
+            if (shopItem.getMaxBuys() > 0 && !shopItem.isCustomPricing() && bought >= shopItem.getMaxBuys()) {
                 unmetReasons.add(tr("\u00a7cPurchase limit reached"));
             }
 
@@ -1196,8 +1392,9 @@ public class SkyBlockMenu {
 
             ItemStack itemStack;
             if (shopItem.getDisplayName() != null && !shopItem.getDisplayName().isEmpty()) {
+                String cleanName = shopItem.getDisplayName().replaceAll(" [x\u00d7]\\d+$", "");
                 itemStack = ItemStackUtil.builder(shopItem.getDisplayItem().clone())
-                    .displayName(FormatUtil.normalize(shopItem.getDisplayName()))
+                    .displayName(FormatUtil.normalize(cleanName))
                     .lore(lores)
                     .build();
             } else {
@@ -1321,8 +1518,28 @@ public class SkyBlockMenu {
             return;
         }
 
-        // 点击物品 - 购买（通过槽位计算索引）
+        // 限时物品商店购买
         String categoryId = getCategoryIdFromInventoryName(inventoryName);
+        if (ShopLogic.RANDOM_SHOP_CATEGORY_ID.equals(categoryId)) {
+            List<RandomShopItem> rItems = shopLogic.getRandomShopItems(player);
+            int page = 1;
+            Matcher m = SHOP_PAGE_HEADER.matcher(inventoryName);
+            if (m.find()) page = Integer.parseInt(m.group("p"));
+            int itemsPerRow = COLS_PER_ROW - 1;
+            int clickedRow = slotIndex / COLS_PER_ROW;
+            int clickedCol = slotIndex % COLS_PER_ROW;
+            if (clickedCol > 0) {
+                int index = (page - 1) * SHOP_ITEMS_PER_PAGE + clickedRow * itemsPerRow + (clickedCol - 1);
+                if (index >= 0 && index < rItems.size()) {
+                    buyRandomShopItem(player, rItems.get(index));
+                    return;
+                }
+            }
+            player.openInventory(displayShopGUI(player, categoryId, page));
+            return;
+        }
+
+        // 点击物品 - 购买（通过槽位计算索引）
         if (categoryId != null) {
             ShopCategory category = shopLogic.getCategory(categoryId);
             if (category != null && currentItem != null && currentItem.getType() != Material.AIR) {
@@ -1382,8 +1599,38 @@ public class SkyBlockMenu {
             }
         }
 
-        if (data.getBuyCount(item.getId()) >= item.getMaxBuys()) {
+        // 自定义定价/不限购跳过购买上限检查
+        if (item.getMaxBuys() > 0 && !item.isCustomPricing() && data.getBuyCount(item.getId()) >= item.getMaxBuys()) {
             player.sendMessage(tr("\u00a7cPurchase limit reached!"));
+            return;
+        }
+
+        // 自定义定价：hopper_limit — 直接操作数据，不走命令
+        if (item.isCustomPricing() && "hopper_limit".equals(item.getId())) {
+            int curlimit = islandInfo.getHopperLimit();
+            int price = curlimit * 5;
+            plugin.getHookManager().getEconomyHook().ifPresent(hook -> {
+                double balance = hook.getBalance(player);
+                if (balance < price) {
+                    player.sendMessage(tr("\u00a7c余额不足！需要 {0,number,#}，你只有 {1,number,#}", price, (int) balance));
+                    return;
+                }
+                hook.withdrawPlayer(player, price);
+                islandInfo.setHopperLimit(curlimit + 1);
+                player.sendMessage(tr("\u00a7a漏斗上限 +1！当前上限: \u00a7f{0}\u00a7a，花费: \u00a7f{1,number,#}", curlimit + 1, price));
+            });
+            player.openInventory(displayShopGUI(player, category.getId(), 1));
+            return;
+        }
+
+        // 其他自定义定价：由命令自行处理
+        if (item.isCustomPricing()) {
+            data.incrementBuyCount(item.getId());
+            shopLogic.savePlayerData(uuid);
+            for (String cmd : item.getCommands()) {
+                plugin.execCommand(player, cmd, true);
+            }
+            player.openInventory(displayShopGUI(player, category.getId(), 1));
             return;
         }
 
@@ -1445,19 +1692,21 @@ public class SkyBlockMenu {
                 : "";
             if (totalGiven > 0) {
                 if (!itemName.isEmpty()) {
-                    player.sendMessage(tr("\u00a7aPurchased {0} x{1}! Cost {2,number,#}, balance {3,number,#}", itemName, totalGiven, actualPrice, (int) remaining));
+                    player.sendMessage(tr("\u00a76\u8d2d\u4e70\u6210\u529f\uff01 \u00a7a\u8d2d\u4e70\u4e86 {0} \u00d7{1} \u00a7a\u82b1\u8d39: \u00a7f{2,number,#}\u00a7a \u4f59\u989d: \u00a7f{3,number,#}", itemName, totalGiven, actualPrice, (int) remaining));
                 } else {
-                    player.sendMessage(tr("\u00a7aPurchased {0}x! Cost {1,number,#}, balance {2,number,#}", totalGiven, actualPrice, (int) remaining));
+                    player.sendMessage(tr("\u00a76\u8d2d\u4e70\u6210\u529f\uff01 \u00a7a\u8d2d\u4e70\u4e86 \u00a7f{0}\u00a7a\u4e2a \u00a7a\u82b1\u8d39: \u00a7f{1,number,#}\u00a7a \u4f59\u989d: \u00a7f{2,number,#}", totalGiven, actualPrice, (int) remaining));
                 }
             } else {
                 if (!itemName.isEmpty()) {
-                    player.sendMessage(tr("\u00a7aPurchased {0}! Cost {1,number,#}, balance {2,number,#}", itemName, actualPrice, (int) remaining));
+                    player.sendMessage(tr("\u00a76\u8d2d\u4e70\u6210\u529f\uff01 \u00a7a\u8d2d\u4e70\u4e86 {0} \u00a7a\u82b1\u8d39: \u00a7f{1,number,#}\u00a7a \u4f59\u989d: \u00a7f{2,number,#}", itemName, actualPrice, (int) remaining));
                 } else {
-                    player.sendMessage(tr("\u00a7aPurchased! Cost {0,number,#}, balance {1,number,#}", actualPrice, (int) remaining));
+                    player.sendMessage(tr("\u00a76\u8d2d\u4e70\u6210\u529f\uff01 \u00a7a\u82b1\u8d39: \u00a7f{0,number,#}\u00a7a \u4f59\u989d: \u00a7f{1,number,#}", actualPrice, (int) remaining));
                 }
             }
-            player.sendMessage(tr("\u00a7eRemaining purchases: {0}/{1}",
-                item.getMaxBuys() - data.getBuyCount(item.getId()), item.getMaxBuys()));
+            if (item.getMaxBuys() > 0) {
+                player.sendMessage(tr("\u00a7eRemaining purchases: {0}/{1}",
+                    item.getMaxBuys() - data.getBuyCount(item.getId()), item.getMaxBuys()));
+            }
         });
 
         player.openInventory(displayShopGUI(player, category.getId(), 1));

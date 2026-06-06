@@ -1,0 +1,3962 @@
+# Copyright (C) 2015
+# This file is distributed under the same license as the uSkyBlock package.
+# Miku_Snow <admin@915mc.com>, 2015-04-23.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: v2.3-HF3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2025-04-25 21:25+0800\n"
+"Last-Translator: Miku_Snow <admin@915mc.com>\n"
+"Language-Team: 915mc <admin@915mc.com>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.6\n"
+
+#, java-format
+msgid "§eYou do not have access (§4{0}§e)"
+msgstr "§e你没有权限（§4{0}§e）"
+
+#, java-format
+msgid "§eInvalid command: {0}"
+msgstr "§e无效命令：{0}"
+
+msgid "changes the language of the plugin, and reloads"
+msgstr "更改插件语言并重新加载"
+
+#, java-format
+msgid "§aSuccessfully changed language to §e{0}"
+msgstr "§a成功将语言更改为§e{0}"
+
+#, java-format
+msgid "§cFailed to change language to §e{0}"
+msgstr "§c无法将语言更改为§e{0}"
+
+msgid "§9Supported Languages:\n"
+msgstr "§9支持的语言：\n"
+
+#, java-format
+msgid "§f{0} §7{1} §9 by {2} §7{3}\n"
+msgstr "§f{0} §7{1} §9 作者 {2} §7{3}\n"
+
+msgid "§cUnable to locate any languages."
+msgstr "§c找不到任何语言文件."
+
+msgid "Command"
+msgstr "命令"
+
+msgid "Permission"
+msgstr "权限"
+
+msgid "Description"
+msgstr "描述"
+
+msgid "saves documentation of the commands to a file"
+msgstr "将命令文档保存到文件"
+
+#, java-format
+msgid "Wrote documentation to {0}"
+msgstr "已写入文档到 {0}"
+
+#, java-format
+msgid "§4Error writing documentation: {0}"
+msgstr "§4写入文档时出错：{0}"
+
+#, java-format
+msgid "§7Usage: {0}"
+msgstr "§7用法：{0}"
+
+#, java-format
+msgid "§7Use §3/{0} ? {1}§7 to display next page\n"
+msgstr "§7使用 §3/{0} ? {1}§7 显示下一页\n"
+
+#, java-format
+msgid "§7Use §3/{0} ? {1} §7 to display previous page\n"
+msgstr "§7使用 §3/{0} ? {1} §7 显示上一页\n"
+
+msgid "d"
+msgstr "天"
+
+msgid "h"
+msgstr "时"
+
+msgid "m"
+msgstr "分"
+
+msgid "s"
+msgstr "秒"
+
+#, java-format
+msgid "{0,number,0}:{1,number,00}.{2,number,000}"
+msgstr "{0,number,0}:{1,number,00}.{2,number,000}"
+
+#, java-format
+msgid "§f{0}x §7{1}"
+msgstr "§f{0}x §7{1}"
+
+#, java-format
+msgid "§7{0}"
+msgstr "§7{0}"
+
+#, java-format
+msgid "§4You can complete this {0} more time(s)."
+msgstr "§4你还可以完成此挑战 {0} 次."
+
+#, java-format
+msgid "§4Requirements will reset in {0} days."
+msgstr "§4需求将在 {0} 天后重置."
+
+#, java-format
+msgid "§4Requirements will reset in {0} hours."
+msgstr "§4需求将在 {0} 小时后重置."
+
+#, java-format
+msgid "§4Requirements will reset in {0} minutes."
+msgstr "§4需求将在 {0} 分钟后重置."
+
+msgid "§4This challenge is currently unavailable."
+msgstr "§4此挑战当前不可用."
+
+#, java-format
+msgid "§4You can complete this again in {0} days."
+msgstr "§4你可以在 {0} 天后再次完成此挑战."
+
+#, java-format
+msgid "§4You can complete this again in {0} hours."
+msgstr "§4你可以在 {0} 小时后再次完成此挑战."
+
+#, java-format
+msgid "§4You can complete this again in {0} minutes."
+msgstr "§4你可以在 {0} 分钟后再次完成此挑战."
+
+msgid "§eThis challenge requires:"
+msgstr "§e此挑战需要："
+
+msgid "§7and more..."
+msgstr "§7以及更多..."
+
+msgid "§eItems will be traded for reward."
+msgstr "§e物品将被消耗以换取奖励."
+
+#, java-format
+msgid "§eMust be within {0} meters."
+msgstr "§e必须在 {0} 米范围内."
+
+msgid "§6Item Reward: §a"
+msgstr "§6物品奖励：§a"
+
+#, java-format
+msgid "§6Currency Reward: §a{0}"
+msgstr "§6货币奖励：§a{0}"
+
+#, java-format
+msgid "§6Exp Reward: §a{0}"
+msgstr "§6经验奖励：§a{0}"
+
+#, java-format
+msgid "§dTotal times completed: §f{0}"
+msgstr "§d总完成次数：§f{0}"
+
+#, java-format
+msgid "§7Requires {0}"
+msgstr "§7需要 {0}"
+
+#, java-format
+msgid "§7Complete {0} more {1} §7challenges"
+msgstr "§7再完成 {0} 个{1}§7挑战"
+
+#, java-format
+msgid "§7Complete {0}"
+msgstr "§7完成 {0}"
+
+msgid "to unlock this rank"
+msgstr "以解锁此等级"
+
+#, java-format
+msgid "§4No challenge named {0} found"
+msgstr "§4未找到名为 {0} 的挑战"
+
+msgid "§4You must be on your island to do that!"
+msgstr "§4你必须在你的岛屿上才能这样做！"
+
+#, java-format
+msgid "§4The {0} challenge is not available yet!"
+msgstr "§4{0} 挑战尚不可用！"
+
+#, java-format
+msgid "§4The {0} challenge is not repeatable!"
+msgstr "§4{0} 挑战不可重复完成！"
+
+#, java-format
+msgid "§4You cannot complete the {0} challenge again yet!"
+msgstr "§4你还不能再次完成 {0} 挑战！"
+
+#, java-format
+msgid "§eTrying to complete challenge §a{0}"
+msgstr "§e正在尝试完成挑战 §a{0}"
+
+#, java-format
+msgid "§4{0}"
+msgstr "§4{0}"
+
+#, java-format
+msgid "§4You must be standing within {0} blocks of all required items."
+msgstr "§4你必须站在所有需求物品的 {0} 格范围之内."
+
+#, java-format
+msgid "§4Your island must be level {0} to complete this challenge!"
+msgstr "§4你的岛屿必须达到 {0} 级才能完成此挑战！"
+
+#, java-format
+msgid "§4Unknown type of challenge: {0}"
+msgstr "§4未知的挑战类型：{0}"
+
+#, java-format
+msgid ""
+"§eStill the following entities short:\n"
+"{0}"
+msgstr ""
+"§e仍缺少以下实体：\n"
+"{0}"
+
+#, java-format
+msgid " §4{0} §b{1}"
+msgstr " §4{0} §b{1}"
+
+#, java-format
+msgid "§eYou are the following items short:{0}"
+msgstr "§e你缺少以下物品：{0}"
+
+#, java-format
+msgid "§aYou have completed the {0} challenge!"
+msgstr "§a你完成了 {0} 挑战！"
+
+#, java-format
+msgid "§9{0}§f has completed the §9{1}§f challenge!"
+msgstr "§9{0}§f 完成了 §9{1}§f 挑战！"
+
+#, java-format
+msgid "§eItem reward(s): §f{0}"
+msgstr "§e物品奖励：§f{0}"
+
+#, java-format
+msgid "§eExp reward: §f{0,number,#.#}"
+msgstr "§e经验奖励：§f{0,number,#.#}"
+
+#, java-format
+msgid "§eCurrency reward: §f{0,number,###.##} {1} §a ({2,number,##.##})%"
+msgstr "§e货币奖励：§f{0,number,###.##} {1} §a ({2,number,##.##})%"
+
+msgid "§eYour inventory is §4full§e. Items dropped on the ground."
+msgstr "§e你的背包§4已满§e.多余物品已掉落在地上."
+
+msgid "§e§lClick to complete this challenge."
+msgstr "§e§l点击完成此挑战."
+
+msgid "§4§lYou can't repeat this challenge."
+msgstr "§4§l你无法重复完成此挑战."
+
+#, java-format
+msgid "Rank: {0}"
+msgstr "等级：{0}"
+
+msgid "§fComplete most challenges in"
+msgstr "§f完成此等级中的大部分挑战"
+
+msgid "§fthis rank to unlock the next rank."
+msgstr "§f以解锁下一等级."
+
+msgid "§eClick here to show previous page"
+msgstr "§e点击此处显示上一页"
+
+msgid "§eClick here to show next page"
+msgstr "§e点击此处显示下一页"
+
+msgid "§4§lLocked Challenge"
+msgstr "§4§l已锁定挑战"
+
+msgid "Return"
+msgstr "返回"
+
+msgid "Caps On"
+msgstr "大写锁定已开启"
+
+#, java-format
+msgid "§7Page {0}"
+msgstr "§7第 {0} 页"
+
+msgid "Config:"
+msgstr "配置："
+
+msgid "§9Text Editor"
+msgstr "§9文本编辑器"
+
+msgid "§eConfiguration saved and reloaded."
+msgstr "§e配置已保存并重新加载."
+
+msgid "§cError! §9Unable to save config file!"
+msgstr "§c错误！§9无法保存配置文件！"
+
+msgid "§3First Page"
+msgstr "§3第一页"
+
+msgid "§3Last Page"
+msgstr "§3最后一页"
+
+msgid "§cSave & Reload config"
+msgstr "§c保存并重新加载配置"
+
+msgid ""
+"§7Saves the settings to\n"
+"§7file & reloads again.\n"
+"§cNote: §7Use with care!"
+msgstr ""
+"§7将设置保存到文件\n"
+"§7并重新加载.\n"
+"§c注意：§7请谨慎使用！"
+
+msgid "§7 (readonly)"
+msgstr "§7（只读）"
+
+#, java-format
+msgid "§c{0,number,#}"
+msgstr "§c{0,number,#}"
+
+#, java-format
+msgid "§a+{0,number,#}"
+msgstr "§a+{0,number,#}"
+
+#, java-format
+msgid "§a{0,number,#}"
+msgstr "§a{0,number,#}"
+
+#, java-format
+msgid "&aLeft:&7 Increment with {0}"
+msgstr "&a左键：&7 以 {0} 递增"
+
+#, java-format
+msgid "&cRight-Click:&7 Set to {0}"
+msgstr "&c右键：&7 设置为 {0}"
+
+msgid "§9Integer Editor"
+msgstr "§9整数编辑器"
+
+msgid "Challenge Menu"
+msgstr "挑战菜单"
+
+msgid "Change Biome"
+msgstr "更改生物群系"
+
+msgid "change the island''s biome."
+msgstr "更改岛屿的生物群系."
+
+msgid "Toggle Island Lock"
+msgstr "切换岛屿锁定"
+
+msgid "toggle the island''s lock."
+msgstr "切换岛屿的锁定状态."
+
+msgid "Set Island Warp"
+msgstr "设置岛屿传送点"
+
+msgid "set the island''s warp."
+msgstr "设置岛屿的传送点."
+
+msgid ""
+"set the island''s warp,\n"
+"which allows non-group\n"
+"members to teleport to\n"
+"the island."
+msgstr ""
+"设置岛屿传送点，\n"
+"允许非队伍成员\n"
+"传送到此岛屿."
+
+msgid "Toggle Island Warp"
+msgstr "切换岛屿传送点"
+
+msgid "toggle the island''s warp."
+msgstr "切换岛屿传送点的开启/关闭."
+
+msgid ""
+"toggle the island''s warp,\n"
+"allowing them to turn it\n"
+"on or off at anytime, but\n"
+"not set the location."
+msgstr ""
+"切换岛屿传送点，\n"
+"允许随时开启或关闭，\n"
+"但不能设置传送点位置."
+
+msgid "Invite Players"
+msgstr "邀请玩家"
+
+msgid "invite others to the island."
+msgstr "邀请其他玩家加入岛屿."
+
+msgid ""
+"invite\n"
+"other players to the island if\n"
+"there is enough room for more\n"
+"members"
+msgstr ""
+"如果岛屿还有\n"
+"足够的成员空位，\n"
+"邀请其他玩家加入"
+
+msgid "Kick Players"
+msgstr "踢出玩家"
+
+msgid "kick others from the island."
+msgstr "将其他玩家踢出岛屿."
+
+msgid ""
+"kick\n"
+"other players from the island,\n"
+"but they are unable to kick\n"
+"the island leader."
+msgstr ""
+"将其他玩家\n"
+"踢出岛屿，\n"
+"但无法踢出岛主."
+
+msgid "Permissions"
+msgstr "权限"
+
+#, java-format
+msgid "{0} <{1}>"
+msgstr "{0} <{1}>"
+
+msgid "§9Player Permissions"
+msgstr "§9玩家权限"
+
+msgid ""
+"§eClick here to return to\n"
+"§eyour island group''s info."
+msgstr ""
+"§e点击此处返回\n"
+"§e你的岛屿队伍信息."
+
+#, java-format
+msgid "§e{0}''§9s Permissions"
+msgstr "§e{0}§9 的权限"
+
+msgid ""
+"§eHover over an icon to view\n"
+"§ea permission. Change the\n"
+"§epermission by clicking it."
+msgstr ""
+"§e悬停在图标上查看\n"
+"§e权限.点击图标\n"
+"§e即可更改权限."
+
+msgid "§fThis player §acan"
+msgstr "§f此玩家§a可以"
+
+msgid "Click here to remove this permission."
+msgstr "点击此处移除此权限."
+
+msgid "§fThis player §ccannot"
+msgstr "§f此玩家§c不能"
+
+msgid "Click here to grant this permission."
+msgstr "点击此处授予此权限."
+
+msgid "Island Group Members"
+msgstr "岛屿队伍成员"
+
+#, java-format
+msgid "Group Members: §2{0}§7/§e{1}"
+msgstr "队伍成员：§2{0}§7/§e{1}"
+
+msgid "§aMore players can be invited to this island."
+msgstr "§a可以邀请更多玩家加入此岛屿."
+
+msgid "§cThis island is full."
+msgstr "§c此岛屿已满员."
+
+msgid ""
+"§eHover over a player''s icon to\n"
+"§eview their permissions. The\n"
+"§eleader can change permissions\n"
+"§eby clicking a player''s icon."
+msgstr ""
+"§e悬停在玩家图标上\n"
+"§e查看其权限.\n"
+"§e岛主可以点击玩家图标\n"
+"§e来更改权限."
+
+#, java-format
+msgid "§e{0}''s§9 Permissions"
+msgstr "§e{0} §9的权限"
+
+msgid "Leader"
+msgstr "岛主"
+
+msgid "Member"
+msgstr "成员"
+
+#, java-format
+msgid "Can {0}"
+msgstr "可以{0}"
+
+#, java-format
+msgid "Cannot {0}"
+msgstr "不能{0}"
+
+msgid "§e<Click to change this player''s permissions>"
+msgstr "§e<点击更改此玩家的权限>"
+
+msgid "Island Log"
+msgstr "岛屿日志"
+
+msgid ""
+"§eClick here to return to\n"
+"§ethe main island screen."
+msgstr ""
+"§e点击此处返回\n"
+"§e岛屿主界面."
+
+msgid "§e§lIsland Log"
+msgstr "§e§l岛屿日志"
+
+msgid "§7Current page"
+msgstr "§7当前页"
+
+msgid "§7First Page"
+msgstr "§7第一页"
+
+msgid "§7Last Page"
+msgstr "§7最后一页"
+
+msgid "Island Create Menu"
+msgstr "岛屿创建菜单"
+
+msgid "§a§lStart an Island"
+msgstr "§a§l开始岛屿生涯"
+
+msgid ""
+"Start your skyblock journey\n"
+"by starting your own island.\n"
+"Complete challenges to earn\n"
+"items and skybucks to help\n"
+"expand your skyblock. You can\n"
+"invite others to join in\n"
+"building your island empire!\n"
+"§e§lClick here to start!"
+msgstr ""
+"创建你自己的岛屿，\n"
+"开启空岛之旅.\n"
+"完成挑战赚取物品和空岛币，\n"
+"来扩展你的空岛.\n"
+"你可以邀请其他人加入，\n"
+"共同建造你的岛屿帝国！\n"
+"§e§l点击此处开始！"
+
+msgid "§aClick to create!"
+msgstr "§a点击创建！"
+
+#, java-format
+msgid ""
+"§cNo access!\n"
+"§7({0})"
+msgstr ""
+"§c禁止访问！\n"
+"§7（{0}）"
+
+msgid "§a§lReturn to Spawn"
+msgstr "§a§l返回出生点"
+
+msgid "Teleport to the spawn area."
+msgstr "传送到出生点区域."
+
+msgid "§a§lJoin an Island"
+msgstr "§a§l加入岛屿"
+
+msgid ""
+"Want to join another player''s\n"
+"island instead of starting\n"
+"your own? If another player\n"
+"invites you to their island\n"
+"you can click here or use\n"
+"§e/island accept§f to join them.\n"
+"§e§lClick here to accept an invite!\n"
+"§e§l(You must be invited first)"
+msgstr ""
+"想加入其他玩家的岛屿\n"
+"而不是自己创建吗？\n"
+"如果有玩家邀请你加入他们的岛屿，\n"
+"你可以点击此处或使用\n"
+"§e/island accept§f 来加入他们.\n"
+"§e§l点击此处接受邀请！\n"
+"§e§l（你必须先收到邀请）"
+
+msgid "Island Menu"
+msgstr "岛屿菜单"
+
+msgid "§a§lReturn Home"
+msgstr "§a§l返回家园"
+
+msgid ""
+"Return to your island''s home\n"
+"point. You can change your home\n"
+"point to any location on your\n"
+"island using §b/island sethome\n"
+"§e§lClick here to return home."
+msgstr ""
+"返回你岛屿的家园点.\n"
+"你可以使用 §b/island sethome\n"
+"将家园点设置到岛屿上的任何位置.\n"
+"§e§l点击此处返回家园."
+
+msgid "§a§lChallenges"
+msgstr "§a§l挑战"
+
+msgid ""
+"View a list of §9challenges that\n"
+"you can complete on your island\n"
+"to earn skybucks, items, perks,\n"
+"and titles."
+msgstr ""
+"查看你可以在岛屿上完成的\n"
+"§9挑战§f列表，\n"
+"以赚取空岛币、物品、增益和称号."
+
+msgid "§e§lClick here to view challenges."
+msgstr "§e§l点击此处查看挑战."
+
+msgid "§4§lChallenges disabled."
+msgstr "§4§l挑战已禁用."
+
+msgid "§a§lIsland Level"
+msgstr "§a§l岛屿等级"
+
+#, java-format
+msgid "§eCurrent Level: §a{0,number,##.#}"
+msgstr "§e当前等级：§a{0,number,##.#}"
+
+msgid ""
+"Gain island levels by expanding\n"
+"your skyblock and completing\n"
+"certain challenges. Rarer blocks\n"
+"will add more to your level.\n"
+"§e§lClick here to refresh.\n"
+"§e§l(must be on island)"
+msgstr ""
+"通过扩展你的空岛\n"
+"并完成特定挑战来提升岛屿等级.\n"
+"更稀有的方块将为你的等级增加更多分数.\n"
+"§e§l点击此处刷新.\n"
+"§e§l（必须在你的岛屿上）"
+
+msgid "Island Group"
+msgstr "岛屿队伍"
+
+#, java-format
+msgid "§eMembers: §2{0}/{1}"
+msgstr "§e成员：§2{0}/{1}"
+
+msgid ""
+"View the members of your island\n"
+"group and their permissions. If\n"
+"you are the island leader, you\n"
+"can change the member permissions.\n"
+"§e§lClick here to view or change."
+msgstr ""
+"查看你岛屿队伍的成员\n"
+"及其权限.\n"
+"如果你是岛主，\n"
+"你可以更改成员权限.\n"
+"§e§l点击此处查看或更改."
+
+msgid "Change Island Biome"
+msgstr "更改岛屿生物群系"
+
+#, java-format
+msgid "§eCurrent Biome: §b{0}"
+msgstr "§e当前生物群系：§b{0}"
+
+msgid ""
+"The island biome affects things\n"
+"like grass color and spawning\n"
+"of both animals and monsters."
+msgstr ""
+"岛屿生物群系会影响\n"
+"草的颜色以及\n"
+"动物和怪物的生成."
+
+msgid "§e§lClick here to change biomes."
+msgstr "§e§l点击此处更改生物群系."
+
+msgid "§c§lYou can't change the biome."
+msgstr "§c§l你无法更改生物群系."
+
+msgid "§a§lIsland Lock"
+msgstr "§a§l岛屿锁定"
+
+msgid ""
+"§eLock Status: §aActive\n"
+"§fYour island is currently §clocked.\n"
+"§fPlayers outside of your group\n"
+"§fare unable to enter your island."
+msgstr ""
+"§e锁定状态：§a已激活\n"
+"§f你的岛屿当前已§c锁定§f.\n"
+"§f队伍外的玩家\n"
+"§f无法进入你的岛屿."
+
+msgid "§e§lClick here to unlock your island."
+msgstr "§e§l点击此处解锁你的岛屿."
+
+msgid "§c§lYou can't change the lock."
+msgstr "§c§l你无法更改锁定状态."
+
+msgid ""
+"§eLock Status: §8Inactive\n"
+"§fYour island is currently §aunlocked.\n"
+"§fAll players are able to enter your\n"
+"§fisland, but only you and your group\n"
+"§fmembers may build there."
+msgstr ""
+"§e锁定状态：§8未激活\n"
+"§f你的岛屿当前§a未锁定§f.\n"
+"§f所有玩家都可以进入你的岛屿，\n"
+"§f但只有你和你的队伍成员\n"
+"§f可以在那里建造."
+
+msgid "§e§lClick here to lock your island."
+msgstr "§e§l点击此处锁定你的岛屿."
+
+msgid "§a§lIsland Warp"
+msgstr "§a§l岛屿传送点"
+
+msgid ""
+"§eWarp Status: §aActive\n"
+"§fOther players may warp to your\n"
+"§fisland at anytime to the point\n"
+"§fyou set using §d/island setwarp."
+msgstr ""
+"§e传送点状态：§a已激活\n"
+"§f其他玩家可以随时传送到\n"
+"§f你使用 §d/island setwarp\n"
+"§f设置的传送点."
+
+msgid "§e§lClick here to deactivate."
+msgstr "§e§l点击此处停用."
+
+msgid "§c§lYou can't change the warp."
+msgstr "§c§l你无法更改传送点."
+
+msgid ""
+"§eWarp Status: §8Inactive\n"
+"§fOther players can't warp to your\n"
+"§fisland. Set a warp point using\n"
+"§d/island setwarp §fbefore activating."
+msgstr ""
+"§e传送点状态：§8未激活\n"
+"§f其他玩家无法传送到你的岛屿.\n"
+"§f在激活之前，请先使用\n"
+"§d/island setwarp §f设置一个传送点."
+
+msgid "§e§lClick here to activate."
+msgstr "§e§l点击此处激活."
+
+msgid "§a§lIsland Log"
+msgstr "§a§l岛屿日志"
+
+msgid ""
+"View a log of events from\n"
+"your island such as member,\n"
+"biome, and warp changes.\n"
+"§e§lClick to view the log."
+msgstr ""
+"查看你岛屿上的事件日志，\n"
+"例如成员、生物群系\n"
+"和传送点的更改.\n"
+"§e§l点击查看日志."
+
+msgid "§a§lChange Home Location"
+msgstr "§a§l更改家园位置"
+
+msgid ""
+"When you teleport to your\n"
+"island you will be taken to\n"
+"this location.\n"
+"§e§lClick here to change."
+msgstr ""
+"当你传送到你的岛屿时，\n"
+"你将被传送到此位置.\n"
+"§e§l点击此处进行更改."
+
+msgid "§a§lChange Warp Location"
+msgstr "§a§l更改传送点位置"
+
+msgid ""
+"When your warp is activated,\n"
+"other players will be taken to\n"
+"this point when they teleport\n"
+"to your island."
+msgstr ""
+"当你的传送点激活时，\n"
+"其他玩家传送到你的岛屿\n"
+"将会到达此位置."
+
+msgid "§e§lClick here to change."
+msgstr "§e§l点击此处进行更改."
+
+msgid "§c§lRestart Island"
+msgstr "§c§l重置岛屿"
+
+msgid ""
+"Restarts your island.\n"
+"§4WARNING! §cwill remove your items and island!"
+msgstr ""
+"重置你的岛屿.\n"
+"§4警告！§c将移除你的所有物品和岛屿！"
+
+msgid "§c§lLeave Island"
+msgstr "§c§l离开岛屿"
+
+msgid ""
+"Leaves your island.\n"
+"§4WARNING! §cwill remove all your items!"
+msgstr ""
+"离开你的岛屿.\n"
+"§4警告！§c将移除你的所有物品！"
+
+msgid "§cClick to leave"
+msgstr "§c点击离开"
+
+msgid "Island Restart Menu"
+msgstr "岛屿重置菜单"
+
+msgid "§eYou do not have access to that island-schematic!"
+msgstr "§e你没有权限使用该岛屿蓝图！"
+
+#, java-format
+msgid "§cClick within §9{0}§c to leave!"
+msgstr "§c在 §9{0}§c 内点击以离开！"
+
+msgid "§a§lReturn to the main menu"
+msgstr "§a§l返回主菜单"
+
+#, java-format
+msgid "§cClick within §9{0}§c to restart!"
+msgstr "§c在 §9{0}§c 内点击以重置！"
+
+msgid "§aClick to restart!"
+msgstr "§a点击重置！"
+
+msgid "true"
+msgstr "启用"
+
+msgid "false"
+msgstr "禁用"
+
+msgid "Either send a message directly to your group, or toggle it on/off."
+msgstr "直接向你的队伍发送消息，或开启/关闭此功能."
+
+msgid "party"
+msgstr "队伍"
+
+msgid "island"
+msgstr "岛屿"
+
+#, java-format
+msgid "§cToggled chat to {0} §aON"
+msgstr "§c已切换聊天至 {0} §a开启"
+
+#, java-format
+msgid "§cRepeat §9{0}§c to toggle it off"
+msgstr "§c重复 §9{0}§c 将其关闭"
+
+#, java-format
+msgid "§aToggled chat §cOFF§a for {0}"
+msgstr "§a已为 {0} 切换聊天至 §c关闭"
+
+msgid "§cCommand only available to players"
+msgstr "§c命令仅限玩家使用"
+
+msgid "talk to your island party"
+msgstr "与你的岛屿队伍交谈"
+
+msgid "But you are ALLLLLLL ALOOOOONE!"
+msgstr "但你孤身一人！"
+
+msgid "But you are Yelling in the wind!"
+msgstr "但你在对着空气大喊！"
+
+msgid "But your fantasy friends are gone!"
+msgstr "但你的幻想朋友已经消失了！"
+
+msgid "But you are Talking to your self!"
+msgstr "但你在自言自语！"
+
+#, java-format
+msgid "§cSorry! {0}"
+msgstr "§c抱歉！{0}"
+
+msgid "talk to players on your island"
+msgstr "与你岛屿上的玩家交谈"
+
+msgid "READY"
+msgstr "准备就绪"
+
+msgid ""
+"§cWARNING:§e Could not transfer all the required items to your inventory!"
+msgstr "§c警告：§e无法将所有需求物品转移到你的背包中！"
+
+msgid "§cNot enough items in chest to complete challenge!"
+msgstr "§c箱子中的物品不足以完成挑战！"
+
+msgid "Island Biome"
+msgstr "岛屿生物群系"
+
+#, java-format
+msgid "Biome: {0}"
+msgstr "生物群系：{0}"
+
+msgid "§2§lThis is your current biome."
+msgstr "§2§l这是你当前的生物群系."
+
+msgid "§e§lClick to change to this biome."
+msgstr "§e§l点击更改为此生物群系."
+
+msgid "§c-"
+msgstr "§c-"
+
+msgid "Decrease radius of biome change"
+msgstr "减小生物群系更改半径"
+
+#, java-format
+msgid "Current radius: {0}"
+msgstr "当前半径：{0}"
+
+msgid "§2+"
+msgstr "§2+"
+
+msgid "Increase radius of biome change"
+msgstr "增加生物群系更改半径"
+
+msgid "§2chunk"
+msgstr "§2区块"
+
+msgid "§call"
+msgstr "§c全部"
+
+#, java-format
+msgid "§e{0}"
+msgstr "§e{0}"
+
+msgid "§cBack to Main Menu"
+msgstr "§c返回主菜单"
+
+msgid "§eClick here to return to the main island screen."
+msgstr "§e点击此处返回岛屿主界面."
+
+msgid "try to complete a challenge"
+msgstr "尝试完成挑战"
+
+msgid "§cCommand only available for players."
+msgstr "§c命令仅限玩家使用."
+
+msgid "show information about the challenge"
+msgstr "显示挑战相关信息"
+
+msgid "§eRank: "
+msgstr "§e等级："
+
+msgid "§4This Challenge is not repeatable!"
+msgstr "§4此挑战不可重复完成！"
+
+msgid "§4You will lose all required items when you complete this challenge!"
+msgstr "§4完成此挑战时你将失去所有需求物品！"
+
+#, java-format
+msgid ""
+"§4All required items must be placed on your island, within {0} blocks of you."
+msgstr "§4所有需求物品必须放置在你的岛屿上，且在你周围 {0} 格范围内."
+
+#, java-format
+msgid "§eTo complete this challenge, use §f/c c {0}"
+msgstr "§e要完成此挑战，请使用 §f/c c {0}"
+
+msgid "§4Invalid challenge name! Use /c help for more information"
+msgstr "§4无效的挑战名称！使用 /c help 获取更多信息"
+
+msgid "manage islands"
+msgstr "管理岛屿"
+
+msgid "protects the island"
+msgstr "保护岛屿"
+
+msgid "delete the island (removes the blocks)"
+msgstr "删除岛屿（移除方块）"
+
+msgid "§9Deleted abandoned island at your current location."
+msgstr "§9已删除你当前位置的废弃岛屿."
+
+msgid ""
+"§4Island at this location has members!\n"
+"§eUse §9/usb island delete <name>§e to delete it."
+msgstr ""
+"§4此位置的岛屿上有成员！\n"
+"§e使用 §9/usb island delete <名称>§e 来删除它."
+
+msgid "removes the player from the island"
+msgstr "将玩家从岛屿中移除"
+
+msgid "adds the player to the island"
+msgstr "将玩家添加到岛屿"
+
+#, java-format
+msgid "§b{0}§d has joined your island group."
+msgstr "§b{0}§d 已加入你的岛屿队伍."
+
+#, java-format
+msgid "§4No player named {0} found!"
+msgstr "§4未找到名为 {0} 的玩家！"
+
+msgid ""
+"§4No valid island provided, either stand within one, or provide an island "
+"name"
+msgstr "§4未提供有效岛屿，请站在一个岛屿上，或提供一个岛屿名称"
+
+msgid "print out info about the island"
+msgstr "打印岛屿信息"
+
+msgid "sets the biome of the island"
+msgstr "设置岛屿的生物群系"
+
+msgid "§4That player has no island."
+msgstr "§4该玩家没有岛屿."
+
+msgid "§4No valid island at your location"
+msgstr "§4你所在位置没有有效岛屿"
+
+msgid "purges the island"
+msgstr "清理岛屿"
+
+msgid "§4Error! §9No valid island found for purging."
+msgstr "§4错误！§9未找到可清理的有效岛屿."
+
+#, java-format
+msgid "§cPURGE: §9Purged island at {0}"
+msgstr "§c清理：§9已清理位于 {0} 的岛屿"
+
+msgid "toggles the islands ignore status"
+msgstr "切换岛屿忽略状态"
+
+#, java-format
+msgid "§cSet {0}s island to be ignored on top-ten and purge."
+msgstr "§c已将 {0} 的岛屿设置为在前十名和清理中忽略."
+
+#, java-format
+msgid ""
+"§cRemoved ignore-flag of {0}s island, it will now show up on top-ten and "
+"purge."
+msgstr "§c已移除 {0} 岛屿的忽略标记，现在它将出现在前十名和清理中."
+
+msgid "§4No valid player-name supplied."
+msgstr "§4未提供有效的玩家名称."
+
+#, java-format
+msgid "Removing {0} from island"
+msgstr "正在将 {0} 从岛屿中移除"
+
+#, java-format
+msgid "§eChanged biome of {0}s island to {1}."
+msgstr "§e已将 {0} 的岛屿生物群系更改为 {1}."
+
+msgid "§aYou may need to go to spawn, or relog, to see the changes."
+msgstr "§a你可能需要返回出生点或重新登录才能看到更改."
+
+#, java-format
+msgid "§e{0} has had their biome changed to {1}."
+msgstr "§e{0} 的生物群系已更改为 {1}."
+
+#, java-format
+msgid "§eRemoving {0}''s island."
+msgstr "§e正在移除 {0} 的岛屿."
+
+msgid "Error: That player does not have an island!"
+msgstr "错误：该玩家没有岛屿！"
+
+#, java-format
+msgid "§e{0}s island at {1} has been protected"
+msgstr "§e{0} 位于 {1} 的岛屿已受到保护"
+
+#, java-format
+msgid "§4{0}s island at {1} was already protected"
+msgstr "§4{0} 位于 {1} 的岛屿已经受到保护"
+
+msgid "flushes all caches to files"
+msgstr "将所有缓存刷新到文件"
+
+#, java-format
+msgid ""
+"§eFlushed §a{0} islands§e, §b{1} players and §6{2} challenge-completions."
+msgstr "§e已刷新 §a{0} 个岛屿§e、§b{1} 名玩家和 §6{2} 次挑战完成记录."
+
+msgid "Controls player-cooldowns"
+msgstr "控制玩家冷却时间"
+
+msgid "clears the cooldown on a command (* = all)"
+msgstr "清除命令的冷却时间（* = 全部）"
+
+msgid "§eThe player is not currently online"
+msgstr "§e该玩家当前不在线"
+
+#, java-format
+msgid "Cleared cooldown on {0} for {1}"
+msgstr "已为 {1} 清除 {0} 的冷却时间"
+
+#, java-format
+msgid "No active cooldown on {0} for {1} detected!"
+msgstr "未检测到 {1} 在 {0} 上有活跃的冷却时间！"
+
+msgid "Invalid command supplied, only restart and biome supported!"
+msgstr "提供的命令无效，仅支持 restart 和 biome！"
+
+msgid "restarts the cooldown on the command"
+msgstr "重置命令的冷却时间"
+
+#, java-format
+msgid "§eReset cooldown on {0} for {1}§e to {2} seconds"
+msgstr "§e已将 {1} 的 {0} 冷却时间重置为 {2} 秒"
+
+msgid "lists all the active cooldowns"
+msgstr "列出所有活跃的冷却时间"
+
+msgid "§eCmd Cooldown"
+msgstr "§e命令冷却时间"
+
+#, java-format
+msgid "§a{0} §c{1}"
+msgstr "§a{0} §c{1}"
+
+#, java-format
+msgid "§eNo active cooldowns for §9{0}§e found."
+msgstr "§e未找到 §9{0}§e 的活跃冷却时间."
+
+msgid "region manipulations"
+msgstr "区域操作"
+
+msgid "shows the borders of the current island"
+msgstr "显示当前岛屿的边界"
+
+msgid "§eNo island found at your current location"
+msgstr "§e你当前所在位置没有岛屿"
+
+msgid "§eCan only be executed as a player"
+msgstr "§e只能以玩家身份执行"
+
+msgid "shows the borders of the current chunk"
+msgstr "显示当前区块的边界"
+
+msgid "shows the borders of the inner-chunks"
+msgstr "显示内部区块的边界"
+
+msgid "shows the non-chunk-aligned borders"
+msgstr "显示非区块对齐的边界"
+
+msgid "shows the borders of the outer-chunks"
+msgstr "显示外部区块的边界"
+
+msgid "hides the regions again"
+msgstr "再次隐藏区域"
+
+msgid "§eStopped displaying regions"
+msgstr "§e已停止显示区域"
+
+msgid "§eNo currently shown regions for this player"
+msgstr "§e当前没有为此玩家显示的区域"
+
+msgid "set the ticks between animations"
+msgstr "设置动画之间的刻数"
+
+#, java-format
+msgid "§eAnimation-tick changed to {0}."
+msgstr "§e动画刻已更改为 {0}."
+
+msgid "§eAnimation-tick must be a valid integer."
+msgstr "§e动画刻必须是一个有效的整数."
+
+msgid "refreshes the existing animations"
+msgstr "刷新现有动画"
+
+msgid "teleport to another players island"
+msgstr "传送到其他玩家的岛屿"
+
+msgid "§4Only supported for players"
+msgstr "§4仅限玩家使用"
+
+msgid "§4That player does not have an island!"
+msgstr "§4该玩家没有岛屿！"
+
+#, java-format
+msgid "§aTeleporting to {0}''s island."
+msgstr "§a正在传送到 {0} 的岛屿."
+
+msgid "various WorldGuard utilities"
+msgstr "各种 WorldGuard 实用工具"
+
+msgid "refreshes the chunks around the player"
+msgstr "刷新玩家周围的区块"
+
+msgid "§eResending chunks to the client"
+msgstr "§e正在向客户端重新发送区块"
+
+msgid "load the region chunks"
+msgstr "加载区域区块"
+
+#, java-format
+msgid "§eLoading chunks at {0}"
+msgstr "§e正在加载位于 {0} 的区块"
+
+#, java-format
+msgid "§eUnloading chunks at {0}"
+msgstr "§e正在卸载位于 {0} 的区块"
+
+msgid "update the WG regions"
+msgstr "更新 WorldGuard 区域"
+
+#, java-format
+msgid "§eIsland world-guard regions updated for {0}"
+msgstr "§e已为 {0} 更新岛屿 WorldGuard 区域"
+
+msgid "§eNo island found at your location!"
+msgstr "§e你所在位置没有岛屿！"
+
+msgid "refreshes the chunk around the player"
+msgstr "刷新玩家周围的区块"
+
+msgid "advanced info about items"
+msgstr "关于物品的高级信息"
+
+msgid "shows the component format for the currently held item"
+msgstr "显示当前手持物品的组件格式"
+
+msgid "§cNo item in hand!"
+msgstr "§c手中没有物品！"
+
+#, java-format
+msgid "§eInfo for §9{0}"
+msgstr "§e§9{0} 的信息"
+
+#, java-format
+msgid "§7 - name: §9{0}"
+msgstr "§7 - 名称：§9{0}"
+
+msgid "manage orphans"
+msgstr "管理孤立岛屿"
+
+msgid "count orphans"
+msgstr "统计孤立岛屿"
+
+#, java-format
+msgid "§e{0} old island locations will be used before new ones."
+msgstr "§e{0} 个旧岛屿位置将在新位置之前被使用."
+
+msgid "clear orphans"
+msgstr "清除孤立岛屿"
+
+msgid "§eClearing all old (empty) island locations."
+msgstr "§e正在清除所有旧的（空的）岛屿位置."
+
+msgid "list orphans"
+msgstr "列出孤立岛屿"
+
+msgid "§eNo orphans currently registered."
+msgstr "§e当前没有注册的孤立岛屿."
+
+#, java-format
+msgid "§eOrphans ({0}/{1}): {2}"
+msgstr "§e孤立岛屿（{0}/{1}）：{2}"
+
+msgid "open GUI for config"
+msgstr "打开配置 GUI"
+
+msgid "searches config for a specific key"
+msgstr "在配置中搜索特定键"
+
+#, java-format
+msgid "§c{0}§9"
+msgstr "§c{0}§9"
+
+#, java-format
+msgid "§9{0}§8: §e{1}"
+msgstr "§9{0}§8: §e{1}"
+
+#, java-format
+msgid "Found the following matching {0}:"
+msgstr "找到以下匹配的 {0}："
+
+msgid "§a<section>"
+msgstr "§a<部分>"
+
+#, java-format
+msgid "§3{0,number,#.##}"
+msgstr "§3{0,number,#.##}"
+
+#, java-format
+msgid "§2{0}"
+msgstr "§2{0}"
+
+msgid "§eInvalid configuration name"
+msgstr "§e无效的配置名称"
+
+msgid "set a player''s island to your location"
+msgstr "将玩家的岛屿设置到你当前的位置"
+
+#, java-format
+msgid "§aSet {0}''s island to the current island."
+msgstr "§a已将 {0} 的岛屿设置为当前岛屿."
+
+msgid "§4Island not found: unable to set the island!"
+msgstr "§4未找到岛屿：无法设置岛屿！"
+
+#, java-format
+msgid "§eInvalid player {0} supplied."
+msgstr "§e提供了无效的玩家 {0}."
+
+msgid "toggles maintenance mode"
+msgstr "切换维护模式"
+
+msgid "§cMAINTENANCE: §aActivated§e all uSkyBlock features currently disabled."
+msgstr "§c维护：§a已激活§e，所有 uSkyBlock 功能当前已禁用."
+
+msgid ""
+"§cMAINTENANCE: §4Deactivated§e all uSkyBlock features back to operational."
+msgstr "§c维护：§4已停用§e，所有 uSkyBlock 功能恢复正常运行."
+
+msgid "§cMaintenance mode can only be changed from console!"
+msgstr "§c维护模式只能从控制台更改！"
+
+msgid "protects all islands (time consuming)"
+msgstr "保护所有岛屿（耗时较长）"
+
+msgid "§cTrying to abort protect-all task."
+msgstr "§c正在尝试中止保护所有任务."
+
+msgid ""
+"§4Sorry!§e A protect-all is already running. Let it complete first, or use "
+"§9usb protectall §cstop"
+msgstr ""
+"§4抱歉！§e 一个全局保护任务已在运行.请先让它完成，或使用 "
+"§9usb protectall §cstop"
+
+msgid "§eStarting a protect-all task. It will take a while."
+msgstr "§e正在启动全局保护任务.这需要一些时间."
+
+msgid "manually update the top 10 list"
+msgstr "手动更新前十名列表"
+
+msgid "§eGenerating the Top Ten list"
+msgstr "§e正在生成前十名列表"
+
+msgid "§eFinished generation of the Top Ten list"
+msgstr "§e前十名列表生成完毕"
+
+#, java-format
+msgid ""
+"- PURGING: {0,number,##}% ({1}/{2}), elapsed {3}, estimated completion ~{4}"
+msgstr "- 清理中：{0,number,##}%（{1}/{2}），已用时 {3}，预计完成时间 ~{4}"
+
+msgid "§4PURGE:§9 Finished purging abandoned islands."
+msgstr "§4清理：§9已完成废弃岛屿的清理."
+
+msgid "§4PURGE:§9 Aborted purging abandoned islands."
+msgstr "§4清理：§9已中止废弃岛屿的清理."
+
+#, java-format
+msgid "§7- SCANNING: {0,number,##}% ({1}/{2} failed: {3}) ~ {4}"
+msgstr "§7- 扫描中：{0,number,##}%（{1}/{2} 失败：{3}）~ {4}"
+
+msgid "§4PURGE:§9 Scanning aborted."
+msgstr "§4清理：§9扫描已中止."
+
+#, java-format
+msgid ""
+"§4PURGE:§9 Scanning done, found {0} candidates, below level {1}, ready for "
+"purgatory."
+msgstr ""
+"§4清理：§9扫描完成，发现 {0} 个候选岛屿，等级低于 {1}，已准备好进入清理流程."
+
+msgid "§cABORTED:§e Protect-All was aborted!"
+msgstr "§c已中止：§e全局保护任务已中止！"
+
+#, java-format
+msgid "§eCompleted protect-all in {0}, {1} new regions were created!"
+msgstr "§e在 {0} 内完成了全局保护，已创建 {1} 个新区域！"
+
+msgid "shows perk-information"
+msgstr "显示增益信息"
+
+msgid "shows a specific players perks"
+msgstr "显示特定玩家的增益"
+
+#, java-format
+msgid "§4No player named {0} was found!"
+msgstr "§4未找到名为 {0} 的玩家！"
+
+#, java-format
+msgid "additional perks {0}"
+msgstr "额外增益 {0}"
+
+msgid "advanced command for getting island-data"
+msgstr "获取岛屿数据的高级命令"
+
+#, java-format
+msgid "§eCurrent value for {0} is ''{1}''"
+msgstr "§e{0} 的当前值为 ''{1}''"
+
+#, java-format
+msgid "§cUnable to get state for {0}"
+msgstr "§c无法获取 {0} 的状态"
+
+#, java-format
+msgid "§eValid fields are {0}"
+msgstr "§e有效字段为 {0}"
+
+msgid "control debugging"
+msgstr "控制调试"
+
+msgid "set debug-level"
+msgstr "设置调试级别"
+
+msgid "toggle debug-logging"
+msgstr "切换调试日志记录"
+
+msgid "§4Logging wasn't active, so you can't disable it!"
+msgstr "§4日志记录未激活，因此你无法禁用它！"
+
+msgid "flush current content of the logger to file."
+msgstr "将日志记录器的当前内容刷新到文件."
+
+msgid "§eLog-file has been flushed."
+msgstr "§e日志文件已刷新."
+
+msgid "§4Logging is not enabled, use §d/usb debug enable"
+msgstr "§4日志记录未启用，使用 §d/usb debug enable"
+
+msgid "§4Invalid argument, try INFO, FINE, FINER, FINEST"
+msgstr "§4无效参数，请尝试 INFO、FINE、FINER、FINEST"
+
+msgid "§eLogging disabled!"
+msgstr "§e日志记录已禁用！"
+
+msgid "advanced command for setting island-data"
+msgstr "设置岛屿数据的高级命令"
+
+#, java-format
+msgid "§c{0} was set to ''{1}''"
+msgstr "§c{0} 已设置为 ''{1}''"
+
+#, java-format
+msgid "§cUnable to set field {0} to ''{1}''"
+msgstr "§c无法将字段 {0} 设置为 ''{1}''"
+
+#, java-format
+msgid "§cUnable to set field {0} to ''{1}'', a number was expected"
+msgstr "§c无法将字段 {0} 设置为 ''{1}''，需要提供一个数字"
+
+#, java-format
+msgid "§cInvalid field {0}"
+msgstr "§c无效字段 {0}"
+
+msgid "transfer leadership to another player"
+msgstr "将岛主转让给其他玩家"
+
+#, java-format
+msgid "§4Player {0} has no island to transfer!"
+msgstr "§4玩家 {0} 没有可以转让的岛屿！"
+
+#, java-format
+msgid ""
+"§ePlayer §d{0}§e already has an island.§eUse §d/usb island remove <name>§e "
+"to remove him first."
+msgstr ""
+"§e玩家 §d{0}§e 已经拥有一个岛屿.§e请先使用 §d/usb island remove <名称>§e "
+"将其移除."
+
+#, java-format
+msgid "§bLeadership transferred by {0}§b to {1}"
+msgstr "§b岛主已由 {0}§b 转让给 {1}"
+
+msgid "purges all abandoned islands"
+msgstr "清理所有废弃岛屿"
+
+msgid "§4You must provide the age in days to purge!"
+msgstr "§4你必须提供要清理的岛屿荒废天数！"
+
+msgid "§4The level must be a valid number"
+msgstr "§4等级必须是一个有效数字"
+
+#, java-format
+msgid ""
+"§eFinding all islands that have been abandoned for more than {0} days below "
+"level {1}"
+msgstr "§e正在查找所有荒废超过 {0} 天且等级低于 {1} 的岛屿"
+
+#, java-format
+msgid "§4PURGE:§e Do §9usb purge confirm§e within {0} to accept."
+msgstr "§4清理：§e在 {0} 内执行 §9usb purge confirm§e 以确认."
+
+msgid "§4Trying to abort purge"
+msgstr "§4正在尝试中止清理"
+
+msgid "§4Purge aborted!"
+msgstr "§4清理已中止！"
+
+msgid "§4A purge is already running.§e Either §9confirm§e or §9stop§e it."
+msgstr "§4一个清理任务已在运行.§e请 §9confirm§e 或 §9stop§e 它."
+
+msgid "§4Starting purge..."
+msgstr "§4正在开始清理..."
+
+msgid "various chunk commands"
+msgstr "各种区块命令"
+
+msgid "regenerate current chunk"
+msgstr "重新生成当前区块"
+
+#, java-format
+msgid "successfully regenerated chunk at {0},{1}"
+msgstr "已成功在 {0},{1} 处重新生成区块"
+
+msgid "unload current chunk"
+msgstr "卸载当前区块"
+
+#, java-format
+msgid "successfully unloaded chunk at {0},{1}"
+msgstr "已成功在 {0},{1} 处卸载区块"
+
+#, java-format
+msgid "§4FAILED!§e could not unload chunk at {0},{1}"
+msgstr "§4失败！§e无法在 {0},{1} 处卸载区块"
+
+msgid "load current chunk"
+msgstr "加载当前区块"
+
+#, java-format
+msgid "loaded chunk at {0},{1}"
+msgstr "已在 {0},{1} 处加载区块"
+
+msgid "only available for players"
+msgstr "仅限玩家使用"
+
+#, java-format
+msgid "§4ERROR:§e {0}"
+msgstr "§4错误：§e{0}"
+
+msgid "imports players and islands from other formats"
+msgstr "从其他格式导入玩家和岛屿"
+
+msgid "Manage challenges for a player"
+msgstr "管理玩家的挑战"
+
+msgid "resets the challenge for the player"
+msgstr "重置该玩家的挑战"
+
+msgid "§4Challenge has never been completed"
+msgstr "§4此挑战从未被完成过"
+
+#, java-format
+msgid "§echallenge: {0} has been reset for {1}"
+msgstr "§e挑战 {0} 已为 {1} 重置"
+
+msgid "resets all challenges for the player"
+msgstr "重置该玩家的所有挑战"
+
+#, java-format
+msgid "§e{0} has had all challenges reset."
+msgstr "§e{0} 的所有挑战已重置."
+
+msgid "complete all challenges in the rank"
+msgstr "完成该等级中的所有挑战"
+
+#, java-format
+msgid "§4Challenge {0} has already been completed"
+msgstr "§4挑战 {0} 已经完成"
+
+#, java-format
+msgid "§eChallenge {0} has been completed for {1}"
+msgstr "§e挑战 {0} 已为 {1} 完成"
+
+#, java-format
+msgid "§4No challenge named {0} was found!"
+msgstr "§4未找到名为 {0} 的挑战！"
+
+#, java-format
+msgid "§4No rank named {0} was found!"
+msgstr "§4未找到名为 {0} 的等级！"
+
+msgid "displays version information"
+msgstr "显示版本信息"
+
+msgid "controls async jobs"
+msgstr "控制异步任务"
+
+msgid "§9Job Statistics"
+msgstr "§9任务统计"
+
+msgid "§7----------------"
+msgstr "§7----------------"
+
+msgid "#"
+msgstr "#"
+
+msgid "ms/job"
+msgstr "毫秒/任务"
+
+msgid "ms/tick"
+msgstr "毫秒/刻"
+
+msgid "ticks"
+msgstr "刻"
+
+msgid "act"
+msgstr "活跃"
+
+msgid "time"
+msgstr "时间"
+
+msgid "name"
+msgstr "名称"
+
+msgid "tries to fix the the area of flatland."
+msgstr "尝试修复平坦区域."
+
+msgid "§4No valid island found"
+msgstr "§4未找到有效岛屿"
+
+#, java-format
+msgid "§4No flatland detected at {0}''s island!"
+msgstr "§4在 {0} 的岛屿上未检测到平坦区域！"
+
+msgid "reload configuration from file."
+msgstr "从文件重新加载配置."
+
+msgid "§eConfiguration reloaded from file."
+msgstr "§e配置已从文件重新加载."
+
+#, java-format
+msgid "§ePlayer {0} has no island!"
+msgstr "§e玩家 {0} 没有岛屿！"
+
+msgid "Ultimate SkyBlock Admin"
+msgstr "终极空岛管理员"
+
+msgid "show player-information"
+msgstr "显示玩家信息"
+
+msgid "complete and list challenges"
+msgstr "完成并列出挑战"
+
+msgid "§eChallenges has been disabled. Contact an administrator."
+msgstr "§e挑战已被禁用.请联系管理员."
+
+msgid "§4You can only submit challenges in the skyblock world!"
+msgstr "§4你只能在空岛世界提交挑战！"
+
+msgid "§4You can only submit challenges when you have an island!"
+msgstr "§4你只能在拥有岛屿时提交挑战！"
+
+msgid ""
+"§4Your island is full, or you have too many pending invites. You can't "
+"invite anyone else."
+msgstr "§4你的岛屿已满员，或者你有太多待处理的邀请.你无法再邀请其他人."
+
+msgid "§4That player is already member on another island. "
+msgstr "§4该玩家已是另一个岛屿的成员."
+
+#, java-format
+msgid ""
+"§e{0}§e tried to invite you, but you are already in a party.To leave your "
+"current party, use: /island leave."
+msgstr ""
+"§e{0}§e 试图邀请你，但你已在一个队伍中.要离开当前队伍，请使用：/island "
+"leave."
+
+#, java-format
+msgid "§aInvite sent to {0}"
+msgstr "§a邀请已发送给 {0}"
+
+#, java-format
+msgid "{0}§e has invited you to join their island!"
+msgstr "{0}§e 邀请你加入他们的岛屿！"
+
+msgid "§f/island [accept/reject]§e to accept or reject the invite."
+msgstr "§f/island [accept/reject]§e 来接受或拒绝邀请."
+
+msgid "§4WARNING: You will lose your current island if you accept!"
+msgstr "§4警告：如果你接受，你将失去你当前的岛屿！"
+
+#, java-format
+msgid "{0}§d invited {1}"
+msgstr "{0}§d 邀请了 {1}"
+
+#, java-format
+msgid "{0}§e has rejected the invitation."
+msgstr "{0}§e 拒绝了邀请."
+
+msgid "§4You can't use that command right now. Leave your current party first."
+msgstr "§4你现在不能使用该命令.请先离开你当前的队伍."
+
+msgid ""
+"§aYou have joined an island! Use /island party to see the other members."
+msgstr "§a你已加入一个岛屿！使用 /island party 查看其他成员."
+
+#, java-format
+msgid "§eInvitation for {0}§e has timedout or been cancelled."
+msgstr "§e来自 {0}§e 的邀请已超时或被取消."
+
+#, java-format
+msgid "§eInvitation for {0}''s island has timedout or been cancelled."
+msgstr "§e来自 {0} 岛屿的邀请已超时或被取消."
+
+msgid "§eYou have accepted the invitation to join an island."
+msgstr "§e你已接受了加入岛屿的邀请."
+
+msgid "§4You haven't been invited."
+msgstr "§4你尚未收到邀请."
+
+msgid "§eYou have rejected the invitation to join an island."
+msgstr "§e你已拒绝了加入岛屿的邀请."
+
+msgid "general island command"
+msgstr "通用岛屿命令"
+
+msgid "allows user to bypass cooldowns"
+msgstr "允许用户绕过冷却时间"
+
+msgid "allows user to bypass visitor-protections"
+msgstr "允许用户绕过访客保护"
+
+msgid "allows user to bypass teleport-delay"
+msgstr "允许用户绕过传送延迟"
+
+msgid "allows user to use [usb] signs"
+msgstr "允许用户使用 [usb] 木牌"
+
+msgid "allows user to place [usb] signs"
+msgstr "允许用户放置 [usb] 木牌"
+
+msgid "lock your island to non-party members."
+msgstr "锁定你的岛屿，禁止非队伍成员进入."
+
+msgid "§4You do not have permission to lock your island!"
+msgstr "§4你没有权限锁定你的岛屿！"
+
+msgid "§4You don't have access to this command!"
+msgstr "§4你没有权限使用此命令！"
+
+msgid "§4You do not have permission to unlock your island!"
+msgstr "§4你没有权限解锁你的岛屿！"
+
+msgid "check your or another''s island info"
+msgstr "查看你或其他人的岛屿信息"
+
+msgid "allows user to see others island info"
+msgstr "允许用户查看其他人的岛屿信息"
+
+msgid "§4Island level has been disabled, contact an administrator."
+msgstr "§4岛屿等级已禁用，请联系管理员."
+
+msgid "§4Hold your horses! §eYou have to be patient..."
+msgstr "§4稍安勿躁！§e你需要耐心等待..."
+
+msgid "§eYou must be on your island to use this command."
+msgstr "§e你必须在你的岛屿上才能使用此命令."
+
+msgid "§4You do not have an island!"
+msgstr "§4你还没有岛屿！"
+
+msgid "§4You do not have access to that command!"
+msgstr "§4你没有权限使用该命令！"
+
+msgid "§4That player is invalid or does not have an island!"
+msgstr "§4该玩家无效或没有岛屿！"
+
+#, java-format
+msgid "§eBlocks on {0}s Island (page {1,number} of {2,number}):"
+msgstr "§e{0} 岛屿上的方块（第 {1,number} 页，共 {2,number} 页）："
+
+msgid "Score Count Block"
+msgstr "分数 数量 方块"
+
+#, java-format
+msgid "{0,number,00.00}  {1,number,#} {2}"
+msgstr "{0,number,00.00}  {1,number,#} {2}"
+
+#, java-format
+msgid "§aIsland level is {0,number,###.##}"
+msgstr "§a岛屿等级为 {0,number,###.##}"
+
+msgid "teleports you to your island (or create one)"
+msgstr "将你传送到你的岛屿（或创建一个）"
+
+msgid "§4This command can only be executed by a player"
+msgstr "§4此命令只能由玩家执行"
+
+msgid "changes a members island-permissions"
+msgstr "更改成员的岛屿权限"
+
+#, java-format
+msgid "§ePermissions for §9{0}§e:"
+msgstr "§e§9{0}§e 的权限："
+
+msgid "§aON"
+msgstr "§a开启"
+
+msgid "§cOFF"
+msgstr "§c关闭"
+
+#, java-format
+msgid "§7 - §6{0}§7 : {1}"
+msgstr "§7 - §6{0}§7 : {1}"
+
+#, java-format
+msgid "§cInvalid permission {0}. Must be one of {1}"
+msgstr "§c无效权限 {0}.必须是以下之一：{1}"
+
+#, java-format
+msgid "§eToggled permission §9{0}§e for §9{1}§e to {2}"
+msgstr "§e已将 §9{1}§e 的权限 §9{0}§e 切换为 {2}"
+
+#, java-format
+msgid "§eUnable to toggle permission §9{0}§e for §9{1}"
+msgstr "§e无法切换 §9{1} 的权限 §9{0}"
+
+msgid "accept/reject an invitation."
+msgstr "接受/拒绝邀请."
+
+msgid "set the island-home"
+msgstr "设置岛屿家园"
+
+msgid "§4You must be closer to your island to set your skyblock home!"
+msgstr "§4你必须离你的岛屿更近才能设置空岛家园！"
+
+msgid "§4Your current location is not a safe home-location."
+msgstr "§4你当前的位置不是一个安全的家园位置."
+
+msgid "§aYour skyblock home has been set to your current location."
+msgstr "§a你的空岛家园已设置为你当前的位置."
+
+msgid "remove a member from your island."
+msgstr "从你的岛屿中移除一名成员."
+
+msgid "§4You do not have permission to kick others from this island!"
+msgstr "§4你没有权限从此岛屿踢出其他人！"
+
+msgid "§4You can't remove the leader from the Island!"
+msgstr "§4你不能将岛主从岛屿中移除！"
+
+msgid "§4Stop kickin' yourself!"
+msgstr "§4别踢你自己！"
+
+#, java-format
+msgid "§4{0} has removed you from their island!"
+msgstr "§4{0} 已将你从他们的岛屿中移除！"
+
+#, java-format
+msgid "§4{0} has been removed from the island."
+msgstr "§4{0} 已从岛屿中移除."
+
+#, java-format
+msgid "§4{0} tried to kick you from their island!"
+msgstr "§4{0} 试图将你踢出他们的岛屿！"
+
+#, java-format
+msgid "§4{0} is exempt from being kicked."
+msgstr "§4{0} 免于被踢出."
+
+#, java-format
+msgid "§4{0} has kicked you from their island!"
+msgstr "§4{0} 已将你踢出他们的岛屿！"
+
+#, java-format
+msgid "§4{0} has been kicked from the island."
+msgstr "§4{0} 已被踢出岛屿."
+
+msgid "§4That player is not part of your island group, and not on your island!"
+msgstr "§4该玩家不是你岛屿队伍的成员，也不在你的岛屿上！"
+
+msgid "change the biome of the island"
+msgstr "更改岛屿的生物群系"
+
+msgid "exempt player from biome-cooldown"
+msgstr "免除玩家的生物群系冷却时间"
+
+#, java-format
+msgid "Let the player change their islands biome to {0}"
+msgstr "允许玩家将其岛屿生物群系更改为 {0}"
+
+msgid ""
+"§cYou do not have permission to change the biome of your current island."
+msgstr "§c你没有权限更改当前岛屿的生物群系."
+
+msgid "§4You do not have permission to change the biome of this island!"
+msgstr "§4你没有权限更改此岛屿的生物群系！"
+
+msgid "§eYou must be on your island to change the biome!"
+msgstr "§e你必须在你的岛屿上才能更改生物群系！"
+
+#, java-format
+msgid "§cYou have misspelled the biome name. Must be one of {0}"
+msgstr "§c你拼错了生物群系名称.必须是以下之一：{0}"
+
+#, java-format
+msgid "§eYou can change your biome again in {0,number,#} minutes."
+msgstr "§e你可以在 {0,number,#} 分钟后再次更改生物群系."
+
+msgid "§cYou do not have permission to change your biome to that type."
+msgstr "§c你没有权限将生物群系更改为该类型."
+
+#, java-format
+msgid ""
+"§7The pixies are busy changing the biome near you to §9{0}§7, be patient."
+msgstr "§7小精灵们正忙着将你附近的生物群系更改为 §9{0}§7，请耐心等待."
+
+#, java-format
+msgid ""
+"§7The pixies are busy changing the biome in your current chunk to §9{0}§7, "
+"be patient."
+msgstr "§7小精灵们正忙着将你当前区块中的生物群系更改为 §9{0}§7，请耐心等待."
+
+#, java-format
+msgid ""
+"§7The pixies are busy changing the biome of your island to §9{0}§7, be "
+"patient."
+msgstr "§7小精灵们正忙着将你岛屿的生物群系更改为 §9{0}§7，请耐心等待."
+
+msgid "§cInvalid arguments. Use /is biome <biome> [radius|chunk|all]"
+msgstr "§c无效参数.使用 /is biome <生物群系> [radius|chunk|all]"
+
+#, java-format
+msgid "§aYou have changed your island''s biome to {0}"
+msgstr "§a你已将岛屿的生物群系更改为 {0}"
+
+#, java-format
+msgid "{0} changed the island biome to {1}"
+msgstr "{0} 将岛屿生物群系更改为 {1}"
+
+#, java-format
+msgid "§aYou have changed {0} blocks around you to the {1} biome"
+msgstr "§a你已将周围的 {0} 个方块更改为 {1} 生物群系"
+
+#, java-format
+msgid "{0} created an area with {1} biome"
+msgstr "{0} 创建了一个 {1} 生物群系区域"
+
+msgid "enable/disable warping to your island."
+msgstr "启用/禁用传送到你的岛屿."
+
+msgid "§4Your island is locked. You must unlock it before enabling your warp."
+msgstr "§4你的岛屿已锁定.你必须先解锁才能启用传送点."
+
+#, java-format
+msgid "§b{0}§d activated the island warp."
+msgstr "§b{0}§d 激活了岛屿传送点."
+
+#, java-format
+msgid "§b{0}§d deactivated the island warp."
+msgstr "§b{0}§d 停用了岛屿传送点."
+
+msgid "§cYou do not have permission to enable/disable your island''s warp!"
+msgstr "§c你没有权限启用/禁用你岛屿的传送点！"
+
+msgid "teleports you to the skyblock spawn"
+msgstr "将你传送到空岛出生点"
+
+msgid "set your island''s warp location"
+msgstr "设置你岛屿的传送点位置"
+
+msgid "§cYou do not have permission to set your island''s warp point!"
+msgstr "§c你没有权限设置你岛屿的传送点！"
+
+msgid "§cYou need to be on your own island to set the warp!"
+msgstr "§c你需要在你的岛屿上才能设置传送点！"
+
+#, java-format
+msgid "§b{0}§d changed the island warp location."
+msgstr "§b{0}§d 更改了岛屿传送点位置."
+
+msgid "§4No Island. §eUse §b/is create§e to get one"
+msgstr "§4没有岛屿.§e使用 §b/is create§e 来创建一个"
+
+msgid "transfer leadership to another member"
+msgstr "将岛主转让给另一名成员"
+
+msgid "§4You can only transfer ownership to party-members!"
+msgstr "§4你只能将所有权转让给队伍成员！"
+
+#, java-format
+msgid "{0}§e is already leader of your island!"
+msgstr "{0}§e 已经是你岛屿的岛主了！"
+
+msgid "§4Only leader can transfer leadership!"
+msgstr "§4只有岛主才能转让领导权！"
+
+#, java-format
+msgid "{0} tried to take over the island!"
+msgstr "{0} 试图接管此岛屿！"
+
+msgid "ban/unban a player from your island."
+msgstr "封禁/解禁你岛屿的玩家."
+
+msgid "exempts user from being banned"
+msgstr "免除用户被封禁"
+
+msgid "§eThe following players are banned from warping to your island:"
+msgstr "§e以下玩家被禁止传送到你的岛屿："
+
+msgid "§eTo ban/unban from your island, use /island ban <player>"
+msgstr "§e要封禁/解禁你岛屿的玩家，使用 /island ban <玩家>"
+
+msgid "§4You can't ban members. Remove them first!"
+msgstr "§4你不能封禁成员.请先将他们移除！"
+
+msgid "§4You do not have permission to kick/ban players."
+msgstr "§4你没有权限踢出/封禁玩家."
+
+#, java-format
+msgid "§eUnable to ban unknown player {0}"
+msgstr "§e无法封禁未知玩家 {0}"
+
+#, java-format
+msgid "§4{0} tried to ban you from their island!"
+msgstr "§4{0} 试图禁止你进入他们的岛屿！"
+
+#, java-format
+msgid "§4{0} is exempt from being banned."
+msgstr "§4{0} 免于被封禁."
+
+#, java-format
+msgid "§eYou have banned §4{0}§e from warping to your island."
+msgstr "§e你已禁止 §4{0}§e 传送到你的岛屿."
+
+#, java-format
+msgid "§eYou have been §cBANNED§e from {0}§e''s island."
+msgstr "§e你已被§c禁止§e进入 {0}§e 的岛屿."
+
+#, java-format
+msgid "§eYou have unbanned §a{0}§e from warping to your island."
+msgstr "§e你已解除对 §a{0}§e 传送到你岛屿的封禁."
+
+#, java-format
+msgid "§eYou have been §aUNBANNED§e from {0}§e''s island."
+msgstr "§e你已被§a解除封禁§e，可以进入 {0}§e 的岛屿."
+
+msgid "warp to another player''s island"
+msgstr "传送到其他玩家的岛屿"
+
+msgid "§aYour incoming warp is active, players may warp to your island."
+msgstr "§a你的传送点已激活，玩家可以传送到你的岛屿."
+
+msgid "§4Your incoming warp is inactive, players may not warp to your island."
+msgstr "§4你的传送点未激活，玩家无法传送到你的岛屿."
+
+msgid "§fSet incoming warp to your current location using §e/island setwarp"
+msgstr "§f使用 §e/island setwarp§f 将传送点设置到你当前的位置"
+
+msgid "§fToggle your warp on/off using §e/island togglewarp"
+msgstr "§f使用 §e/island togglewarp§f 开启/关闭你的传送点"
+
+msgid "§4You do not have permission to create a warp on your island!"
+msgstr "§4你没有权限在你的岛屿上创建传送点！"
+
+msgid "§fWarp to another island using §e/island warp <player>"
+msgstr "§f使用 §e/island warp <玩家>§f 传送到其他岛屿"
+
+msgid "§4You do not have permission to warp to other islands!"
+msgstr "§4你没有权限传送到其他岛屿！"
+
+msgid ""
+"§cYour island is in the process of generating, you cannot warp to other "
+"players islands right now."
+msgstr "§c你的岛屿正在生成过程中，你现在无法传送到其他玩家的岛屿."
+
+msgid "§4That player does not exist!"
+msgstr "§4该玩家不存在！"
+
+msgid "§4That player does not have an active warp."
+msgstr "§4该玩家没有激活的传送点."
+
+msgid ""
+"§cThat players island is in the process of generating, you cannot warp to it "
+"right now."
+msgstr "§c该玩家的岛屿正在生成过程中，你现在无法传送到那里."
+
+#, java-format
+msgid "§cWARNING: §9{0}§e is warping to your island!"
+msgstr "§c警告：§9{0}§e 正在传送到你的岛屿！"
+
+msgid "§4That player has forbidden you from warping to their island."
+msgstr "§4该玩家禁止你传送到他们的岛屿."
+
+msgid "create an island"
+msgstr "创建一个岛屿"
+
+msgid "exempt player from create-cooldown"
+msgstr "免除玩家的创建冷却时间"
+
+msgid ""
+"§4Island found!§e You already have an island. If you want a fresh island, "
+"type§b /is restart§e to get one"
+msgstr ""
+"§4已找到岛屿！§e 你已经拥有一个岛屿.如果你想要一个全新的岛屿，输入§b /is "
+"restart§e 来获取一个"
+
+msgid ""
+"§4Island found!§e You are already a member of an island. To start your own, "
+"first§b /is leave"
+msgstr ""
+"§4已找到岛屿！§e 你已经是一个岛屿的成员.要开始你自己的岛屿，请先§b /is "
+"leave"
+
+#, java-format
+msgid "§eYou can create a new island in {0,number,#} seconds."
+msgstr "§e你可以在 {0,number,#} 秒后创建一个新岛屿."
+
+msgid "show party information"
+msgstr "显示队伍信息"
+
+msgid "shows information about your party"
+msgstr "显示关于你队伍的信息"
+
+msgid "show pending invites"
+msgstr "显示待处理的邀请"
+
+msgid "§eNo pending invites"
+msgstr "§e没有待处理的邀请"
+
+msgid "withdraw an invite"
+msgstr "撤回邀请"
+
+msgid "§4You don't have permissions to uninvite players."
+msgstr "§4你没有权限撤回对玩家的邀请."
+
+msgid "teleport to the island home"
+msgstr "传送到岛屿家园"
+
+msgid ""
+"§cYour island is in the process of generating, you cannot teleport home "
+"right now."
+msgstr "§c你的岛屿正在生成过程中，你现在无法传送回家."
+
+msgid "check your or anothers island level"
+msgstr "查看你或其他人的岛屿等级"
+
+msgid "allows user to query for others levels"
+msgstr "允许用户查询其他人的等级"
+
+#, java-format
+msgid "§eInformation about {0}''s Island:"
+msgstr "§e关于 {0} 岛屿的信息："
+
+#, java-format
+msgid "§9Rank is {0}"
+msgstr "§9排名为 {0}"
+
+#, java-format
+msgid "§4Could not locate rank of {0}"
+msgstr "§4无法定位 {0} 的排名"
+
+msgid "display the top10 of islands"
+msgstr "显示前十名岛屿"
+
+msgid "enables user to all-ways generate top-ten (no caching)"
+msgstr "允许用户始终生成前十名列表（无缓存）"
+
+msgid "trust/untrust a player to help on your island."
+msgstr "信任/取消信任一名玩家在你的岛屿上帮忙."
+
+msgid "§eThe following players are trusted on your island:"
+msgstr "§e以下玩家在你的岛屿上受到信任："
+
+msgid "§eThe following leaders trusts you:"
+msgstr "§e以下岛主信任你："
+
+msgid "§eTo trust/untrust from your island, use /island trust <player>"
+msgstr "§e要信任/取消信任你岛屿上的玩家，使用 /island trust <玩家>"
+
+msgid "§4Members are already trusted!"
+msgstr "§4成员已经受到信任！"
+
+#, java-format
+msgid "§4Unknown player {0}"
+msgstr "§4未知玩家 {0}"
+
+#, java-format
+msgid "§eYou are now trusted on §4{0}''s §eisland."
+msgstr "§e你现在在 §4{0}§e 的岛屿上受到信任."
+
+#, java-format
+msgid "§a{0} trusted {1} on the island"
+msgstr "§a{0} 在岛屿上信任了 {1}"
+
+#, java-format
+msgid "§eYou are no longer trusted on §4{0}''s §eisland."
+msgstr "§e你不再在 §4{0}§e 的岛屿上受到信任."
+
+#, java-format
+msgid "§c{0} revoked trust in {1} on the island"
+msgstr "§c{0} 撤销了对岛屿上 {1} 的信任"
+
+msgid "leave your party"
+msgstr "离开你的队伍"
+
+msgid ""
+"§4You can't leave your island if you are the only person. Try using /island "
+"restart if you want a new one!"
+msgstr ""
+"§4如果你是岛屿上唯一的人，你不能离开你的岛屿.如果你想要一个新的，请尝试使用 "
+"/island restart！"
+
+msgid "§eYou own this island, use /island remove <player> instead."
+msgstr "§e你拥有此岛屿，请改用 /island remove <玩家>."
+
+msgid "§eYou have left the island and returned to the player spawn."
+msgstr "§e你已离开岛屿并返回到玩家出生点."
+
+#, java-format
+msgid "§4{0} has left your island!"
+msgstr "§4{0} 已离开你的岛屿！"
+
+msgid "§4You must be in the skyblock world to leave your party!"
+msgstr "§4你必须在空岛世界才能离开你的队伍！"
+
+msgid "delete your island and start a new one."
+msgstr "删除你的岛屿并开始一个新的."
+
+msgid "exempt player from restart-cooldown"
+msgstr "免除玩家的重置冷却时间"
+
+msgid ""
+"§4Only the owner may restart this island. Leave this island in order to "
+"start your own (/island leave)."
+msgstr ""
+"§4只有岛主才能重置此岛屿.离开此岛屿以开始你自己的岛屿（/island leave）."
+
+msgid ""
+"§eYou must remove all players from your island before you can restart it (/"
+"island kick <player>). See a list of players currently part of your island "
+"using /island party."
+msgstr ""
+"§e你必须先移除你岛屿上的所有玩家才能重置它（/island kick <玩家>）.使用 /"
+"island party 查看当前属于你岛屿的玩家列表."
+
+#, java-format
+msgid "§cYou can restart your island in {0} seconds."
+msgstr "§c你可以在 {0} 秒后重置你的岛屿."
+
+msgid "§cYour island is in the process of generating, you cannot restart now."
+msgstr "§c你的岛屿正在生成过程中，你现在无法重置."
+
+msgid "§eNOTE: Your entire island and all your belongings will be RESET!"
+msgstr "§e注意：你的整个岛屿和所有财产将被§c§l重置§e！"
+
+msgid "invite a player to your island"
+msgstr "邀请一名玩家加入你的岛屿"
+
+msgid ""
+"§eUse§f /island invite <playername>§e to invite a player to your island."
+msgstr "§e使用§f /island invite <玩家名>§e 来邀请一名玩家加入你的岛屿."
+
+msgid "§4Only the island''s owner can invite!"
+msgstr "§4只有岛主才能邀请！"
+
+#, java-format
+msgid "§aYou can invite {0} more players."
+msgstr "§a你还可以邀请 {0} 名玩家."
+
+msgid "§4You can't invite any more players."
+msgstr "§4你无法再邀请更多玩家."
+
+msgid "§4You do not have permission to invite others to this island!"
+msgstr "§4你没有权限邀请其他人加入此岛屿！"
+
+msgid "§4That player is offline or doesn't exist."
+msgstr "§4该玩家离线或不存在."
+
+msgid "§4You can't invite yourself!"
+msgstr "§4你不能邀请你自己！"
+
+msgid "§4That player is the leader of your island!"
+msgstr "§4该玩家是你岛屿的岛主！"
+
+msgid "display log"
+msgstr "显示日志"
+
+msgid "show the islands limits"
+msgstr "显示岛屿限制"
+
+#, java-format
+msgid " §f{0}x §7{1}"
+msgstr " §f{0}x §7{1}"
+
+#, java-format
+msgid "§eStill the following blocks short: {0}"
+msgstr "§e仍缺少以下方块：{0}"
+
+#, java-format
+msgid ""
+"§eProgress: {0,number,##}% ({1}/{2} - success:{3}, failed:{4}, skipped:{5}) "
+"~ {6}"
+msgstr "§e进度：{0,number,##}%（{1}/{2} - 成功：{3}，失败：{4}，跳过：{5}）~ {6}"
+
+#, java-format
+msgid "§4No importer named §e{0}§4 found"
+msgstr "§4未找到名为 §e{0}§4 的导入器"
+
+#, java-format
+msgid "§eConverted {0}/{1} files in {2}"
+msgstr "§e在 {2} 内转换了 {0}/{1} 个文件"
+
+msgid "§9Hold your horses! You have to be patient..."
+msgstr "§9稍安勿躁！你得有点耐心..."
+
+msgid "§9Not really patient, are you?"
+msgstr "§9你其实没什么耐心，对吧？"
+
+msgid "§9Be patient, young padawan"
+msgstr "§9耐心点，年轻的学徒"
+
+msgid "§9Patience you MUST have, young padawan"
+msgstr "§9耐心，你必须有，年轻的学徒"
+
+msgid "§9The two most powerful warriors are patience and time."
+msgstr "§9最强大的两位战士是耐心和时间."
+
+msgid "§4Unable to find a safe home-location on your island!"
+msgstr "§4在你的岛屿上找不到安全的家园位置！"
+
+msgid "§cWARNING: §eTeleporting you to mid-air."
+msgstr "§c警告：§e将你传送到半空中."
+
+msgid "§aTeleporting you to your island."
+msgstr "§a正在将你传送到你的岛屿."
+
+#, java-format
+msgid "§aYou will be teleported in {0} seconds."
+msgstr "§a你将在 {0} 秒后被传送."
+
+msgid "§4Unable to warp you to that player''s island!"
+msgstr "§4无法将你传送到该玩家的岛屿！"
+
+#, java-format
+msgid "§aTeleporting you to {0}''s island."
+msgstr "§a正在将你传送到 {0} 的岛屿."
+
+msgid "§7Teleport cancelled"
+msgstr "§7传送已取消"
+
+msgid "§eSending you to spawn."
+msgstr "§e正在将你送往出生点."
+
+msgid "§eThe island has been §cLOCKED§e."
+msgstr "§e该岛屿已§c锁定§e."
+
+msgid "§eVisitors can't drop items!"
+msgstr "§e访客不能丢弃物品！"
+
+#, java-format
+msgid "Owner: {0}"
+msgstr "所有者：{0}"
+
+msgid "You cannot pick up other players' loot when you are a visitor!"
+msgstr "作为访客，你不能拾取其他玩家的掉落物！"
+
+msgid "§cWither Despawned!§e It wandered too far from your island."
+msgstr "§c凋零已消失！§e 它离你的岛屿太远了."
+
+msgid "§4You can only convert obsidian once every 10 seconds"
+msgstr "§4你每 10 秒只能转换一次黑曜石"
+
+msgid "§eChanging your obsidian back into lava. Be careful!"
+msgstr "§e正在将你的黑曜石转换回熔岩.小心！"
+
+msgid "§eYour inventory must have another empty space!"
+msgstr "§e你的背包必须还有一个空位！"
+
+msgid "§4It''s a bad idea to replace your lava!"
+msgstr "§4替换你的熔岩可不是个好主意！"
+
+msgid "§eYou cannot hurt island-members."
+msgstr "§e你不能伤害岛屿成员."
+
+msgid "§4That player has forbidden you from teleporting to their island."
+msgstr "§4该玩家禁止你传送到他们的岛屿."
+
+msgid "§4That island is §clocked.§e No teleporting to the island."
+msgstr "§4该岛屿已§c锁定§e.无法传送到该岛屿."
+
+#, java-format
+msgid ""
+"§4{0} is limited. §eScanning your island to see if you are allowed to place "
+"more, please be patient"
+msgstr ""
+"§4{0} 已达到上限.§e正在扫描你的岛屿，看看你是否被允许放置更多，请耐心等待"
+
+msgid "§e... Scanning complete, you can try again"
+msgstr "§e... 扫描完成，你可以重试"
+
+#, java-format
+msgid ""
+"§4You''ve hit the {0} limit!§e You can''t have more of that type on your "
+"island!§9 Max: {1,number}"
+msgstr ""
+"§4你已达到 {0} 限制！§e 你的岛屿上不能再有更多该类型的东西！§9 最大值："
+"{1,number}"
+
+msgid "§eYou can only use spawn-eggs on your own island."
+msgstr "§e你只能在你自己的岛屿上使用刷怪蛋."
+
+msgid "§cYou have reached your spawn-limit for your island."
+msgstr "§c你的岛屿已达到刷怪数量限制."
+
+msgid "§eYou can not use another island''s portals!"
+msgstr "§e你不能使用其他岛屿的传送门！"
+
+msgid "§eVillager-trading isn't allowed."
+msgstr "§e村民交易不被允许."
+
+msgid "§eTrading isn't allowed on other islands. Do it in spawn."
+msgstr "§e在其他岛屿上不允许交易.请在出生点进行."
+
+msgid "§eRiding is only allowed on your own island!"
+msgstr "§e只允许在你自己的岛屿上骑行！"
+
+msgid "§eYou cannot break vehicles while being a visitor!"
+msgstr "§e作为访客，你不能破坏载具！"
+
+msgid "§cBanned:§e You are banned from this island."
+msgstr "§c封禁：§e你被禁止进入此岛屿."
+
+msgid "§cLocked:§e That island is locked! No entry allowed."
+msgstr "§c已锁定：§e该岛屿已锁定！禁止进入."
+
+#, java-format
+msgid "{0}''s Wither"
+msgstr "{0} 的凋零"
+
+msgid "Something went wrong saving the island and/or party data!"
+msgstr "保存岛屿和/或队伍数据时出现问题！"
+
+msgid "§cMAINTENANCE:§e uSkyBlock is currently in maintenance mode"
+msgstr "§c维护：§e uSkyBlock 当前处于维护模式"
+
+#, java-format
+msgid ""
+"§buSkyBlock§e depends on §9{0}§e >= §av{1}§e but only §cv{2}§e was found!\n"
+msgstr ""
+"§buSkyBlock§e 依赖于 §9{0}§e >= §av{1}§e，但仅找到 §cv{2}§e！\n"
+
+#, java-format
+msgid "§buSkyBlock§e depends on §9{0}§e >= §av{1}"
+msgstr "§buSkyBlock§e 依赖于 §9{0}§e >= §av{1}"
+
+msgid "§4Player is already assigned to this island!"
+msgstr "§4该玩家已经分配到此岛屿！"
+
+msgid "§cYour island is in the process of generating, you cannot create now."
+msgstr "§c你的岛屿正在生成过程中，你现在无法创建."
+
+msgid "Could not create your Island. Please contact a server moderator."
+msgstr "无法创建你的岛屿.请联系服务器管理员."
+
+msgid "§eGetting your island ready, please be patient, it can take a while."
+msgstr "§e正在准备你的岛屿，请耐心等待，这可能需要一些时间."
+
+msgid "§cCommand is currently disabled!"
+msgstr "§c命令当前已禁用！"
+
+msgid "North"
+msgstr "北"
+
+msgid "North-East"
+msgstr "东北"
+
+msgid "East"
+msgstr "东"
+
+msgid "South-East"
+msgstr "东南"
+
+msgid "South"
+msgstr "南"
+
+msgid "South-West"
+msgstr "西南"
+
+msgid "West"
+msgstr "西"
+
+msgid "North-West"
+msgstr "西北"
+
+msgid "N/A"
+msgstr "无"
+
+#, java-format
+msgid "§9{0}§7 timed out"
+msgstr "§9{0}§7 已超时"
+
+#, java-format
+msgid ""
+"§eDoing §9{0}§e is §cRISKY§e. Repeat the command within §a{1}§e seconds to "
+"accept!"
+msgstr ""
+"§e执行 §9{0}§e 是§c有风险的§e.在 §a{1}§e 秒内重复该命令以确认！"
+
+#, java-format
+msgid "§eWaiting for our turn §c{0,number,###}%"
+msgstr "§e等待我们的回合 §c{0,number,###}%"
+
+#, java-format
+msgid "§9Creating island...§e{0,number,###}%"
+msgstr "§9正在创建岛屿...§e{0,number,###}%"
+
+msgid "§4** You are entering a protected - but abandoned - island area."
+msgstr "§4** 你正在进入一个受保护但已废弃的岛屿区域."
+
+#, java-format
+msgid "§d** You are entering §b{0}''s §disland."
+msgstr "§d** 你正在进入 §b{0}§d 的岛屿."
+
+msgid "§4** You are leaving an abandoned island."
+msgstr "§4** 你正在离开一个废弃的岛屿."
+
+#, java-format
+msgid "§d** You are leaving §b{0}''s §disland."
+msgstr "§d** 你正在离开 §b{0}§d 的岛屿."
+
+msgid "§eYour island is now locked. Only your party members may enter."
+msgstr "§e你的岛屿现已锁定.只有你的队伍成员可以进入."
+
+msgid "§4You must be the party leader to lock your island!"
+msgstr "§4你必须是队伍领袖才能锁定你的岛屿！"
+
+msgid ""
+"§eYour island is unlocked and anyone may enter, however only you and your "
+"party members may build or remove blocks."
+msgstr ""
+"§e你的岛屿已解锁，任何人都可以进入，但只有你和你的队伍成员可以建造或移除方块."
+
+msgid "§4You must be the party leader to unlock your island!"
+msgstr "§4你必须是队伍领袖才能解锁你的岛屿！"
+
+msgid ""
+"§cThe island owning this piece of nether is being deleted! Sending you to "
+"spawn."
+msgstr "§c拥有这片下界区域的岛屿正在被删除！将你送往出生点."
+
+msgid "§cThe island you are on is being deleted! Sending you to spawn."
+msgstr "§c你所在的岛屿正在被删除！将你送往出生点."
+
+#, java-format
+msgid "§eWALL OF FAME (page {0} of {1}):"
+msgstr "§e荣誉墙（第 {0} 页，共 {1} 页）："
+
+#, java-format
+msgid "§4Top ten list is empty! Only islands above level {0} is considered."
+msgstr "§4前十名列表为空！仅考虑等级高于 {0} 的岛屿."
+
+#, java-printf-format
+msgid "§a#%2d §7(%5.2f): §e%s §7%s"
+msgstr "§a#%2d §7(%5.2f): §e%s §7%s"
+
+msgid "Click to warp to the island!"
+msgstr "点击传送到该岛屿！"
+
+#, java-format
+msgid "§eYour rank is: §f{0}"
+msgstr "§e你的排名是：§f{0}"
+
+msgid "§9Creating an island at your location"
+msgstr "§9正在你所在位置创建岛屿"
+
+#, java-format
+msgid "§9Creating an island §7{0}§9 of you"
+msgstr "§9正在为你创建一个岛屿 §7{0}§9"
+
+msgid "The island has been created."
+msgstr "岛屿已创建."
+
+#, java-format
+msgid "§b{0}§d locked the island."
+msgstr "§b{0}§d 锁定了岛屿."
+
+msgid "§4Since your island is locked, your incoming warp has been deactivated."
+msgstr "§4由于你的岛屿已锁定，你的传入传送点已被停用."
+
+#, java-format
+msgid "§b{0}§d unlocked the island."
+msgstr "§b{0}§d 解锁了岛屿."
+
+#, java-format
+msgid "§cSKY §f> §7 {0}"
+msgstr "§cSKY §f> §7 {0}"
+
+#, java-format
+msgid "§b{0}§d has been removed from the island group."
+msgstr "§b{0}§d 已从岛屿队伍中移除."
+
+#, java-format
+msgid "§9{1} §7- {0}"
+msgstr "§9{1} §7- {0}"
+
+msgid "§aCongratulations! §eYour island has appeared."
+msgstr "§a恭喜！§e你的岛屿已出现."
+
+msgid "§cNote:§e Construction might still be ongoing."
+msgstr "§c注意：§e 建设工作可能仍在进行中."
+
+msgid "Use §9/is h§r or the §9/is§r menu to go there."
+msgstr "使用 §9/is h§r 或 §9/is§r 菜单前往那里."
+
+#, java-format
+msgid "Unable to locate schematic {0}, contact a server-admin"
+msgstr "无法定位蓝图 {0}，请联系服务器管理员"
+
+#, java-format
+msgid "§cWatchdog!§9 Unable to locate a chest within {0}, bailing out."
+msgstr "§c看门狗！§9 无法在 {0} 内找到箱子，正在退出."
+
+msgid "UNKNOWN"
+msgstr "未知"
+
+msgid "ANIMAL"
+msgstr "动物"
+
+msgid "MONSTER"
+msgstr "怪物"
+
+msgid "VILLAGER"
+msgstr "村民"
+
+msgid "GOLEM"
+msgstr "铁傀儡"
+
+#, java-format
+msgid "§c{0}"
+msgstr "§c{0}"
+
+#, java-format
+msgid "§7{0}: §a{1}§7 (max. {2})"
+msgstr "§7{0}：§a{1}§7（最大 {2}）"
+
+# ==============================
+# 方块
+# ==============================
+msgid "GRASS_BLOCK"
+msgstr "草方块"
+
+msgid "OAK_LOG"
+msgstr "橡木原木"
+
+msgid "BIRCH_SAPLING"
+msgstr "白桦树苗"
+
+msgid "SPRUCE_SAPLING"
+msgstr "云杉树苗"
+
+msgid "JUNGLE_SAPLING"
+msgstr "丛林树苗"
+
+msgid "ACACIA_SAPLING"
+msgstr "金合欢树苗"
+
+msgid "DARK_OAK_SAPLING"
+msgstr "深色橡木树苗"
+
+msgid "COBBLESTONE"
+msgstr "圆石"
+
+msgid "DIRT"
+msgstr "泥土"
+
+msgid "GRAVEL"
+msgstr "沙砾"
+
+msgid "SUGAR_CANE"
+msgstr "甘蔗"
+
+msgid "SAND"
+msgstr "沙子"
+
+msgid "CACTUS"
+msgstr "仙人掌"
+
+msgid "MELON_SLICE"
+msgstr "西瓜片"
+
+msgid "MELON_SEEDS"
+msgstr "西瓜种子"
+
+msgid "PUMPKIN"
+msgstr "南瓜"
+
+msgid "PUMPKIN_SEEDS"
+msgstr "南瓜种子"
+
+msgid "STONE"
+msgstr "石头"
+
+msgid "RED_MUSHROOM"
+msgstr "红色蘑菇"
+
+msgid "BROWN_MUSHROOM"
+msgstr "棕色蘑菇"
+
+msgid "MYCELIUM"
+msgstr "菌丝"
+
+msgid "PODZOL"
+msgstr "灰化土"
+
+msgid "OAK_PLANKS"
+msgstr "橡木木板"
+
+msgid "GLASS"
+msgstr "玻璃"
+
+msgid "OAK_DOOR"
+msgstr "橡木门"
+
+msgid "CRAFTING_TABLE"
+msgstr "工作台"
+
+msgid "FURNACE"
+msgstr "熔炉"
+
+msgid "CHEST"
+msgstr "箱子"
+
+msgid "WHITE_BED"
+msgstr "白色床"
+
+msgid "TORCH"
+msgstr "火把"
+
+msgid "STONE_BRICKS"
+msgstr "石砖"
+
+msgid "STONE_BRICK_SLAB"
+msgstr "石砖台阶"
+
+msgid "STONE_BRICK_STAIRS"
+msgstr "石砖楼梯"
+
+msgid "STONE_BRICK_WALL"
+msgstr "石砖墙"
+
+msgid "ANDESITE"
+msgstr "安山岩"
+
+msgid "DIORITE"
+msgstr "闪长岩"
+
+msgid "GRANITE"
+msgstr "花岗岩"
+
+msgid "CALCITE"
+msgstr "方解石"
+
+msgid "TUFF"
+msgstr "凝灰岩"
+
+msgid "DEEPSLATE"
+msgstr "深板岩"
+
+msgid "OBSIDIAN"
+msgstr "黑曜石"
+
+msgid "NETHERRACK"
+msgstr "下界岩"
+
+msgid "SOUL_SAND"
+msgstr "灵魂沙"
+
+msgid "QUARTZ"
+msgstr "下界石英"
+
+msgid "GLOWSTONE"
+msgstr "萤石"
+
+msgid "GLOWSTONE_DUST"
+msgstr "萤石粉"
+
+msgid "CRYING_OBSIDIAN"
+msgstr "哭泣的黑曜石"
+
+msgid "NETHER_BRICKS"
+msgstr "下界砖块"
+
+msgid "NETHER_BRICK_SLAB"
+msgstr "下界砖台阶"
+
+msgid "NETHER_BRICK_STAIRS"
+msgstr "下界砖楼梯"
+
+msgid "NETHER_BRICK_FENCE"
+msgstr "下界砖栅栏"
+
+msgid "QUARTZ_BLOCK"
+msgstr "石英块"
+
+msgid "QUARTZ_SLAB"
+msgstr "石英台阶"
+
+msgid "QUARTZ_STAIRS"
+msgstr "石英楼梯"
+
+msgid "QUARTZ_PILLAR"
+msgstr "石英柱"
+
+msgid "SMOOTH_QUARTZ"
+msgstr "平滑石英"
+
+msgid "GOLD_BLOCK"
+msgstr "金块"
+
+msgid "BEACON"
+msgstr "信标"
+
+msgid "END_PORTAL_FRAME"
+msgstr "末地传送门框架"
+
+msgid "BOOKSHELF"
+msgstr "书架"
+
+msgid "ENCHANTING_TABLE"
+msgstr "附魔台"
+
+msgid "SNOW_BLOCK"
+msgstr "雪块"
+
+msgid "PACKED_ICE"
+msgstr "浮冰"
+
+msgid "WHITE_WOOL"
+msgstr "白色羊毛"
+
+msgid "SPRUCE_LOG"
+msgstr "云杉原木"
+
+msgid "BLUE_ICE"
+msgstr "蓝冰"
+
+msgid "POWDER_SNOW_BUCKET"
+msgstr "细雪桶"
+
+msgid "ACACIA_LOG"
+msgstr "金合欢原木"
+
+msgid "HAY_BLOCK"
+msgstr "干草块"
+
+msgid "COAL_BLOCK"
+msgstr "煤炭块"
+
+msgid "REDSTONE_LAMP"
+msgstr "红石灯"
+
+msgid "SEA_LANTERN"
+msgstr "海晶灯"
+
+msgid "PRISMARINE"
+msgstr "海晶石"
+
+msgid "PRISMARINE_CRYSTALS"
+msgstr "海晶砂粒"
+
+msgid "KELP"
+msgstr "海带"
+
+msgid "IRON_BLOCK"
+msgstr "铁块"
+
+msgid "BONE_BLOCK"
+msgstr "骨块"
+
+msgid "DIAMOND_BLOCK"
+msgstr "钻石块"
+
+# ==============================
+# 工具与武器
+# ==============================
+msgid "STONE_PICKAXE"
+msgstr "石镐"
+
+msgid "STONE_AXE"
+msgstr "石斧"
+
+msgid "STONE_SHOVEL"
+msgstr "石锹"
+
+msgid "STONE_HOE"
+msgstr "石锄"
+
+msgid "STONE_SWORD"
+msgstr "石剑"
+
+msgid "IRON_PICKAXE"
+msgstr "铁镐"
+
+msgid "IRON_AXE"
+msgstr "铁斧"
+
+msgid "IRON_SHOVEL"
+msgstr "铁锹"
+
+msgid "IRON_HOE"
+msgstr "铁锄"
+
+msgid "IRON_SWORD"
+msgstr "铁剑"
+
+msgid "IRON_HELMET"
+msgstr "铁头盔"
+
+msgid "IRON_CHESTPLATE"
+msgstr "铁胸甲"
+
+msgid "IRON_LEGGINGS"
+msgstr "铁护腿"
+
+msgid "IRON_BOOTS"
+msgstr "铁靴子"
+
+msgid "SHIELD"
+msgstr "盾牌"
+
+msgid "BOW"
+msgstr "弓"
+
+msgid "ARROW"
+msgstr "箭"
+
+msgid "FISHING_ROD"
+msgstr "钓鱼竿"
+
+msgid "FLINT_AND_STEEL"
+msgstr "打火石"
+
+msgid "BUCKET"
+msgstr "桶"
+
+msgid "WATER_BUCKET"
+msgstr "水桶"
+
+msgid "LAVA_BUCKET"
+msgstr "岩浆桶"
+
+msgid "COMPOSTER"
+msgstr "堆肥桶"
+
+msgid "SHEARS"
+msgstr "剪刀"
+
+# ==============================
+# 矿石与矿物
+# ==============================
+msgid "COAL"
+msgstr "煤炭"
+
+msgid "CHARCOAL"
+msgstr "木炭"
+
+msgid "RAW_IRON"
+msgstr "粗铁"
+
+msgid "RAW_GOLD"
+msgstr "粗金"
+
+msgid "IRON_INGOT"
+msgstr "铁锭"
+
+msgid "GOLD_INGOT"
+msgstr "金锭"
+
+msgid "GOLD_NUGGET"
+msgstr "金粒"
+
+msgid "DIAMOND"
+msgstr "钻石"
+
+msgid "EMERALD"
+msgstr "绿宝石"
+
+msgid "IRON_ORE"
+msgstr "铁矿石"
+
+msgid "GOLD_ORE"
+msgstr "金矿石"
+
+msgid "REDSTONE_ORE"
+msgstr "红石矿石"
+
+msgid "LAPIS_ORE"
+msgstr "青金石矿石"
+
+msgid "LAPIS_LAZULI"
+msgstr "青金石"
+
+msgid "REDSTONE"
+msgstr "红石粉"
+
+msgid "REDSTONE_BLOCK"
+msgstr "红石块"
+
+msgid "NETHER_QUARTZ_ORE"
+msgstr "下界石英矿石"
+
+msgid "FLINT"
+msgstr "燧石"
+
+# ==============================
+# 食物与农作物
+# ==============================
+msgid "APPLE"
+msgstr "苹果"
+
+msgid "BREAD"
+msgstr "面包"
+
+msgid "WHEAT"
+msgstr "小麦"
+
+msgid "WHEAT_SEEDS"
+msgstr "小麦种子"
+
+msgid "POTATO"
+msgstr "马铃薯"
+
+msgid "BAKED_POTATO"
+msgstr "烤马铃薯"
+
+msgid "CARROT"
+msgstr "胡萝卜"
+
+msgid "GOLDEN_CARROT"
+msgstr "金胡萝卜"
+
+msgid "GOLDEN_APPLE"
+msgstr "金苹果"
+
+msgid "ENCHANTED_GOLDEN_APPLE"
+msgstr "附魔金苹果"
+
+msgid "CAKE"
+msgstr "蛋糕"
+
+msgid "COOKED_PORKCHOP"
+msgstr "熟猪排"
+
+msgid "COOKED_BEEF"
+msgstr "熟牛肉"
+
+msgid "COOKED_CHICKEN"
+msgstr "熟鸡肉"
+
+msgid "COOKED_COD"
+msgstr "熟鳕鱼"
+
+msgid "COOKED_SALMON"
+msgstr "熟鲑鱼"
+
+msgid "MUSHROOM_STEW"
+msgstr "蘑菇煲"
+
+msgid "BEETROOT_SEEDS"
+msgstr "甜菜种子"
+
+msgid "BAMBOO"
+msgstr "竹子"
+
+msgid "PAPER"
+msgstr "纸"
+
+msgid "BOOK"
+msgstr "书"
+
+msgid "HONEY_BOTTLE"
+msgstr "蜂蜜瓶"
+
+msgid "GLOW_BERRIES"
+msgstr "发光浆果"
+
+# ==============================
+# 怪物掉落物
+# ==============================
+msgid "ROTTEN_FLESH"
+msgstr "腐肉"
+
+msgid "BONE"
+msgstr "骨头"
+
+msgid "STRING"
+msgstr "线"
+
+msgid "GUNPOWDER"
+msgstr "火药"
+
+msgid "SPIDER_EYE"
+msgstr "蜘蛛眼"
+
+msgid "LEATHER"
+msgstr "皮革"
+
+msgid "SLIME_BALL"
+msgstr "粘液球"
+
+msgid "BLAZE_ROD"
+msgstr "烈焰棒"
+
+msgid "BLAZE_POWDER"
+msgstr "烈焰粉"
+
+msgid "GHAST_TEAR"
+msgstr "恶魂之泪"
+
+msgid "ENDER_PEARL"
+msgstr "末影珍珠"
+
+msgid "MAGMA_CREAM"
+msgstr "岩浆膏"
+
+msgid "WITHER_SKELETON_SKULL"
+msgstr "凋灵骷髅头颅"
+
+msgid "NETHER_STAR"
+msgstr "下界之星"
+
+msgid "HEART_OF_THE_SEA"
+msgstr "海洋之心"
+
+msgid "NAUTILUS_SHELL"
+msgstr "鹦鹉螺壳"
+
+# ==============================
+# 鱼类
+# ==============================
+msgid "COD"
+msgstr "鳕鱼"
+
+msgid "SALMON"
+msgstr "鲑鱼"
+
+msgid "PUFFERFISH"
+msgstr "河豚"
+
+msgid "TROPICAL_FISH"
+msgstr "热带鱼"
+
+# ==============================
+# 染料
+# ==============================
+msgid "GREEN_DYE"
+msgstr "绿色染料"
+
+msgid "INK_SAC"
+msgstr "墨囊"
+
+msgid "BONE_MEAL"
+msgstr "骨粉"
+
+# ==============================
+# 红石组件
+# ==============================
+msgid "COMPARATOR"
+msgstr "红石比较器"
+
+msgid "REPEATER"
+msgstr "红石中继器"
+
+msgid "OBSERVER"
+msgstr "侦测器"
+
+msgid "PISTON"
+msgstr "活塞"
+
+msgid "DROPPER"
+msgstr "投掷器"
+
+msgid "HOPPER"
+msgstr "漏斗"
+
+msgid "TNT"
+msgstr "TNT"
+
+msgid "CHAIN"
+msgstr "锁链"
+
+# ==============================
+# 刷怪蛋
+# ==============================
+msgid "CHICKEN_SPAWN_EGG"
+msgstr "鸡刷怪蛋"
+
+msgid "PIG_SPAWN_EGG"
+msgstr "猪刷怪蛋"
+
+msgid "COW_SPAWN_EGG"
+msgstr "牛刷怪蛋"
+
+msgid "SHEEP_SPAWN_EGG"
+msgstr "羊刷怪蛋"
+
+msgid "MOOSHROOM_SPAWN_EGG"
+msgstr "哞菇刷怪蛋"
+
+msgid "BEE_SPAWN_EGG"
+msgstr "蜜蜂刷怪蛋"
+
+msgid "LLAMA_SPAWN_EGG"
+msgstr "羊驼刷怪蛋"
+
+msgid "POLAR_BEAR_SPAWN_EGG"
+msgstr "北极熊刷怪蛋"
+
+msgid "GOAT_SPAWN_EGG"
+msgstr "山羊刷怪蛋"
+
+msgid "TURTLE_SPAWN_EGG"
+msgstr "海龟刷怪蛋"
+
+msgid "AXOLOTL_SPAWN_EGG"
+msgstr "美西螈刷怪蛋"
+
+msgid "BLAZE_SPAWN_EGG"
+msgstr "烈焰人刷怪蛋"
+
+msgid "WITHER_SKELETON_SPAWN_EGG"
+msgstr "凋灵骷髅刷怪蛋"
+
+msgid "CATTLE_SPAWN_EGG"
+msgstr "牛刷怪蛋"
+
+# ==============================
+# 附魔与经验
+# ==============================
+msgid "EXPERIENCE_BOTTLE"
+msgstr "附魔之瓶"
+
+msgid "ENCHANTED_BOOK"
+msgstr "附魔书"
+
+# ==============================
+# 装饰与植物
+# ==============================
+msgid "DANDELION"
+msgstr "蒲公英"
+
+msgid "POPPY"
+msgstr "虞美人"
+
+msgid "BLUE_ORCHID"
+msgstr "兰花"
+
+msgid "ALLIUM"
+msgstr "绒球葱"
+
+msgid "AZURE_BLUET"
+msgstr "茜草花"
+
+msgid "RED_TULIP"
+msgstr "红色郁金香"
+
+msgid "ORANGE_TULIP"
+msgstr "橙色郁金香"
+
+msgid "WHITE_TULIP"
+msgstr "白色郁金香"
+
+msgid "PINK_TULIP"
+msgstr "粉红色郁金香"
+
+msgid "ROSE_BUSH"
+msgstr "玫瑰丛"
+
+msgid "SUNFLOWER"
+msgstr "向日葵"
+
+msgid "LILAC"
+msgstr "丁香"
+
+msgid "PEONY"
+msgstr "牡丹"
+
+msgid "VINE"
+msgstr "藤蔓"
+
+msgid "FLOWER_POT"
+msgstr "花盆"
+
+msgid "BEE_NEST"
+msgstr "蜂巢"
+
+msgid "BRAIN_CORAL_BLOCK"
+msgstr "脑珊瑚块"
+
+msgid "BRAIN_CORAL"
+msgstr "脑珊瑚"
+
+msgid "SEA_PICKLE"
+msgstr "海泡菜"
+
+# ==============================
+# 其他
+# ==============================
+msgid "SPAWNER"
+msgstr "刷怪笼"
+
+msgid "DRAGON_EGG"
+msgstr "龙蛋"
+
+msgid "NETHER_WART"
+msgstr "地狱疣"
+
+msgid "WHITE_DYE"
+msgstr "白色染料"
+
+msgid "COCOA_BEANS"
+msgstr "可可豆"
+
+msgid "EGG"
+msgstr "鸡蛋"
+
+msgid "MILK_BUCKET"
+msgstr "牛奶桶"
+
+msgid "SUGAR"
+msgstr "糖"
+
+msgid "COOKIE"
+msgstr "曲奇"
+
+msgid "PUMPKIN_PIE"
+msgstr "南瓜派"
+
+msgid "JACK_O_LANTERN"
+msgstr "南瓜灯"
+
+msgid "LEAD"
+msgstr "拴绳"
+
+msgid "SADDLE"
+msgstr "鞍"
+
+msgid "NAME_TAG"
+msgstr "命名牌"
+
+msgid "IRON_HORSE_ARMOR"
+msgstr "铁马铠"
+
+msgid "GOLDEN_HORSE_ARMOR"
+msgstr "金马铠"
+
+msgid "DIAMOND_HORSE_ARMOR"
+msgstr "钻石马铠"
+
+msgid "DIAMOND_SWORD"
+msgstr "钻石剑"
+
+msgid "DIAMOND_HELMET"
+msgstr "钻石头盔"
+
+msgid "DIAMOND_CHESTPLATE"
+msgstr "钻石胸甲"
+
+msgid "DIAMOND_LEGGINGS"
+msgstr "钻石护腿"
+
+msgid "DIAMOND_BOOTS"
+msgstr "钻石靴子"
+
+msgid "CARROT_ON_A_STICK"
+msgstr "胡萝卜钓竿"
+
+msgid "LADDER"
+msgstr "梯子"
+
+msgid "OAK_TRAPDOOR"
+msgstr "橡木活板门"
+
+msgid "OAK_PRESSURE_PLATE"
+msgstr "橡木压力板"
+
+msgid "OAK_FENCE"
+msgstr "橡木栅栏"
+
+msgid "ACACIA_FENCE"
+msgstr "金合欢栅栏"
+
+msgid "DARK_OAK_FENCE_GATE"
+msgstr "深色橡木栅栏门"
+
+msgid "SPRUCE_DOOR"
+msgstr "云杉门"
+
+msgid "JUNGLE_STAIRS"
+msgstr "丛林楼梯"
+
+msgid "DARK_OAK_SLAB"
+msgstr "深色橡木台阶"
+
+msgid "STRIPPED_OAK_LOG"
+msgstr "去皮橡木原木"
+
+msgid "STRIPPED_SPRUCE_LOG"
+msgstr "去皮云杉原木"
+
+msgid "STRIPPED_BIRCH_LOG"
+msgstr "去皮白桦原木"
+
+msgid "STRIPPED_JUNGLE_LOG"
+msgstr "去皮丛林原木"
+
+msgid "STRIPPED_ACACIA_LOG"
+msgstr "去皮金合欢原木"
+
+msgid "STRIPPED_DARK_OAK_LOG"
+msgstr "去皮深色橡木原木"
+
+msgid "REDSTONE_TORCH"
+msgstr "红石火把"
+
+msgid "LEVER"
+msgstr "拉杆"
+
+msgid "STONE_BUTTON"
+msgstr "石头按钮"
+
+msgid "STONE_PRESSURE_PLATE"
+msgstr "石头压力板"
+
+msgid "DAYLIGHT_DETECTOR"
+msgstr "阳光探测器"
+
+msgid "STICKY_PISTON"
+msgstr "粘性活塞"
+
+msgid "EMERALD_BLOCK"
+msgstr "绿宝石块"
+
+msgid "RED_SANDSTONE"
+msgstr "红砂岩"
+
+msgid "CHISELED_QUARTZ_BLOCK"
+msgstr "錾制石英块"
+
+msgid "CHISELED_STONE_BRICKS"
+msgstr "錾制石砖"
+
+msgid "CHISELED_SANDSTONE"
+msgstr "錾制砂岩"
+
+msgid "SMOOTH_SANDSTONE"
+msgstr "平滑砂岩"
+
+msgid "SANDSTONE"
+msgstr "砂岩"
+
+msgid "SANDSTONE_STAIRS"
+msgstr "砂岩楼梯"
+
+msgid "SANDSTONE_SLAB"
+msgstr "砂岩台阶"
+
+msgid "RED_SAND"
+msgstr "红沙"
+
+msgid "COARSE_DIRT"
+msgstr "砂土"
+
+msgid "CLAY"
+msgstr "粘土"
+
+msgid "ICE"
+msgstr "冰"
+
+msgid "CONDUIT"
+msgstr "潮涌核心"
+
+msgid "DRIED_KELP_BLOCK"
+msgstr "干海带块"
+
+msgid "PRISMARINE_BRICKS"
+msgstr "海晶石砖"
+
+msgid "DARK_PRISMARINE"
+msgstr "暗海晶石"
+
+msgid "PRISMARINE_SHARD"
+msgstr "海晶碎片"
+
+msgid "MUSIC_DISC_13"
+msgstr "音乐唱片"
+
+msgid "MUSIC_DISC_CAT"
+msgstr "音乐唱片"
+
+msgid "MUSIC_DISC_BLOCKS"
+msgstr "音乐唱片"
+
+msgid "MUSIC_DISC_CHIRP"
+msgstr "音乐唱片"
+
+msgid "MUSIC_DISC_FAR"
+msgstr "音乐唱片"
+
+msgid "MUSIC_DISC_MALL"
+msgstr "音乐唱片"
+
+msgid "MUSIC_DISC_MELLOHI"
+msgstr "音乐唱片"
+
+msgid "MUSIC_DISC_STAL"
+msgstr "音乐唱片"
+
+msgid "MUSIC_DISC_STRAD"
+msgstr "音乐唱片"
+
+msgid "MUSIC_DISC_WARD"
+msgstr "音乐唱片"
+
+msgid "MUSIC_DISC_11"
+msgstr "音乐唱片"
+
+msgid "MUSIC_DISC_WAIT"
+msgstr "音乐唱片"
+
+msgid "JUKEBOX"
+msgstr "唱片机"
+
+msgid "NOTE_BLOCK"
+msgstr "音符盒"
+
+msgid "WHITE_BANNER"
+msgstr "白色旗帜"
+
+msgid "BLACK_BANNER"
+msgstr "黑色旗帜"
+
+msgid "BLUE_BANNER"
+msgstr "蓝色旗帜"
+
+msgid "BROWN_BANNER"
+msgstr "棕色旗帜"
+
+msgid "CYAN_BANNER"
+msgstr "青色旗帜"
+
+msgid "GRAY_BANNER"
+msgstr "灰色旗帜"
+
+msgid "GREEN_BANNER"
+msgstr "绿色旗帜"
+
+msgid "LIGHT_BLUE_BANNER"
+msgstr "淡蓝色旗帜"
+
+msgid "LIGHT_GRAY_BANNER"
+msgstr "淡灰色旗帜"
+
+msgid "LIME_BANNER"
+msgstr "黄绿色旗帜"
+
+msgid "MAGENTA_BANNER"
+msgstr "品红色旗帜"
+
+msgid "ORANGE_BANNER"
+msgstr "橙色旗帜"
+
+msgid "PINK_BANNER"
+msgstr "粉红色旗帜"
+
+msgid "PURPLE_BANNER"
+msgstr "紫色旗帜"
+
+msgid "RED_BANNER"
+msgstr "红色旗帜"
+
+msgid "YELLOW_BANNER"
+msgstr "黄色旗帜"
+
+msgid "BLACK_STAINED_GLASS"
+msgstr "黑色染色玻璃"
+
+msgid "BLUE_STAINED_GLASS"
+msgstr "蓝色染色玻璃"
+
+msgid "BROWN_STAINED_GLASS"
+msgstr "棕色染色玻璃"
+
+msgid "CYAN_STAINED_GLASS"
+msgstr "青色染色玻璃"
+
+msgid "GRAY_STAINED_GLASS"
+msgstr "灰色染色玻璃"
+
+msgid "GREEN_STAINED_GLASS"
+msgstr "绿色染色玻璃"
+
+msgid "LIGHT_BLUE_STAINED_GLASS"
+msgstr "淡蓝色染色玻璃"
+
+msgid "LIGHT_GRAY_STAINED_GLASS"
+msgstr "淡灰色染色玻璃"
+
+msgid "LIME_STAINED_GLASS"
+msgstr "黄绿色染色玻璃"
+
+msgid "MAGENTA_STAINED_GLASS"
+msgstr "品红色染色玻璃"
+
+msgid "ORANGE_STAINED_GLASS"
+msgstr "橙色染色玻璃"
+
+msgid "PINK_STAINED_GLASS"
+msgstr "粉红色染色玻璃"
+
+msgid "PURPLE_STAINED_GLASS"
+msgstr "紫色染色玻璃"
+
+msgid "RED_STAINED_GLASS"
+msgstr "红色染色玻璃"
+
+msgid "WHITE_STAINED_GLASS"
+msgstr "白色染色玻璃"
+
+msgid "YELLOW_STAINED_GLASS"
+msgstr "黄色染色玻璃"
+
+msgid "BLACK_STAINED_GLASS_PANE"
+msgstr "黑色染色玻璃板"
+
+msgid "BLUE_STAINED_GLASS_PANE"
+msgstr "蓝色染色玻璃板"
+
+msgid "BROWN_STAINED_GLASS_PANE"
+msgstr "棕色染色玻璃板"
+
+msgid "CYAN_STAINED_GLASS_PANE"
+msgstr "青色染色玻璃板"
+
+msgid "GRAY_STAINED_GLASS_PANE"
+msgstr "灰色染色玻璃板"
+
+msgid "GREEN_STAINED_GLASS_PANE"
+msgstr "绿色染色玻璃板"
+
+msgid "LIGHT_BLUE_STAINED_GLASS_PANE"
+msgstr "淡蓝色染色玻璃板"
+
+msgid "LIGHT_GRAY_STAINED_GLASS_PANE"
+msgstr "淡灰色染色玻璃板"
+
+msgid "LIME_STAINED_GLASS_PANE"
+msgstr "黄绿色染色玻璃板"
+
+msgid "MAGENTA_STAINED_GLASS_PANE"
+msgstr "品红色染色玻璃板"
+
+msgid "ORANGE_STAINED_GLASS_PANE"
+msgstr "橙色染色玻璃板"
+
+msgid "PINK_STAINED_GLASS_PANE"
+msgstr "粉红色染色玻璃板"
+
+msgid "PURPLE_STAINED_GLASS_PANE"
+msgstr "紫色染色玻璃板"
+
+msgid "RED_STAINED_GLASS_PANE"
+msgstr "红色染色玻璃板"
+
+msgid "WHITE_STAINED_GLASS_PANE"
+msgstr "白色染色玻璃板"
+
+msgid "YELLOW_STAINED_GLASS_PANE"
+msgstr "黄色染色玻璃板"
+
+msgid "CYAN_TERRACOTTA"
+msgstr "青色陶瓦"
+
+msgid "LIME_TERRACOTTA"
+msgstr "黄绿色陶瓦"
+
+msgid "YELLOW_TERRACOTTA"
+msgstr "黄色陶瓦"
+
+msgid "ORANGE_TERRACOTTA"
+msgstr "橙色陶瓦"
+
+msgid "RED_TERRACOTTA"
+msgstr "红色陶瓦"
+
+msgid "LIGHT_GRAY_TERRACOTTA"
+msgstr "淡灰色陶瓦"
+
+msgid "BLACK_TERRACOTTA"
+msgstr "黑色陶瓦"
+
+msgid "BLUE_TERRACOTTA"
+msgstr "蓝色陶瓦"
+
+msgid "BROWN_TERRACOTTA"
+msgstr "棕色陶瓦"
+
+msgid "GRAY_TERRACOTTA"
+msgstr "灰色陶瓦"
+
+msgid "GREEN_TERRACOTTA"
+msgstr "绿色陶瓦"
+
+msgid "LIGHT_BLUE_TERRACOTTA"
+msgstr "淡蓝色陶瓦"
+
+msgid "MAGENTA_TERRACOTTA"
+msgstr "品红色陶瓦"
+
+msgid "PINK_TERRACOTTA"
+msgstr "粉红色陶瓦"
+
+msgid "PURPLE_TERRACOTTA"
+msgstr "紫色陶瓦"
+
+msgid "WHITE_TERRACOTTA"
+msgstr "白色陶瓦"
+
+msgid "RED_MUSHROOM_BLOCK"
+msgstr "红色蘑菇方块"
+
+msgid "BROWN_MUSHROOM_BLOCK"
+msgstr "棕色蘑菇方块"
+
+msgid "GRASS_BLOCK"
+msgstr "草方块"
+
+msgid "BIRCH_LOG"
+msgstr "白桦原木"
+
+msgid "OAK_SAPLING"
+msgstr "橡树树苗"
+
+msgid "TALL_GRASS"
+msgstr "高草丛"
+
+msgid "WOLF_SPAWN_EGG"
+msgstr "狼刷怪蛋"
+
+msgid "HORSE_SPAWN_EGG"
+msgstr "马刷怪蛋"
+
+msgid "SLIME_SPAWN_EGG"
+msgstr "史莱姆刷怪蛋"
+
+msgid "LILY_PAD"
+msgstr "睡莲"
+
+msgid "CAMEL_SPAWN_EGG"
+msgstr "骆驼刷怪蛋"
+
+msgid "FOX_SPAWN_EGG"
+msgstr "狐狸刷怪蛋"
+
+msgid "DONKEY_SPAWN_EGG"
+msgstr "驴刷怪蛋"
+
+msgid "OCELOT_SPAWN_EGG"
+msgstr "豹猫刷怪蛋"
+
+msgid "SNOWBALL"
+msgstr "雪球"
+
+msgid "SNOW"
+msgstr "雪"
+
+msgid "EMERALD_ORE"
+msgstr "绿宝石矿石"
+
+msgid "BRAIN_CORAL_FAN"
+msgstr "脑纹珊瑚扇"
+
+msgid "JUNGLE_LOG"
+msgstr "丛林原木"
+
+msgid "NETHER_PORTAL"
+msgstr "下界传送门"
+
+msgid "END_PORTAL"
+msgstr "末地传送门"
+
+msgid "Buy Extra Hopper Success!"
+msgstr "购买漏斗数量扩容成功！"
+
+msgid "Buy Extra Hopper Failed!"
+msgstr "购买漏斗数量扩容失败！"
+
+msgid "You do not have enough money!"
+msgstr "你没有足够的钱完成购买！"
+
+msgid "You have {0}"
+msgstr "你还有 {0}"
+
+msgid "Buy Extra Hopper Limit"
+msgstr "购买漏斗数量扩容"
+
+msgid "Current Extra Limit is {0}"
+msgstr "当前漏斗数量限制：{0}"
+
+msgid "Price to buy another hopper limit is {0}"
+msgstr "购买下一个漏斗数量扩容的价格：{0}"
+
+msgid "click to buy hopper"
+msgstr "点击购买漏斗数量扩容"
+
+msgid "Current Limit: {0,number,##}(Default) + {1,number,##}(Extra)"
+msgstr "当前数量限制：{0,number,##}（默认）+ {1,number,##}（额外）"
+
+msgid "======================"
+msgstr "======================"
+
+msgid "ocean"
+msgstr "海洋"
+
+msgid "forest"
+msgstr "森林"
+
+msgid "desert"
+msgstr "沙漠"
+
+msgid "jungle"
+msgstr "丛林"
+
+msgid "swamp"
+msgstr "沼泽"
+
+msgid "taiga"
+msgstr "针叶林"
+
+msgid "mushroom_fields"
+msgstr "蘑菇岛"
+
+msgid "nether_wastes"
+msgstr "下界荒地"
+
+msgid "the_end"
+msgstr "末地"
+
+msgid "plains"
+msgstr "平原"
+
+msgid "windswept_hills"
+msgstr "风袭丘陵"
+
+msgid "flower_forest"
+msgstr "繁花森林"
+
+msgid "savanna_plateau"
+msgstr "热带高原"
+
+msgid "lush_caves"
+msgstr "繁茂洞穴"
+
+msgid "lukewarm_ocean"
+msgstr "温水海洋"
+
+msgid "snowy_slopes"
+msgstr "雪坡"
+
+msgid "deep_ocean"
+msgstr "深海"
+
+msgid "snowy_plains"
+msgstr "积雪平原"
+
+# ==========================================
+# 商店系统
+# ==========================================
+
+msgid "Store"
+msgstr "商店"
+
+msgid "§fUse §bSkybucks§f to buy §abasic§f or §orare items§f, even §dspecial permissions§f!"
+msgstr "§f使用§b天空币§f购买§a基础§f或§6稀有物资§f，甚至§d特殊权限§f！"
+
+msgid "§ePrice: §f{0,number,#}"
+msgstr "§e价格：§f{0,number,#}"
+
+msgid "§eBought: §f{0}/{1}"
+msgstr "§e已购买：§f{0}/{1}"
+
+msgid "§cRequires Island Level: §f{0} §7(Current: §f{1,number,##.#}§7)"
+msgstr "§c需要岛屿等级：§f{0} §7（当前：§f{1,number,##.#}§7）"
+
+msgid "§cRequires Challenges:"
+msgstr "§c需要完成挑战："
+
+msgid "§c  {0}"
+msgstr "§c  {0}"
+
+msgid "§cPurchase limit reached"
+msgstr "§c已达到购买上限"
+
+msgid "§c§lLocked"
+msgstr "§c§l商品已锁定"
+
+msgid "§e§lClick to buy"
+msgstr "§e§l点击购买"
+
+msgid "§7Back to Main Menu"
+msgstr "§7返回主菜单"
+
+msgid "§cIsland level too low! Requires level {0}"
+msgstr "§c岛屿等级不足！需要 {0} 级"
+
+msgid "§cYou need to complete: {0}"
+msgstr "§c你需要先完成挑战：{0}"
+
+msgid "§cPurchase limit reached!"
+msgstr "§c已达到最大购买数量！"
+
+msgid "§cNot enough money! Need {0,number,#}, you have {1,number,#}"
+msgstr "§c余额不足！需要 {0,number,#}，你只有 {1,number,#}"
+
+msgid "§aPurchased! Cost {0,number,#}, balance {1,number,#}"
+msgstr "§a购买成功！花费 {0,number,#}，余额 {1,number,#}"
+
+msgid "§aPurchased {0}x! Cost {1,number,#}, balance {2,number,#}"
+msgstr "§a成功购买 {0} 个！花费 {1,number,#}，余额 {2,number,#}"
+
+msgid "§eRemaining purchases: {0}/{1}"
+msgstr "§e剩余购买次数：{0}/{1}"
+
+msgid "§eInventory full, items dropped on ground."
+msgstr "§e背包已满，部分物品掉在地上。"
+
+msgid "§cShop is empty"
+msgstr "§c商店暂无物品"
+
+msgid "§eItem reward(s):"
+msgstr "§e物品奖励："
+
+# 捆绑包购买成功
+msgid "§aPurchased {0} x{1}! Cost {2,number,#}, balance {3,number,#}"
+msgstr "§a成功购买 {0} x{1}！花费 {2,number,#}，余额 {3,number,#}"
+
+msgid "§aPurchased {0}x! Cost {1,number,#}, balance {2,number,#}"
+msgstr "§a成功购买 {0} 个！花费 {1,number,#}，余额 {2,number,#}"
+
+msgid "§aPurchased {0}! Cost {1,number,#}, balance {2,number,#}"
+msgstr "§a成功购买 {0}！花费 {1,number,#}，余额 {2,number,#}"
+
+msgid "§e§lClick to open the store!"
+msgstr "§e§l点击打开商店！"

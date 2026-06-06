@@ -44,3 +44,10 @@ repositories {
     maven { url = uri("https://maven.aliyun.com/repository/central/") }
     maven { url = uri("https://repo.papermc.io/repository/maven-public/") }
 }
+
+// 将 src/main/po/ 下的 .po 文件打包到 jar 的 po/ 目录（供 I18nUtil 和首次释放使用）
+tasks.processResources {
+    from(file("src/main/po")) {
+        into("po")
+    }
+}

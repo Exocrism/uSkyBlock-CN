@@ -328,9 +328,8 @@ ranks:
         reward:
           text: 1个哞菇刷怪蛋，解锁蘑菇岛生物群系
           commands:
-          - 'console: give {party} minecraft:mooshroom_spawn_egg 1'
-          commands:
-            - 'console: lp user {player} permission set usb.biome.mushroom_fields true'
+            - 'console: lp user {party} permission set usb.biome.mushroom_fields true'
+            - 'console: give {party} minecraft:mooshroom_spawn_egg 1'
           currency: 40
           xp: 40
 
@@ -2441,7 +2440,7 @@ ranks:
         type: onIsland
         radius: 10
         requiredChallenges:
-        - end_portal_frame_assembly
+        - ender_pearl_hunter
         requiredBlocks:
         - minecraft:end_portal_frame:12
         displayItem: minecraft:end_portal_frame

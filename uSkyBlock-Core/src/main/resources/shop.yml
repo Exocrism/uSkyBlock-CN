@@ -13,9 +13,10 @@ categories:
     items:
       oak_sapling:
         displayItem: minecraft:oak_sapling
-        displayName: '&f橡树树苗 x1'
+        displayName: '&f橡树树苗'
         cost: 5
-        max-buys: 64
+        max-buys: 0
+        no-price-increase: true
         required-level: 0
         items:
           - minecraft:oak_sapling:1
@@ -24,9 +25,10 @@ categories:
             - '&7购买后获得 &f1x&f橡树树苗'
       spruce_sapling:
         displayItem: minecraft:spruce_sapling
-        displayName: '&f云杉树苗 x1'
+        displayName: '&f云杉树苗'
         cost: 5
-        max-buys: 64
+        max-buys: 0
+        no-price-increase: true
         required-level: 0
         required-challenges:
           - lumberjack
@@ -37,9 +39,10 @@ categories:
             - '&7购买后获得 &f1x&f云杉树苗'
       birch_sapling:
         displayItem: minecraft:birch_sapling
-        displayName: '&f白桦树苗 x1'
+        displayName: '&f白桦树苗'
         cost: 5
-        max-buys: 64
+        max-buys: 0
+        no-price-increase: true
         required-level: 0
         required-challenges:
           - lumberjack
@@ -50,9 +53,10 @@ categories:
             - '&7购买后获得 &f1x&f白桦树苗'
       jungle_sapling:
         displayItem: minecraft:jungle_sapling
-        displayName: '&f丛林树苗 x1'
+        displayName: '&f丛林树苗'
         cost: 5
-        max-buys: 64
+        max-buys: 0
+        no-price-increase: true
         required-level: 0
         required-challenges:
           - lumberjack
@@ -63,9 +67,10 @@ categories:
             - '&7购买后获得 &f1x&f丛林树苗'
       acacia_sapling:
         displayItem: minecraft:acacia_sapling
-        displayName: '&f金合欢树苗 x1'
+        displayName: '&f金合欢树苗'
         cost: 5
-        max-buys: 64
+        max-buys: 0
+        no-price-increase: true
         required-level: 0
         required-challenges:
           - lumberjack
@@ -76,9 +81,10 @@ categories:
             - '&7购买后获得 &f1x&f金合欢树苗'
       dark_oak_sapling:
         displayItem: minecraft:dark_oak_sapling
-        displayName: '&f深色橡树树苗 x1'
+        displayName: '&f深色橡树树苗'
         cost: 5
-        max-buys: 64
+        max-buys: 0
+        no-price-increase: true
         required-level: 0
         required-challenges:
           - lumberjack
@@ -89,9 +95,10 @@ categories:
             - '&7购买后获得 &f1x&f深色橡树树苗'
       mangrove_propagule:
         displayItem: minecraft:mangrove_propagule
-        displayName: '&a红树胎生苗 x1'
+        displayName: '&a红树胎生苗'
         cost: 15
-        max-buys: 32
+        max-buys: 0
+        no-price-increase: true
         required-level: 30
         required-challenges:
           - lukewarm_ocean_biome
@@ -102,9 +109,10 @@ categories:
             - '&7购买后获得 &f1x&a红树胎生苗'
       cherry_sapling:
         displayItem: minecraft:cherry_sapling
-        displayName: '&a樱花树苗 x1'
+        displayName: '&a樱花树苗'
         cost: 20
-        max-buys: 32
+        max-buys: 0
+        no-price-increase: true
         required-level: 30
         required-challenges:
           - flower_biome
@@ -115,9 +123,10 @@ categories:
             - '&7购买后获得 &f1x&a樱花树苗'
       pale_oak_sapling:
         displayItem: minecraft:pale_oak_sapling
-        displayName: '&a苍白橡树树苗 x1'
+        displayName: '&a苍白橡树树苗'
         cost: 25
-        max-buys: 32
+        max-buys: 0
+        no-price-increase: true
         required-level: 20
         items:
           - minecraft:pale_oak_sapling:1
@@ -126,9 +135,10 @@ categories:
             - '&7购买后获得 &f1x&a苍白橡树树苗'
       dirt:
         displayItem: minecraft:dirt
-        displayName: '&f泥土 x1'
+        displayName: '&f泥土'
         cost: 1
-        max-buys: 256
+        max-buys: 0
+        no-price-increase: true
         required-level: 0
         items:
           - minecraft:dirt:1
@@ -137,9 +147,10 @@ categories:
             - '&7购买后获得 &f1x&f泥土'
       coarse_dirt:
         displayItem: minecraft:coarse_dirt
-        displayName: '&f砂土 x1'
+        displayName: '&f砂土'
         cost: 2
-        max-buys: 128
+        max-buys: 0
+        no-price-increase: true
         required-level: 5
         required-challenges:
           - cobble_gen
@@ -150,9 +161,10 @@ categories:
             - '&7购买后获得 &f1x&f砂土'
       sand:
         displayItem: minecraft:sand
-        displayName: '&f沙子 x1'
+        displayName: '&f沙子'
         cost: 2
-        max-buys: 128
+        max-buys: 0
+        no-price-increase: true
         required-level: 5
         required-challenges:
           - sugar_cane_plant
@@ -163,9 +175,10 @@ categories:
             - '&7购买后获得 &f1x&f沙子'
       red_sand:
         displayItem: minecraft:red_sand
-        displayName: '&f红沙 x1'
+        displayName: '&f红沙'
         cost: 5
-        max-buys: 128
+        max-buys: 0
+        no-price-increase: true
         required-level: 10
         items:
           - minecraft:red_sand:1
@@ -174,9 +187,10 @@ categories:
             - '&7购买后获得 &f1x&f红沙'
       gravel:
         displayItem: minecraft:gravel
-        displayName: '&f砂砾 x1'
+        displayName: '&f砂砾'
         cost: 2
-        max-buys: 128
+        max-buys: 0
+        no-price-increase: true
         required-level: 5
         required-challenges:
           - cobble_gen
@@ -187,9 +201,10 @@ categories:
             - '&7购买后获得 &f1x&f砂砾'
       clay_ball:
         displayItem: minecraft:clay_ball
-        displayName: '&f粘土球 x4'
+        displayName: '&f粘土球'
         cost: 1
-        max-buys: 256
+        max-buys: 0
+        no-price-increase: true
         required-level: 10
         required-challenges:
           - fisherman
@@ -200,9 +215,10 @@ categories:
             - '&7购买后获得 &f4x&f粘土球'
       ice:
         displayItem: minecraft:ice
-        displayName: '&a冰 x2'
+        displayName: '&a冰'
         cost: 50
-        max-buys: 16
+        max-buys: 0
+        no-price-increase: true
         required-level: 5
         required-challenges:
           - cobble_gen
@@ -213,7 +229,7 @@ categories:
             - '&7购买后获得 &f2x&a冰'
       water_bucket:
         displayItem: minecraft:water_bucket
-        displayName: '&9水桶 x1'
+        displayName: '&9水桶'
         cost: 150
         max-buys: 8
         required-level: 10
@@ -226,7 +242,7 @@ categories:
             - '&7购买后获得 &f1x&9水桶'
       lava_bucket:
         displayItem: minecraft:lava_bucket
-        displayName: '&9岩浆桶 x1'
+        displayName: '&9岩浆桶'
         cost: 400
         max-buys: 8
         required-level: 20
@@ -240,7 +256,7 @@ categories:
             - '&7购买后获得 &f1x&9岩浆桶'
       powder_snow_bucket:
         displayItem: minecraft:powder_snow_bucket
-        displayName: '&9细雪桶 x1'
+        displayName: '&9细雪桶'
         cost: 200
         max-buys: 8
         required-level: 40
@@ -259,9 +275,10 @@ categories:
     items:
       wheat_seeds:
         displayItem: minecraft:wheat_seeds
-        displayName: '&f小麦种子 x1'
+        displayName: '&f小麦种子'
         cost: 2
-        max-buys: 64
+        max-buys: 0
+        no-price-increase: true
         required-level: 5
         required-challenges:
           - wheat_farm
@@ -272,9 +289,10 @@ categories:
             - '&7购买后获得 &f1x&f小麦种子'
       carrot:
         displayItem: minecraft:carrot
-        displayName: '&f胡萝卜 x1'
+        displayName: '&f胡萝卜'
         cost: 5
-        max-buys: 64
+        max-buys: 0
+        no-price-increase: true
         required-level: 15
         required-challenges:
           - zombie_hunter
@@ -285,9 +303,10 @@ categories:
             - '&7购买后获得 &f1x&f胡萝卜'
       potato:
         displayItem: minecraft:potato
-        displayName: '&f土豆 x1'
+        displayName: '&f土豆'
         cost: 5
-        max-buys: 64
+        max-buys: 0
+        no-price-increase: true
         required-level: 15
         required-challenges:
           - monster_hunter
@@ -298,9 +317,10 @@ categories:
             - '&7购买后获得 &f1x&f土豆'
       beetroot_seeds:
         displayItem: minecraft:beetroot_seeds
-        displayName: '&f甜菜种子 x1'
+        displayName: '&f甜菜种子'
         cost: 3
-        max-buys: 64
+        max-buys: 0
+        no-price-increase: true
         required-level: 20
         required-challenges:
           - potato_farm
@@ -311,9 +331,10 @@ categories:
             - '&7购买后获得 &f1x&f甜菜种子'
       melon_seeds:
         displayItem: minecraft:melon_seeds
-        displayName: '&f西瓜种子 x1'
+        displayName: '&f西瓜种子'
         cost: 5
-        max-buys: 32
+        max-buys: 0
+        no-price-increase: true
         required-level: 10
         required-challenges:
           - melon_farm
@@ -324,9 +345,10 @@ categories:
             - '&7购买后获得 &f1x&f西瓜种子'
       pumpkin_seeds:
         displayItem: minecraft:pumpkin_seeds
-        displayName: '&f南瓜种子 x1'
+        displayName: '&f南瓜种子'
         cost: 5
-        max-buys: 32
+        max-buys: 0
+        no-price-increase: true
         required-level: 10
         required-challenges:
           - pumpkin_farm
@@ -337,9 +359,10 @@ categories:
             - '&7购买后获得 &f1x&f南瓜种子'
       sugar_cane:
         displayItem: minecraft:sugar_cane
-        displayName: '&f甘蔗 x1'
+        displayName: '&f甘蔗'
         cost: 5
-        max-buys: 64
+        max-buys: 0
+        no-price-increase: true
         required-level: 5
         required-challenges:
           - sugar_cane_plant
@@ -350,9 +373,10 @@ categories:
             - '&7购买后获得 &f1x&f甘蔗'
       bamboo:
         displayItem: minecraft:bamboo
-        displayName: '&f竹子 x1'
+        displayName: '&f竹子'
         cost: 10
-        max-buys: 64
+        max-buys: 0
+        no-price-increase: true
         required-level: 10
         required-challenges:
           - sugar_cane_harvest
@@ -363,9 +387,10 @@ categories:
             - '&7购买后获得 &f1x&f竹子'
       kelp:
         displayItem: minecraft:kelp
-        displayName: '&f海带 x1'
+        displayName: '&f海带'
         cost: 10
-        max-buys: 64
+        max-buys: 0
+        no-price-increase: true
         required-level: 10
         required-challenges:
           - sugar_cane_plant
@@ -376,9 +401,10 @@ categories:
             - '&7购买后获得 &f1x&f海带'
       cocoa_beans:
         displayItem: minecraft:cocoa_beans
-        displayName: '&f可可豆 x1'
+        displayName: '&f可可豆'
         cost: 15
-        max-buys: 32
+        max-buys: 0
+        no-price-increase: true
         required-level: 20
         items:
           - minecraft:cocoa_beans:1
@@ -387,9 +413,10 @@ categories:
             - '&7购买后获得 &f1x&f可可豆'
       sweet_berries:
         displayItem: minecraft:sweet_berries
-        displayName: '&f甜浆果 x1'
+        displayName: '&f甜浆果'
         cost: 5
-        max-buys: 32
+        max-buys: 0
+        no-price-increase: true
         required-level: 5
         items:
           - minecraft:sweet_berries:1
@@ -398,9 +425,10 @@ categories:
             - '&7购买后获得 &f1x&f甜浆果'
       glow_berries:
         displayItem: minecraft:glow_berries
-        displayName: '&a发光浆果 x1'
+        displayName: '&a发光浆果'
         cost: 15
-        max-buys: 32
+        max-buys: 0
+        no-price-increase: true
         required-level: 60
         required-challenges:
           - lush_caves_biome
@@ -411,9 +439,10 @@ categories:
             - '&7购买后获得 &f1x&a发光浆果'
       torchflower_seeds:
         displayItem: minecraft:torchflower_seeds
-        displayName: '&a火把花种子 x1'
+        displayName: '&a火把花种子'
         cost: 20
-        max-buys: 32
+        max-buys: 0
+        no-price-increase: true
         required-level: 30
         required-challenges:
           - flower_biome
@@ -424,9 +453,10 @@ categories:
             - '&7购买后获得 &f1x&a火把花种子'
       pitcher_pod:
         displayItem: minecraft:pitcher_pod
-        displayName: '&a瓶子草荚果 x1'
+        displayName: '&a瓶子草荚果'
         cost: 20
-        max-buys: 32
+        max-buys: 0
+        no-price-increase: true
         required-level: 30
         required-challenges:
           - flower_biome
@@ -443,9 +473,10 @@ categories:
     items:
       coal:
         displayItem: minecraft:coal
-        displayName: '&f煤炭 x1'
+        displayName: '&f煤炭'
         cost: 5
-        max-buys: 128
+        max-buys: 0
+        no-price-increase: true
         required-level: 5
         required-challenges:
           - furnace_basics
@@ -456,9 +487,10 @@ categories:
             - '&7购买后获得 &f1x&f煤炭'
       raw_iron:
         displayItem: minecraft:raw_iron
-        displayName: '&f粗铁 x1'
+        displayName: '&f粗铁'
         cost: 15
-        max-buys: 64
+        max-buys: 0
+        no-price-increase: true
         required-level: 10
         required-challenges:
           - furnace_basics
@@ -469,9 +501,10 @@ categories:
             - '&7购买后获得 &f1x&f粗铁'
       raw_copper:
         displayItem: minecraft:raw_copper
-        displayName: '&f粗铜 x1'
+        displayName: '&f粗铜'
         cost: 10
-        max-buys: 64
+        max-buys: 0
+        no-price-increase: true
         required-level: 10
         required-challenges:
           - furnace_basics
@@ -482,9 +515,10 @@ categories:
             - '&7购买后获得 &f1x&f粗铜'
       raw_gold:
         displayItem: minecraft:raw_gold
-        displayName: '&f粗金 x1'
+        displayName: '&f粗金'
         cost: 20
-        max-buys: 64
+        max-buys: 0
+        no-price-increase: true
         required-level: 20
         required-challenges:
           - workstation
@@ -495,9 +529,10 @@ categories:
             - '&7购买后获得 &f1x&f粗金'
       iron_ingot:
         displayItem: minecraft:iron_ingot
-        displayName: '&f铁锭 x1'
+        displayName: '&f铁锭'
         cost: 25
-        max-buys: 64
+        max-buys: 0
+        no-price-increase: true
         required-level: 15
         required-challenges:
           - iron_smelting
@@ -508,9 +543,10 @@ categories:
             - '&7购买后获得 &f1x&f铁锭'
       copper_ingot:
         displayItem: minecraft:copper_ingot
-        displayName: '&f铜锭 x1'
+        displayName: '&f铜锭'
         cost: 15
-        max-buys: 64
+        max-buys: 0
+        no-price-increase: true
         required-level: 10
         required-challenges:
           - furnace_basics
@@ -521,9 +557,10 @@ categories:
             - '&7购买后获得 &f1x&f铜锭'
       gold_ingot:
         displayItem: minecraft:gold_ingot
-        displayName: '&f金锭 x1'
+        displayName: '&f金锭'
         cost: 35
-        max-buys: 64
+        max-buys: 0
+        no-price-increase: true
         required-level: 25
         required-challenges:
           - shiny
@@ -534,9 +571,10 @@ categories:
             - '&7购买后获得 &f1x&f金锭'
       lapis_lazuli:
         displayItem: minecraft:lapis_lazuli
-        displayName: '&a青金石 x1'
+        displayName: '&a青金石'
         cost: 15
-        max-buys: 64
+        max-buys: 0
+        no-price-increase: true
         required-level: 15
         required-challenges:
           - skeleton_archer
@@ -547,9 +585,10 @@ categories:
             - '&7购买后获得 &f1x&a青金石'
       redstone:
         displayItem: minecraft:redstone
-        displayName: '&a红石粉 x1'
+        displayName: '&a红石粉'
         cost: 15
-        max-buys: 64
+        max-buys: 0
+        no-price-increase: true
         required-level: 15
         required-challenges:
           - monster_hunter
@@ -560,7 +599,7 @@ categories:
             - '&7购买后获得 &f1x&a红石粉'
       diamond:
         displayItem: minecraft:diamond
-        displayName: '&b钻石 x1'
+        displayName: '&b钻石'
         cost: 150
         max-buys: 32
         required-level: 30
@@ -573,7 +612,7 @@ categories:
             - '&7购买后获得 &f1x&b钻石'
       emerald:
         displayItem: minecraft:emerald
-        displayName: '&b绿宝石 x1'
+        displayName: '&b绿宝石'
         cost: 120
         max-buys: 32
         required-level: 40
@@ -586,9 +625,10 @@ categories:
             - '&7购买后获得 &f1x&b绿宝石'
       quartz:
         displayItem: minecraft:quartz
-        displayName: '&f下界石英 x1'
+        displayName: '&f下界石英'
         cost: 20
-        max-buys: 64
+        max-buys: 0
+        no-price-increase: true
         required-level: 30
         required-challenges:
           - nether_entry
@@ -599,9 +639,10 @@ categories:
             - '&7购买后获得 &f1x&f下界石英'
       amethyst_shard:
         displayItem: minecraft:amethyst_shard
-        displayName: '&a紫水晶碎片 x1'
+        displayName: '&a紫水晶碎片'
         cost: 30
-        max-buys: 64
+        max-buys: 0
+        no-price-increase: true
         required-level: 20
         required-challenges:
           - island_level_30
@@ -612,7 +653,7 @@ categories:
             - '&7购买后获得 &f1x&a紫水晶碎片'
       ancient_debris:
         displayItem: minecraft:ancient_debris
-        displayName: '&5远古残骸 x1'
+        displayName: '&5远古残骸'
         cost: 500
         max-buys: 16
         required-level: 80
@@ -625,7 +666,7 @@ categories:
             - '&7购买后获得 &f1x&5远古残骸'
       netherite_scrap:
         displayItem: minecraft:netherite_scrap
-        displayName: '&5下界合金碎片 x1'
+        displayName: '&5下界合金碎片'
         cost: 800
         max-buys: 8
         required-level: 100
@@ -638,7 +679,7 @@ categories:
             - '&7购买后获得 &f1x&5下界合金碎片'
       netherite_ingot:
         displayItem: minecraft:netherite_ingot
-        displayName: '&5下界合金锭 x1'
+        displayName: '&5下界合金锭'
         cost: 3500
         max-buys: 4
         required-level: 110
@@ -657,9 +698,10 @@ categories:
     items:
       nether_wart:
         displayItem: minecraft:nether_wart
-        displayName: '&a地狱疣 x1'
+        displayName: '&a地狱疣'
         cost: 50
-        max-buys: 32
+        max-buys: 0
+        no-price-increase: true
         required-level: 30
         required-challenges:
           - soul_sand_platform
@@ -670,7 +712,7 @@ categories:
             - '&7购买后获得 &f1x&a地狱疣'
       blaze_rod:
         displayItem: minecraft:blaze_rod
-        displayName: '&9烈焰棒 x1'
+        displayName: '&9烈焰棒'
         cost: 150
         max-buys: 32
         required-level: 50
@@ -683,9 +725,10 @@ categories:
             - '&7购买后获得 &f1x&9烈焰棒'
       magma_cream:
         displayItem: minecraft:magma_cream
-        displayName: '&a岩浆膏 x1'
+        displayName: '&a岩浆膏'
         cost: 80
-        max-buys: 32
+        max-buys: 0
+        no-price-increase: true
         required-level: 35
         required-challenges:
           - hell_slime
@@ -696,7 +739,7 @@ categories:
             - '&7购买后获得 &f1x&a岩浆膏'
       ghast_tear:
         displayItem: minecraft:ghast_tear
-        displayName: '&9恶魂之泪 x1'
+        displayName: '&9恶魂之泪'
         cost: 250
         max-buys: 16
         required-level: 60
@@ -709,7 +752,7 @@ categories:
             - '&7购买后获得 &f1x&9恶魂之泪'
       wither_skeleton_skull:
         displayItem: minecraft:wither_skeleton_skull
-        displayName: '&5凋零骷髅头颅 x1'
+        displayName: '&5凋零骷髅头颅'
         cost: 1500
         max-buys: 2
         required-level: 100
@@ -722,7 +765,7 @@ categories:
             - '&7购买后获得 &f1x&5凋零骷髅头颅'
       ender_pearl:
         displayItem: minecraft:ender_pearl
-        displayName: '&9末影珍珠 x1'
+        displayName: '&9末影珍珠'
         cost: 100
         max-buys: 32
         required-level: 40
@@ -735,7 +778,7 @@ categories:
             - '&7购买后获得 &f1x&9末影珍珠'
       phantom_membrane:
         displayItem: minecraft:phantom_membrane
-        displayName: '&a幻翼膜 x1'
+        displayName: '&a幻翼膜'
         cost: 100
         max-buys: 16
         required-level: 25
@@ -748,7 +791,7 @@ categories:
             - '&7购买后获得 &f1x&a幻翼膜'
       shulker_shell:
         displayItem: minecraft:shulker_shell
-        displayName: '&5潜影壳 x1'
+        displayName: '&5潜影壳'
         cost: 500
         max-buys: 16
         required-level: 120
@@ -761,7 +804,7 @@ categories:
             - '&7购买后获得 &f1x&5潜影壳'
       nether_star:
         displayItem: minecraft:nether_star
-        displayName: '&5下界之星 x1'
+        displayName: '&5下界之星'
         cost: 8000
         max-buys: 2
         required-level: 130
@@ -774,7 +817,7 @@ categories:
             - '&7购买后获得 &f1x&5下界之星'
       breeze_rod:
         displayItem: minecraft:breeze_rod
-        displayName: '&9旋风棒 x1'
+        displayName: '&9旋风棒'
         cost: 180
         max-buys: 32
         required-level: 80
@@ -785,11 +828,24 @@ categories:
         bundle:
           description:
             - '&7购买后获得 &f1x&9旋风棒'
+      netherite_upgrade:
+        displayItem: minecraft:netherite_upgrade_smithing_template
+        displayName: '&5下届合金升级'
+        cost: 5000
+        max-buys: 1
+        required-level: 110
+        required-challenges:
+          - beacon_3
+        bundle:
+          description:
+            - '&7购买后获得 &f1个&5下届合金升级锻造模板'
+            - '&7用于将钻石装备升级为下界合金装备'
       slime_ball:
         displayItem: minecraft:slime_ball
-        displayName: '&f粘液球 x1'
+        displayName: '&f粘液球'
         cost: 30
-        max-buys: 32
+        max-buys: 0
+        no-price-increase: true
         required-level: 25
         required-challenges:
           - hell_slime
@@ -800,9 +856,10 @@ categories:
             - '&7购买后获得 &f1x&f粘液球'
       spider_eye:
         displayItem: minecraft:spider_eye
-        displayName: '&f蜘蛛眼 x1'
+        displayName: '&f蜘蛛眼'
         cost: 20
-        max-buys: 32
+        max-buys: 0
+        no-price-increase: true
         required-level: 10
         required-challenges:
           - monster_hunter
@@ -813,9 +870,10 @@ categories:
             - '&7购买后获得 &f1x&f蜘蛛眼'
       gunpowder:
         displayItem: minecraft:gunpowder
-        displayName: '&f火药 x1'
+        displayName: '&f火药'
         cost: 25
-        max-buys: 64
+        max-buys: 0
+        no-price-increase: true
         required-level: 15
         required-challenges:
           - demolitionist
@@ -826,9 +884,10 @@ categories:
             - '&7购买后获得 &f1x&f火药'
       bone:
         displayItem: minecraft:bone
-        displayName: '&f骨头 x1'
+        displayName: '&f骨头'
         cost: 10
-        max-buys: 64
+        max-buys: 0
+        no-price-increase: true
         required-level: 5
         required-challenges:
           - monster_hunter
@@ -839,9 +898,10 @@ categories:
             - '&7购买后获得 &f1x&f骨头'
       rotten_flesh:
         displayItem: minecraft:rotten_flesh
-        displayName: '&f腐肉 x1'
+        displayName: '&f腐肉'
         cost: 5
-        max-buys: 64
+        max-buys: 0
+        no-price-increase: true
         required-level: 5
         required-challenges:
           - monster_hunter
@@ -852,9 +912,10 @@ categories:
             - '&7购买后获得 &f1x&f腐肉'
       string:
         displayItem: minecraft:string
-        displayName: '&f线 x1'
+        displayName: '&f线'
         cost: 10
-        max-buys: 64
+        max-buys: 0
+        no-price-increase: true
         required-level: 10
         required-challenges:
           - web_collector
@@ -865,9 +926,10 @@ categories:
             - '&7购买后获得 &f1x&f线'
       leather:
         displayItem: minecraft:leather
-        displayName: '&f皮革 x1'
+        displayName: '&f皮革'
         cost: 15
-        max-buys: 32
+        max-buys: 0
+        no-price-increase: true
         required-level: 10
         required-challenges:
           - leather_collector
@@ -884,7 +946,7 @@ categories:
     items:
       mycelium:
         displayItem: minecraft:mycelium
-        displayName: '&5菌丝 x1'
+        displayName: '&5菌丝'
         cost: 250
         max-buys: 16
         required-level: 30
@@ -897,7 +959,7 @@ categories:
             - '&7购买后获得 &f1x&5菌丝'
       podzol:
         displayItem: minecraft:podzol
-        displayName: '&5灰化土 x1'
+        displayName: '&5灰化土'
         cost: 180
         max-buys: 16
         required-level: 30
@@ -910,7 +972,7 @@ categories:
             - '&7购买后获得 &f1x&5灰化土'
       packed_ice:
         displayItem: minecraft:packed_ice
-        displayName: '&a浮冰 x1'
+        displayName: '&a浮冰'
         cost: 120
         max-buys: 32
         required-level: 40
@@ -923,7 +985,7 @@ categories:
             - '&7购买后获得 &f1x&a浮冰'
       blue_ice:
         displayItem: minecraft:blue_ice
-        displayName: '&9蓝冰 x1'
+        displayName: '&9蓝冰'
         cost: 250
         max-buys: 16
         required-level: 60
@@ -936,7 +998,7 @@ categories:
             - '&7购买后获得 &f1x&9蓝冰'
       moss_block:
         displayItem: minecraft:moss_block
-        displayName: '&a苔藓块 x1'
+        displayName: '&a苔藓块'
         cost: 200
         max-buys: 16
         required-level: 60
@@ -949,7 +1011,7 @@ categories:
             - '&7购买后获得 &f1x&a苔藓块'
       rooted_dirt:
         displayItem: minecraft:rooted_dirt
-        displayName: '&a缠根泥土 x1'
+        displayName: '&a缠根泥土'
         cost: 100
         max-buys: 32
         required-level: 50
@@ -962,7 +1024,7 @@ categories:
             - '&7购买后获得 &f1x&a缠根泥土'
       mud:
         displayItem: minecraft:mud
-        displayName: '&f泥巴 x1'
+        displayName: '&f泥巴'
         cost: 60
         max-buys: 32
         required-level: 10
@@ -975,7 +1037,7 @@ categories:
             - '&7购买后获得 &f1x&f泥巴'
       mud_bricks:
         displayItem: minecraft:mud_bricks
-        displayName: '&f泥砖 x1'
+        displayName: '&f泥砖'
         cost: 80
         max-buys: 32
         required-level: 10
@@ -988,7 +1050,7 @@ categories:
             - '&7购买后获得 &f1x&f泥砖'
       packed_mud:
         displayItem: minecraft:packed_mud
-        displayName: '&f泥坯 x1'
+        displayName: '&f泥坯'
         cost: 70
         max-buys: 32
         required-level: 10
@@ -1001,7 +1063,7 @@ categories:
             - '&7购买后获得 &f1x&f泥坯'
       soul_sand:
         displayItem: minecraft:soul_sand
-        displayName: '&a灵魂沙 x1'
+        displayName: '&a灵魂沙'
         cost: 50
         max-buys: 64
         required-level: 40
@@ -1014,7 +1076,7 @@ categories:
             - '&7购买后获得 &f1x&a灵魂沙'
       soul_soil:
         displayItem: minecraft:soul_soil
-        displayName: '&a灵魂土 x1'
+        displayName: '&a灵魂土'
         cost: 60
         max-buys: 64
         required-level: 40
@@ -1027,7 +1089,7 @@ categories:
             - '&7购买后获得 &f1x&a灵魂土'
       glowstone:
         displayItem: minecraft:glowstone
-        displayName: '&a荧石 x1'
+        displayName: '&a荧石'
         cost: 60
         max-buys: 32
         required-level: 40
@@ -1040,7 +1102,7 @@ categories:
             - '&7购买后获得 &f1x&a荧石'
       crying_obsidian:
         displayItem: minecraft:crying_obsidian
-        displayName: '&5哭泣的黑曜石 x1'
+        displayName: '&5哭泣的黑曜石'
         cost: 200
         max-buys: 16
         required-level: 70
@@ -1053,7 +1115,7 @@ categories:
             - '&7购买后获得 &f1x&5哭泣的黑曜石'
       obsidian:
         displayItem: minecraft:obsidian
-        displayName: '&5黑曜石 x1'
+        displayName: '&5黑曜石'
         cost: 120
         max-buys: 32
         required-level: 30
@@ -1066,7 +1128,7 @@ categories:
             - '&7购买后获得 &f1x&5黑曜石'
       tuff:
         displayItem: minecraft:tuff
-        displayName: '&f凝灰岩 x1'
+        displayName: '&f凝灰岩'
         cost: 5
         max-buys: 128
         required-level: 15
@@ -1079,7 +1141,7 @@ categories:
             - '&7购买后获得 &f1x&f凝灰岩'
       calcite:
         displayItem: minecraft:calcite
-        displayName: '&f方解石 x1'
+        displayName: '&f方解石'
         cost: 10
         max-buys: 64
         required-level: 15
@@ -1092,7 +1154,7 @@ categories:
             - '&7购买后获得 &f1x&f方解石'
       dripstone_block:
         displayItem: minecraft:dripstone_block
-        displayName: '&f滴水石块 x1'
+        displayName: '&f滴水石块'
         cost: 15
         max-buys: 64
         required-level: 40
@@ -1111,7 +1173,7 @@ categories:
     items:
       spawner:
         displayItem: minecraft:spawner
-        displayName: '&5刷怪笼 x1'
+        displayName: '&5刷怪笼'
         cost: 5000
         max-buys: 2
         required-level: 130
@@ -1125,7 +1187,7 @@ categories:
       # 被动生物蛋
       chicken_spawn_egg:
         displayItem: minecraft:chicken_spawn_egg
-        displayName: '&f鸡刷怪蛋 x1'
+        displayName: '&f鸡刷怪蛋'
         cost: 200
         max-buys: 8
         required-level: 10
@@ -1138,7 +1200,7 @@ categories:
             - '&7购买后获得 &f1x&f鸡刷怪蛋'
       cow_spawn_egg:
         displayItem: minecraft:cow_spawn_egg
-        displayName: '&f牛刷怪蛋 x1'
+        displayName: '&f牛刷怪蛋'
         cost: 200
         max-buys: 8
         required-level: 15
@@ -1151,7 +1213,7 @@ categories:
             - '&7购买后获得 &f1x&f牛刷怪蛋'
       pig_spawn_egg:
         displayItem: minecraft:pig_spawn_egg
-        displayName: '&f猪刷怪蛋 x1'
+        displayName: '&f猪刷怪蛋'
         cost: 200
         max-buys: 8
         required-level: 10
@@ -1164,7 +1226,7 @@ categories:
             - '&7购买后获得 &f1x&f猪刷怪蛋'
       sheep_spawn_egg:
         displayItem: minecraft:sheep_spawn_egg
-        displayName: '&f羊刷怪蛋 x1'
+        displayName: '&f羊刷怪蛋'
         cost: 200
         max-buys: 8
         required-level: 15
@@ -1177,7 +1239,7 @@ categories:
             - '&7购买后获得 &f1x&f羊刷怪蛋'
       rabbit_spawn_egg:
         displayItem: minecraft:rabbit_spawn_egg
-        displayName: '&f兔子刷怪蛋 x1'
+        displayName: '&f兔子刷怪蛋'
         cost: 200
         max-buys: 8
         required-level: 20
@@ -1190,7 +1252,7 @@ categories:
             - '&7购买后获得 &f1x&f兔子刷怪蛋'
       horse_spawn_egg:
         displayItem: minecraft:horse_spawn_egg
-        displayName: '&a马刷怪蛋 x1'
+        displayName: '&a马刷怪蛋'
         cost: 500
         max-buys: 4
         required-level: 40
@@ -1203,7 +1265,7 @@ categories:
             - '&7购买后获得 &f1x&a马刷怪蛋'
       donkey_spawn_egg:
         displayItem: minecraft:donkey_spawn_egg
-        displayName: '&a驴刷怪蛋 x1'
+        displayName: '&a驴刷怪蛋'
         cost: 500
         max-buys: 4
         required-level: 40
@@ -1216,7 +1278,7 @@ categories:
             - '&7购买后获得 &f1x&a驴刷怪蛋'
       mule_spawn_egg:
         displayItem: minecraft:mule_spawn_egg
-        displayName: '&a骡刷怪蛋 x1'
+        displayName: '&a骡刷怪蛋'
         cost: 600
         max-buys: 4
         required-level: 50
@@ -1229,7 +1291,7 @@ categories:
             - '&7购买后获得 &f1x&a骡刷怪蛋'
       llama_spawn_egg:
         displayItem: minecraft:llama_spawn_egg
-        displayName: '&a羊驼刷怪蛋 x1'
+        displayName: '&a羊驼刷怪蛋'
         cost: 500
         max-buys: 4
         required-level: 40
@@ -1242,7 +1304,7 @@ categories:
             - '&7购买后获得 &f1x&a羊驼刷怪蛋'
       cat_spawn_egg:
         displayItem: minecraft:cat_spawn_egg
-        displayName: '&a猫刷怪蛋 x1'
+        displayName: '&a猫刷怪蛋'
         cost: 400
         max-buys: 4
         required-level: 30
@@ -1255,7 +1317,7 @@ categories:
             - '&7购买后获得 &f1x&a猫刷怪蛋'
       wolf_spawn_egg:
         displayItem: minecraft:wolf_spawn_egg
-        displayName: '&a狼刷怪蛋 x1'
+        displayName: '&a狼刷怪蛋'
         cost: 400
         max-buys: 4
         required-level: 25
@@ -1268,7 +1330,7 @@ categories:
             - '&7购买后获得 &f1x&a狼刷怪蛋'
       fox_spawn_egg:
         displayItem: minecraft:fox_spawn_egg
-        displayName: '&a狐狸刷怪蛋 x1'
+        displayName: '&a狐狸刷怪蛋'
         cost: 500
         max-buys: 4
         required-level: 40
@@ -1281,7 +1343,7 @@ categories:
             - '&7购买后获得 &f1x&a狐狸刷怪蛋'
       axolotl_spawn_egg:
         displayItem: minecraft:axolotl_spawn_egg
-        displayName: '&9美西螈刷怪蛋 x1'
+        displayName: '&9美西螈刷怪蛋'
         cost: 600
         max-buys: 4
         required-level: 60
@@ -1294,7 +1356,7 @@ categories:
             - '&7购买后获得 &f1x&9美西螈刷怪蛋'
       frog_spawn_egg:
         displayItem: minecraft:frog_spawn_egg
-        displayName: '&a青蛙刷怪蛋 x1'
+        displayName: '&a青蛙刷怪蛋'
         cost: 400
         max-buys: 4
         required-level: 40
@@ -1307,7 +1369,7 @@ categories:
             - '&7购买后获得 &f1x&a青蛙刷怪蛋'
       turtle_spawn_egg:
         displayItem: minecraft:turtle_spawn_egg
-        displayName: '&a海龟刷怪蛋 x1'
+        displayName: '&a海龟刷怪蛋'
         cost: 500
         max-buys: 4
         required-level: 50
@@ -1320,7 +1382,7 @@ categories:
             - '&7购买后获得 &f1x&a海龟刷怪蛋'
       villager_spawn_egg:
         displayItem: minecraft:villager_spawn_egg
-        displayName: '&9村民刷怪蛋 x1'
+        displayName: '&9村民刷怪蛋'
         cost: 1000
         max-buys: 4
         required-level: 50
@@ -1334,7 +1396,7 @@ categories:
             - '&7购买后获得 &f1x&9村民刷怪蛋'
       bee_spawn_egg:
         displayItem: minecraft:bee_spawn_egg
-        displayName: '&a蜜蜂刷怪蛋 x1'
+        displayName: '&a蜜蜂刷怪蛋'
         cost: 400
         max-buys: 4
         required-level: 30
@@ -1347,7 +1409,7 @@ categories:
             - '&7购买后获得 &f1x&a蜜蜂刷怪蛋'
       goat_spawn_egg:
         displayItem: minecraft:goat_spawn_egg
-        displayName: '&a山羊刷怪蛋 x1'
+        displayName: '&a山羊刷怪蛋'
         cost: 600
         max-buys: 4
         required-level: 60
@@ -1360,7 +1422,7 @@ categories:
             - '&7购买后获得 &f1x&a山羊刷怪蛋'
       mooshroom_spawn_egg:
         displayItem: minecraft:mooshroom_spawn_egg
-        displayName: '&9哞菇刷怪蛋 x1'
+        displayName: '&9哞菇刷怪蛋'
         cost: 800
         max-buys: 4
         required-level: 50
@@ -1373,7 +1435,7 @@ categories:
             - '&7购买后获得 &f1x&9哞菇刷怪蛋'
       polar_bear_spawn_egg:
         displayItem: minecraft:polar_bear_spawn_egg
-        displayName: '&9北极熊刷怪蛋 x1'
+        displayName: '&9北极熊刷怪蛋'
         cost: 800
         max-buys: 4
         required-level: 50
@@ -1386,7 +1448,7 @@ categories:
             - '&7购买后获得 &f1x&9北极熊刷怪蛋'
       armadillo_spawn_egg:
         displayItem: minecraft:armadillo_spawn_egg
-        displayName: '&a犰狳刷怪蛋 x1'
+        displayName: '&a犰狳刷怪蛋'
         cost: 500
         max-buys: 4
         required-level: 40
@@ -1400,7 +1462,7 @@ categories:
       # 敌对生物蛋
       zombie_spawn_egg:
         displayItem: minecraft:zombie_spawn_egg
-        displayName: '&a僵尸刷怪蛋 x1'
+        displayName: '&a僵尸刷怪蛋'
         cost: 400
         max-buys: 8
         required-level: 20
@@ -1413,7 +1475,7 @@ categories:
             - '&7购买后获得 &f1x&a僵尸刷怪蛋'
       skeleton_spawn_egg:
         displayItem: minecraft:skeleton_spawn_egg
-        displayName: '&a骷髅刷怪蛋 x1'
+        displayName: '&a骷髅刷怪蛋'
         cost: 400
         max-buys: 8
         required-level: 25
@@ -1426,7 +1488,7 @@ categories:
             - '&7购买后获得 &f1x&a骷髅刷怪蛋'
       spider_spawn_egg:
         displayItem: minecraft:spider_spawn_egg
-        displayName: '&a蜘蛛刷怪蛋 x1'
+        displayName: '&a蜘蛛刷怪蛋'
         cost: 350
         max-buys: 8
         required-level: 15
@@ -1439,7 +1501,7 @@ categories:
             - '&7购买后获得 &f1x&a蜘蛛刷怪蛋'
       cave_spider_spawn_egg:
         displayItem: minecraft:cave_spider_spawn_egg
-        displayName: '&a洞穴蜘蛛刷怪蛋 x1'
+        displayName: '&a洞穴蜘蛛刷怪蛋'
         cost: 350
         max-buys: 8
         required-level: 20
@@ -1452,7 +1514,7 @@ categories:
             - '&7购买后获得 &f1x&a洞穴蜘蛛刷怪蛋'
       creeper_spawn_egg:
         displayItem: minecraft:creeper_spawn_egg
-        displayName: '&9苦力怕刷怪蛋 x1'
+        displayName: '&9苦力怕刷怪蛋'
         cost: 800
         max-buys: 4
         required-level: 40
@@ -1465,7 +1527,7 @@ categories:
             - '&7购买后获得 &f1x&9苦力怕刷怪蛋'
       enderman_spawn_egg:
         displayItem: minecraft:enderman_spawn_egg
-        displayName: '&5末影人刷怪蛋 x1'
+        displayName: '&5末影人刷怪蛋'
         cost: 1200
         max-buys: 4
         required-level: 70
@@ -1478,7 +1540,7 @@ categories:
             - '&7购买后获得 &f1x&5末影人刷怪蛋'
       blaze_spawn_egg:
         displayItem: minecraft:blaze_spawn_egg
-        displayName: '&9烈焰人刷怪蛋 x1'
+        displayName: '&9烈焰人刷怪蛋'
         cost: 1500
         max-buys: 4
         required-level: 80
@@ -1491,7 +1553,7 @@ categories:
             - '&7购买后获得 &f1x&9烈焰人刷怪蛋'
       wither_skeleton_spawn_egg:
         displayItem: minecraft:wither_skeleton_spawn_egg
-        displayName: '&5凋零骷髅刷怪蛋 x1'
+        displayName: '&5凋零骷髅刷怪蛋'
         cost: 2500
         max-buys: 2
         required-level: 110
@@ -1504,7 +1566,7 @@ categories:
             - '&7购买后获得 &f1x&5凋零骷髅刷怪蛋'
       witch_spawn_egg:
         displayItem: minecraft:witch_spawn_egg
-        displayName: '&9女巫刷怪蛋 x1'
+        displayName: '&9女巫刷怪蛋'
         cost: 1000
         max-buys: 4
         required-level: 60
@@ -1517,7 +1579,7 @@ categories:
             - '&7购买后获得 &f1x&9女巫刷怪蛋'
       guardian_spawn_egg:
         displayItem: minecraft:guardian_spawn_egg
-        displayName: '&9守卫者刷怪蛋 x1'
+        displayName: '&9守卫者刷怪蛋'
         cost: 1200
         max-buys: 4
         required-level: 70
@@ -1530,7 +1592,7 @@ categories:
             - '&7购买后获得 &f1x&9守卫者刷怪蛋'
       elder_guardian_spawn_egg:
         displayItem: minecraft:elder_guardian_spawn_egg
-        displayName: '&5远古守卫者刷怪蛋 x1'
+        displayName: '&5远古守卫者刷怪蛋'
         cost: 3000
         max-buys: 2
         required-level: 120
@@ -1543,7 +1605,7 @@ categories:
             - '&7购买后获得 &f1x&5远古守卫者刷怪蛋'
       shulker_spawn_egg:
         displayItem: minecraft:shulker_spawn_egg
-        displayName: '&5潜影贝刷怪蛋 x1'
+        displayName: '&5潜影贝刷怪蛋'
         cost: 4000
         max-buys: 2
         required-level: 130
@@ -1556,7 +1618,7 @@ categories:
             - '&7购买后获得 &f1x&5潜影贝刷怪蛋'
       hoglin_spawn_egg:
         displayItem: minecraft:hoglin_spawn_egg
-        displayName: '&a疣猪兽刷怪蛋 x1'
+        displayName: '&a疣猪兽刷怪蛋'
         cost: 600
         max-buys: 4
         required-level: 50
@@ -1569,7 +1631,7 @@ categories:
             - '&7购买后获得 &f1x&a疣猪兽刷怪蛋'
       piglin_spawn_egg:
         displayItem: minecraft:piglin_spawn_egg
-        displayName: '&a猪灵刷怪蛋 x1'
+        displayName: '&a猪灵刷怪蛋'
         cost: 600
         max-buys: 4
         required-level: 50
@@ -1582,7 +1644,7 @@ categories:
             - '&7购买后获得 &f1x&a猪灵刷怪蛋'
       piglin_brute_spawn_egg:
         displayItem: minecraft:piglin_brute_spawn_egg
-        displayName: '&9猪灵蛮兵刷怪蛋 x1'
+        displayName: '&9猪灵蛮兵刷怪蛋'
         cost: 1500
         max-buys: 2
         required-level: 100
@@ -1595,7 +1657,7 @@ categories:
             - '&7购买后获得 &f1x&9猪灵蛮兵刷怪蛋'
       zoglin_spawn_egg:
         displayItem: minecraft:zoglin_spawn_egg
-        displayName: '&9僵尸疣猪兽刷怪蛋 x1'
+        displayName: '&9僵尸疣猪兽刷怪蛋'
         cost: 800
         max-buys: 4
         required-level: 60
@@ -1608,7 +1670,7 @@ categories:
             - '&7购买后获得 &f1x&9僵尸疣猪兽刷怪蛋'
       breeze_spawn_egg:
         displayItem: minecraft:breeze_spawn_egg
-        displayName: '&9旋风人刷怪蛋 x1'
+        displayName: '&9旋风人刷怪蛋'
         cost: 1800
         max-buys: 4
         required-level: 90
@@ -1621,7 +1683,7 @@ categories:
             - '&7购买后获得 &f1x&9旋风人刷怪蛋'
       bogged_spawn_egg:
         displayItem: minecraft:bogged_spawn_egg
-        displayName: '&a泥泞骷髅刷怪蛋 x1'
+        displayName: '&a泥泞骷髅刷怪蛋'
         cost: 500
         max-buys: 4
         required-level: 40
@@ -1705,3 +1767,16 @@ categories:
             - '&7可设置多个传送点'
         commands:
           - 'console: lp user {player} permission set essentials.sethome.multiple.unlimited'
+      hopper_limit:
+        displayItem: minecraft:hopper
+        displayName: '&6漏斗放置上限 +1'
+        cost: 0
+        custom-pricing: true
+        max-buys: 0
+        required-level: 10
+        required-challenges:
+          - furnace_basics
+        bundle:
+          description:
+            - '&7购买后增加 &f1&7个漏斗放置上限'
+            - '&7价格 = 当前上限 × 5'

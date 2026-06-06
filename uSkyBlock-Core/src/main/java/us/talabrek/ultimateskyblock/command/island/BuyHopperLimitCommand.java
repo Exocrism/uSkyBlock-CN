@@ -26,32 +26,38 @@ public class BuyHopperLimitCommand extends RequireIslandCommand {
     protected boolean doExecute(String alias, Player player, PlayerInfo pi, IslandInfo island, Map<String, Object> data, String... args) {
         us.talabrek.ultimateskyblock.api.IslandInfo islandInfo = uSkyBlock.getInstance().getIslandInfo(player);
         int curlimit = islandInfo.getHopperLimit();
+        boolean silent = args.length > 1 && "silent".equals(args[1]);
+        final Player targetPlayer = player; // lambda 引用需要 final
+
         if (args.length > 0 && args[0].equals("buy")) {
             int price = calcPrice(curlimit);
             uSkyBlock.getInstance().getHookManager().getEconomyHook().ifPresent((hook) -> {
                 boolean success;
-                String result = hook.withdrawPlayer(player, price);
+                String result = hook.withdrawPlayer(targetPlayer, price);
                 success = result == null;
                 if (success) {
                     islandInfo.setHopperLimit(curlimit + 1);
-                    player.sendMessage("\u00a7a\u00a7l" + tr("Buy Extra Hopper Success!"));
-                    player.sendMessage("\u00a77" + tr("======================"));
-                } else {
-                    player.sendMessage("\u00a7c\u00a7l" + tr("Buy Extra Hopper Failed!"));
-                    if (hook.getBalance(player) < price) {
-                        player.sendMessage("\u00a7d" + tr("You do not have enough money!"));
-                        player.sendMessage("\u00a7d" + tr("You have {0}", hook.getBalance(player)));
+                    if (!silent) {
+                        targetPlayer.sendMessage("\u00a7a\u00a7l" + tr("Buy Extra Hopper Success!"));
+                        targetPlayer.sendMessage("\u00a77" + tr("======================"));
                     }
-                    player.sendMessage("\u00a7c" + tr("{0}", result));
+                } else {
+                    targetPlayer.sendMessage("\u00a7c\u00a7l" + tr("Buy Extra Hopper Failed!"));
+                    if (hook.getBalance(targetPlayer) < price) {
+                        targetPlayer.sendMessage("\u00a7d" + tr("You do not have enough money!"));
+                        targetPlayer.sendMessage("\u00a7d" + tr("You have {0}", hook.getBalance(targetPlayer)));
+                    }
+                    targetPlayer.sendMessage("\u00a7c" + tr("{0}", result));
                 }
             });
+            if (silent) return true; // 商店调用：静默执行，跳过交互提示
         } else {
-            player.sendMessage("\u00a7b\u00a7l" + tr("Buy Extra Hopper Limit"));
-            player.sendMessage("\u00a77" + tr("======================"));
+            targetPlayer.sendMessage("\u00a7b\u00a7l" + tr("Buy Extra Hopper Limit"));
+            targetPlayer.sendMessage("\u00a77" + tr("======================"));
         }
-        player.sendMessage("\u00a7b" + tr("Current Extra Limit is {0}", islandInfo.getHopperLimit()));
-        player.sendMessage("\u00a7b" + tr("Price to buy another hopper limit is {0}", calcPrice(islandInfo.getHopperLimit())));
-        plugin.execCommand(player, "console:tellraw " + player.getName() + " [{\"text\":\"" + tr("click to buy hopper") + "\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"/is hopper buy\"}}]", false);
+        targetPlayer.sendMessage("\u00a7b" + tr("Current Extra Limit is {0}", islandInfo.getHopperLimit()));
+        targetPlayer.sendMessage("\u00a7b" + tr("Price to buy another hopper limit is {0}", calcPrice(islandInfo.getHopperLimit())));
+        plugin.execCommand(targetPlayer, "console:tellraw " + targetPlayer.getName() + " [{\"text\":\"" + tr("click to buy hopper") + "\",\"color\":\"green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"/is hopper buy\"}}]", false);
         return true;
     }
 }

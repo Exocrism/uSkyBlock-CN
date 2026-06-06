@@ -8,6 +8,11 @@ import dk.lockfuglsang.minecraft.command.Command;
 import dk.lockfuglsang.minecraft.command.CommandManager;
 import dk.lockfuglsang.minecraft.file.FileUtil;
 import dk.lockfuglsang.minecraft.po.I18nUtil;
+
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.Files;
 import dk.lockfuglsang.minecraft.util.TimeUtil;
 import dk.lockfuglsang.minecraft.util.VersionUtil;
 import org.bukkit.Bukkit;
@@ -257,6 +262,29 @@ public class uSkyBlock extends JavaPlugin implements uSkyBlockAPI, CommandManage
     private void createDataFolder() {
         if (!getDataFolder().exists()) {
             getDataFolder().mkdirs();
+        }
+    }
+
+    /**
+     * 首次运行时，将 jar 内 po/ 目录下的 .po 文件释放到 dataFolder/i18n/ 目录。
+     * 已存在的文件不会被覆盖。
+     */
+    private void ensurePoFiles() {
+        File i18nDir = new File(getDataFolder(), "i18n");
+        if (!i18nDir.exists()) {
+            i18nDir.mkdirs();
+        }
+        // 直接释放到 plugins/uSkyBlock/i18n/zh_CN.po
+        File poFile = new File(i18nDir, Settings.locale + ".po");
+        if (!poFile.exists()) {
+            try (java.io.InputStream in = getClass().getClassLoader().getResourceAsStream("po/" + Settings.locale + ".po")) {
+                if (in != null) {
+                    java.nio.file.Files.copy(in, poFile.toPath());
+                    getLogger().info("已释放翻译文件: " + poFile.getName());
+                }
+            } catch (java.io.IOException e) {
+                getLogger().warning("无法释放翻译文件 " + poFile.getName() + ": " + e.getMessage());
+            }
         }
     }
 
@@ -666,6 +694,7 @@ public class uSkyBlock extends JavaPlugin implements uSkyBlockAPI, CommandManage
         FileUtil.setDataFolder(getDataFolder());
         FileUtil.setAlwaysOverwrite("levelConfig.yml");
         Settings.loadPluginConfig(new PluginConfig().getYamlConfig());
+        ensurePoFiles(); // 首次运行时释放 .po 翻译文件
         I18nUtil.initialize(getDataFolder(), Settings.locale);
         saveConfig();
         // Update all of the loaded configs.

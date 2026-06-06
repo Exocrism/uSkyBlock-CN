@@ -8,6 +8,7 @@ import java.util.Map;
 public class PlayerShopData {
     private final Map<String, Integer> buyCounts = new HashMap<>();
     private final Map<String, Long> lastBuyTime = new HashMap<>();
+    private final Map<String, Integer> randomShopBuys = new HashMap<>();
     private long lastResetTime = Instant.now().getEpochSecond();
 
     public int getBuyCount(String itemId) {
@@ -57,4 +58,15 @@ public class PlayerShopData {
         }
         return data;
     }
+
+    public int getRandomShopBuyCount(String itemId) {
+    return randomShopBuys.getOrDefault(itemId, 0);
+    }
+    public void incrementRandomShopBuyCount(String itemId) {
+        randomShopBuys.put(itemId, getRandomShopBuyCount(itemId) + 1);
+    }
+    public void resetRandomShopBuys() {
+        randomShopBuys.clear();
+    }
+
 }
